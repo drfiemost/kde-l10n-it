@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+
+  <!ENTITY i18n-kmailcvt "<application
+>KMailCVT</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+> 
+]>
+
+<article id="kmailcvt" lang="&language;">
+
+<articleinfo id="kmailcvtinfo">
+
+<title
+>Manuale di &i18n-kmailcvt;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> <email
+>montel@kde.org</email
+> </author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Luigi</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>luigi.toscano@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>Laurent Montel</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-12-10</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+</articleinfo>
+
+<sect1 id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&i18n-kmailcvt; può essere usata per importare i messaggi di posta elettronica se il programma o il formato di posta che usavi precedentemente è presente nell'elenco riportato di seguito.</para>
+  <simplelist>
+    <member
+>Archivio di KMail</member>
+    <member
+>mbox(Unix, Evolution)</member>
+    <member
+>Evolution 1.x</member>
+    <member
+>Evolution 2.x</member>
+    <member
+>Evolution 3.x</member>
+    <member
+>&kmail;</member>
+    <member
+>OS X Mail</member>
+    <member
+>Opera</member>
+    <member
+>Sylpheed</member>
+    <member
+>Thunderbird/Mozilla</member>
+    <member
+>The Bat!</member>
+    <member
+>Outlook Express</member>
+    <member
+>Pegasus-Mail</member>
+    <member
+>Lotus Notes</member>
+    <member
+>Testo semplice</member>
+  </simplelist>
+<para
+>Se il programma o il formato di posta che usavi precedentemente non è elencato qui, consulta la documentazione delle <ulink url="help:/kmail/import-restore.html#importing-options"
+>opzioni di importazione</ulink
+> per altre opzioni di importazione.</para>
+
+
+
+<sect2 id="using-kapp">
+<title
+>Uso di &i18n-kmailcvt;</title>
+
+<para>
+<screenshot>
+<screeninfo
+>Schermata di &i18n-kmailcvt;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kmailcvt.png" format="PNG"/>
+    </imageobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+<para
+>&i18n-kmailcvt; è uno strumento che permette un'importazione facile dalle applicazioni supportate. Puoi accedere ad esso tramite la voce di menu <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Importa messaggi</guimenuitem
+></menuchoice
+> di &kmail; o eseguendo indipendentemente &i18n-kmailcvt; dal lanciatore di applicazioni di &kde;.</para>
+<note
+><para
+>Assicurati di compattare le tue cartelle nell'altro programma di posta.</para
+></note>
+<para
+>Seleziona il programma di posta precedentemente utilizzato dalla lista a cascata. L'area di testo centrale di &i18n-kmailcvt; verrà aggiornata con istruzioni speciali (se applicabili) e la posizione conosciuta dove quel programma conserva i messaggi di posta. Segui le istruzioni, quindi seleziona la cartella in cui vuoi importare i tuoi messaggi.</para>
+<para
+>Se vuoi che lo strumento &i18n-kmailcvt; rimuova i messaggi duplicati, marca <guilabel
+>Rimuovi i messaggi duplicati durante l'importazione</guilabel
+>. Comparirà una finestra di dialogo di selezione dei file e dovrai selezionare il file/cartella segnalato nelle istruzioni. Fai clic sul pulsante <guibutton
+>Successivo</guibutton
+> per completare l'importazione. Quando l'importazione è terminate puoi fare clic sul pulsante <guibutton
+>Indietro</guibutton
+> per importare da un'altra applicazione o il pulsante <guibutton
+>Completa</guibutton
+> per uscire. </para>
+</sect2>
+
+<sect2 id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&i18n-kmailcvt;</para>
+<para
+>Copyright del programma 2013 Laurent Montel montel@kde.org </para>
+<para
+>Copyright della documentazione &copy; 2013 Laurent Montel montel@kde.org e Scarlett Clark scarlett@scarlettgatelyclark.com </para>
+
+<para
+>Traduzione italiana di Luigi Toscano <email
+>luigi.toscano@tiscali.it</email
+></para
+> 
+&underFDL; &underGPL; </sect2>
+
+
+</sect1>
+
+
+</article>
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

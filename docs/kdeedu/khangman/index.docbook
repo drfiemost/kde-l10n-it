@@ -1,0 +1,1350 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+ "dtd/kdex.dtd" [
+  <!ENTITY kappname "&khangman;">
+  <!ENTITY package "kdeedu">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="khangman" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale di &khangman;</title>
+
+<authorgroup>
+<author
+><firstname
+>Anne-Marie</firstname
+> <surname
+>Mahfouf</surname
+> <affiliation
+> <address
+>&Anne-Marie.Mahfouf.mail;</address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Nicola</firstname
+><surname
+>Ruggero</surname
+><affiliation
+><address
+><email
+>nicola@nxnt.org</email
+></address
+></affiliation
+><contrib
+>Revisione e traduzione italiana</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Davide</firstname
+><surname
+>Rizzo</surname
+><affiliation
+><address
+><email
+>drizzo@daviderizzo.com</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+<year
+>2001</year
+><year
+>2009</year>
+<holder
+>&Anne-Marie.Mahfouf;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2013-05-31</date>
+<releaseinfo
+>2.5 (&kde; 4.11)</releaseinfo>
+
+<abstract>
+<para
+>&khangman; è il classico gioco dell'impiccato per bambini, adattato a &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KHangMan</keyword>
+<keyword
+>impiccato</keyword>
+<keyword
+>gioco</keyword>
+<keyword
+>bambino</keyword>
+<keyword
+>parole</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&khangman; è basato sul ben noto gioco dell'impiccato. È pensato per i bambini da sei anni in su. Il gioco ha diverse categorie di parole con cui giocare tra cui <guimenuitem
+>Animali</guimenuitem
+> (parole di animali) e tre livelli di difficoltà <guimenuitem
+>facile</guimenuitem
+>, <guimenuitem
+>medio</guimenuitem
+> e <guimenuitem
+>difficile</guimenuitem
+>. Una parola è scelta a caso, le lettere sono nascoste, e bisogna indovinare la parola provando una lettera alla volta. Ogni volta che provi una lettera sbagliata, compare parte dell'immagine di un impiccato. Devi indovinare la parola prima di farti impiccare! Hai a disposizione dieci tentativi. </para>
+
+</chapter>
+
+<chapter id="using-khangman">
+<title
+>Utilizzo di &khangman;</title>
+
+<screenshot>
+<screeninfo
+>Ecco un'immagine di &khangman; quando lo si avvia per la prima volta</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="khangman-main.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase
+>Immagine di &khangman;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Qui puoi vedere &khangman; alla prima esecuzione. Il livello è animali, la lingua è quella predefinita (la lingua corrente di &kde; se i dati sono disponibili, in questo caso è l'inglese), e il tema è "Mare". Ogni modifica al livello, alla lingua o al tema dello sfondo viene scritta nel file di configurazione e sarà ripristinata al successivo avvio. </para>
+
+<para
+>Nota come è facile cambiare il livello e il tema: basta fare clic sulle liste a comparsa nella barra degli strumenti. Allo stesso modo, per passare a una nuova parola o uscire dal gioco è sufficiente fare clic sugli appositi pulsanti nella barra degli strumenti. </para>
+
+<sect1 id="general-usage">
+<title
+>Utilizzo generale</title>
+
+<para
+>Una parola è scelta e al posto delle sue lettere sono visualizzati dei trattini bassi (_). Sai già da quante lettere è composta. Devi indovinare di che parola si tratta provando una lettera dopo l'altra. Inserisci la lettera nella casella e premi &Enter; o fai clic sul pulsante <guibutton
+>Prova</guibutton
+> per vedere se appartiene o meno alla parola. </para>
+
+<para
+>La parola viene scelta a caso e non è uguale alla precedente. </para>
+
+<important
+><para
+>Tutte le parole sono sostantivi (niente verbi, aggettivi &etc;).</para
+></important>
+
+<para
+>Se hai bisogno di aiuto per indovinare la parola, puoi fare clic sull'icona <guiicon
+>Mostra suggerimento</guiicon
+> <inlinemediaobject
+><imageobject
+> <imagedata fileref="games-hint.png" format="PNG"/></imageobject
+></inlinemediaobject
+> nella barra degli strumenti e verrà visualizzato un aiutino per darti qualche indizio sulla parola. Facendo clic nuovamente sull'icona <guiicon
+>Mostra suggerimento</guiicon
+> l'aiutino scompare. </para>
+
+<para
+>I suggerimenti non vengono mostrati nella modalità di avvio predefinita. </para>
+
+<para
+>Normalmente è indifferente scrivere in lettere maiuscole o minuscole. Il programma converte tutto in minuscolo (fatta eccezione per le parole tedesche che iniziano con la maiuscola). Il programma fa questa operazione in automatico. </para>
+
+<para
+>La categoria corrente, le vittorie e le perdite sono mostrate nella barra di stato. </para>
+
+<para
+>Ogni volta che provi una lettera che non fa parte della parola, una parte dell'impiccato viene disegnata. Hai dieci tentativi a disposizione per indovinare la parola, dopodiché viene mostrata la risposta corretta. </para>
+
+<para
+>Ci sono quattro livelli: facile, medio, difficile e animali, oltre a livelli su altri argomenti in alcune lingue. Il programma ricerca tutti i file di dati in tutte le lingue ed è in grado di usare anche le parole di &kanagram;. </para>
+ 
+<para
+>Nel livello facile le parole sono abbastanza semplici, prese dalla vita di tutti i giorni. È adatto per bambini dai sei ai nove anni. Il livello animali contiene solo nomi di animali, in modo che sia più facile indovinarli. Alcuni sono facili, altri più difficili. Nel livello medio, le parole sono più lunghe e più difficili. È adatto per bambini dai nove anni in su. Il livello difficile è, come dice il nome, difficile, &ie; le parole sono complicate e non molto conosciute. Si tratta di un livello non banale anche per gli adulti. </para>
+
+<para
+>Dopo che una parola è stata indovinata (oppure quando il disegno dell'impiccato è completo) verrà mostrato un messaggio e ti verrà chiesto di indovinare un'altra parola. Puoi fare clic su <guilabel
+>Gioca ancora</guilabel
+> e ti verrà presentata una nuova parola da indovinare, oppure puoi selezionare un altro <guimenu
+>Livello</guimenu
+> in cui giocare. Per uscire dal gioco seleziona <menuchoice
+><guimenu
+>Gioco</guimenu
+><guimenuitem
+>Esci</guimenuitem
+> </menuchoice
+> oppure fai clic sull'icona <guiicon
+>Esci</guiicon
+> nella barra degli strumenti. </para>
+
+<para
+>Digita la lettera che vuoi provare nella casella (il cursore del mouse è pronto in posizione) e premi &Enter; o fai clic sul pulsante <guibutton
+>Indovina</guibutton
+>. Se la lettera fa parte della parola, sarà visualizzata nelle posizioni opportune. In caso contrario, finirà nella lista delle lettere <guilabel
+>sbagliate</guilabel
+>, e un altro pezzo dell'impiccato sarà disegnato. Hai dieci tentativi, dopo i quali perdi la partita e la parola corretta viene visualizzata. </para>
+
+<para
+>Durante il gioco puoi scegliere di iniziare una nuova partita andando nel menu <guimenu
+>Partita</guimenu
+> e scegliendo <guimenuitem
+>Nuova</guimenuitem
+>, o facendo clic sull'icona <guiicon
+>Nuovo</guiicon
+> <inlinemediaobject
+><imageobject
+><imagedata fileref="document-new.png" format="PNG"/></imageobject
+></inlinemediaobject
+> nella barra degli strumenti. Puoi anche cambiare il livello attraverso il menu <guimenu
+>Livello</guimenu
+> (ciò farà comparire una nuova parola dal livello appena selezionato).</para>
+
+<para
+>L'aspetto può essere cambiato facilmente attraverso la casella a discesa <guimenuitem
+>Aspetto</guimenuitem
+> nella barra degli strumenti.</para>
+
+<para
+>Il pulsante <guiicon
+>Esci</guiicon
+> nella barra degli strumenti <inlinemediaobject
+><imageobject
+><imagedata fileref="application-exit.png" format="PNG"/></imageobject
+></inlinemediaobject
+> ti permette di uscire facilmente dal gioco.</para>
+
+<para
+>Puoi anche giocare con un file locale installato nel tuo sistema che puoi aprire utilizzando il menu <guimenu
+>Gioco</guimenu
+> e scegliendo <guimenuitem
+>Apri</guimenuitem
+>.</para>
+
+</sect1>
+
+<sect1 id="languages">
+<title
+>Giocare in diverse lingue</title>
+<para
+>Puoi giocare a &khangman; in molte lingue tra cui: bulgaro, catalano, ceco, danese, finlandese, francese, inglese, irlandese (gaelico), italiano, norvegese (Bokm&#229;l), norvegese (Nynorsk), olandese, portoghese, portoghese brasiliano, russo, serbo (latino e cirillico), sloveno, spagnolo, svedese, tagico, tedesco, turco e ungherese. Puoi anche provare il cinese se installi i file da &kanagram;!! </para>
+
+<para
+>L'impostazione predefinita è che, con la prima installazione di &khangman;, siano inclusi solo l'inglese e la lingua scelta per &kde;, a patto che sia una di quelle elencate e che il corrispondente pacchetto kde-i18n sia installato. Per esempio, se sei un utente italiano e hai &kde; in italiano, in <guimenu
+>Lingue</guimenu
+> vedrai due voci, Inglese e Italiano, e Italiano sarà l'impostazione predefinita. </para>
+
+<para
+>Puoi comunque giocare a &khangman; in altre lingue. Aggiungere nuovi dati è molto facile, è sufficiente una connessione a Internet. Fai clic sul menu <guimenu
+>Gioco</guimenu
+>, quindi su <guimenu
+>Ottieni parole in nuova lingua...</guimenu
+>. Apparirà una finestra di dialogo simile a questa: </para>
+
+<screenshot>
+<screeninfo
+>La finestra "Ottieni parole in nuova lingua" di &khangman;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="getnewstuff.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase
+>La finestra "Ottieni parole in nuova lingua" di &khangman;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Fai clic sul nome della lingua che vuoi installare, quindi sul pulsante <guibutton
+>Installa</guibutton
+>. Se la lingua è installata con successo, un segno verde di spunta viene mostrato davanti al nome della lingua ed il pulsante <guibutton
+>Installa</guibutton
+> si trasforma in <guibutton
+>Disinstalla</guibutton
+>. I dati sono disponibili immediatamente su &khangman;. Fai clic sul pulsante <guibutton
+>Chiudi</guibutton
+> per chiudere la finestra di dialogo delle novità. Se vuoi un'altra lingua, basta che ripeti la procedura. </para>
+
+<para
+>Puoi cambiare facilmente lingua andando nel menu <guimenu
+>Lingue</guimenu
+> e scegliendone un'altra. </para>
+
+<para
+>Nota che ora puoi digitare i caratteri speciali di una lingua visualizzando la barra degli strumenti <interface
+>caratteri speciali</interface
+>. Questa barra contiene pulsanti con le icone dei caratteri speciali di una lingua, come per esempio la &eacute; francese. Facendo clic su un pulsante la lettera corrispondente comparirà nella riga di inserimento, e dovrai confermare la scelta premendo &Enter;. Ovviamente puoi anche usare il layout di tastiera corrispondente alla lingua. Questa barra degli strumenti può essere mostrata o nascosta a piacere. L'impostazione sarà ripristinata al successivo avvio di &khangman;. </para>
+
+<important
+><para
+>Nota che, per visualizzare correttamente i caratteri speciali di alcune lingue, è necessario avere i set Arial e URW Bookman. Se sono installati, &khangman; li utilizzerà automaticamente. Se vedi dei rettangoli al posto delle lettere, può darsi che uno di questi set di caratteri sia assente. Digita <command
+>fonts:/</command
+> nella barra degli indirizzi di &konqueror; per controllare quali caratteri sono installati. </para
+></important>
+
+</sect1>
+<sect1 id="few-tips">
+<title
+>Qualche suggerimento</title>
+<para
+>Prova a indovinare prima le vocali. Poi passa alle consonanti più comuni: l, t, r, n, s. </para>
+<para
+>Se stai giocando in francese o inglese e compare <quote
+>io</quote
+>, prova la lettera n. </para>
+<para
+>In portoghese brasiliano, catalano, spagnolo e portoghese le vocali accentate compaiono anche premendo la vocale non accentata corrispondente. Per esempio, tutte le <quote
+>a</quote
+> accentate di una parola saranno mostrate premendo <quote
+>a</quote
+>. Ciò accade quando la voce <guilabel
+>Digita lettere accentate</guilabel
+> non è marcata. Quando invece lo è, bisogna digitare anche le lettere accentate. Premendo <quote
+>a</quote
+>, solo le <quote
+>a</quote
+> saranno visualizzate, e dovrai per esempio digitare &atilde; perché questa lettera sia mostrata. </para>
+<para
+>Lo sapevi? In inglese, la lettera più comune è la e (12,7%), seguita dalla t (9,1%) dalla a (8,2%), dalla i (7,0%) e dalla n (6,7%). </para>
+</sect1>
+
+
+</chapter>
+
+<chapter id="menus">
+<title
+>Barra dei menu e barre degli strumenti</title>
+
+<sect1 id="mainwindow">
+<title
+>La finestra principale di &khangman;</title>
+
+<para
+>Il menu <guimenu
+>Partita</guimenu
+> ha tre voci: <guimenuitem
+>Nuova</guimenuitem
+>, <guimenuitem
+>Ottieni parole in nuova lingua...</guimenuitem
+> ed <guimenuitem
+>Esci</guimenuitem
+>.</para>
+
+<para
+><guimenuitem
+>Nuova</guimenuitem
+> fa iniziare una nuova partita, &ie; una nuova parola da indovinare, nel livello corrente. <guimenuitem
+>Ottieni parole in nuova lingua...</guimenuitem
+> visualizza l'apposita finestra di dialogo per scaricare i dati di una nuova lingua. <guimenuitem
+>Esci</guimenuitem
+> provoca l'uscita dal gioco, chiudendo la finestra principale e salvando le impostazioni correnti nel file di configurazione.</para>
+
+<para
+>Il menu <guimenu
+>Livelli</guimenu
+> permette di scegliere il livello, ovvero il grado di difficoltà delle parole da indovinare. </para>
+
+<para
+>Il menu <guimenu
+>Lingue</guimenu
+> permette di cambiare la lingua delle parole da indovinare. </para>
+
+<para
+>Il menu <guimenu
+>Aspetto</guimenu
+> propone quattro temi: il <guimenuitem
+>Tema Mare</guimenuitem
+>, il <guimenuitem
+>Tema Inverno</guimenuitem
+>, il <guimenuitem
+>Tema Ape</guimenuitem
+> e il <guimenuitem
+>Tema Deserto</guimenuitem
+>. I colori dello sfondo e dei caratteri cambiano a seconda del tema. </para>
+
+<para
+>Il menu <guimenuitem
+>Impostazioni</guimenuitem
+> ti permette di configurare &khangman; con facilità. Per prima cosa, <guimenuitem
+>Barre degli strumenti</guimenuitem
+>,<guimenuitem
+>Mostra suggerimenti</guimenuitem
+> e <guimenuitem
+>Mostra la barra di stato</guimenuitem
+> ti danno la possibilità di visualizzare o nascondere queste barre. </para>
+
+<para
+>Ci sono quattro barre degli strumenti: quella <guimenuitem
+>Principale</guimenuitem
+>, <guimenuitem
+>Aspetto</guimenuitem
+> e <guimenuitem
+>Lingua</guimenuitem
+> con i pulsanti e le liste a discesa nella parte alta della finestra, e quella <interface
+>Caratteri speciali</interface
+> che, quando è visibile, si trova in basso. Questa barra dispone di pulsanti con i caratteri speciali di ogni lingua: lettere accentate e altri caratteri particolari. Ciò permette all'utente di giocare con un'altra lingua senza dover configurare una nuova mappatura di tastiera. Facendo clic su un carattere speciale esso è visualizzato al posto della lettera da provare. Premendo &Enter; il programma controllerà se la lettera è presente nella parola o meno. Puoi nascondere questa barra degli strumenti se lo desideri. L'impostazione è salvata nel file di configurazione: in tal modo, se la barra degli strumenti è nascosta, lo rimarrà anche al successivo avvio di &khangman;. </para>
+
+<tip>
+<para
+>Ovviamente è possibile spostare le barre degli strumenti. Posiziona il puntatore del mouse sulla piccola maniglia all'estremità sinistra della barra, premi il &LMB; e trascina la barra nella posizione desiderata. Se ti posizioni col puntatore del mouse su una barra degli strumenti e premi il pulsante destro, apparirà un menu contestuale con il quale potrai impostare diverse opzioni per la barra. </para>
+</tip>
+
+<para
+><guimenuitem
+>Configura le scorciatoie...</guimenuitem
+> è una finestra standard di &kde; che ti permette di scegliere diverse scorciatoie da tastiera per diverse azioni. Ad esempio, <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> è la scorciatoia standard per il comando <guimenuitem
+>Esci</guimenuitem
+>.</para>
+<para
+><guimenuitem
+>Configura le barre degli strumenti...</guimenuitem
+> è un'altra voce di menu standard di &kde; che ti permette di aggiungere o togliere oggetti dalla barra degli strumenti. </para>
+
+<screenshot>
+<screeninfo
+>Il tema Deserto di &khangman;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="khangman-desert.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase
+>tema Deserto di &khangman;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+>Ecco &khangman; con il tema Deserto, lingua francese e livello facile. È mostrata la barra degli strumenti <interface
+>Caratteri speciali</interface
+>.</para>
+
+<para
+>Il livello si sceglie da una lista a cascata nella barra degli strumenti o tramite il menu <guimenu
+>Livello</guimenu
+>. I livelli disponibili sono <guimenuitem
+>Facile</guimenuitem
+>, <guimenuitem
+>Medio</guimenuitem
+>, <guimenuitem
+>Animali</guimenuitem
+> e <guimenuitem
+>Difficile</guimenuitem
+>. Il livello <guimenuitem
+>facile</guimenuitem
+> contiene oggetti comuni noti a un bambino di sei o sette anni. Il livello <guimenuitem
+>medio</guimenuitem
+> contiene nomi un po' più complicati, e in misura maggiore il livello <guimenuitem
+>difficile</guimenuitem
+>. Il livello <guimenuitem
+>animali</guimenuitem
+> contiene solo nomi di animali. Ci sono anche altre categorie di parole a seconda della lingua. </para>
+
+<para
+>Tutte le parole sono sostantivi. Niente verbi né aggettivi. Il livello scelto viene mostrato nella barra di stato.</para>
+<para
+>Nella casella si possono digitare soltanto lettere.</para>
+</sect1>
+
+<sect1 id="settings">
+<title
+>Impostazioni disponibili</title>
+<para
+>Una barra degli strumenti permette un accesso rapido ad alcune impostazioni. Puoi fare clic su un pulsante per iniziare una nuova partita (ovvero una nuova parola), per uscire dal gioco. Il livello e il tema si possono cambiare facilmente grazie a due liste a cascata sulla barra degli strumenti. </para>
+<para
+>In <menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura &khangman;...</guimenuitem
+> </menuchoice
+> troverai tre schede. La prima è per le impostazioni <guilabel
+>Generali</guilabel
+>. </para>
+
+<sect2 id="general-settings">
+<title
+>Impostazioni generali</title>
+
+<screenshot>
+<screeninfo
+>Impostazioni generali di &khangman;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="settings-general.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase
+>Impostazioni generali di &khangman;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+><guilabel
+>Una lettera alla volta</guilabel
+>: non è marcato per impostazione predefinita. Quando non è marcato, se provi la lettera "a" e la parola ne ha più di una, verranno visualizzate tutte. Per esempio, se la parola è "armadio", digitando "a" entrambe le occorrenze saranno mostrate. Marcando questa opzione, invece, soltanto la prima "a" sarà mostrata, e dovrai digitare di nuovo "a" per vederne la seconda apparizione. Ciò ha l'effetto di aumentare la difficoltà del gioco. </para>
+
+<para
+><guilabel
+>Abilita animazioni</guilabel
+>: l'impostazione predefinita è che sia marcato. Ciò significa che quando vinci una partita apparirà un messaggio per informarti dell'accaduto e chiederti se vuoi giocare ancora. Smarcando questa opzione il messaggio non sarà più mostrato, e una nuova partita inizierà automaticamente dopo tre secondi. </para>
+
+<para
+><guilabel
+>Abilita globalmente i suggerimenti</guilabel
+>: in maniera predefinita non è marcato. I suggerimenti non vengono mostrati. Se selezioni la casella (oppure usi l'icona <guilabel
+>Mostra suggerimenti</guilabel
+>, il menu <menuchoice
+><guimenu
+>Impostazioni</guimenu
+><guimenuitem
+>Mostra suggerimenti</guimenuitem
+></menuchoice
+> oppure la scorciatoia <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+>), Un suggerimento per agevolarti nel gioco verrà mostrato sopra la parola da indovinare. </para>
+
+<para
+>Nella sezione <guilabel
+>Suoni</guilabel
+>, marcando la casella <guilabel
+>Abilita suoni</guilabel
+>, si udirà un suono all'inizio di una nuova partita, e un altro dopo una vittoria. </para>
+
+</sect2>
+<sect2 id="languages-settings">
+<title
+>Impostazioni lingue</title>
+<para
+>La scheda <guilabel
+>Lingue</guilabel
+> permette di controllare impostazioni specifiche di alcune lingue. Se la lingua corrente non prevede tali impostazioni, esse saranno disabilitate e impossibili da modificare. </para>
+
+<screenshot>
+<screeninfo
+>Impostazioni lingue di &khangman;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="settings-languages.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase
+>Impostazioni lingue di &khangman;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+><guilabel
+>Digita lettere accentate</guilabel
+>, è disponibile nella finestra di dialogo di configurazione di &khangman; per il Catalano, Portoghese, Portoghese Brasiliano e Spagnolo. Marcando <guilabel
+>Digita lettere accentate</guilabel
+>, dovrai digitare esplicitamente le vocali accentate nel gioco (come &atilde;). In caso contrario, digitando una vocale anche quelle eventualmente accentate saranno visualizzate. </para>
+
+</sect2>
+
+<sect2 id="timers-settings">
+<title
+>Impostazioni intervalli</title>
+<para
+>La scheda <guilabel
+>Intervalli</guilabel
+> ti permette di impostare per quanto tempo debbano essere visualizzati i suggerimenti e gli avvisi di lettera già provata. </para>
+
+<screenshot>
+<screeninfo
+>Impostazioni intervalli di &khangman;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="settings-timers.png" format="PNG"/>
+	  </imageobject>
+	    <textobject>
+	    <phrase
+>Impostazioni intervalli di &khangman;</phrase>
+	  </textobject>
+	</mediaobject>
+</screenshot>
+
+<para
+><guilabel
+>Imposta durata messaggio lettera già provata</guilabel
+> ti permette di aumentare o diminuire il tempo di permanenza su schermo dell'avviso di lettera già provata. Alcuni vorranno vederlo solo per pochi istanti, mentre i bambini avranno bisogno di più tempo per capirlo. Da ciò la necessità di configurare questo intervallo. </para>
+
+</sect2>
+
+</sect1>
+
+</chapter>
+
+<chapter id="commands">
+<title
+>Guida ai comandi</title>
+
+<sect1 id="khangman-mainwindow">
+<title
+>Menu e scorciatoie da tastiera</title>
+
+<sect2>
+<title
+>Il menu Gioco</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Nuovo</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Nuova</action
+> partita (&ie; nuova parola)</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Apri</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Apri</action
+> un file locale per giocare con le parole</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Ottieni parole in nuova lingua...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Visualizza</action
+> la finestra di dialogo <guilabel
+>Scarica Novità!</guilabel
+> con tutti i dati disponibili nelle varie lingue. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Gioco</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Esce</action
+> da &khangman;</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>Il menu Categoria</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Livello</guimenu
+> <guimenuitem
+>Animali</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> la lista di nomi di animali da indovinare</para>
+<para
+>Anche tutte le altre lingue installate sono visualizzate in questo menu.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Livello</guimenu
+> <guimenuitem
+>Facile</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> la lista di parole facili da indovinare</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Livello</guimenu
+> <guimenuitem
+>Medio</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> la lista di parole di media difficoltà da indovinare</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Livello</guimenu
+> <guimenuitem
+>Difficile</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> la lista di parole difficili da indovinare</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>Il menu Lingua</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Lingua</guimenu
+> <guimenuitem
+>Inglese</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> la lingua inglese per le parole da indovinare.</para>
+<para
+>Anche tutte le altre lingue installate sono visualizzate in questo menu.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title
+>Il menu Aspetto</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Aspetto</guimenu
+> <guimenuitem
+>Tema Mare</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> il tema Mare per l'immagine di sfondo e il colore dei caratteri</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Aspetto</guimenu
+> <guimenuitem
+>Tema Inverno</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> il tema Inverno per l'immagine di sfondo e il colore dei caratteri</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Aspetto</guimenu
+> <guimenuitem
+>Tema Ape</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> il tema Ape per l'immagine di sfondo e il colore dei caratteri</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Aspetto</guimenu
+> <guimenuitem
+>Tema Deserto</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Sceglie</action
+> il tema Deserto per l'immagine di sfondo e il colore dei caratteri</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Inoltre &khangman; ha le voci dei menu <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+> comuni di &kde;; per maggiori informazioni, consulta i capitoli <ulink url="help:/fundamentals/ui.html#menus-settings"
+>Menu Impostazioni</ulink
+> e <ulink url="help:/fundamentals/ui.html#menus-help"
+>menu Aiuto</ulink
+> dei «Fondamentali di &kde;». </para>
+
+</sect2>
+
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Guida dello sviluppatore a &khangman;</title>
+
+<sect1 id="changing-words">
+<title
+>Come tradurre le parole in una nuova lingua per il gioco</title>
+
+<para
+>Per favore segui la procedura e invia i file compressi con tar e gzip a &Anne-Marie.Mahfouf.mail;. </para>
+<para
+>Per favore dai un'occhiata in&khangman; <guimenuitem
+>Ottieni parole in una nuova lingua...</guimenuitem
+> nel menu <guimenu
+>Gioco</guimenu
+> per vedere se la tua lingua è già disponibile. Se è disponibile puoi controllare se contiene i <emphasis
+>suggerimenti</emphasis
+>. </para>
+<para
+>Le parole sono contenute il quattro file separati, uno per livello. I file si trovano in <filename class="directory"
+>/khangman/data/</filename
+>. Il file <filename
+>easy.kvtml</filename
+> è per il livello facile, <filename
+>medium.kvtml</filename
+> per il livello medio, <filename
+>animals.kvtml</filename
+> per il livello animali e <filename
+>hard.kvtml</filename
+> per il livello difficile.</para>
+<para
+>L'inglese è la lingua predefinita e l'unica inclusa assieme a &khangman;. Tutte le altre lingue si trovano nel pacchetto kde-l10n corrispondente. </para>
+<procedure>
+<step>
+<para
+>I file ora utilizzano il formato kvtml. Il tag <sgmltag class="starttag"
+>text</sgmltag
+> è per la parola e il tag <sgmltag class="starttag"
+>comment</sgmltag
+> per il suggerimento. Entrambi sono nel tag <sgmltag class="starttag"
+>entry</sgmltag
+>. Cerca di adattare il suggerimento al livello di difficoltà. Il livello <guimenuitem
+>Facile</guimenuitem
+> richiederà un suggerimento semplice, ma per il livello <guimenuitem
+>Difficile</guimenuitem
+> servirà la definizione del dizionario. Cerca di non usare nel suggerimento parole della stessa famiglia di quella da scoprire, altrimenti indovinarla diventa troppo facile!</para>
+
+<para
+>Nota che devi usare la <emphasis role="bold"
+>codifica UTF-8</emphasis
+> quando modifichi i file. Se il tuo editor non ha questa funzione, prova a utilizzare &kwrite; o &kate;. Aprendo un file con questi editor puoi selezionare la codifica utf8 tramite la lista a cascata in cima alla finestra di dialogo per l'apertura di un file.</para>
+
+<para
+>Un esempio di file kvtml è il seguente:</para>
+<programlisting
+><markup>
+&lt;?xml version="1.0"?&gt; 
+&lt;DOCTYPE kvtml PUBLIC "kvtml2.dtd"
+"http://edu.kde.org/kanagram/kvtml2.dtd"&gt; 
+&lt;kvtml version="2.0"&gt; 
+&lt;information&gt;
+    &lt;generator&gt;converter&lt;/generator&gt;
+    &lt;title&gt;Animals&lt;/title&gt;&lt;!--Translate tag content--&gt;
+    &lt;comment&gt;Animals from across the
+planet&lt;/comment&gt;&lt;!--Translate tag content--&gt;
+  &lt;/information&gt;
+  &lt;identifiers&gt;
+    &lt;identifier id="0" &gt;
+      &lt;locale&gt;en&lt;/locale&gt;
+    &lt;/identifier&gt;
+  &lt;/identifiers&gt;
+...
+&lt;entry id="0" &gt;
+      &lt;inactive&gt;false&lt;/inactive&gt;
+      &lt;inquery&gt;false&lt;/inquery&gt;
+      &lt;translation id="0" &gt;
+        &lt;text&gt;bear&lt;/text&gt;&lt;!--Translate all text tags
+content--&gt;
+        &lt;comment&gt;Large heavy animal with thick
+fur&lt;/comment&gt;&lt;!--Translate all comment tags content--&gt;
+      &lt;/translation&gt;
+    &lt;/entry&gt;
+...
+&lt;/kvtml&gt;
+</markup
+></programlisting>
+</step>
+<step>
+<para
+>All'inizio del file, dovresti tradurre il contenuto dei tag <sgmltag class="starttag"
+>title</sgmltag
+> e <sgmltag class="starttag"
+>comment</sgmltag
+> che sono contenuti nel tag <sgmltag class="starttag"
+>information</sgmltag
+>. Il titolo sarà ciò che compare nel menu Categoria del gioco (dove l'utente sceglie il file con cui giocare). </para>
+</step>
+<step>
+<para
+>Quindi all'interno del tag <sgmltag class="starttag"
+>identifier</sgmltag
+> per favore inserisci il codice della tua lingua al posto di «en» nel tag <sgmltag class="starttag"
+>locale</sgmltag
+>.</para>
+
+<para
+>Per favore non tradurre il nome del file perché i nomi dei file non dovrebbero contenere mai caratteri speciali. Salva quindi sempre il file con il suo nome inglese.</para>
+</step>
+<step>
+<para
+>Modifica i file kvtml con un editor di testi (è più facile se usi l'evidenziazione del formato &XML;) e sostituisci ogni parola all'interno del tag <sgmltag class="starttag"
+>text</sgmltag
+> con la traduzione e ogni suggerimento nel tag <sgmltag class="starttag"
+>comment</sgmltag
+> col relativo suggerimento tradotto. Non importa che sia conservato l'esatto significato della parola, ma cerca di mantenere per quanto possibile inalterate la sua lunghezza e difficoltà. </para
+> 
+
+<para
+>Puoi includere parole con spazi bianchi o trattini. In questo caso gli spazi bianchi ed i trattini ovviamente verranno mostrati invece di essere sostituiti dalla barretta _ per essere indovinati. Per favore contattami se c'è qualcosa di speciale legato alla tua lingua in modo che possa adattare il codice (in particolare per i caratteri accentati ed i caratteri speciali). </para>
+</step
+>	
+
+<step>
+<para
+>Puoi limitarti a tradurre le parole, ma se vuoi puoi anche adattarle al livello e aggiungerne di nuove. Per esempio, <quote
+>tavolo</quote
+> è nel livello facile in inglese, ma potrebbe essere nel livello medio nella tua lingua. Sentiti libero di adattare i file alle necessità del tuo idioma. Il numero di parole in un file non è importante, quindi ne puoi aggiungere alcune se lo desideri.</para>
+
+<para
+>Ricorda che tutte le parole sono sostantivi.</para>
+
+</step>
+
+<step>
+<para
+>Puoi depositare i tuoi file in <emphasis
+>l10n-kde4/&lt;lang_code&gt;/data/kdeedu/khangman</emphasis
+>. Non dimenticarti di aggiornare anche il file CMakeLists.txt. Per favore contattami via email se hai bisogno di informazioni.Quando mi mandi dei file non dimenticare di menzionare eventuali <emphasis role="bold"
+>caratteri speciali</emphasis
+> presenti nella tua lingua. Mettili in un file di testo, uno per riga, e aggiungi il file al pacchetto. Segnala anche ogni altra particolarità.</para>
+<para
+><emphasis
+>Non fare mai commit di file su un BRANCH, dato che potrebbe rendere il gioco inutilizzabile.</emphasis
+></para>
+</step>
+</procedure>
+<para
+>Grazie infinite per il tuo contributo!</para>
+</sect1>
+
+<sect1 id="internal">
+<title
+>Che cosa viene memorizzato da &khangman;, e dove</title>
+<para
+>Quando ti procuri una nuova lingua tramite <menuchoice
+><guimenu
+>Game</guimenu
+> <guimenuitem
+>Ottieni parole in nuova lingua...</guimenuitem
+></menuchoice
+>, i dati relativi sono memorizzati in <filename class="directory"
+>$KDEHOME/share/apps/kvtml/</filename
+>, nella cartella che ha per nome il codice della lingua. I nomi delle cartelle con le lingue disponibili sono inoltre memorizzati nel file di configurazione di &khangman;, <filename
+>$KDEHOME/share/config/khangmanrc</filename
+>. </para>
+<para
+>Il nome del fornitore (ovvero l'indirizzo del sito web da cui scaricare la nuova lingua) è memorizzato in <filename
+>$KDEDIR/share/apps/khangman/khangmanrc</filename
+>. </para>
+<para
+>La lingua inglese (predefinita) e la lingua dell'utente dal pacchetto i18n (se disponibile) si trovano in <filename class="directory"
+>$KDEDIR/share/apps/kvtml</filename
+>. </para>
+<para
+>Nel file di configurazione, che per ciascun utente è <filename
+>$KDEHOME/share/config/khangmanrc</filename
+>, sono salvate tutte le impostazioni del gioco, come lo sfondo, l'ultimo livello a cui si è giocato e così via, e inoltre i file scaricati tramite la finestra <guilabel
+>Scarica Novità!</guilabel
+>. </para>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Domande e risposte</title>
+&reporting.bugs; &updating.documentation; <qandaset id="faqlist">
+<qandaentry>
+<question>
+<para
+>Un messaggio d'errore mi dice che è impossibile trovare le immagini.</para>
+</question>
+<answer>
+<para
+>La cartella di installazione predefinita del gioco è <filename class="directory"
+>/usr/local/kde</filename
+>, perciò aggiungi <filename class="directory"
+>/usr/local/kde/bin</filename
+> al tuo path e imposta la variabile <envar
+>KDEDIR</envar
+> a <filename class="directory"
+>/usr/local/kde</filename
+> prima di avviare il gioco. Un modo più semplice è configurare &khangman; con l'opzione <option
+>--prefix</option
+>=$<envar
+>KDEDIR</envar
+>, dove $<envar
+>KDEDIR</envar
+> è la cartella dove è installato il resto di &kde;. Tale cartella può variare notevolmente a seconda della distribuzione e del sistema operativo che utilizzi. La cosa migliore è installare &khangman; dai pacchetti della tua distribuzione!</para>
+</answer>
+</qandaentry>
+<qandaentry>
+<question>
+<para
+>&khangman; non si avvia correttamente dopo l'aggiornamento da una versione precedente alla versione 4 di &kde;</para>
+</question>
+<answer>
+<para
+>Ci potrebbe essere un problema causato dal cambiamento del file di configurazione. Elimina il file <filename
+>khangmanrc</filename
+> nella cartella <filename class="directory"
+>$KDEHOME/share/config</filename
+>. </para>
+</answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&khangman; </para>
+<para
+>Copyright programma 2001-2007 &Anne-Marie.Mahfouf; &Anne-Marie.Mahfouf.mail; </para>
+<para
+>Hanno contribuito: <itemizedlist>
+<listitem
+><para
+>Grafica impiccato: Renaud Blanchard <email
+>kisukuma@chez.com</email
+></para
+> </listitem>
+<listitem
+><para
+>Suoni: Ludovic Grossard <email
+>ludovic.grossard@libertysurf.fr</email
+></para
+> </listitem>
+<listitem
+><para
+>Responsabile precedente: &Primoz.Anzur; &Primoz.Anzur.mail;</para
+> </listitem>
+<listitem
+><para
+>File di dati per lo svedese, aiuto nella programmazione, immagini a sfondo trasparente e correzioni i18n: Stefan Asserhäll <email
+>stefan.asserhall@telia.com</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per lo spagnolo: eXParTaKus <email
+>expartakus@expartakus.com</email
+></para
+> </listitem>
+<listitem
+><para
+>Suggerimenti per lo spagnolo: Rafael Beccar <email
+>rafael.beccar@kdemail.net</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il danese: Erik Kjaer Pedersen <email
+>erik@mpim-bonn.mpg.de</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il finlandese: Niko Lewman <email
+>niko.lewman@edu.hel.fi</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il portoghese brasiliano: João Sebastião de Oliveira Bueno <email
+>gwidion@mpc.com.br</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il catalano: Antoni Bella <email
+>bella5@teleline.es</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per l'italiano: Giovanni Venturi <email
+>jumpyj@tiscali.it</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per l'olandese: Rinse <email
+>rinse@kde.nl</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il portoghese: Pedro Morais <email
+>morais@kde.org</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il serbo (cirillico e latino): Chusslove Illich <email
+>chaslav@sezampro.yu</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per lo sloveno: Jure Repinc <email
+>jlp@holodeck1.com</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il ceco: Luk&aacute;&scaron; Tinkl <email
+>lukas@kde.org</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il tagico: Roger Kovacs <email
+>rkovacs@khujand.org</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il norvegese (Bokm&#229;l): Torger &#197;ge Sinnes <email
+>torg-a-s@online.no</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per l'ungherese: Tamas Szanto <email
+>tszanto@mol.hu</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il norvegese (Nyorsk): Gaute Hvoslef Kvalnes <email
+>gaute@verdsveven.com</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il turco: Mehmet &Ouml;zel <email
+>mehmet_ozel2003@hotmail.com</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per il bulgaro: Radostin Radnev <email
+>radnev@yahoo.com</email
+></para
+> </listitem>
+<listitem
+><para
+>File di dati per l'irlandese (gaelico): Kevin Patrick Scannell <email
+>scannell@slu.edu</email
+></para
+> </listitem>
+<listitem
+><para
+>Aiuto nella programmazione: &Robert.Gogolok; &Robert.Gogolok.mail;</para
+> </listitem>
+<listitem
+><para
+>Aiuto nella programmazione: Benjamin Meyer <email
+>ben@meyerhome.net</email
+></para
+> </listitem>
+<listitem
+><para
+>Correzioni al codice: Lubos Lun&agrave;k <email
+>l.lunak@kde.org</email
+></para
+> </listitem>
+<listitem
+><para
+>Correzioni al codice: Albert Astals Cid &Albert.Astals.Cid.mail;</para
+> </listitem>
+<listitem
+><para
+>Studio usabilità: Celeste Paul <email
+>seele@obso1337.org</email
+></para
+> </listitem>
+</itemizedlist>
+</para>
+
+<para
+>Copyright documentazione 2001-2007 &Anne-Marie.Mahfouf; &Anne-Marie.Mahfouf.mail; </para>
+
+<para
+>Revisione e traduzione italiana Nicola Ruggero <email
+>nicola@nxnt.org</email
+></para
+><para
+>Traduzione italiana Davide Rizzo <email
+>drizzo@daviderizzo.com</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installazione</title>
+
+<sect1 id="getting-khangman">
+<title
+>Come ottenere &khangman;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilazione e installazione</title>
+&install.compile.documentation; </sect1>
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

@@ -1,0 +1,93 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Federico Zenith <federico.zenith@member.fsf.org>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: nepomukfilewatch\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-06-11 01:35+0000\n"
+"PO-Revision-Date: 2013-07-07 14:23+0200\n"
+"Last-Translator: Federico Zenith <federico.zenith@member.fsf.org>\n"
+"Language-Team: Italian <kde-i18n-doc@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Federico Zenith"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "federico.zenith@member.fsf.org"
+
+#: metadatamover.cpp:114
+#, kde-format
+msgid "Remove metadata from %1"
+msgstr "Rimuovi dati aggiuntivi da %1"
+
+#: metadatamover.cpp:121
+#, kde-format
+msgid "Move metadata from %1 to %2"
+msgstr "Sposta dati aggiuntivi da %1 a %2"
+
+#: nepomukfilewatch.cpp:545
+msgid "The File Watcher is idle."
+msgstr "L'osservatore di file è inattivo"
+
+#: nepomukfilewatch.cpp:554 nepomukfilewatch.cpp:556
+msgid "Nepomuk File Watch"
+msgstr "Osservazione dei file di Nepomuk"
+
+#: nepomukfilewatch.cpp:558
+msgid "(c) 2008-2013, Sebastian Trüg"
+msgstr "© 2008-2013 di Sebastian Trüg"
+
+#: nepomukfilewatch.cpp:561
+msgid "Sebastian Trüg"
+msgstr "Sebastian Trüg"
+
+#: nepomukfilewatch.cpp:561
+msgid "Developer"
+msgstr "Sviluppatore"
+
+#: nepomukfilewatch.cpp:562
+msgid "Vishesh Handa"
+msgstr "Vishesh Handa"
+
+#: nepomukfilewatch.cpp:562
+msgid "Maintainer"
+msgstr "Responsabile"
+
+#: removabledeviceindexnotification.cpp:41
+msgctxt "@title"
+msgid "New removable device detected"
+msgstr "Nuovo dispositivo rimovibile rilevato"
+
+#: removabledeviceindexnotification.cpp:42
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Do you want files on removable device <resource>%1</resource> to be indexed "
+"for fast desktop searches?"
+msgstr ""
+"Vuoi che i file sul dispositivo rimovibile <resource>%1</resource> siano "
+"indicizzati per le ricerche da desktop veloci?"
+
+#: removabledeviceindexnotification.cpp:46
+msgctxt "@action"
+msgid "Index files"
+msgstr "Indicizza i file"
+
+#: removabledeviceindexnotification.cpp:47
+msgctxt "@action"
+msgid "Ignore device"
+msgstr "Ignora dispositivo"
+
+#: removabledeviceindexnotification.cpp:48
+msgctxt "@action"
+msgid "Configure"
+msgstr "Configura"

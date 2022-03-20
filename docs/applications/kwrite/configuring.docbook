@@ -1,0 +1,34 @@
+<chapter id="config-dialog">
+<title
+>Configura &kappname;</title>
+
+<para
+>Selezionando <menuchoice
+><guimenu
+>Impostazioni</guimenu
+><guimenuitem
+>Configura editor...</guimenuitem
+></menuchoice
+> dal menu, si apre la finestra di dialogo <guilabel
+>Configura</guilabel
+>. Questa finestra di dialogo può essere utilizzata per modificare diverse impostazioni. Le impostazioni disponibili da cambiare variano a seconda della quale categoria scelta nella lista verticale sul lato sinistro della finestra. Per mezzo di tre pulsanti lungo la base della finestra l'utente può controllare il processo. </para>
+
+<para
+>Si può invocare il sistema di <guilabel
+>Aiuto</guilabel
+>, accettare le impostazioni correnti e chiudere la finestra di dialogo con il pulsante <guibutton
+>OK</guibutton
+> o, con <guibutton
+>Annulla</guibutton
+>, annullare il processo. Le categorie <guilabel
+>Aspetto</guilabel
+>, <guilabel
+>Caratteri e colori</guilabel
+>, <guilabel
+>Modifica</guilabel
+>, <guilabel
+>Apri e salva</guilabel
+> e <guilabel
+>Estensioni</guilabel
+> sono descritte sotto. </para>
+&configuring-part-sections; &plugins-part-sections; </chapter>

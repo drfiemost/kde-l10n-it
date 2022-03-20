@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmcgi" lang="&language;">
+<articleinfo>
+
+<title
+>Script CGI</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+></personname
+> <email
+>lueck@hube-lueck.de</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-20</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>cgi</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Il Kioslave CGI permette di eseguire programmi locali CGI senza bisogno di avere un server Web.</para
+> 
+
+<para
+>In questo modulo delle impostazioni di sistema puoi configurare i percorsi in cui si cercano gli script CGI. </para>
+
+<para
+>I percorsi agli script CGI sono visualizzati nella casella a cascata in fondo a questa finestra. </para>
+
+<para
+>Usa i pulsanti sotto la casella a cascata per aggiungere o rimuovere percorsi dalla ricerca. </para>
+
+</article>

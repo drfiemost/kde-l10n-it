@@ -1,0 +1,215 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="khtml-plugins" lang="&language;">
+<articleinfo>
+<title
+>Estensioni del browser</title>
+<authorgroup>
+<author
+>&Krishna.Tateneni;</author
+><author
+>&Jost.Schenck; </author>
+<othercredit role="translator"
+><firstname
+>Luciano</firstname
+><surname
+>Montanaro</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>Konqueror</keyword>
+<keyword
+>Navigare</keyword>
+<keyword
+>Plugin</keyword>
+</keywordset>
+
+</articleinfo>
+<!--from the old konqueror handbook - reuse it here? lueck 05-2010
+<para
+>The <guilabel
+>Global Settings</guilabel
+> page controls how &kde; scans for new
+&Netscape; plugins, either manually by pressing the <guibutton
+>Scan for 
+Plugins</guibutton
+> button or automatically each time &kde; starts up.</para>
+
+<para
+>The dialog box also contains a checkbox <guilabel>
+Enable plugins globally</guilabel
+> which you can use to enable or disable 
+plugins that can be contained in <acronym
+>HTML</acronym
+> pages (these can 
+be considered a security risk).</para>
+
+<para
+>The <guilabel
+>Plugins</guilabel
+> page shows you the &Netscape; plugins
+that &kde; has found, and for each plugin it lists the <acronym
+>MIME</acronym>
+types and the filename suffixes it uses to recognize them.</para>
+
+<para
+>The scan is done by looking through the folders listed in the
+<guilabel
+>Scan Folders</guilabel
+> list for <literal
+role="extension"
+>.so</literal
+> files containing plugin code. It examines every
+such file to find out which <acronym
+>MIME</acronym
+> types the plugin
+supports. It then creates <acronym
+>MIME</acronym
+> type definitions for &kde; in
+the user's <filename class="directory"
+> ~/.kde/share/mimelnk</filename>
+folder to make other applications aware of them.</para>
+-->
+<sect1 id="konq-browsing">
+<title
+>Estensioni del browser</title>
+
+<sect2 id="kbrowse-plugins">
+<title
+>Impostazioni globali</title>
+
+<para
+>La prima impostazione presente è <guilabel
+>Abilita plugin globalmente</guilabel
+>. Se la disabiliti, &konqueror; non userà nessun plugin. Se l'abiliti, &konqueror; userà tutti i plugin installati e configurati che troverà.</para>
+
+<para
+>Puoi anche attivare la casella <guilabel
+>Permetti solo URL HTTP e HTTPS per i plugin</guilabel
+> per limitare &konqueror; in tal senso.</para>
+
+<para
+>La prossima opzione determina se i plugin devono essere caricati solo su richiesta.</para>
+<para
+>Usa il cursore indicato con <guilabel
+>Priorità CPU per i plugin</guilabel
+> per regolare questa impostazione. </para>
+
+<para
+>Fai clic sul pulsante <guibutton
+>Impostazioni specifiche per dominio</guibutton
+> per aprire una finestra in cui puoi impostare delle politiche dei plugin specifiche per qualsiasi host o dominio in particolare. Queste politiche saranno usate al posto di quella predefinita di abilitazione dei plugin per le pagine inviate da questi domini o host.</para>
+<para
+>Aggiungi qui una nuova politica o selezionane una, e usa i controlli sulla destra per modificarla. </para>
+</sect2>
+
+<sect2 id="nsplugins">
+<title
+>Plugin</title>
+
+<sect3 id="nsplugins-intro">
+<title
+>Introduzione</title>
+
+<para
+>Siccome &Netscape; <application
+>Navigator</application
+> è stato per molti anni lo standard per la navigazione Web, si sono diffuse dei plugin per &Netscape;, che permettono di visualizzare contenuti più complessi. Con questi plugin, i siti possono contenere file <acronym
+>PDF</acronym
+>, animazioni Flash, video, eccetera. È possibile usare questi plugin anche con &konqueror;, per poter usare i contenuti estesi.</para>
+
+<note
+><para
+>I plugin di &Netscape; non vanno confusi con le estensioni di &konqueror;. Queste ultime estendono specificamente le funzioni di &konqueror;, e non sono usati normalmente per mostrare contenuti estesi.</para
+></note>
+
+</sect3>
+
+<sect3 id="nsplugins-scan">
+<title
+>Cercare i plugin</title>
+
+<para
+>&konqueror; deve sapere dove sono installate i plugin di &Netscape;. Possono essere in diversi posti: potresti avere i plugin di sistema in <filename class="directory"
+>/opt/netscape/plugins</filename
+> e quelli personali in <filename class="directory"
+>$<envar
+>HOME</envar
+>/.netscape/plugins</filename
+>. Però, &konqueror; non userà automaticamente i plugin installati: deve prima scansionare un elenco di cartelle. Puoi avviare la scansione facendo clic su <guibutton
+>Cerca plugin</guibutton
+>.</para>
+
+<para
+>Per trovare i plugin, &konqueror; cercherà nelle cartelle specificate nel riquadro <guilabel
+>Cartelle</guilabel
+>. Quando usi questo modulo di controllo per la prima volta, questo elenco conterrà già dei percorsi ragionevoli che dovrebbero andare bene sulla maggior parte dei sistemi operativi. Se devi inserirne uno nuovo, fai clic sul pulsante <guibutton
+>Nuovo</guibutton
+>; puoi quindi inserire il nuovo percorso nella casella di testo a sinistra, o scegliere una cartella con il selettore dei file facendo clic sull'icona <guibutton
+>Apri file</guibutton
+>. Siccome ci può volere un po' per la scansione delle cartelle, potresti preferire rimuovere dall'elenco le cartelle in cui sai che non ci sono estensioni: fallo selezionandone una e facendo clic su <guibutton
+>Rimuovi</guibutton
+>. Usando i pulsanti <guibutton
+>Su</guibutton
+> e <guibutton
+>Giù</guibutton
+> puoi cambiare l'ordine in cui le cartelle saranno scansionate spostandole in alto o in basso.</para>
+
+<para
+>Come al solito, premi <guibutton
+>Applica</guibutton
+> per salvare le modifiche.</para>
+
+</sect3>
+
+<sect3 id="nsplugins-plugins">
+<title
+>Plugin</title>
+
+<para
+>In questa sezione, puoi vedere un elenco dei plugin per &Netscape; trovati da &konqueror;, visualizzate in un albero. Fai doppio clic su un plugin per farlo espandere e vedrai che i vari tipi di file che esso può gestire vengono visualizzati come sottoelementi. Fai espandere un tipo di file per vederne le informazioni.</para>
+
+<para
+>L'elenco è solo a scopo informativo.</para>
+
+</sect3>
+
+</sect2>
+</sect1>
+
+</article>

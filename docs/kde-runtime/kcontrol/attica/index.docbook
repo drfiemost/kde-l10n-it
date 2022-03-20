@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="attica" lang="&language;">
+<articleinfo>
+
+<title
+>Desktop sociale</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Frederik</firstname
+><surname
+>Gladhorn</surname
+></personname
+> <email
+>gladhorn@kde.org</email
+> </author>
+
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-11-05</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>Desktop sociale</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>Il modulo delle impostazioni del desktop sociale (servizi di collaborazione aperta) permette di configurare gli account dei fornitori di servizi di collaborazione aperta.</para>
+
+<para
+>Al momento della scrittura <ulink url="http://opendesktop.org/"
+>openDesktop.org</ulink
+> è il primo fornitore utilizzabile. Puoi usare il sito Web o questa finestra di configurazione per registrarti e gestire l'account. </para
+> 
+
+<para
+>Il vantaggio è che puoi fare più cose che nelle <quote
+>Novità</quote
+>: dare un voto agli elementi, diventarne fan, e caricare nuovi contenuti. Un account configurato permette anche di usare gli oggetti sociali di Plasma (<quote
+>Comunità</quote
+>, <quote
+>Notizie sociali</quote
+>, eccetera) al massimo delle loro possibilità. </para>
+
+<para
+>Usare il modulo delle &systemsettings;:</para>
+
+<para
+>Puoi selezionare quale fornitore configurare in cima. Inserisci un nome utente e una password esistenti per farli usare a &kde;. Puoi verificare che questi funzionino usando il pulsante <guibutton
+>Accesso di prova</guibutton
+>.</para>
+
+<!--
+missing:
+Enable
+Add/Remove Providers-->
+
+<para
+>Se ancora non hai un account, una la scheda <guilabel
+>Registra</guilabel
+>. Lì devi riempire tutti i campi. Dopo aver fatto clic su <guibutton
+>Registra...</guibutton
+> riceverai un messaggio di posta dal server per attivare l'account. </para>
+
+</article>

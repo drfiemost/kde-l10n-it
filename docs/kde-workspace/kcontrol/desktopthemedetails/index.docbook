@@ -1,0 +1,223 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<article id="desktopthemedetails" lang="&language;">
+<articleinfo>
+<title
+>Tema del desktop</title>
+<authorgroup>
+<author
+><firstname
+>Andrew</firstname
+> <surname
+>Lake</surname
+></author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-06-02</date>
+<releaseinfo
+>&kde; 4.11</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>desktop</keyword>
+<keyword
+>tema</keyword>
+<keyword
+>plasma</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="kcm_desktoptheme">
+<title
+>Scheda <guilabel
+>Tema</guilabel
+></title>
+ 
+<para
+>In questa scheda viene mostrato un elenco dei temi disponibili. Selezionane uno facendo clic su un elemento dell'elenco.</para>
+
+<para
+>Usa il pulsante <guibutton
+>Scarica nuovi temi</guibutton
+> per avviare la finestra delle <guilabel
+>Novità</guilabel
+> e scaricare altri temi da Internet.</para>
+
+</sect1>
+
+<sect1 id="kcm_desktopthemedetails">
+<title
+>Scheda <guilabel
+>Dettagli</guilabel
+></title>
+
+<para
+>Un tema del desktop Plasma di &kde; è costituito da diversi componenti o elementi, che consistono per lo più di sfondi SVG e schemi di colori. Questo modulo ti permette di configurare il tuo tema di Plasma e di sostituire gli elementi del tema con elementi da altri temi o file. </para>
+
+<para
+>Gli elementi del tema del desktop consistono del tema del pannello, l'orologio analogico, e altri.</para>
+
+<note
+><para
+>Se vuoi cambiare il tema attuale con un tema nuovo completo (per esempio da Aria a Glassified), lo puoi fare nella scheda <guilabel
+>Tema</guilabel
+>. </para
+></note>
+
+<sect2 id="start">
+<title
+>Avvio rapido</title>
+<para
+>Prima scarica i temi che vuoi usare per personalizzare il desktop con il pulsante <guibutton
+>Scarica nuovi temi</guibutton
+> nella scheda <guilabel
+>Tema</guilabel
+>.</para>
+
+<para
+>Tutti i temi disponibili saranno mostrati in alto, con quello attuale evidenziato.</para>
+
+<para
+>Nell'elenco dei temi, seleziona un tema di base da usare per la maggior parte degli oggetti e inizia a personalizzare ogni elemento che vuoi modificare con un nuovo tema, per esempio puoi avere il pannello nel tema Glassified, gli sfondi degli oggetti in Aria e così via.</para>
+
+<para
+>Qui il tema per la maggior parte degli oggetti è Aria, e abbiamo cambiato lo sfondo del pannello e l'orologio analogico a Glassified, e le note a Oxygen.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Personalizzare il tema di Plasma</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="customizing.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Personalizzare il tema di Plasma</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+<para
+>Fare clic su <guibutton
+>Applica</guibutton
+> creerà un nuovo tema dal nome <guilabel
+>(Personalizzato)</guilabel
+> e lo applicherà al desktop. </para>
+</sect2>
+
+<sect2 id="custom">
+<title
+>Creare un tema personalizzato</title>
+<para
+>All'apertura del modulo, verranno mostrati gli elementi del tema attuale del desktop. Se volessi iniziare a personalizzare un altro tema, selezionalo dalla casella sopra all'elenco degli elementi del tema. Questo tema dall'elenco è il tema di partenza, la base del tuo nuovo tema personalizzato.</para>
+
+<para
+>Nell'elenco di elementi, per ogni elemento che vorresti sostituire, seleziona un elemento sostitutivo dalla sua casella a cascata. Puoi selezionare l'elemento corrispondente da un altro tema, o potresti selezionare un file. Gli elementi dei temi del desktop &plasma; sono file <literal role="extension"
+>.svg</literal
+>, tranne lo schema di colori che è un file di schema di colori di &kde;. </para>
+
+<para
+>Fai clic su <guibutton
+>Applica</guibutton
+> quando hai effettuato tutte le modifiche. Ciò creerà un nuovo tema chiamato <guilabel
+>(Personalizzato)</guilabel
+>, che puoi selezionare dalla finestra delle impostazioni dell'aspetto dal desktop. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Il tema personalizzato</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="clicking-apply.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Personalizzato</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+<note
+><para
+>Gli elementi del tema elencati sono i componenti più visibili del tema del desktop Plasma. Altri componenti del tema non sono elencati. Il tuo nuovo tema userà questi componenti non elencati dal tema che hai selezionato come inizio per creare il tema personalizzato. </para
+></note>
+</sect2>
+
+<sect2 id="naming">
+<title
+>Dare un nome a un tema personalizzato</title>
+<para
+>Per dare un nome al tuo tema personalizzato, spunta la casella <guilabel
+>Altro</guilabel
+> ed inserisci il nome del tema. Puoi anche fornire il tuo nome (<guilabel
+>Autore</guilabel
+>), una versione e una descrizione del tema. Fai clic su <guibutton
+>Applica</guibutton
+> quando hai finito. </para>
+</sect2>
+
+<sect2 id="removing">
+<title
+>Rimuovere un tema</title>
+<para
+>Seleziona il tema che vorresti rimuovere dalla casella sopra l'elenco degli elementi dei temi. Spunta la casella <guilabel
+>Altro</guilabel
+>. Fai clic sul pulsante <guibutton
+>Rimuovi tema</guibutton
+> per rimuovere il tema selezionato. </para>
+</sect2>
+
+<sect2 id="exporting">
+<title
+>Esportare un tema su file</title>
+<para
+>Puoi condividere il tuo nuovo tema personalizzato con la comunità esportando il tema su file. Seleziona il tuo tema personalizzato dalla casella sopra l'elenco degli elementi dei temi. Spunta la casella <guilabel
+>Altro</guilabel
+>. Fai clic su <guibutton
+>Esporta tema su file</guibutton
+>. Inserisci il nome del file compresso su cui salvare il tema. </para>
+</sect2>
+
+</sect1>
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

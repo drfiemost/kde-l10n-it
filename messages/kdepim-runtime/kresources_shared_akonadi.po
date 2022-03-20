@@ -1,0 +1,48 @@
+# translation of kresources_shared_akonadi.po to Italian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the kresources_shared_akonadi package.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kresources_shared_akonadi\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2011-08-02 06:28+0200\n"
+"PO-Revision-Date: 2010-06-18 21:42+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: abstractsubresourcemodel.cpp:171
+msgctxt "@info:status"
+msgid "Loading already in progress"
+msgstr "Caricamento già in corso"
+
+#: resourceprivatebase.cpp:145 resourceprivatebase.cpp:181
+msgctxt "@info:status"
+msgid "Cannot save to closed resource"
+msgstr "Impossibile salvare in una risorsa chiusa"
+
+#: resourceprivatebase.cpp:151 resourceprivatebase.cpp:187
+msgctxt "@info:status"
+msgid "Cannot save while not connected to Akonadi"
+msgstr "Impossibile salvare mentre non si è connessi ad Akonadi"
+
+#: resourceprivatebase.cpp:162 resourceprivatebase.cpp:198
+msgctxt "@info:status"
+msgid "Processing change set failed"
+msgstr "Elaborazione dell'insieme delle modifiche non riuscita"
+
+#: storecollectiondialog.cpp:67
+msgctxt "@title:window"
+msgid "Target Folder Selection"
+msgstr "Selezione cartella di destinazione"
+
+#: storecollectionmodel.cpp:71
+msgctxt "@title:column data types which should be stored here by default"
+msgid "Defaults"
+msgstr "Valori predefiniti"

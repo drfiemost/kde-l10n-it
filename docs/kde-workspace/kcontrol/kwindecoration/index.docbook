@@ -1,0 +1,205 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kwindecoration" lang="&language;">
+<articleinfo>
+<title
+>Decorazioni delle finestre</title>
+<authorgroup>
+<author
+>&Rik.Hemsley; &Rik.Hemsley.mail;</author>
+<author
+>&Anne-Marie.Mahfouf; &Anne-Marie.Mahfouf.mail;</author>
+<othercredit role="translator"
+><firstname
+>Dario</firstname
+><surname
+>Panico</surname
+><contrib
+>Traduzione del documento</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Samuele</firstname
+><surname
+>Kaplun</surname
+><contrib
+>Traduzione del documento</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-12-05</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>kwin</keyword>
+<keyword
+>finestra</keyword>
+<keyword
+>bordo</keyword>
+<keyword
+>tema</keyword>
+<keyword
+>stile</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="window-deco">
+<title
+>Decorazioni delle finestre</title>
+
+<para
+>Questo modulo permette di selezionare uno stile per i pulsanti e i bordi attorno alle finestre.</para>
+
+<sect2>
+<title
+>Decorazioni delle finestre</title>
+
+<para>
+<screenshot>
+<screeninfo
+>Modulo di configurazione delle decorazioni delle finestre</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="main.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Modulo di configurazione delle decorazioni delle finestre</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+<para
+>Scegli uno stile di decorazione della finestre dall'elenco delle anteprime, usando il campo di ricerca in cima allo schermo.</para>
+
+<para
+>La decorazione delle finestre predefinita di &kde; si chiama <quote
+>Oxygen</quote
+>.</para>
+
+<para
+>Ogni stile ha un aspetto diverso, ma anche una sua <quote
+>sensazione</quote
+>. Alcuni hanno dei bordi (a volte invisibili) <quote
+>ridimensionabili</quote
+> attorno al margine delle finestre, che facilitano il ridimensionamento ma non lo spostamento. Alcuni non hanno bordi su certi lati. Uno (<quote
+>BII</quote
+>) ha addirittura una barra del titolo con dimensione e posizione dinamiche.</para>
+
+<para
+>Raccomandiamo di sperimentare con diversi stili fino a trovare quello che meglio si adatta a te.</para>
+
+<para
+>Sotto il pannello di anteprima ci sono tre pulsanti per aprire finestre di configurazione per la decorazione e i pulsanti dello stile selezionato o per scaricare altri stili.</para>
+
+</sect2>
+
+<sect2>
+<title
+>Decorazioni</title>
+
+<para
+>Qui puoi cambiare la decorazione della finestra. Le opzioni disponibili dipendono dallo stile selezionato. </para>
+<para>
+<screenshot>
+<screeninfo
+>Opzioni di decorazione di Oxygen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="decoration.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Opzioni di decorazione di Oxygen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Pulsanti</title>
+
+<para
+>Questa finestra permette di personalizzare la posizione dei pulsanti nella barra del titolo. Puoi spostare il pulsante di chiusura a sinistra, per esempio. Spunta l'opzione <guilabel
+>Usa posizioni personalizzate dei pulsanti</guilabel
+> per configurare le barre dei titoli. Poi potrai riordinare come vuoi i pulsanti della barra del titolo di &kde; qui sotto. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Modulo di configurazione delle decorazioni delle finestre</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="buttons.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Modulo di configurazione delle decorazioni delle finestre</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+<para
+>Il comportamento predefinito prevede che l'opzione <guilabel
+>Mostra suggerimenti per i pulsanti della finestra</guilabel
+> sia attiva e che i suggerimenti siano mostrati. </para>
+
+<para
+>Questa pagina contiene direttamente le istruzioni per usarla: basta trascinare i pulsanti fino a trovare la disposizione più congeniale.</para>
+
+<note>
+<para
+>Non tutte le decorazioni delle finestre riescono ad attenersi al tuo ordine dei pulsanti. Quelle che non ci riescono sono in fase di conversione, ma al momento di questo rilascio non sono state aggiornate tutte.</para>
+</note>
+
+<para
+>Oltre a poter scegliere la decorazione della finestra stessa, qui puoi scegliere altre due cose: se deve apparire un suggerimento quando passi il mouse sopra un pulsante della decorazione della finestra, e la decorazione dovrebbe cercare di usare un ordine personalizzato dei pulsanti.</para>
+
+<tip>
+<para
+>I suggerimenti sono piuttosto utili se hai impostato un tuo ordine dei pulsanti e sei poi passato ad una decorazione poco conosciuta.</para>
+</tip>
+
+<tip>
+<para
+>Per motivi di accessibilità, alcune decorazioni supportano bordi molto spessi. Se sono disponibili, qui puoi sceglierne anche lo spessore. Questi bordi ampi sono più semplici da vedere per gli utenti con problemi di vista e più semplici da <quote
+>afferrare</quote
+> per persone con problemi motori o con difficoltà nell'uso del mouse.</para>
+</tip>
+
+</sect2>
+
+</sect1>
+
+</article>

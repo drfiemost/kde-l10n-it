@@ -1,0 +1,787 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+
+  <!ENTITY kabcclient "<application
+>KABC-Client</application
+>">
+  <!ENTITY kappname "KABCClient">
+  <!ENTITY package "kdepim">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<!-- The language must NOT be changed here. -->
+
+<book id="kabcclient" lang="&language;">
+
+<bookinfo id="kabcclientinfo">
+
+<title
+>Manuale di &kabcclient;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Kevin</firstname
+> <surname
+>Krammer</surname
+> <affiliation
+> <address
+> <email
+>kevin.krammer@gmx.at</email>
+      </address>
+    </affiliation>
+  </author>
+  <othercredit role="translator"
+><firstname
+>Luigi</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>luigi.toscano@tiscali.it</email
+></address
+></affiliation
+> <contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2008</year>
+  <holder
+>Kevin Krammer</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Don't change format of date and version of the documentation -->
+
+<date
+>2008-11-20</date>
+<releaseinfo
+>1.1.1</releaseinfo>
+
+<abstract>
+  <para
+>&kabcclient; è un'interfaccia da riga di comando per la rubrica indirizzi di &kde;.</para>
+</abstract>
+
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>&package;</keyword>
+  <keyword
+>&kappname;</keyword>
+  <keyword
+>KAddressBook</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&kabcclient; è un'interfaccia da riga di comando per la rubrica indirizzi di &kde;. Ti consente di elencare, cercare, inserire, rimuovere o fondere contatti direttamente da riga di comando o con linguaggi di scripting. &kabcclient; può gestire molti formati in ingresso e in uscita che possono, essere usati per l'importazione e l'esportazione della rubrica di &kde;. </para>
+
+<para
+>Se invocato senza argomenti, &kabcclient; entra in modalità ricerca e tenta di estrarre tutti contatti della rubrica di &kde; corrispondenti a tutti i dati leggibili da standard input</para>
+
+<para
+>Principali funzioni di &kabcclient;: <itemizedlist>
+  <listitem
+><para
+>Elenca tutti i contatti della rubrica di &kde;</para
+></listitem>
+  <listitem
+><para
+>Cerca contatti in base all'input specificato</para
+></listitem>
+  <listitem
+><para
+>Inserisce (aggiunge) contatti</para
+></listitem>
+  <listitem
+><para
+>Rimuove (elimina) contatti</para
+></listitem>
+  <listitem
+><para
+>Fonde (modifica) con nuovi dati i contatti corrispondenti</para
+></listitem>
+</itemizedlist
+></para>
+
+<para
+>&kabcclient; <emphasis
+>non</emphasis
+> è un'altra interfaccia grafica per la rubrica di &kde; (cioè &kaddressbook;). &kabcclient; è pensato per essere utilizzato sola quando l'uso dell'interfaccia grafica non è pratico o possibile.</para>
+
+<para
+>&kabcclient; <emphasis
+>non</emphasis
+> mette a disposizione un linguaggio completo per richiedere informazioni alla rubrica dell'utente, né è intenzione dei suoi autori implementare tale funzionalità. Elaborazioni di questo tipo possono essere effettuate tramite altri strumenti da riga di comando o tramite le funzionalità proprie di linguaggi di script. </para>
+
+<para
+>Per semplificare la visibilità delle sue funzioni, ogni opzione che richiede un argomento può essere invocata con il valore <replaceable
+>help</replaceable
+>. In questo modo verranno elencati tutti i valori validi per tale opzione. </para>
+
+</chapter>
+
+<chapter id="features">
+<title
+>Funzionalità</title>
+<para
+>In questo capitolo potrai conoscere le principali funzionalità di &kabcclient; e come controllarle tramite i parametri da riga di comando (ricorda che &kabcclient; non è un'interfaccia grafica; è esclusivamente un programma a riga di comando).</para>
+
+<para
+>Imparerai come inserire, cancellare e cercare dati di contatti, e come utilizzare differenti formati per l'input e l'output. </para>
+
+<sect1 id="listing">
+<title
+>Elencazione della rubrica</title>
+
+<para
+>Questa è la modalità operativa di base, richiamabile tramite le opzioni <parameter
+>--list</parameter
+> o <parameter
+>-L</parameter
+>. &kabcclient; elencherà tutti i contatti presenti nella rubrica di &kde;, scrivendo i dati nello standard output del programma. La quantità ed il formato dei dati in output dipendono dal formato scelto.</para>
+
+<para>
+<informalexample
+><para
+>Per elencare tutti i contatti come normali schede vCard, basta eseguire:</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>kabcclient <option
+>-L</option
+></command>
+</userinput
+>
+</screen>
+</para>
+</informalexample>
+</para>
+
+<para>
+<informalexample
+><para
+>Per ottenere una sola riga per contatto, &eg; per contare gli elementi, basta eseguire:</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>kabcclient <option
+>-L</option
+> <option
+>-of <replaceable
+>uid</replaceable
+></option
+></command>
+</userinput
+>
+</screen>
+</para>
+</informalexample>
+</para>
+
+<para>
+<informalexample
+><para
+>Nel prossimo esempio, elencheremo tutti gli indirizzi di posta elettronica:</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>kabcclient</command
+> <option
+>--list</option
+> <option
+>-of <replaceable
+>email</replaceable
+></option>
+</userinput
+>
+</screen>
+</para>
+</informalexample>
+</para>
+
+</sect1>
+
+<sect1 id="searching">
+<title
+>Ricerca di contatti in base ai dati in input</title>
+
+<para
+>&kabcclient; può leggere dati dalla riga di comando o dallo standard input del programma e verificare eventuali somiglianze tra tutti i contatti della rubrica di &kde;. La ricerca è la modalità di funzionamento predefinita ma può essere scelta esplicitamente usando gli argomenti a riga di comando <parameter
+>--search</parameter
+> o <parameter
+>-S</parameter
+>. </para>
+
+<para>
+<informalexample
+><para
+>Nell'esempio seguente, tutti i contatti aventi <replaceable
+>jane</replaceable
+> come parte del nome o di un indirizzo di posta elettronica saranno trascritti nello standard output del programma, formattati come vCard (perché questo è il valore predefinito dell'opzione <option
+>--output-format</option
+>):</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>kabcclient</command
+> <option
+>--search</option
+> <replaceable
+>jane</replaceable
+></userinput
+></screen>
+</para>
+</informalexample>
+</para>
+
+<para>
+<informalexample
+><para
+>La stessa ricerca, ma questa volta leggendo la stringa di ricerca dallo standard input del programma:</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>echo</command
+> <replaceable
+>jane</replaceable
+> | <command
+>kabcclient</command
+> <option
+>--search</option
+></userinput
+></screen>
+</para>
+</informalexample>
+</para>
+
+<para
+>L'uso delle maiuscole nelle ricerche può essere abilitato tramite l'opzione <option
+>--match-case</option
+>.</para>
+</sect1>
+
+<sect1 id="adding">
+<title
+>Aggiunta di contatti</title>
+
+<para
+>&kabcclient; consente l'aggiunta di nuovi contatti alla rubrica di &kde; tramite l'argomento da riga di comando <parameter
+>--add</parameter
+> o <parameter
+>-A</parameter
+>. I dati possono essere passati come ulteriori argomenti da riga di comando o letti da standard input. Se l'operazione va a buon fine, i nuovi contatti saranno scritti nello standard output del programma. Poiché questa è un'operazione che effettua modifiche alla rubrica, può essere eseguita in modalità "solo test" specificando l'opzione <option
+>--nosave</option
+>. </para>
+
+<para>
+<informalexample
+><para
+>Aggiunge un contatto con un dato nome ed indirizzo di posta elettronica interpretando un ulteriore argomento da riga di comando come dati in input:</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>kabcclient</command
+> <option
+>--add</option
+> <option
+>--input-format <replaceable
+>email</replaceable
+> </option
+><replaceable
+>"John Doe &lt;j.doe@example.com&gt;"</replaceable
+></userinput
+></screen>
+</para>
+</informalexample>
+</para>
+
+<para>
+<informalexample
+><para
+>Aggiunge tutti i contatti da un file vCard passato tramite lo standard input del programma:</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>cat <replaceable
+>example-file.vcf</replaceable
+></command
+> | <command
+>kabcclient</command
+> <option
+>--add</option
+> <option
+>--input-format <replaceable
+>vcard</replaceable
+> </option
+></userinput
+></screen>
+</para>
+</informalexample>
+</para>
+</sect1>
+
+<sect1 id="deleting">
+<title
+>Eliminazione di contatti</title>
+
+<para
+>&kabcclient; consente la rimozione di contatti dalla rubrica di &kde; tramite l'argomento da riga di comando <parameter
+>--remove</parameter
+> o <parameter
+>-R</parameter
+>. I dati in input sono costituiti fondamentalmente da un'espressione di ricerca analoga a quella utilizzata per le ricerche nella rubrica. Se l'operazione va a buon fine, i nuovi contatti saranno scritti nello standard output del programma. Poiché questa è un'operazione che effettua modifiche alla rubrica, può essere eseguita in modalità "solo test" specificando l'opzione <option
+>--nosave</option
+>. </para>
+
+<warning
+><para
+>Quando elimini qualcosa dalla rubrica <emphasis
+>non puoi</emphasis
+> tornare indietro! In altre parole, quando elimini un contatto non puoi annullare la cancellazione. È andata.</para
+></warning>
+
+<para>
+<informalexample
+><para
+>Prova la cancellazione di tutti i contatti aventi <replaceable
+>jane</replaceable
+> come parte del nome o di un indirizzo di posta elettronica:</para>
+
+<para>
+<screen
+><prompt
+>%</prompt
+><userinput
+> <command
+>kabcclient</command
+> <option
+>--remove</option
+> <option
+>--nosave</option
+> <replaceable
+>jane</replaceable
+></userinput
+></screen>
+</para>
+</informalexample>
+</para>
+
+</sect1>
+
+<sect1 id="formats">
+<title
+>Formati di input e di output</title>
+
+<para
+>&kabcclient; può interpretare dati in input e formattare i dati in output in base a variare a diverse regole di formattazione. In base allo scenario d'uso alcune combinazioni possono estrarre meglio i risultati. Alcuni formati riconoscono ulteriori parametri per meglio definire il loro comportamento. </para>
+
+<para
+>Poiché i dati testuali possono essere codificati, sia i dati in input che quelli in output possono essere soggetti rispettivamente ad ulteriore decodifica o codifica. </para>
+
+<para
+>Tutte queste opzioni a riga di comando reagiranno al valore speciale <replaceable
+>help</replaceable
+> elencando i valori ammessi.</para>
+
+<sect2 id="vcard-format">
+<title
+>Formato vCard</title>
+
+<para
+>vCard (<acronym
+>RFC</acronym
+> 2426) è il formato standard per i dati dei contatti e come tale è in grado di mostrare tutte le informazioni a cui altri programmi di rubrica come &kaddressbook; possono accedere. È pertanto il formato predefinito di output. </para>
+</sect2>
+
+<sect2 id="csv-format">
+<title
+>Formato <acronym
+>CSV</acronym
+> (Valori separati da virgole)</title>
+
+<para
+>Il formato valori separati da virgole può essere usato come formato in input per fornire dati a precisi campi di un contatto, e come formato di output per ridurre o riordinare i dati per ulteriori elaborazioni. Per consentire maggiore flessibilità, la corrispondenza dei campi dei contatti con le colonne del CSV può essere specificata tramiti file di descrizione del modello utilizzati anche da &kaddressbook; per lo stesso scopo. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="features-commandline-options">
+<title
+>Argomenti a riga di comando</title>
+
+<para
+>&kabcclient; supporta le seguenti opzioni:</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+  <entry
+>Opzione</entry>
+  <entry
+>Descrizione</entry>
+</row>
+</thead>
+<tbody>
+<row>
+  <entry
+><option
+>--help, --help-all</option
+></entry>
+  <entry
+>Mostra un messaggio di aiuto sulle opzioni del programma.</entry>
+</row>
+<row>
+  <entry
+><option
+>--author</option
+></entry>
+  <entry
+>Mostra le informazioni sugli autori del programma.</entry>
+</row>
+<row>
+  <entry
+><option
+>-v, --version</option
+></entry>
+  <entry
+>Mostra delle informazioni sulla versione del programma.</entry>
+</row>
+<row>
+  <entry
+><option
+>--license</option
+></entry>
+  <entry
+>Mostra le informazioni sulla licenza d'uso del programma.</entry>
+</row>
+<row>
+  <entry
+><option
+>--verbose</option
+></entry>
+  <entry
+>Stampa messaggi di aiuto sull'esecuzione.</entry>
+</row>
+<row>
+  <entry
+><option
+>--nosave</option
+></entry>
+  <entry
+>Stampa quello che avrebbe dovuto visualizzare, ma senza effettivamente eseguire alcuna operazione. Non modifica informazioni nella rubrica di &kde;; non inserisce, rimuove, modifica alcun contatto.</entry>
+</row>
+<row>
+  <entry
+><option
+>--match-case</option
+></entry>
+  <entry
+>Considera le maiuscole nel confrontare i dati in output con i dati dei contatti della rubrica.</entry>
+</row>
+<row>
+  <entry
+><emphasis
+>Principali modalità operative:</emphasis
+></entry>
+</row>
+<row>
+  <entry
+><option
+>-L, --list</option
+></entry>
+  <entry
+>Stampa tutti i contatti nel formato di esportazione specificato.</entry>
+</row>
+<row>
+  <entry
+><option
+>-A, --add</option
+></entry>
+  <entry
+>Inserisce i contatti nella rubrica.</entry>
+</row>
+<row>
+  <entry
+><option
+>-R, --remove</option
+></entry>
+  <entry
+>Elimina contatti dalla rubrica.</entry>
+</row>
+<row>
+  <entry
+><option
+>-M, --merge</option
+></entry>
+  <entry
+>Fondi i dati in ingresso con i dati dei contatti corrispondenti della rubrica.</entry>
+</row>
+<row>
+  <entry
+><emphasis
+>Formattazione e codifica:</emphasis
+></entry>
+</row>
+<row>
+  <entry
+><option
+>-if, --input-format</option
+> <replaceable
+>formato</replaceable
+></entry>
+  <entry
+>Come interpretare i dati in input. Usa il valore <replaceable
+>help</replaceable
+> per ottenere la lista dei valori ammissibili.</entry>
+</row>
+<row>
+  <entry
+><option
+>-of, --output-format</option
+> <replaceable
+>formato</replaceable
+></entry>
+  <entry
+>Come interpretare i dati in output. Usa il valore <replaceable
+>help</replaceable
+> per ottenere la lista dei valori ammissibili.</entry>
+</row>
+<row>
+  <entry
+><option
+>-if-opts, --input-format-options</option
+> <replaceable
+>opzioni</replaceable
+></entry>
+  <entry
+>Ulteriori opzioni relative al formato di input. Usa il valore <replaceable
+>help</replaceable
+> per ottenere la lista dei valori ammissibili.</entry>
+</row>
+<row>
+  <entry
+><option
+>-of-opts, --output-format-options</option
+> <replaceable
+>opzioni</replaceable
+></entry>
+  <entry
+>Ulteriori opzioni relative al formato di output. Usa il valore <replaceable
+>help</replaceable
+> per ottenere la lista dei valori ammissibili.</entry>
+</row>
+<row>
+  <entry
+><option
+>-ic, --input-codec</option
+> <replaceable
+>codifica</replaceable
+></entry>
+  <entry
+>Codifica del testo usata per presentare i dati in input. Usa <replaceable
+>help</replaceable
+> per ottenere la lista dei valori ammissibili.</entry>
+</row>
+<row>
+  <entry
+><option
+>-oc, --output-codec</option
+> <replaceable
+>codifica</replaceable
+></entry>
+  <entry
+>Codifica del testo che dovrebbe essere usata per presentare i dati in output. Usa <replaceable
+>help</replaceable
+> per ottenere la lista dei valori ammissibili.</entry>
+</row>
+
+</tbody>
+</tgroup>
+</informaltable>
+
+</chapter>
+
+<chapter id="faq">
+<title
+>Domande e risposte</title>
+&reporting.bugs; &updating.documentation; <qandaset id="faqlist">
+<qandaentry>
+<question>
+<para
+>Quali file di configurazione utilizza &kabcclient;?</para>
+</question>
+<answer>
+<para
+>Nessuno.</para>
+</answer>
+</qandaentry>
+
+
+<qandaentry>
+<question>
+<para
+>Quali sono i nomi con cui è noto &kabcclient;?</para>
+</question>
+<answer>
+<para
+>Il nome dell'applicazione &kabcclient; è <application
+>kabcclient</application
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para
+>Posso far aggiungere domande alla <acronym
+>FAQ</acronym
+>?</para>
+</question>
+<answer>
+<para
+>Invia le tue domande a <email
+>kevin.krammer@gmx.at</email
+>.</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>Programma &kabcclient; copyright 2005-2008:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Kevin Krammer <email
+>kevin.krammer@gmx.at</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Copyright della documentazione 2008:</para>
+<itemizedlist>
+<listitem
+><para
+>Kevin Krammer <email
+>kevin.krammer@gmx.at</email
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Luigi Toscano <email
+>luigi.toscano@tiscali.it</email
+> (Traduzione della documentazione)</para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installazione</title>
+
+<sect1 id="obtaining-application">
+<title
+>Come procurarsi &kabcclient;</title>
+&install.intro.documentation; <para
+>&kabcclient; è distribuito con &kde;4 e non è disponibile separatamente. </para>
+
+</sect1>
+
+<sect1 id="requirements">
+<title
+>Requisiti</title>
+
+<para
+>&kabcclient; richiede la presenza delle librerie di base di &kde; (i pacchetti <filename
+>kdelibs</filename
+> e <filename
+>kdepimlibs</filename
+>). Per compilare dai sorgenti sono richiesti anche i pacchetti di sviluppo di &Qt;, <filename
+>kdelibs</filename
+> e <filename
+>kdepimlibs</filename
+>.</para>
+
+<para
+>Puoi trovare l'elenco delle modifiche (in inglese) nel file <filename
+>ChangeLog</filename
+>.</para>
+</sect1>
+
+<sect1 id="configuration">
+<title
+>Configurazione</title>
+
+<para
+>Nessuna configurazione speciale è richiesta per impostare &kabcclient; in modo che sia eseguito nell'ambiente desktop &kde;.</para>
+
+</sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

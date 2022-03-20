@@ -1,0 +1,130 @@
+<chapter id="authorizationagent">
+<title
+>Agente di autorizzazione</title>
+
+<sect1 id="authorizationagent-overview">
+<title
+>Manuale</title>
+
+<para
+>L'agente di autorizzazione è l'applicazione che viene chiamata ogni volta che un utente vuole ottenere una certa autorizzazione. È un demone attivato da &DBus;, che usa <quote
+>libpolkit-grant</quote
+>, che a sua volta usa PAM per i servizi di autenticazione (si possono tuttavia inserire altre interfacce di autenticazione se necessario). </para>
+</sect1>
+
+<sect1 id="authorizationagent-dialog">
+<title
+>Finestra dell'agente di autorizzazione</title>
+
+<para
+>L'aspetto della finestra di autenticazione dipende dal risultato di PolicyKit e anche dalla definizione di autenticazione come amministratore, se come <quote
+>utente root</quote
+>, o come <quote
+>utente del gruppo wheel</quote
+>, o comunque la libreria PolicyKit è stata configurata (vedi la pagina di manuale <userinput
+>PolicyKit.conf(5)</userinput
+> per i dettagli). Nota che alcune delle schermate sotto sono state fatte su sistemi configurati per usare il modulo PAM <ulink url="http://thinkfinger.sourceforge.net/"
+>ThinkFinger</ulink
+>. Il testo mostrato nelle finestre di autenticazione proviene dai file <acronym
+>XML</acronym
+> <literal role="extension"
+>.policy</literal
+> di PolicyKit che risiedono in <filename class="directory"
+>/usr/share/PolicyKit/policy</filename
+> e viene letto dal demone di autenticazione quando un'applicazione chiede di ottenere un'autorizzazione. Quindi, ciò che l'utente vede non è sotto il controllo dell'applicazione, il che esclude una classe di attacchi in cui le applicazioni cercano di ingannare l'utente per ottenere surrettiziamente dei privilegi. </para>
+
+<para
+>La finestra di autenticazione in cui si chiede all'utente di autenticarsi come root usando la password o presentare l'impronta digitale. I dettagli indicano l'applicazione che ha richiesto l'azione, l'azione stessa e il fornitore dell'azione. Se si fa clic nel collegamento dell'azione, verrà aperto il gestore delle autorizzazioni indicante l'azione, e anche il fornitore potrebbe dare un collegamento per l'azione che verrà attivato quando si fa clic sul suo collegamento:</para>
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authdialog_1.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>La finestra di autenticazione che chiede la password di root o di fornire l'impronta digitale, e mostra le descrizioni. </phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+<para
+>La finestra di autenticazione in cui si chiede all'utente di autenticarsi come amministratore e PolicyKit è configurato per usare a tal fine la password di root:</para>
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authdialog_2.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>La finestra di autenticazione che chiede la password di root. </phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+<para
+>La finestra di autenticazione in cui si chiede all'utente di autenticarsi come amministratore e PolicyKit è configurato per usare a tal fine un gruppo:</para>
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authdialog_3.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>La finestra di autenticazione che chiede la password di un utente del gruppo amministrativo. </phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Stessa finestra di autenticazione, che mostra un menu a tendina in cui si può selezionare l'utente:</para>
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authdialog_4.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Stessa finestra di autenticazione, che mostra un menu a tendina in cui si può selezionare l'utente. </phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+
+<para
+>Finestra di autenticazione che indica un'azione per cui il privilegio può essere mantenuto indefinitamente:</para>
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authdialog_5.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Finestra di autenticazione che indica un'azione per cui il privilegio può essere mantenuto indefinitamente. </phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+
+<para
+>Finestra di autenticazione che indica un'azione per cui il privilegio può essere mantenuto solo per il resto della sessione desktop:</para>
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authdialog_6.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Finestra di autenticazione che indica un'azione per cui il privilegio può essere mantenuto solo per il resto della sessione desktop. </phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+</sect1>
+
+</chapter>

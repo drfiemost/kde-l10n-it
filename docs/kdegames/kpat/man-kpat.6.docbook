@@ -1,0 +1,685 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "kpat">
+  <!ENTITY % Italian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refmeta>
+<refentrytitle
+>KPat</refentrytitle>
+<manvolnum
+>6</manvolnum>
+<refmiscinfo class="date"
+>2010-11-09</refmiscinfo>
+<refmiscinfo class="source"
+>kdegames</refmiscinfo>
+<refmiscinfo class="title"
+>Manuale utente di KDE</refmiscinfo>
+</refmeta>
+
+<refnamediv>
+<refname
+>&kappname;</refname>
+<refpurpose
+>Un gioco di carte molto appassionante per &kde;.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kpat</command
+> <arg choice="opt" rep="repeat"
+>Qt-option</arg
+> <arg choice="opt" rep="repeat"
+>KDE-option</arg
+> <group choice="opt"
+><option
+>--solvegame</option
+> <replaceable
+> file</replaceable
+></group
+> <group choice="opt"
+><option
+>--solve</option
+> <replaceable
+> num</replaceable
+></group
+> <group choice="opt"
+><option
+>--start</option
+> <replaceable
+> num</replaceable
+></group
+> <group choice="opt"
+><option
+>--end</option
+> <replaceable
+> num</replaceable
+></group
+> <group choice="opt"
+><option
+>--gametype</option
+> <replaceable
+> gioco</replaceable
+></group
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>DESCRIZIONE</title>
+<para
+>&kpatience; è una raccolta di parecchi solitari, che vanno dai famosissimi Klondike e Freecell, ad altri meno noti come Mod3 e l'Orologio del nonno. In tutto ce ne sono 12 per aiutarti a passare il tempo.</para>
+</refsect1>
+	
+<refsect1>
+<title
+>OPZIONI</title>
+<para
+>Questo programma utilizza l'abituale sintassi delle righe di comando GNU, in cui le opzioni lunghe iniziano con due trattini (`--'). Di seguito si trova un elenco delle opzioni previste per <command
+>kpat</command
+>.</para>
+
+<refsect2>
+<title
+>Opzioni generali</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--author</option
+></term>
+<listitem>
+<para
+>Mostra informazioni sull'autore</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help</option
+></term>
+<listitem>
+<para
+>Mostra la guida per le opzioni</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-qt</option
+></term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per Qt</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-kde</option
+></term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per &kde;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-all</option
+></term>
+<listitem>
+<para
+>Mostra tutte le opzioni</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--license</option
+></term>
+<listitem>
+<para
+>Mostra le informazioni sulla licenza</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-v</option
+>, <option
+>--version</option
+></term>
+<listitem>
+<para
+>Mostra le informazioni sulla versione ed esce.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect2>
+
+<!-- Cut here: From here to the end of the KDE options will be entities -->
+<refsect2>
+<title
+>Opzioni per Qt</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+>--display <replaceable
+>nome_display</replaceable
+></option
+></term>
+<listitem>
+<para
+>Usa il display <emphasis
+>nome_display</emphasis
+> del server X.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--session <replaceable
+>sessionId</replaceable
+></option
+></term>
+<listitem>
+<para
+>Ripristina l'applicazione per la sessione <replaceable
+>sessionId</replaceable
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--cmap</option
+></term>
+<listitem>
+<para
+>Impone all'applicazione di installare una color map privata su un display a 8 bit. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--ncols <replaceable
+>numero</replaceable
+></option
+></term>
+<listitem>
+<para
+>Limita il numero di colori allocati nel color cube su un display a 8-bit, se l'applicazione usa la specifica colore <methodname
+>QApplication::ManyColor</methodname
+>. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--nograb</option
+></term>
+<listitem>
+<para
+>Dice alle Qt di non catturare (grab) mai il mouse o la tastiera.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--dograb</option
+></term>
+<listitem>
+<para
+>L'esecuzione sotto un debugger può causare un implicito <option
+>-nograb</option
+>, usa <option
+>-dograb</option
+> per aggirare il problema. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--sync</option
+></term>
+<listitem>
+<para
+>passa in modalità sincrona per il debug.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--fn</option
+>, <option
+>--font <replaceable
+>nome_font</replaceable
+></option
+></term>
+<listitem>
+<para
+>definisce il tipo di carattere per l'applicazione.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--bg</option
+>, <option
+>--background <replaceable
+>colore</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta il colore di sfondo predefinito e una tavolozza per l'applicazione (le sfumature chiare e scure vengono calcolate). </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--fg</option
+>,<option
+>--foreground <replaceable
+>colore</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta il colore di primo piano predefinito.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--btn</option
+>, <option
+>--button <replaceable
+>colore</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta il colore dei pulsanti predefinito.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--name <replaceable
+>nome</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta il nome dell'applicazione.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--title <replaceable
+>titolo</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta il titolo (caption) dell'applicazione.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--visual <replaceable
+>TrueColor</replaceable
+></option
+></term>
+<listitem>
+<para
+>forza l'applicazione a usare una visuale TrueColor su un display a 8 bit. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--inputstyle</option
+></term>
+<listitem>
+<para
+>imposta lo stile di input XIM (X Input Method). I valori possibili sono onthespot, overthespot, offthespot e root. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--im <replaceable
+>server XIM</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta il server XIM.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--noxim</option
+></term>
+<listitem>
+<para
+>disabilita il server XIM.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--reverse</option
+></term>
+<listitem>
+<para
+>ridispone specularmente tutti gli oggetti.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--stylesheet <replaceable
+>file.qss</replaceable
+></option
+></term>
+<listitem>
+<para
+>applica il foglio di stile Qt agli oggetti dell'applicazione.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--graphicssystem <replaceable
+>sistema</replaceable
+></option
+></term>
+<listitem>
+<para
+>usa un sistema grafico diverso da quello predefinito. Le opzioni sono <quote
+>raster</quote
+> e <quote
+>opengl</quote
+> (sperimentale).</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2>
+<title
+>Opzioni KDE</title>
+<variablelist>
+<varlistentry>
+<term
+><option
+>--caption <replaceable
+>titolo</replaceable
+></option
+></term>
+<listitem>
+<para
+>Usa <emphasis
+>titolo</emphasis
+> come nome nella barra del titolo.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--icon <replaceable
+>icona</replaceable
+></option
+></term>
+<listitem>
+<para
+>Usa <emphasis
+>icona</emphasis
+> come icona dell'applicazione.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--config <replaceable
+>nome-file</replaceable
+></option
+></term>
+<listitem>
+<para
+>Usa un file di configurazione alternativo. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--nocrashhandler</option
+></term>
+<listitem>
+<para
+> Disabilita il gestore dei crash, per ottenere i core dump.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--waitforwm</option
+></term>
+<listitem>
+<para
+>Aspetta un window manager compatibile WM_NET. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--style <replaceable
+>stile</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta lo stile dell'interfaccia grafica dell'applicazione.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--geometry <replaceable
+>geometria</replaceable
+></option
+></term>
+<listitem>
+<para
+>imposta la geometria client dell'oggetto principale - vedi la pagina del  manuale <ulink url="man:/X"
+>man:/X</ulink
+> per il formato degli argomenti (di dolito LarghezzaxAltezza+XPos+YPos). </para>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+
+<!-- Stop cutting here: End of entity text -->
+
+<refsect2>
+<title
+>Opzioni</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--solvegame</option
+> <replaceable
+> file</replaceable
+></term>
+<listitem>
+<para
+>Cerca di risolvere il solitario salvato nel file</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--solve</option
+> <replaceable
+> num</replaceable
+></term>
+<listitem>
+<para
+>Distribuisce carte e risolve (debug)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--start</option
+> <replaceable
+> num</replaceable
+></term>
+<listitem>
+<para
+>Avvia un intervallo di gioco (predefinito  0:INT_MAX)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--end</option
+> <replaceable
+> num</replaceable
+></term>
+<listitem>
+<para
+>Fine di un intervallo di gioco (predefinito start:start se start esiste)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--gametype</option
+> <replaceable
+> gioco</replaceable
+></term>
+<listitem>
+<para
+>Salta la schermata di selezione e avvia direttamente il solitario scelto. I valori accettati sono: acesup, fortyeight, freecell, golf, grandfather, grandfathersclock, gypsy, klondike, mod3, simplesimon, spider e yukon</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect2>
+
+<refsect2>
+<title
+>Argomenti</title>
+<variablelist>
+
+<varlistentry>
+<term
+><replaceable
+>file</replaceable
+></term>
+<listitem>
+<para
+>File da caricare</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect2>
+
+</refsect1>
+	
+<refsect1>
+<title
+>VEDERE ANCHE</title>
+<para
+>&kpatience; è documentato in dettaglio nel <emphasis
+>Manuale di &kpatience;</emphasis
+> (<filename
+>$<envar
+>KDEDIR</envar
+>/share/doc/HTML/it/kpat/index.html</filename
+> o immetti  <userinput
+>help:/kpat/index.html</userinput
+> in &konqueror;).</para>
+		
+</refsect1>
+
+<refsect1>
+<title
+>AUTORE</title>
+
+<para
+>&kpatience; è stato prodotto da:</para>
+<simplelist type="vert">
+<member
+>Paul Olav Tvete</member>
+<member
+>Mario Weilguni <email
+>mweilguni@kde.org</email
+></member>
+<member
+>Matthias Ettrich <email
+>ettrich@kde.org</email
+></member>
+<member
+>Rodolfo Borges <email
+>barrett@labma.ufrj.br</email
+></member>
+<member
+>Peter H. Ruegg <email
+>kpat@incense.org</email
+></member>
+<member
+>Michael Koch <email
+>koch@kde.org</email
+></member>
+<member
+>Marcus Meissner <email
+>mm@caldera.de</email
+></member>
+<member
+>Shlomi Fish <email
+>shlomif@vipe.technion.ac.il</email
+></member>
+<member
+>Stephan Kulow <email
+>coolo@kde.org</email
+></member>
+</simplelist>
+</refsect1>
+</refentry>

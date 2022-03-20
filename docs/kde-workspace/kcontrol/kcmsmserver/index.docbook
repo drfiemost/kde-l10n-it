@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kcmsmserver" lang="&language;">
+<articleinfo>
+<title
+>Gestione delle sessioni</title>
+<authorgroup>
+<author
+>&Jost.Schenck; &Jost.Schenck.mail;</author>
+<othercredit role="translator"
+><firstname
+>Riccardo</firstname
+><surname
+>Iaconelli</surname
+> <contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-12-05</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Centro di controllo</keyword>
+<keyword
+>sessione</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sessions">
+<title
+>Gestione delle sessioni</title>
+
+<sect2 id="sessions-use">
+<title
+>Uso</title>
+
+<para
+>In questo modulo delle &systemsettings; puoi configurare il gestore delle sessioni e le impostazioni di uscita di &kde;.</para>
+
+<para
+>La gestione delle sessioni riguarda la capacità di &kde; di salvare lo stato delle applicazioni e delle finestre quando esci da &kde;, e di ripristinarlo al prossimo accesso.</para>
+
+<sect3 id="sessions-general">
+<title
+>Generale</title>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Conferma l'uscita</guilabel
+></term>
+<listitem>
+<para
+>Se questa opzione è selezionata, quando si esce, &kde; visualizzerà una finestra di conferma. In questa finestra potrai scegliere se vuoi ripristinare la sessione al prossimo accesso.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Offri le opzioni di spegnimento</guilabel
+></term>
+<listitem>
+<para
+>Se questa opzione è selezionata, &kde; permetterà di scegliere tra alcune azioni all'uscita. Queste includono la semplice conclusione della sessione (quello che si fa se non sono abilitate le opzioni di spegnimento), spegnere il computer o riavviarlo.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect3>
+
+<sect3 id="sessions-default-leave-options">
+<title
+>Opzione di uscita predefinita</title>
+<para
+>Puoi configurare cosa dovrebbe accadere normalmente all'uscita di &kde;. Queste opzioni non sono possibili su tutti i sistemi operativi, e alcune richiedono l'uso di &kdm; come gestore d'accesso.</para>
+
+<para
+>Le opzioni disponibili si spiegano da sole, ma se non sei sicuro non cambiare le impostazioni predefinite. Esse sono:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Termina la sessione corrente</guilabel
+> (l'opzione predefinita)</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Spegni il computer</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Riavvia il computer</guilabel
+></para
+></listitem>
+</itemizedlist>
+</sect3>
+
+<sect3 id="sessions-on-login">
+<title
+>All'accesso</title>
+<para
+>Scegli, tra le seguenti tre opzioni, cosa vuoi che accada appena accedi a &kde;:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Ripristina la sessione precedente</guilabel
+></term>
+<listitem
+><para
+>Se questa opzione è selezionata, &kde; salverà lo stato della sessione quando ne uscirai. Al prossimo accesso &kde; la ripristinerà automaticamente, così potrai continuare a lavorare con un desktop uguale a come l'avevi lasciato.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Ripristina una sessione salvata manualmente</guilabel
+></term>
+<listitem
+><para
+>Invece di ripristinare &kde; nello stato in cui sei uscito l'ultima volta, la sessione sarà ripristinata nell'ultimo stato che hai salvato manualmente.</para>
+<para
+>Se questa opzione è selezionata, il menu d'avvio presenta un elemento supplementare, <menuchoice
+><guimenu
+>Abbandona</guimenu
+><guimenuitem
+>Salva sessione</guimenuitem
+></menuchoice
+>. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Avvia una sessione vuota</guilabel
+></term>
+<listitem>
+<para
+>Se selezioni questa opzione, &kde; non ripristinerà mai le sessioni precedentemente salvate.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+<para
+>Infine, puoi inserire una serie di applicazioni separate con due punti (<literal
+>:</literal
+>) o virgole (<literal
+>,</literal
+>) che non dovranno essere salvate tra le sessioni, e quindi non ripristinate all'avvio di una nuova. Per esempio <userinput
+>xterm:konsole</userinput
+> o <userinput
+>xterm,konsole</userinput
+>.</para>
+<!-- does this need the full path here? -->
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>
+

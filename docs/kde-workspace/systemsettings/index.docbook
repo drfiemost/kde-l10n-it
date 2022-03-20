@@ -1,0 +1,595 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "&systemsettings;">
+  <!ENTITY package "kdebase-workspace">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<book id="systemsettings" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale delle &systemsettings;</title>
+
+<authorgroup>
+<author
+>&Richard.Johnson; &Richard.Johnson.mail; </author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>&Richard.Johnson;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-12-05</date>
+<releaseinfo
+>4.12 (&kde; 4.12)</releaseinfo>
+
+<abstract>
+<para
+>Questa documentazione descrive il centro di configurazione di sistema e di amministrazione di &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistema</keyword>
+<keyword
+>Impostazioni</keyword>
+<keyword
+>configurazione</keyword>
+<keyword
+>amministrazione</keyword>
+<keyword
+>config</keyword>
+<keyword
+>admin</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>Le &systemsettings; di &kde; dànno all'utente un modo centralizzato e comodo per configurare tutte le impostazioni di &kde;. </para>
+
+<para
+>Le &systemsettings; sono costituite da diversi moduli. Ogni modulo è un'applicazione a parte, ma le &systemsettings; di &kde; le organizzano tutte in un posto solo. </para>
+
+<tip>
+<para
+>Ogni modulo delle &systemsettings; può essere eseguito singolarmente. </para>
+<para
+>Vedi <xref linkend="run-modules-individually"/> per maggiori informazioni. </para>
+</tip>
+
+<para
+>Le &systemsettings; raggruppano tutti i moduli di configurazione in alcune categorie fondamentali: <itemizedlist>
+<listitem
+><para
+><link linkend="application-appearance"
+>Aspetto e comportamento comune</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="workspace-appearance"
+>Aspetto e comportamento dello spazio di lavoro</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="network"
+>Rete e connettività</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="hardware"
+>Hardware</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="system-administration"
+>Amministrazione di sistema</link
+></para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>I moduli che costituiscono le &systemsettings; ricadono in una delle categorie sopra enunciate, facilitando il ritrovamento del modulo di configurazione giusto. </para>
+
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Usare le &systemsettings;</title>
+
+<para
+>Questa sezione spiega in dettaglio l'uso generale delle &systemsettings;. Per maggiori informazioni su ogni singolo modulo, vedi <xref linkend="modules"/>. </para>
+
+<sect1 id="starting">
+<title
+>Avviare le &systemsettings;</title>
+
+<para
+>Le &systemsettings; di &kde; possono essere avviate in tre modi: </para>
+
+<orderedlist>
+<listitem>
+<para
+>Selezionando <menuchoice
+><guimenu
+>Pulsante K</guimenu
+><guisubmenu
+>Computer</guisubmenu
+><guimenuitem
+>Impostazioni di sistema</guimenuitem
+></menuchoice
+>. </para>
+</listitem>
+<listitem>
+<para
+>Premendo <keycombo
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> apparirà la finestra di &krunner;. Digita <command
+>impostazioni di sistema</command
+> e premi &Enter;. </para>
+</listitem>
+<listitem>
+<para
+>Scrivi <userinput
+>systemsettings</userinput
+> in qualsiasi emulatore di terminale. </para>
+</listitem>
+</orderedlist>
+
+<para
+>Questi metodi sono equivalenti, e producono lo stesso risultato. </para>
+</sect1>
+
+<sect1 id="screen">
+<title
+>La schermata delle &systemsettings; di &kde;</title>
+
+<para
+>Quando avvii le &systemsettings; ti viene presentata una finestra divisa in tre parti funzionali. </para>
+
+<para
+>In cima c'è una barra degli strumenti. La barra permette all'utente di tornare alla vista principale da un modulo con il pulsante <guibutton
+>Panoramica</guibutton
+>. Puoi anche trovare un menu di <guimenu
+>Aiuto</guimenu
+> oltre al pulsante <guibutton
+>Configura</guibutton
+>, che permette di usare altre impostazioni di visualizzazione. </para>
+<para
+>Per cercare qualcosa tra tutti i moduli, inizia a scrivere le parole chiave nel campo di ricerca sulla destra della barra nella <guibutton
+>Panoramica</guibutton
+>. Quando inizi a scrivere, comparirà un elenco di temi corrispondenti. Selezionane uno e saranno abilitati solo i gruppi con delle impostazioni per questa parola chiave, mentre gli altri saranno lasciati in grigio.</para>
+<para
+>Quando l'icona della finestra è attiva, puoi battere la prima lettera di qualsiasi nome di modulo o gruppo di moduli per selezionarlo. Battere di nuovo la stessa lettera fa passare la selezione alla prossima corrispondenza. </para>
+<para
+>Sotto la barra degli strumenti c'è una vista a icone dei singoli moduli o gruppi di moduli che costituiscono le &systemsettings;, raggruppati nelle varie categorie. Come impostazione predefinita, se il mouse viene lasciato per alcuni secondi sopra una di queste, apparirà un suggerimento dettagliato per spiegare lo scopo del modulo o dei moduli del gruppo. </para>
+</sect1>
+
+<sect1 id="general">
+<title
+>Categorie e moduli delle &systemsettings;</title>
+<para
+>Una breve panoramica di tutte le categorie e dei loro moduli:</para>
+
+<variablelist>
+<varlistentry id="application-appearance">
+<term
+>Aspetto e comportamento comune</term>
+<listitem>
+<para
+><itemizedlist>
+<listitem
+><para
+>Dettagli dell'account (password e account dell'utente, percorsi, portafogli di &kde;, desktop sociale, scorciatoie del Web) </para
+></listitem>
+<listitem
+><para
+>Aspetto delle applicazioni (stile, colori, icone, caratteri, faccine) </para
+></listitem>
+<listitem
+><para
+>Notifiche delle applicazioni e di sistema (gestione delle notifiche, campanella di sistema, notifica d'avvio) </para
+></listitem>
+<listitem
+><para
+>Associazioni dei file </para
+></listitem>
+<listitem
+><para
+>Localizzazione (lingua e paese, controllo ortografico) </para
+></listitem>
+<listitem
+><para
+>Informazioni personali (configurazione delle risorse di Akonadi) </para
+></listitem>
+<listitem
+><para
+>Scorciatoie e gesti (scorciatoie personalizzate, scorciatoie da tastiera standard, scorciatoie da tastiera globali) </para
+></listitem>
+</itemizedlist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="workspace-appearance">
+<term
+>Aspetto e comportamento dello spazio di lavoro</term>
+<listitem>
+<para
+><itemizedlist>
+<listitem
+><para
+>Effetti del desktop </para
+></listitem>
+<listitem
+><para
+>Aspetto dello spazio di lavoro (decorazioni delle finestre, tema del cursore, tema del desktop, schermata d'avvio) </para
+></listitem>
+<listitem
+><para
+>Accessibilità (accessibilità, pronuncia) </para
+></listitem>
+<listitem
+><para
+>Applicazioni predefinite </para
+></listitem>
+<listitem
+><para
+>Ricerca sul desktop </para
+></listitem>
+<listitem
+><para
+>Comportamento delle finestre (scambiafinestre, comportamento delle finestre, script di KWin, regole delle finestre) </para
+></listitem>
+<listitem
+><para
+>Comportamento dello spazio di lavoro (attività, desktop virtuali, bordi dello schermo, spazio di lavoro) </para
+></listitem>
+</itemizedlist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="network">
+<term
+>Rete e connettività</term>
+<listitem>
+<para
+><itemizedlist>
+<listitem
+><para
+>Impostazioni di rete (proxy, preferenze di connessione, rilevamento dei servizi) </para
+></listitem>
+<listitem
+><para
+>Condivisione (condivisioni Windows) </para
+></listitem>
+<listitem
+><para
+>Preferenze SSL </para
+></listitem>
+</itemizedlist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="hardware">
+<term
+>Hardware</term>
+<listitem>
+<para
+><itemizedlist>
+<listitem
+><para
+>Azioni dei dispositivi </para
+></listitem>
+<listitem
+><para
+>Macchina fotografica digitale </para
+></listitem>
+<listitem
+><para
+>Schermo e visualizzazione (dimensioni e orientazione, bloccaschermo, gamma) </para
+></listitem>
+<listitem
+><para
+>Dispositivi di immissione (tastiere, mouse, joystick, telecomandi) </para
+></listitem>
+<listitem
+><para
+>Gestione energetica (impostazioni di risparmio energetico, impostazioni delle attività, impostazioni avanzate) </para
+></listitem>
+<listitem
+><para
+>Stampanti </para
+></listitem>
+<listitem
+><para
+>Dispositivi rimovibili </para
+></listitem>
+<listitem
+><para
+>Multimedia (CD audio, impostazioni audio e video, recupero CDDB) </para
+></listitem>
+</itemizedlist>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry id="system-administration">
+<term
+>Amministrazione di sistema</term>
+<listitem>
+<para
+><itemizedlist>
+<listitem
+><para
+>Data e ora </para
+></listitem>
+<listitem
+><para
+>Gestione dei caratteri </para
+></listitem>
+<listitem
+><para
+>Schermata d'accesso </para
+></listitem>
+<listitem
+><para
+>Avvio e spegnimento (avvio automatico, gestione dei servizi e delle sessioni) </para
+></listitem>
+<listitem
+><para
+>Pianificazione delle operazioni </para
+></listitem>
+</itemizedlist>
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<tip
+><para
+>Usa il campo di ricerca <guibutton
+>Panoramica</guibutton
+> per trovare tutti i moduli corrispondenti a una certa parola chiave.</para
+></tip>
+</sect1>
+<sect1 id="exiting">
+<title
+>Uscire dalle &systemsettings; di &kde;</title>
+
+<para
+>Si può uscire dalle &systemsettings; in due modi: </para>
+
+<orderedlist>
+<listitem>
+<para
+>Premi <keycombo
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> sulla tastiera. </para>
+</listitem>
+<listitem>
+<para
+>Fai clic sul pulsante <guibutton
+>Chiudi</guibutton
+> nella barra degli strumenti. </para>
+</listitem>
+</orderedlist>
+</sect1>
+
+<sect1 id="configuring">
+<title
+>Configurare le &systemsettings;</title>
+
+<para
+>L'icona <guiicon
+>Configura</guiicon
+> nella barra degli strumenti permette di modificare alcuni parametri delle &systemsettings;. Puoi passare dalla <guilabel
+>Vista a icone</guilabel
+> alla <guilabel
+>Classica vista ad albero</guilabel
+>. </para>
+
+<para
+>Puoi anche disattivare i suggerimenti dettagliati deselezionanto <guilabel
+>Mostra suggerimenti dettagliati</guilabel
+>. In tal caso vedrai solo dei suggerimenti normali e non il contenuto di un gruppo di moduli. </para>
+</sect1>
+
+<sect1 id="run-modules-individually">
+<title
+>Eseguire singolarmente i moduli delle &systemsettings;</title>
+
+<para
+>I singoli moduli possono essere eseguiti senza usare le &systemsettings; con il comando <command
+>kcmshell4</command
+> dalla riga di comando. Digita <command
+>kcmshell4 <option
+>--list</option
+></command
+> per vedere un elenco dei moduli delle &systemsettings; di &kde; disponibili. </para>
+<!--FIXME kcmshell4 - -list has ~30 more kcms than in systemsettings-->
+</sect1>
+</chapter>
+
+<chapter id="modules">
+<title
+>I moduli delle &systemsettings; di &kde;</title>
+
+<para
+>Per renderle il più semplici possibile, le &systemsettings; di &kde; organizzano le opzioni in cinque categorie. Sotto ogni categoria ci sono delle icone raggruppate per sottocategorie. Ogni icona rappresenta un modulo. Quando fai doppio clic sull'icona di un modulo, ti verranno presentate le opzioni del modulo nella finestra principale. </para>
+
+<para
+>Ogni modulo avrà alcuni o tutti i seguenti pulsanti: </para>
+
+<variablelist>
+<varlistentry>
+<term
+>Aiuto</term>
+<listitem>
+<para
+>Questo pulsante presenterà dell'aiuto specifico per modulo attuale. Fare clic sul pulsante aprirà &khelpcenter; in una nuova finestra, per fornire informazioni dettagliate sul modulo. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Valori predefiniti</term>
+<listitem>
+<para
+>Fare clic su questo pulsante ripristinerà il modulo ai valori predefiniti. Devi fare clic su <guibutton
+>Applica</guibutton
+> per salvare le opzioni. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Azzera</term>
+<listitem>
+<para
+>Questo pulsante <quote
+>azzererà</quote
+> il modulo alle impostazioni precedenti. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Applica</term>
+<listitem>
+<para
+>Fare clic su questo pulsante salverà tutte le modifiche fatte a &kde;. Se hai modificato qualcosa, fare clic su <guibutton
+>Applica</guibutton
+> metterà in atto le modifiche. </para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<note>
+<para
+>Devi azzerare o applicare le modifiche effettuate prima di poter cambiare modulo. </para>
+<para
+>Se cerchi di cambiare modulo senza salvare o azzerare le opzioni, ti verrà chiesto se vuoi salvare le modifiche o scartarle. </para>
+</note>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&systemsettings; </para>
+<para
+>Copyright del programma 2007 di Benjamin C. Meyer. </para>
+<para
+>Copyright del programma 2009 di Ben Cooksley. </para>
+<para
+>Hanno contribuito: <itemizedlist>
+<listitem>
+<para
+>Will Stephenson <email
+>wstepheson@kde.org</email
+> </para>
+</listitem>
+<listitem>
+<para
+>Michael D. Stemle, Jr. <email
+>manchicken@notsosoft.net</email
+> </para>
+</listitem>
+<listitem>
+<para
+>Matthias Kretz <email
+>kretz@kde.org</email
+> </para>
+</listitem>
+<listitem>
+<para
+>&Daniel.Molkentin; &Daniel.Molkentin.mail; </para>
+</listitem>
+<listitem>
+<para
+>&Matthias.Elter; &Matthias.Elter.mail; </para>
+</listitem>
+<listitem>
+<para
+>Frans Englich <email
+>englich@kde.org</email
+> </para>
+</listitem>
+<listitem>
+<para
+>Michael Jansen <email
+>kde@michael-jansen.biz</email
+> </para>
+</listitem>
+</itemizedlist>
+</para>
+
+<para
+>Copyright della documentazione 2008 di &Richard.Johnson; &Richard.Johnson.mail; </para>
+
+<para
+>Traduzione di Federico Zenith<email
+>federico.zenith@member.fsf.org</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

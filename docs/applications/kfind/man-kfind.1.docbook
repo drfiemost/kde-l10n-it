@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY % Italian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manuale utente di KDE</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2010-10-06</date>
+<productname
+>Ambiente desktop KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kfind</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kfind</command
+></refname>
+<refpurpose
+>Un programma di &kde; per trovare file</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kfind</command
+> <group choice="opt"
+><option
+>percorso_di_ricerca</option
+></group
+> <arg choice="opt"
+>Opzioni generiche di KDE</arg
+> <arg choice="opt"
+>Opzioni generiche di Qt</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrizione</title>
+<para
+>Lo strumento di ricerca è un metodo utile per cercare file specifici sul computer, o per cercare file che corrispondano a un modello. Un esempio potrebbe essere la ricerca di file di un certo tipo o con certe lettere nel nome, o che abbiano certi contenuti.</para
+> 
+<para
+>&kfind; è uno strumento grafico, e normalmente non si avvia dalla riga di comando.</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Opzioni</title>
+<variablelist>
+<varlistentry>
+<term
+><option
+>percorso_di_ricerca</option
+></term>
+<listitem
+><para
+>Volendo puoi aggiungere un percorso separato da segni di due punti per inserire dati nella finestra. Potresti usare questa possibilità per configurare delle icone sul pannello o sul desktop per avviare ricerche veloci da diverse parti.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Vedi anche</title>
+<para
+>Una documentazione più dettagliata è disponibile scrivendo <ulink url="help:/kfind"
+>help:/kfind</ulink
+> (oppure scrivendo l'<acronym
+>URL</acronym
+> in &konqueror;, o avviando  <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kfind</parameter
+></userinput
+>).</para>
+</refsect1>
+
+<refsect1>
+<title
+>Autori</title>
+<para
+>Un elenco degli sviluppatori è accessibile nel manuale completo disponibile in &khelpcenter;.</para>
+<para
+>Questa documentazione è stata preparata da &Lauri.Watts; &Lauri.Watts.mail;.</para>
+</refsect1>
+
+</refentry>

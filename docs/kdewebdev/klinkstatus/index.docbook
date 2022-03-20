@@ -1,0 +1,448 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY klinkstatus "<application
+>KLinkStatus</application
+>">
+  <!ENTITY kappname "&klinkstatus;"
+><!-- Do *not* replace kappname-->
+  <!ENTITY package "kdewebdev"
+><!-- kdebase, kdeadmin, etc -->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="klinkstatus" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale di &klinkstatus;</title>
+
+<authorgroup>
+<author
+><firstname
+></firstname
+> <othername
+></othername
+> <surname
+>Paulo Moura Guedes</surname
+> <affiliation
+> <address
+><email
+>moura&#64;kdewebdev&#46;org</email
+></address>
+</affiliation>
+</author>
+
+<othercredit role="translator"
+><firstname
+>Samuele</firstname
+><surname
+>Kaplun</surname
+><affiliation
+><address
+><email
+>Samuele.Kaplun@cern.ch</email
+></address
+></affiliation
+><contrib
+>Traduzione iniziale italiana</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Pino</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>toscano.pino@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2004</year>
+
+<holder
+>Paulo Moura Guedes</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2011-08-22</date>
+<releaseinfo
+>0.7.0 (&kde; 4.7)</releaseinfo>
+
+<abstract>
+<para
+>&klinkstatus; è un verificatore di collegamenti per &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KLinkStatus</keyword>
+<keyword
+>verificatore di collegamenti</keyword>
+<keyword
+>validazione</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&klinkstatus; è un verificatore di collegamenti per &kde;. Ti permette di cercare link interni ed esterni in tutto il tuo sito web, in una singola pagina scegliendo la profondità di ricerca. Puoi anche verificare file locali, ftp, fish, &etc;, dato che &klinkstatus; utilizza KIO. Per migliorare le prestazioni i collegamenti possono essere verificati simultaneamente. </para>
+<para
+>Le funzionalità dell'applicazione possono essere estese usando <ulink url="http://techbase.kde.org/Development/Tutorials/Kross/Introduction"
+>script di Kross</ulink
+>. </para>
+</chapter>
+
+<chapter id="using-klinkstatus">
+<title
+>Usare &klinkstatus;</title>
+
+<para
+>Per controllare i collegamenti in un sito web o in un file locale, inserisci il suo indirizzo nel campo <guilabel
+>URL:</guilabel
+> e premi &Enter;. Puoi anche usare l'icona di una cartella a destra per navigare in maniera grafica all'indirizzo voluto. </para>
+<screenshot>
+<screeninfo
+>Ecco un'immagine di &klinkstatus;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="screenshot.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Immagine</phrase>
+	  </textobject>
+	  <caption>
+	    <para
+>&klinkstatus; sta controllando i collegamenti sul sito web di KDevelop. I collegamenti interrotti e difettosi sono segnati in rosso. </para>
+	  </caption>
+	</mediaobject>
+</screenshot>
+<para
+>Se l'accesso ai dati da ispezionare è ristretto, usa l'opzione <guilabel
+>Accesso</guilabel
+>. Dopo aver premuto &Enter; nel campo &URL; oppure aver premuto <guibutton
+>Inizia ricerca</guibutton
+> nella barra degli strumenti, appare la finestra di dialogo seguente per inserire le credenziali. </para>
+<screenshot>
+<screeninfo
+>Finestra di dialogo delle credenziali di &klinkstatus;</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="login-dialog.png" format="PNG"/>
+	  </imageobject>
+	  <textobject>
+	    <phrase
+>Finestra di dialogo delle credenziali di &klinkstatus;</phrase>
+	  </textobject>
+	  <caption>
+	    <para
+>&klinkstatus; ti chiede di inserire le credenziali. </para>
+	  </caption>
+	</mediaobject>
+</screenshot>
+<para
+>Inserisci le credenziali e premi <guibutton
+>OK</guibutton
+>. </para>
+<para
+>Puoi ridurre il numero di collegamenti da controllare disattivando <guilabel
+>Verifica collegamenti esterni</guilabel
+> (in caso in cui i collegamenti esterni non devono essere controllati) oppure inserendo un'espressione regolare nel campo <guilabel
+>Non verificare espressioni regolari</guilabel
+>. </para>
+<para
+>I risultati della ricerca possono essere filtrati usando il campo <guilabel
+>Cerca</guilabel
+> o il menu a cascata <guilabel
+>Stato</guilabel
+> (<guimenuitem
+>Tutti i collegamenti</guimenuitem
+>, <guimenuitem
+>Collegamenti validi</guimenuitem
+>, <guimenuitem
+>Collegamenti interrotti</guimenuitem
+>, <guimenuitem
+>Collegamenti difettosi</guimenuitem
+> oppure <guimenuitem
+>Collegamenti indeterminati</guimenuitem
+>). </para>
+<para
+>Dal menu contestuale di ciascun elemento dei risultati della ricerca puoi scegliere di verificare nuovamente (<guimenuitem
+>Riverifica</guimenuitem
+>), di modificare il riferimento alla pagina di provenienza (<guimenuitem
+>Modifica il riferimento alla pagina di provenienza (referrer)</guimenuitem
+>), di aprire l'&URL; (<guimenuitem
+>Apri URL</guimenuitem
+>), di aprire l'&URL; del riferimento alla pagina di provenienza (<guimenuitem
+>Apri URL del riferimento alla pagina di provenienza (referrer)</guimenuitem
+>), di copiare l'&URL; (<guimenuitem
+>Copia URL</guimenuitem
+>), di copiare l'&URL; del riferimento alla pagina di provenienza (<guimenuitem
+>Copia URL del riferimento alla pagina di provenienza (referrer)</guimenuitem
+>), oppure di copiarne il testo (<guimenuitem
+>Copia testo della cella</guimenuitem
+>). </para>
+<para
+>I risultati della ricerca possono essere salvati come mappa del sito in &XML; usando la voce di menu <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Crea una mappa del sito...</guimenuitem
+></menuchoice
+>, oppure esportati in &HTML; usando <menuchoice
+><guimenu
+>File</guimenu
+><guisubmenu
+>Esporta come HTML</guisubmenu
+></menuchoice
+>. Puoi scegliere di esportare <guimenuitem
+>Tutti</guimenuitem
+> i collegamenti o solo quelli <guimenuitem
+>Interrotti</guimenuitem
+>. Inoltre è presente un'opzione <guimenuitem
+>Scarica nuovi fogli di stile</guimenuitem
+> per scaricare nuovi fogli di stile dalle «Novità», ed usarli in esportazione. </para>
+<!--kde.org
+Support several protocols (allowing fast checking of local documents): http, ftp, ssh (fish or sftp) and file.
+Proxy support
+Allows authentication when checking restricted documents
+Limit the search depth
+Pause/Resume of checking session
+History of checked URLs
+Kross Scripting
+  -->
+</chapter>
+<!--
+  How does scheduling auto link check work?
+  starting klinkstatus via user crontab? apparently not!
+  via a kded service?
+  needs a running klinkstatus instance?
+  is this unfinished work?
+
+<chapter id="auto-check">
+<title
+>Automatic Site Checking</title>
+
+<para>
+  Using <menuchoice
+><guimenu
+>Tools</guimenu
+><guimenuitem
+>Schedule Link Checks...</guimenuitem
+></menuchoice>
+  opens the <guilabel
+>Configure Site Check Automation</guilabel
+> dialog.
+
+  Here you can add, remove and edit sessions.
+  Scheduling Weekly (how to set day?), Daily, Hourly
+
+</para>
+
+</chapter>
+-->
+
+<chapter id="config">
+  <title
+>Configurare &klinkstatus;</title>
+  <para
+>È possibile trovare le opzioni di configurazione di &klinkstatus; aprendo la finestra di dialogo di configurazione, selezionando <menuchoice
+> <guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura &klinkstatus;...</guimenuitem
+> </menuchoice
+> dal menu.</para>
+    <screenshot>
+      <screeninfo
+>La finestra di dialogo di configurazione di &klinkstatus;</screeninfo>
+      <mediaobject>
+	<imageobject>
+	  <imagedata fileref="check-settings.png" format="PNG"/>
+	</imageobject>
+	<textobject>
+	  <phrase
+>Verifica</phrase>
+	</textobject>
+      </mediaobject>
+    </screenshot>
+  <para
+>Nella pagina <guilabel
+>Verifica</guilabel
+> puoi modificare i parametri predefiniti della verifica. Questa pagina è suddivisa in tre parti (<guilabel
+>Rete</guilabel
+>, <guilabel
+>Input</guilabel
+> e <guilabel
+>Quanta</guilabel
+>) con la casella aggiuntiva <guilabel
+>Ricorda le impostazioni all'uscita</guilabel
+>. Se quest'ultima casella è marcata, all'uscita &klinkstatus; memorizza le impostazioni configurate e le ripristina all'avvio successivo. </para>
+  <para
+>La sezione <guilabel
+>Rete</guilabel
+> può essere usata per scegliere il <guilabel
+>Numero di connessioni simultanee</guilabel
+> e il <guilabel
+>Tempo massimo in secondi</guilabel
+>. </para>
+  <para
+>Puoi modificare il <guilabel
+>Numero di elementi nella cronologia degli &URL;</guilabel
+> (il valore predefinito è 50) e la <guilabel
+>Profondità</guilabel
+> della verifica (che può essere configurata anche nella finestra principale di &klinkstatus;; 0 significa <guilabel
+>Illimitata</guilabel
+>). Puoi anche decidere se verificare le cartelle superiori (<guilabel
+>Verifica cartelle superiori</guilabel
+>) e verificare i collegamenti esterni (<guilabel
+>Verifica collegamenti esterni</guilabel
+>; può essere configurata anche nella finestra principale di &klinkstatus;). </para>
+  <para
+>Nella sezione <guilabel
+>Quanta</guilabel
+> puoi controllare l'integrazione di &klinkstatus; con &quantaplus;. Attiva <guilabel
+>Usa prefisso di anteprima</guilabel
+> se vuoi usare il prefisso di anteprima del progetto di &quantaplus; nell'&URL; da controllare. </para>
+  <screenshot>
+    <screeninfo
+>La finestra di dialogo di configurazione di &klinkstatus;</screeninfo>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="results-settings.png" format="PNG"/>
+      </imageobject>
+      <textobject>
+	<phrase
+>Risultati</phrase>
+      </textobject>
+    </mediaobject>
+  </screenshot>
+  <para
+>Usando la pagina <guilabel
+>Risultati</guilabel
+> puoi scegliere il formato della lista dei risultati della verifica. <guilabel
+>Albero</guilabel
+> rappresenta la vista ad albero predefinita, mentre <guilabel
+>Piatta</guilabel
+> rappresenta la lista piatta semplice (può essere più veloce su macchine più vecchie). Puoi anche abilitare <guilabel
+>Segui gli ultimi collegamenti verificati</guilabel
+> e definire il <guilabel
+>Foglio di stile preferito</guilabel
+> per la lista dei risultati della verifica. Nuovi fogli di stile possono essere scaricati dalle «Novità» usando la voce di menu <menuchoice
+><guimenu
+>File</guimenu
+> <guisubmenu
+>Esporta come HTML</guisubmenu
+> <guimenuitem
+>Scarica nuovi fogli di stile...</guimenuitem
+></menuchoice
+>. </para>
+  <screenshot>
+    <screeninfo
+>La finestra di dialogo di configurazione di &klinkstatus;</screeninfo>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="identification-settings.png" format="PNG"/>
+      </imageobject>
+      <textobject>
+	<phrase
+>Identificazione</phrase>
+      </textobject>
+    </mediaobject>
+  </screenshot>
+  <para
+>Usando la pagina <guilabel
+>Identificazione</guilabel
+> puoi configurare come &klinkstatus; si identifica presso il server della pagina da verificare. Puoi scegliere se inviare un'identificazione o meno usando <guilabel
+>Invia identificazione</guilabel
+>. Usa il pulsante <guilabel
+>Predefinita</guilabel
+> per impostare l'identificazione predefinita di &konqueror;. La pagina <guilabel
+>Identificazione</guilabel
+> può essere usata per configurare anche l'identità con cui autenticarsi sul server. </para>
+  <screenshot>
+    <screeninfo
+>La finestra di dialogo di configurazione di &klinkstatus;</screeninfo>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="mail-transport-settings.png" format="PNG"/>
+      </imageobject>
+      <textobject>
+	<phrase
+>Trasporto della posta</phrase>
+      </textobject>
+    </mediaobject>
+  </screenshot>
+  <para
+>Usando la pagina <guilabel
+>Trasporto della posta</guilabel
+> puoi configurare l'account di posta elettronica che riceve i risultati delle verifiche pianificate di &klinkstatus;. </para>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&klinkstatus; </para>
+<para
+>Programma copyright 2004 Paulo Moura Guedes <email
+>pmg&#64;netcabo&#46;pt</email
+> </para>
+<para
+>Documentazione copyright 2004 Paulo Moura Guedes <email
+>pmg&#64;netcabo&#46;pt</email
+> </para>
+
+<para
+>Samuele Kaplun<email
+>kaplun@aliceposta.it</email
+> (traduzione iniziale)</para
+><para
+>Pino Toscano<email
+>toscano.pino@tiscali.it</email
+> (ultimo aggiornamento della traduzione)</para
+> 
+&underFDL; &underGPL; </chapter>
+
+<chapter id="installation">
+  
+<title
+>Installazione e compilazione</title>
+&install.intro.documentation; &install.compile.documentation; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+-->
+

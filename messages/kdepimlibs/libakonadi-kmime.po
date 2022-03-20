@@ -1,0 +1,659 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Federico Zenith <federico.zenith@member.fsf.org>, 2011, 2012, 2013, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libakonadi-kmime\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-02-25 01:41+0000\n"
+"PO-Revision-Date: 2013-07-07 14:37+0200\n"
+"Last-Translator: Federico Zenith <federico.zenith@member.fsf.org>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: emptytrashcommand.cpp:60
+msgid "Empty Trash"
+msgstr "Svuota cestino"
+
+#: emptytrashcommand.cpp:61
+msgid "Are you sure you want to empty the trash folders of all accounts?"
+msgstr "Sei sicuro di voler svuotare i cestini di tutti gli account?"
+
+#. i18n: ectx: label, entry (ImapServer), group (network)
+#: imapresource.kcfg:10
+msgid "IMAP server"
+msgstr "Server IMAP"
+
+#. i18n: ectx: label, entry (ImapPort), group (network)
+#: imapresource.kcfg:13
+msgid "Defines the port the IMAP service is running on"
+msgstr "Definisce la porta su cui è attivo il server IMAP"
+
+#. i18n: ectx: label, entry (UserName), group (network)
+#: imapresource.kcfg:17
+msgid "Username"
+msgstr "Nome dell'utente"
+
+#. i18n: ectx: label, entry (Safety), group (network)
+#: imapresource.kcfg:20
+msgid "Defines the encryption type to use"
+msgstr "Definisce il tipo di cifratura da usare"
+
+#. i18n: ectx: label, entry (Authentication), group (network)
+#: imapresource.kcfg:24
+msgid "Defines the authentication type to use"
+msgstr "Definisce il tipo di autenticazione da usare"
+
+#. i18n: ectx: label, entry (SubscriptionEnabled), group (network)
+#: imapresource.kcfg:28
+msgid "Defines if the server side subscription is enabled"
+msgstr "Definisce se le sottoscrizioni lato server sono abilitate"
+
+#. i18n: ectx: label, entry (DisconnectedModeEnabled), group (cache)
+#: imapresource.kcfg:34
+msgid "Defines if all the IMAP data should be cached locally all the time"
+msgstr ""
+"Definisce se tutti i dati IMAP debbano essere sempre salvati nella cache "
+"locale"
+
+#. i18n: ectx: label, entry (IntervalCheckEnabled), group (cache)
+#: imapresource.kcfg:38
+msgid "Defines if interval checking is enabled."
+msgstr "Definisce se il controllo periodico è abilitato."
+
+#. i18n: ectx: label, entry (IntervalCheckTime), group (cache)
+#: imapresource.kcfg:42
+msgid "Check interval in minutes"
+msgstr "Intervallo di controllo in minuti"
+
+#. i18n: ectx: label, entry (RetrieveMetadataOnFolderListing), group (cache)
+#: imapresource.kcfg:47
+msgid ""
+"Defines if the annotations, ACLs and quota information of mailboxes should\n"
+"             also be retrieved when the mailboxes get listed."
+msgstr ""
+"Definisce se anche annotazioni, ACL e informazioni di quota delle caselle\n"
+"             di posta vanno recuperate quando le caselle vengono elencate."
+
+#. i18n: ectx: label, entry (AutomaticExpungeEnabled), group (cache)
+#: imapresource.kcfg:52
+msgid ""
+"Defines if the expunge command is issued automatically, otherwise it should "
+"be\n"
+"             triggered manually through the D-Bus interface."
+msgstr ""
+"Definisce se il comando di pulizia vada eseguito automaticamente, "
+"altrimenti\n"
+"             va attivato manualmente attraverso l'interfaccia D-Bus."
+
+#. i18n: ectx: label, entry (TrashCollection), group (cache)
+#: imapresource.kcfg:56
+msgid "Define which folder is used for trash"
+msgstr "Definisce quale cartella è usata per il cestino"
+
+#. i18n: ectx: label, entry (UseDefaultIdentity), group (cache)
+#: imapresource.kcfg:60
+msgid "Define if account uses the default identity"
+msgstr "Definisce se l'account usa l'identità predefinita"
+
+#. i18n: ectx: label, entry (AccountIdentity), group (cache)
+#: imapresource.kcfg:64
+msgid "Identity account"
+msgstr "Account dell'identità"
+
+#. i18n: ectx: label, entry (IdleRidPath), group (idle)
+#: imapresource.kcfg:69
+msgid "RID path to the mailbox to watch for changes"
+msgstr ""
+"Percorso identificativo (RID) della casella di posta per sorvegliare le "
+"modifiche"
+
+#. i18n: ectx: label, entry (SieveSupport), group (siever)
+#: imapresource.kcfg:74
+msgid "Define if server supports sieve"
+msgstr "Definisce se il server supporta sieve"
+
+#. i18n: ectx: label, entry (SieveReuseConfig), group (siever)
+#: imapresource.kcfg:78
+msgid "Define if we reuse host and login configuration"
+msgstr "Definisce se riutilizzare la configurazione dell'host e dell'accesso"
+
+#. i18n: ectx: label, entry (SievePort), group (siever)
+#: imapresource.kcfg:82
+msgid "Define sieve port"
+msgstr "Definisce la porta di sieve"
+
+#. i18n: ectx: label, entry (SieveAlternateUrl), group (siever)
+#: imapresource.kcfg:86
+msgid "Define alternate URL"
+msgstr "Definisce un URL alternativo"
+
+#. i18n: ectx: label, entry (SieveVacationFilename), group (siever)
+#: imapresource.kcfg:89
+msgid "Define default sieve vacation filename"
+msgstr "Definisce il nome del file predefinito di sieve per le vacanze"
+
+#: messagemodel.cpp:102
+#, kde-format
+msgctxt "@label"
+msgid ""
+"This model can only handle email folders. The current collection holds "
+"mimetypes: %1"
+msgstr ""
+"Questo modello può gestire solo cartelle di posta. La raccolta attuale "
+"contiene i tipi di file: %1"
+
+#: messagemodel.cpp:126
+msgctxt "@label No size available"
+msgid "-"
+msgstr "-"
+
+#: messagemodel.cpp:164
+msgctxt "@title:column, message (e.g. email) subject"
+msgid "Subject"
+msgstr "Oggetto"
+
+#: messagemodel.cpp:166
+msgctxt "@title:column, sender of message (e.g. email)"
+msgid "Sender"
+msgstr "Mittente"
+
+#: messagemodel.cpp:168
+msgctxt "@title:column, receiver of message (e.g. email)"
+msgid "Receiver"
+msgstr "Destinatario"
+
+#: messagemodel.cpp:170
+msgctxt "@title:column, message (e.g. email) timestamp"
+msgid "Date"
+msgstr "Data"
+
+#: messagemodel.cpp:172
+msgctxt "@title:column, message (e.g. email) size"
+msgid "Size"
+msgstr "Dimensione"
+
+#: removeduplicatesjob.cpp:54
+msgid "Retrieving items..."
+msgstr "Recupero degli elementi..."
+
+#: removeduplicatesjob.cpp:72
+msgid "Searching for duplicates..."
+msgstr "Ricerca dei duplicati..."
+
+#: removeduplicatesjob.cpp:131
+msgid "Removing duplicates..."
+msgstr "Rimozione dei duplicati..."
+
+#: specialmailcollections.cpp:143
+msgctxt "local mail folder"
+msgid "inbox"
+msgstr "in arrivo"
+
+#: specialmailcollections.cpp:146
+msgctxt "local mail folder"
+msgid "outbox"
+msgstr "in uscita"
+
+#: specialmailcollections.cpp:149
+msgctxt "local mail folder"
+msgid "sent-mail"
+msgstr "inviata"
+
+#: specialmailcollections.cpp:152
+msgctxt "local mail folder"
+msgid "trash"
+msgstr "cestino"
+
+#: specialmailcollections.cpp:155
+msgctxt "local mail folder"
+msgid "drafts"
+msgstr "bozze"
+
+#: specialmailcollections.cpp:158
+msgctxt "local mail folder"
+msgid "templates"
+msgstr "modelli"
+
+#. i18n: ectx: label, entry (DefaultResourceId), group (SpecialCollections)
+#: specialmailcollections.kcfg:9
+msgid "Id of the resource containing the default special collections."
+msgstr ""
+"Identificativo della risorsa contenente le raccolte speciali predefinite."
+
+#. i18n: ectx: whatsthis, entry (DefaultResourceId), group (SpecialCollections)
+#: specialmailcollections.kcfg:10
+msgid "Id of the maildir resource containing the default special collections."
+msgstr ""
+"Identificativo della risorsa maildir contenente le raccolte speciali "
+"predefinite."
+
+#: specialmailcollectionsrequestjob.cpp:68
+msgctxt "local mail folder"
+msgid "Local Folders"
+msgstr "Cartelle locali"
+
+#: standardmailactionmanager.cpp:125
+msgid "Add Folder..."
+msgstr "Aggiungi cartella..."
+
+#: standardmailactionmanager.cpp:127 standardmailactionmanager.cpp:129
+msgid "Add a new folder to the currently selected account."
+msgstr "Aggiungi una nuova cartella all'account attualmente selezionato."
+
+#: standardmailactionmanager.cpp:133
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "Nuova cartella"
+
+#: standardmailactionmanager.cpp:137
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "Impossibile creare la cartella: %1"
+
+#: standardmailactionmanager.cpp:141
+msgid "Folder creation failed"
+msgstr "Creazione della cartella non riuscita"
+
+#: standardmailactionmanager.cpp:146
+#, kde-format
+msgid "Copy Folder"
+msgid_plural "Copy %1 Folders"
+msgstr[0] "Copia cartella"
+msgstr[1] "Copia %1 cartelle"
+
+#: standardmailactionmanager.cpp:148 standardmailactionmanager.cpp:150
+msgid "Copy the selected folders to the clipboard."
+msgstr "Copia le cartelle selezionate negli appunti."
+
+#: standardmailactionmanager.cpp:153
+#, kde-format
+msgctxt "@title:window"
+msgid "Properties of Folder %1"
+msgstr "Proprietà della cartella %1"
+
+#: standardmailactionmanager.cpp:158
+#, kde-format
+msgid "Delete Folder"
+msgid_plural "Delete %1 Folders"
+msgstr[0] "Elimina cartella"
+msgstr[1] "Elimina %1 cartelle"
+
+#: standardmailactionmanager.cpp:160 standardmailactionmanager.cpp:162
+msgid "Delete the selected folders from the account."
+msgstr "Elimina le cartelle selezionate dall'account."
+
+#: standardmailactionmanager.cpp:165
+#, kde-format
+msgid "Do you really want to delete this folder and all its sub-folders?"
+msgid_plural ""
+"Do you really want to delete %1 folders and all their sub-folders?"
+msgstr[0] ""
+"Vuoi davvero eliminare questa cartella e tutte le sue sottocartelle?"
+msgstr[1] "Vuoi davvero eliminare %1 cartelle e tutte le loro sottocartelle?"
+
+#: standardmailactionmanager.cpp:170
+msgctxt "@title:window"
+msgid "Delete folder?"
+msgid_plural "Delete folders?"
+msgstr[0] "Eliminare la cartella?"
+msgstr[1] "Eliminare le cartelle?"
+
+#: standardmailactionmanager.cpp:174
+#, kde-format
+msgid "Could not delete folder: %1"
+msgstr "Impossibile eliminare la cartella: %1"
+
+#: standardmailactionmanager.cpp:178
+msgid "Folder deletion failed"
+msgstr "Eliminazione di cartella non riuscita"
+
+#: standardmailactionmanager.cpp:183
+msgid "Update Folder"
+msgid_plural "Update Folders"
+msgstr[0] "Aggiorna cartella"
+msgstr[1] "Aggiorna cartelle"
+
+#: standardmailactionmanager.cpp:186 standardmailactionmanager.cpp:188
+msgid "Update the contents of the selected folders."
+msgstr "Aggiorna i contenuti delle cartelle selezionate."
+
+#: standardmailactionmanager.cpp:192
+#, kde-format
+msgid "Cut Folder"
+msgid_plural "Cut %1 Folders"
+msgstr[0] "Taglia cartella"
+msgstr[1] "Taglia %1 cartelle"
+
+#: standardmailactionmanager.cpp:194 standardmailactionmanager.cpp:196
+msgid "Cut the selected folders from the account."
+msgstr "Taglia le cartelle selezionate dall'account."
+
+#: standardmailactionmanager.cpp:200
+msgid "Folder Properties..."
+msgstr "Proprietà della cartella..."
+
+#: standardmailactionmanager.cpp:202 standardmailactionmanager.cpp:204
+msgid "Open a dialog to edit the properties of the selected folder."
+msgstr ""
+"Apre una finestra per modificare le proprietà della cartella selezionata."
+
+#: standardmailactionmanager.cpp:208
+#, kde-format
+msgid "Copy Message"
+msgid_plural "Copy %1 Messages"
+msgstr[0] "Copia messaggio"
+msgstr[1] "Copia %1 messaggi"
+
+#: standardmailactionmanager.cpp:210 standardmailactionmanager.cpp:212
+msgid "Copy the selected messages to the clipboard."
+msgstr "Copia i messaggi selezionati negli appunti."
+
+#: standardmailactionmanager.cpp:216
+#, kde-format
+msgid "Delete Message"
+msgid_plural "Delete %1 Messages"
+msgstr[0] "Elimina messaggio"
+msgstr[1] "Elimina %1 messaggi"
+
+#: standardmailactionmanager.cpp:218 standardmailactionmanager.cpp:220
+msgid "Delete the selected messages from the folder."
+msgstr "Elimina i messaggi selezionati dalla cartella."
+
+#: standardmailactionmanager.cpp:223
+#, kde-format
+msgid "Do you really want to delete the selected message?"
+msgid_plural "Do you really want to delete %1 messages?"
+msgstr[0] "Vuoi davvero eliminare il messaggio selezionato?"
+msgstr[1] "Vuoi davvero eliminare %1 messaggi selezionati?"
+
+#: standardmailactionmanager.cpp:228
+msgctxt "@title:window"
+msgid "Delete Message?"
+msgid_plural "Delete Messages?"
+msgstr[0] "Eliminare il messaggio?"
+msgstr[1] "Eliminare i messaggi?"
+
+#: standardmailactionmanager.cpp:232
+#, kde-format
+msgid "Could not delete message: %1"
+msgstr "Impossibile eliminare il messaggio: %1"
+
+#: standardmailactionmanager.cpp:236
+msgid "Message deletion failed"
+msgstr "Eliminazione del messaggio non riuscita"
+
+#: standardmailactionmanager.cpp:240
+#, kde-format
+msgid "Cut Message"
+msgid_plural "Cut %1 Messages"
+msgstr[0] "Taglia messaggio"
+msgstr[1] "Taglia %1 messaggi"
+
+#: standardmailactionmanager.cpp:242 standardmailactionmanager.cpp:244
+msgid "Cut the selected message from the folder."
+msgstr "Taglia i messaggi selezionati dalla cartella."
+
+#: standardmailactionmanager.cpp:248
+msgid "Add &Account..."
+msgstr "Aggiungi &account..."
+
+#: standardmailactionmanager.cpp:250
+msgid ""
+"Add a new account<p>You will be presented with a dialog where you can select "
+"the type of the account that shall be added.</p>"
+msgstr ""
+"Aggiungi un nuovo account<p>Verrà presentata una finestra in cui si può "
+"selezionare il tipo di account da aggiungere.</p>"
+
+#: standardmailactionmanager.cpp:255
+msgctxt "@title:window"
+msgid "Add Account"
+msgstr "Aggiungi account"
+
+#: standardmailactionmanager.cpp:259
+#, kde-format
+msgid "Could not create account: %1"
+msgstr "Impossibile creare l'account: %1"
+
+#: standardmailactionmanager.cpp:263
+msgid "Account creation failed"
+msgstr "Creazione dell'account non riuscita"
+
+#: standardmailactionmanager.cpp:267
+#, kde-format
+msgid "&Delete Account"
+msgid_plural "&Delete %1 Accounts"
+msgstr[0] "&Elimina account"
+msgstr[1] "&Elimina %1 account"
+
+#: standardmailactionmanager.cpp:269
+msgid ""
+"Delete the selected accounts<p>The currently selected accounts will be "
+"deleted, along with all the messages they contain.</p>"
+msgstr ""
+"Elimina gli account selezionati<p>Gli account attualmente selezionati "
+"verranno eliminati, assieme ai messaggi che contengono.</p>"
+
+#: standardmailactionmanager.cpp:274
+#, kde-format
+msgid "Do you really want to delete this account?"
+msgid_plural "Do you really want to delete %1 accounts?"
+msgstr[0] "Vuoi davvero eliminare questo account?"
+msgstr[1] "Vuoi veramente eliminare questi %1 account?"
+
+#: standardmailactionmanager.cpp:279
+msgctxt "@title:window"
+msgid "Delete Account?"
+msgid_plural "Delete Accounts?"
+msgstr[0] "Eliminare account?"
+msgstr[1] "Eliminare %1 account?"
+
+#: standardmailactionmanager.cpp:283
+msgid "Account Properties..."
+msgstr "Proprietà dell'account..."
+
+#: standardmailactionmanager.cpp:285
+msgid "Open a dialog to edit properties of the selected account."
+msgstr ""
+"Apre una finestra per modificare le proprietà dell'account selezionato."
+
+#: standardmailactionmanager.cpp:289
+#, kde-format
+msgid "Update Account"
+msgid_plural "Update %1 Accounts"
+msgstr[0] "Aggiorna account"
+msgstr[1] "Aggiorna %1 account"
+
+#: standardmailactionmanager.cpp:291
+msgid "Updates the content of all folders of the selected accounts."
+msgstr "Aggiorna i contenuti di tutte le cartelle degli account selezionati."
+
+#: standardmailactionmanager.cpp:297
+msgid "Update This Folder and All Its Subfolders"
+msgid_plural "Update These Folders and All Their Subfolders"
+msgstr[0] "Aggiorna questa cartella e tutte le sue sottocartelle"
+msgstr[1] "Aggiorna queste cartelle e tutte le loro sottocartelle"
+
+#: standardmailactionmanager.cpp:301 standardmailactionmanager.cpp:303
+msgid "Update the contents of the selected folders and all their subfolders."
+msgstr ""
+"Aggiorna i contenuti delle cartelle selezionate e di tutte le loro "
+"sottocartelle."
+
+#: standardmailactionmanager.cpp:308
+#, kde-format
+msgid "Could not paste message: %1"
+msgstr "Impossibile incollare il messaggio: %1"
+
+#: standardmailactionmanager.cpp:312
+msgid "Paste failed"
+msgstr "Incollamento non riuscito"
+
+#: standardmailactionmanager.cpp:375
+msgid "Remove Important Mark"
+msgstr "Rimuovi il segno di importanza dal messaggio"
+
+#: standardmailactionmanager.cpp:378
+msgid "&Mark Mail as Important"
+msgstr "Segna il &messaggio come importante"
+
+#: standardmailactionmanager.cpp:389
+msgid "Remove Action Item Mark"
+msgstr "Rimuovi il segno di compito dal messaggio"
+
+#: standardmailactionmanager.cpp:392
+msgid "&Mark Mail as Action Item"
+msgstr "Segna il &messaggio come compito"
+
+#: standardmailactionmanager.cpp:721
+msgid "&Mark Message as Read"
+msgstr "Segna il &messaggio come letto"
+
+#: standardmailactionmanager.cpp:722
+msgid "Mark as Read"
+msgstr "Segna come letto"
+
+#: standardmailactionmanager.cpp:723 standardmailactionmanager.cpp:724
+msgid "Mark selected messages as read."
+msgstr "Segna i messaggi selezionati come letti."
+
+#: standardmailactionmanager.cpp:734
+msgid "&Mark Message as Unread"
+msgstr "Segna il &messaggio come non letto"
+
+#: standardmailactionmanager.cpp:735
+msgid "Mark as Unread"
+msgstr "Segna come non letto"
+
+#: standardmailactionmanager.cpp:736 standardmailactionmanager.cpp:737
+msgid "Mark selected messages as unread."
+msgstr "Segna i messaggi selezionati come non letti."
+
+#: standardmailactionmanager.cpp:747
+msgid "&Mark Message as Important"
+msgstr "Segna il &messaggio come importante"
+
+#: standardmailactionmanager.cpp:748
+msgid "Mark as Important"
+msgstr "Segna come importante"
+
+#: standardmailactionmanager.cpp:749
+msgid "Mark selected messages as important."
+msgstr "Segna i messaggi selezionati come importanti."
+
+#: standardmailactionmanager.cpp:759
+msgid "&Mark Message as Action Item"
+msgstr "Segna il &messaggio come compito"
+
+#: standardmailactionmanager.cpp:760
+msgid "Mark as Action Item"
+msgstr "Segna come compito"
+
+#: standardmailactionmanager.cpp:761 standardmailactionmanager.cpp:762
+msgid "Mark selected messages as action items."
+msgstr "Segna i messaggi selezionati come compiti."
+
+#: standardmailactionmanager.cpp:771
+msgid "Mark &All Messages as Read"
+msgstr "Segn&a tutti i messaggi come letti"
+
+#: standardmailactionmanager.cpp:772
+msgid "Mark All as Read"
+msgstr "Segna tutti come letti"
+
+#: standardmailactionmanager.cpp:773 standardmailactionmanager.cpp:774
+msgid "Mark all messages as read."
+msgstr "Segna tutti i messaggi selezionati come letti."
+
+#: standardmailactionmanager.cpp:783
+msgid "Mark &All Messages as Unread"
+msgstr "Segn&a tutti i messaggi come non letti"
+
+#: standardmailactionmanager.cpp:784
+msgid "Mark All as Unread"
+msgstr "Segna tutti come non letti"
+
+#: standardmailactionmanager.cpp:785 standardmailactionmanager.cpp:786
+msgid "Mark all messages as unread."
+msgstr "Segna tutti i messaggi selezionati come non letti."
+
+#: standardmailactionmanager.cpp:795
+msgid "Mark &All Messages as Important"
+msgstr "Segn&a tutti i messaggi come importanti"
+
+#: standardmailactionmanager.cpp:796
+msgid "Mark All as Important"
+msgstr "Segna tutti come importanti"
+
+#: standardmailactionmanager.cpp:797 standardmailactionmanager.cpp:798
+msgid "Mark all messages as important."
+msgstr "Segn&a tutti i messaggi come importanti."
+
+#: standardmailactionmanager.cpp:806
+msgid "Mark All as Action Item"
+msgstr "Segna tutti come compiti"
+
+#: standardmailactionmanager.cpp:807
+msgid "Mark &All Messages as Action Item"
+msgstr "Segn&a tutti i messaggi come compiti"
+
+#: standardmailactionmanager.cpp:809 standardmailactionmanager.cpp:810
+msgid "Mark all messages as action items."
+msgstr "Segna tutti i messaggi come compiti."
+
+#: standardmailactionmanager.cpp:819
+msgid "Move to &Trash"
+msgstr "Ces&tina"
+
+#: standardmailactionmanager.cpp:821 standardmailactionmanager.cpp:822
+msgid "Move selected messages to the trash folder."
+msgstr "Cestina i messaggi selezionati."
+
+#: standardmailactionmanager.cpp:830
+msgid "Move All to &Trash"
+msgstr "Cestina tutti"
+
+#: standardmailactionmanager.cpp:831 standardmailactionmanager.cpp:832
+msgid "Move all messages to the trash folder."
+msgstr "Cestina tutti i messaggi."
+
+#: standardmailactionmanager.cpp:839
+msgid "Remove &Duplicate Messages"
+msgstr "Rimuovi messaggi &duplicati"
+
+#: standardmailactionmanager.cpp:840 standardmailactionmanager.cpp:841
+msgid "Remove duplicate messages."
+msgstr "Rimuovi i messaggi duplicati."
+
+#: standardmailactionmanager.cpp:849
+msgid "Empty All &Trash Folders"
+msgstr "Svuota tutti i &cestini"
+
+#: standardmailactionmanager.cpp:850 standardmailactionmanager.cpp:851
+msgid "Permanently delete all messages from all trash folders."
+msgstr "Elimina definitivamente tutti i messaggi da tutti i cestini."
+
+#: standardmailactionmanager.cpp:858
+msgid "E&mpty Trash"
+msgstr "S&vuota cestino"
+
+#: standardmailactionmanager.cpp:859 standardmailactionmanager.cpp:860
+msgid "Permanently delete all messages from the trash folder."
+msgstr "Elimina definitivamente tutti i messaggi dal cestino."
+
+#~ msgid "Copy Email"
+#~ msgid_plural "Copy %1 Emails"
+#~ msgstr[0] "Copia messaggio"
+#~ msgstr[1] "Copia %1 messaggi"
+
+#~ msgid "Cut Email"
+#~ msgid_plural "Cut %1 Emails"
+#~ msgstr[0] "Taglia messaggio"
+#~ msgstr[1] "Taglia %1 messaggi"

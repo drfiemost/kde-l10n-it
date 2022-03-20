@@ -1,0 +1,190 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE">
+<!-- change language only here -->
+]>
+
+<article lang="&language;" id="nepomuksearch">
+  <title
+>nepomuksearch</title>
+  <articleinfo>
+    <authorgroup>
+      <author
+><personname
+> <firstname
+>Sebastian</firstname
+> <surname
+>Trüg</surname
+> </personname
+> <email
+>trueg@kde.org</email
+> </author>
+      <othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+    </authorgroup>
+
+    <date
+>2010-09-10</date>
+    <releaseinfo
+>1.0.0</releaseinfo>
+  </articleinfo>
+
+  <sect1>
+    <title
+>Panoramica</title>
+
+    <para
+>Il protocollo <userinput
+>nepomuksearch</userinput
+> permette di cercare, nella banca dei dati aggiuntivi Nepomuk, file o ogni altro tipo di risorsa (anche se i file sono il caso più importante perché qui si parla di filesystem virtuali).</para>
+    <note>
+      <para
+>Perché funzioni, deve essere attivo il sistema Nepomuk. L'attivazione dell'indicizzatore di file Strigi produce risultati migliori e molte più possibilità di ricerca.</para>
+    </note>
+
+    <para
+>Tipicamente, <userinput
+>nepomuksearch</userinput
+> viene usato invisibilmente all'utente con un'applicazione come &dolphin;, che fornisce gli elementi grafici per costruire l'interrogazione e l'&URL; corrispondente. Tuttavia, è anche possibile scrivere un &URL; di interrogazione a mano. Ci sono due diverse possibilità che potrebbero interessare l'utente (attenzione che le interrogazioni create come mostrato sotto non si limitano ai file):</para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <userinput
+>nepomuksearch:/?query=Nepomuk</userinput>
+        </term>
+        <listitem>
+          <para
+>cercherà per qualsiasi cosa contenente la parola <quote
+>Nepomuk</quote
+>. <quote
+>Nepomuk</quote
+> può essere sostituito da qualsiasi cosa permessa dal semplice <xref linkend="query_syntax"/>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <userinput
+>nepomuksearch:/?sparql=select ?r where { ?r nao:hasTag ?tag . ?tag nao:prefLabel 'Nepomuk'^^xsd:string . }</userinput>
+        </term>
+        <listitem>
+          <para
+>eseguirà l'interrogazione <acronym
+>SPARQL</acronym
+> che in questo caso cerca tutte le risorse indicate con l'etichetta <quote
+>Nepomuk</quote
+>. Nota che l'interrogazione deve essere codificata con segni di percentuale, cioè un URI come <userinput
+>&lt;http://www.semanticdesktop.org/ontologies/2007/08/15/nao#Tag&gt;</userinput
+> deve essere scritto <userinput
+>%3chttp:%2f%2fwww.semanticdesktop.org%2fontologies%2f2007%2f08%2f15%2fnao#Tag%3e</userinput
+>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect1>
+
+  <sect1 id="query_syntax">
+    <title
+>Sintassi delle interrogazioni di Nepomuk</title>
+    <para
+>La sintassi è abbastanza semplice. Si possono combinare più termini di interrogazione con <command
+>AND</command
+> o <command
+>OR</command
+>; i termini possono essere esclusi prefiggendoli con un segno meno, e si possono cercare delle proprietà specifiche combinando il nome della proprietà con un operatore di confronto e un valore.</para>
+    <tip>
+      <para
+>La sintassi si può usare anche nei normali campi di ricerca, come quello di &dolphin;.</para>
+    </tip>
+    <sect2>
+      <title
+>Esempi</title>
+      <variablelist>
+        <varlistentry>
+          <term
+><userinput
+>Nepomuk KDE</userinput
+> o <userinput
+>Nepomuk AND KDE</userinput
+> </term>
+          <listitem>
+            <para
+>cerca tutte le cose contenenti le parole <quote
+>Nepomuk</quote
+> e <quote
+>KDE</quote
+> in una qualsiasi delle loro proprietà (ciò include i contenuti dei file).</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <userinput
+>Nepomuk OR KDE</userinput>
+          </term>
+          <listitem>
+            <para
+>cerca tutte le cose contenenti una tra le parole <quote
+>Nepomuk</quote
+> e <quote
+>KDE</quote
+> in una qualsiasi delle loro proprietà.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <userinput
+>"Nepomuk KDE"</userinput>
+          </term>
+          <listitem>
+            <para
+>cerca tutte le cose contenenti l'esatta espressione <quote
+>Nepomuk KDE</quote
+> in una qualsiasi delle loro proprietà.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <userinput
+>hastag:Nepomuk</userinput>
+          </term>
+          <listitem>
+            <para
+>cerca tutte le cose indicate con un'etichetta chiamata <quote
+>Nepomuk</quote
+>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <userinput
+>+hastag:nepomuk AND -hastag:scribo</userinput>
+          </term>
+          <listitem>
+            <para
+>cerca tutte le cose indicate con un'etichetta chiamata <quote
+>Nepomuk</quote
+>, ma senza un'etichetta chiamata <quote
+>scribo</quote
+>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+
+</article>

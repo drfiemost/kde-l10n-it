@@ -1,0 +1,698 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="language" lang="&language;">
+<articleinfo>
+<title
+>Lingua e paese</title>
+<authorgroup>
+<author
+>&Mike.McBride;&Mike.McBride.mail;</author>
+<author
+>&Krishna.Tateneni;&Krishna.Tateneni.mail;</author>
+<othercredit role="translator"
+><firstname
+>Marcello</firstname
+><surname
+>Anni</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della documentazione</contrib
+></othercredit
+> 
+ </authorgroup>
+
+	  <date
+>2013-12-05</date>
+	  <releaseinfo
+>4.12</releaseinfo>
+
+	  <keywordset>
+		<keyword
+>KDE</keyword>
+		<keyword
+>Impostazioni di sistema</keyword>
+		<keyword
+>localizzazione</keyword>
+		<keyword
+>paese</keyword>
+		<keyword
+>lingua</keyword>
+	  </keywordset>
+</articleinfo>
+
+
+<sect1 id="locale">
+
+<title
+>Lingua e paese</title>
+
+<para
+>Questo modulo delle &systemsettings; di &kde; permette di selezionare opzioni personalizzate che dipendono dal paese dove vivi. Ci sono sette diverse schede in questo modulo, ognuna delle quali è descritta dettagliatamente nelle seguenti sezioni. </para>
+
+<para
+>Nella maggior parte dei casi, puoi semplicemente selezionare il paese e la lingua, e le altre opzioni saranno impostate in modo appropriato. </para>
+
+<para
+>Sotto le schede di questo modulo, puoi vedere un'anteprima dell'aspetto delle impostazioni. Oltre ai numeri positivi e negativi, puoi vedere come vengono mostrati i valori in denaro positivi e negativi, le date lunghe e brevi, e gli orari. Quando cambi qualunque impostazione, l'anteprima mostra gli effetti dei cambiamenti prima di applicarli. </para>
+
+<para
+>Ogni impostazione nelle varie schede ha un <inlinemediaobject
+><imageobject
+><imagedata fileref="oxygen-22x22-document-revert.png" format="PNG"/></imageobject
+></inlinemediaobject
+> pulsante a sé per il valore predefinito, che viene attivato ogni volta che l'impostazione è diversa dal valore predefinito del tuo paese. Fare clic sul pulsante ripristinerà quella singola impostazione al valore predefinito del tuo paese. </para>
+
+
+<sect2 id="locale-country">
+
+<title
+>Paese</title>
+
+<para
+>In scheda puoi selezionare il paese o la regione che vuoi usare. </para>
+
+<para
+>La casella <guilabel
+>Paese</guilabel
+> contiene l'elenco dei paesi disponibili e mostrerà inizialmente quello attualmente selezionato. Se la selezione mostra <quote
+>Paese di sistema</quote
+>, vuol dire che non ne hai impostato uno e ti affidi all'impostazione di sistema, che verrà anch'essa mostrata. Cambiare il paese cambierà anche le impostazioni a quelle predefinite per il nuovo paese, tranne quelle personalizzate, che saranno lasciate intatte. Puoi vedere facilmente dove le tue impostazioni personali sono diverse da quelle del paese guardando il pulsante <guilabel
+>Predefinito</guilabel
+> di fianco alle singole impostazioni. Se il pulsante è attivo, l'impostazione è diversa dalla predefinita, e puoi farci clic per ripristinarla. </para>
+
+</sect2>
+
+
+<sect2 id="locale-languages">
+
+<title
+>Lingue</title>
+
+<para
+>In questa scheda puoi impostare le lingue preferite da usare per lo spazio di lavoro e le applicazioni di &kde;. </para>
+
+<para
+>Lo spazio di lavoro e le applicazioni di &kde; sono scritte in inglese americano, e vengono tradotte in molte altre lingue da squadre di volontari. Queste traduzioni devono essere installate prima che tu le possa selezionare. L'elenco di <guilabel
+>Lingue disponibili</guilabel
+> mostra quali traduzioni di &kde; sono installate e disponibili sul sistema. Se la lingua che vuoi usare manca in questo elenco, la dovrai installare con il metodo appropriato per il sistema. Il sistema potrebbe aver abilitato il pulsante <guilabel
+>Installa altre lingue</guilabel
+> per facilitarti il compito. </para>
+
+<para
+>L'elenco <guilabel
+>Lingue preferite</guilabel
+> mostra le lingue da usare nello spazio di lavoro e nelle applicazioni di &kde;. Siccome lo spazio di lavoro e le applicazioni potrebbero non essere tradotti in ogni lingua, &kde; cercherà di trovare una traduzione appropriata scendendo l'elenco finché non troverà una traduzione. Se nessuna delle lingue preferite ha una particolare traduzione, verrà usato l'inglese americano originale. </para>
+
+<para
+>Puoi aggiungere una lingua all'elenco delle <guilabel
+>Lingue preferite</guilabel
+> selezionandola nelle <guilabel
+>Lingue disponibili</guilabel
+> e quindi facendo clic sul pulsante a freccia <guibutton
+>Aggiungi</guibutton
+>. Puoi rimuovere una lingua dall'elenco delle <guilabel
+>Lingue preferite</guilabel
+> selezionandola e facendo clic sul pulsante a freccia <guibutton
+>Rimuovi</guibutton
+>. Puoi cambiare l'ordine di preferenza nell'elenco delle <guilabel
+>Lingue preferite</guilabel
+> selezionandone una e facendo clic sui pulsanti con la freccia in alto o in basso. </para>
+
+<para
+>Solo le lingue elencate sotto <guilabel
+>Lingue preferite</guilabel
+> e <guilabel
+>Lingue disponibili</guilabel
+> saranno offerte come possibile <guilabel
+>Lingua principale</guilabel
+> e <guilabel
+>Lingua di ripiego</guilabel
+> nella finestra <guilabel
+>Cambia la lingua dell'applicazione</guilabel
+> del menu <guimenu
+>Aiuto</guimenu
+>. </para>
+
+<note>
+<para
+>Le impostazioni di lingua e paese sono indipendenti. Cambiare la lingua <emphasis
+>non</emphasis
+> cambia automaticamente le impostazioni per i numeri, la valuta, eccetera a quelle del paese corrispondente. Cambia solo la lingua usata per mostrare le date, come i nomi dei mesi. </para>
+</note>
+
+</sect2>
+
+
+<sect2 id="locale-numbers">
+
+<title
+>Numeri</title>
+
+<para
+>In questa scheda puoi selezionare le opzioni per come mostrare i numeri. Le impostazioni di base sono selezionate automaticamente in base allo stato attualmente selezionato. </para>
+
+<para
+>Nella prima casella a cascata puoi definire il <guilabel
+>Raggruppamento delle cifre</guilabel
+> da usare per mostrare i numeri.</para>
+
+<para
+>Nella casella <guilabel
+>Separatore dei gruppi</guilabel
+> puoi scrivere il carattere che vuoi usare per separare i gruppi di cifre nei numeri, di solito uno spazio, un <userinput
+>ॱ</userinput
+> o un <userinput
+>,</userinput
+>. Dovresti assicurarti che questo valore sia diverso da quello impostato per il <guilabel
+>Separatore decimale</guilabel
+>. La casella presenta una serie di impostazioni comuni tra cui scegliere. </para>
+
+<para
+>Nella casella <guilabel
+>Separatore decimale</guilabel
+> puoi scrivere il carattere da usare per separare la parte decimale dei numeri, di solito un <userinput
+>,</userinput
+> o un <userinput
+>.</userinput
+>. Dovresti assicurarti che questo valore sia diverso da quello impostato per il <guilabel
+>Separatore dei gruppi</guilabel
+>. La casella presenta una serie di impostazioni comuni tra cui scegliere. </para>
+
+<para
+>Nella casella numerica <guilabel
+>Cifre decimali</guilabel
+> puoi impostare il numero di cifre decimali mostrate nei valori numerici, cioè il numero di cifre <emphasis
+>dopo</emphasis
+> la virgola. </para>
+
+<para
+>Nella casella <guilabel
+>Segno positivo</guilabel
+> puoi scrivere il carattere da usare per indicare i numeri positivi. Dovresti assicurarti che questo valore sia diverso da quello impostato per il <guilabel
+>Segno negativo</guilabel
+>. La casella presenta una serie di impostazioni comuni tra cui scegliere. Questo valore può anche essere usato per i valori monetari a seconda del <guilabel
+>Formato positivo</guilabel
+> selezionato nella scheda <guilabel
+>Denaro</guilabel
+>. </para>
+
+<para
+>Nella casella <guilabel
+>Segno negativo</guilabel
+> puoi scrivere il carattere da usare per indicare i numeri negativi. Dovresti assicurarti che questo valore sia diverso da quello impostato per il <guilabel
+>Segno positivo</guilabel
+>. La casella presenta una serie di impostazioni comuni tra cui scegliere. Questo valore può anche essere usato per i valori monetari a seconda del <guilabel
+>Formato negativo</guilabel
+> selezionato nella scheda <guilabel
+>Denaro</guilabel
+>. </para>
+
+<para
+>La casella <guilabel
+>Sistema di numerazione</guilabel
+> presenta degli insiemi di cifre che possono essere usate al posto delle cifre arabe per visualizzare i numeri. Se selezioni un sistema di numerazione diverso dall'arabo, verrà applicato solo ai numeri che compaiono in un contesto linguistico che lo ammette, mentre le cifre arabe saranno usate altrove; per esempio, le cifre arabo-indiane verranno applicate in arabo ma non in italiano. </para>
+
+<para
+>Nota che il raggruppamento delle cifre, il separatore dei gruppi, il separatore decimale, le cifre decimali, i formati positivo e negativo e il sistema di numerazione usati per visualizzare valori monetari devono essere impostati a parte nella scheda <guilabel
+>Denaro</guilabel
+>. </para>
+
+</sect2>
+
+
+<sect2 id="locale-money">
+
+<title
+>Denaro</title>
+
+<para
+>In questa scheda puoi selezionare le opzioni per come mostrare i valori monetari. Le impostazioni di base sono selezionate automaticamente in base allo stato attualmente selezionato. </para>
+
+<para
+>Nella casella <guilabel
+>Valuta</guilabel
+> puoi scegliere la valuta da usare per visualizzare i valori monetari. Il valore predefinito è la valuta principale usata nel paese selezionato. Puoi scegliere un'altra valuta dalla casella, che presenta i nomi di tutte le valute disponibili nei codici di valuta standard ISO 4217. Le valute usate nel paese selezionato sono elencate in cima, seguite da tutte le altre. Cambiare la valuta aggiornerà anche il <guilabel
+>Simbolo di valuta</guilabel
+> da usare come simbolo predefinito per quella valuta, ma non saranno modificate altre impostazioni di formato. </para>
+
+<para
+>Nella casella <guilabel
+>Simbolo di valuta</guilabel
+> puoi scegliere il simbolo da usare per i valori monetari. Questo verrà preimpostato al normale simbolo della valuta selezionata nella casella <guilabel
+>Valuta</guilabel
+>. Questo permette solo di selezionare un simbolo di valuta valido per il codice di valuta, per evitare scelte inconsistenti, come scegliere gli euro ma mostrare il simbolo dei dollari, $. Questa impostazione verrà cambiata automaticamente alla modifica della <guilabel
+>Valuta</guilabel
+>. </para>
+
+<para
+>Nella prossima casella a cascata puoi definire il <guilabel
+>Raggruppamento delle cifre</guilabel
+> da usare per mostrare i valori monetari.</para>
+
+<para
+>Nella casella <guilabel
+>Separatore dei gruppi</guilabel
+> puoi scrivere il carattere che vuoi usare per separare i gruppi di cifre nei valori monetari, di solito uno spazio, un <userinput
+>ॱ</userinput
+> o un <userinput
+>,</userinput
+>. Dovresti assicurarti che questo valore sia diverso da quello impostato per il <guilabel
+>Separatore decimale</guilabel
+>. La casella presenta una serie di impostazioni comuni tra cui scegliere. </para>
+
+<para
+>Nella casella <guilabel
+>Separatore decimale</guilabel
+> puoi scrivere il carattere da usare per separare la parte decimale dei valori monetari, di solito un <userinput
+>,</userinput
+> o un <userinput
+>.</userinput
+>. Dovresti assicurarti che questo valore sia diverso da quello impostato per il <guilabel
+>Separatore dei gruppi</guilabel
+>. La casella presenta una serie di impostazioni comuni tra cui scegliere. </para>
+
+<para
+>Nella casella numerica <guilabel
+>Cifre decimali</guilabel
+> puoi impostare il numero di cifre decimali mostrate nei valori monetari, cioè il numero di cifre <emphasis
+>dopo</emphasis
+> la virgola. </para>
+
+<para
+>Nella casella <guilabel
+>Formato positivo</guilabel
+> puoi selezionare come vuoi far mostrare i valori monetari positivi. La casella presenta un elenco di quattro formati tra cui scegliere, combinando le opzioni per cui il <guilabel
+>Simbolo di valuta</guilabel
+> e il <guilabel
+>Segno positivo</guilabel
+> del valore numerico sono visualizzati. Puoi anche scegliere di sostituire il <guilabel
+>Segno positivo</guilabel
+> del valore numerico con delle parentesi. </para>
+
+<para
+>Nella casella <guilabel
+>Formato negativo</guilabel
+> puoi selezionare come vuoi far mostrare i valori monetari negativi. La casella presenta un elenco di dieci formati tra cui scegliere, combinando le opzioni per cui il <guilabel
+>Simbolo di valuta</guilabel
+> e il <guilabel
+>Segno negativo</guilabel
+> del valore numerico sono visualizzati. Puoi anche scegliere di sostituire il <guilabel
+>Segno negativo</guilabel
+> del valore numerico con delle parentesi. </para>
+
+<para
+>La casella <guilabel
+>Sistema di numerazione</guilabel
+> presenta degli insiemi di cifre che possono essere usate al posto delle cifre arabe per visualizzare valori monetari. Se selezioni un sistema di numerazione diverso dall'arabo, verrà applicato solo ai numeri che compaiono in un contesto linguistico che lo ammette, mentre le cifre arabe saranno usate altrove; per esempio, le cifre arabo-indiane verranno applicate in arabo ma non in italiano. </para>
+
+<para
+>Nota che il raggruppamento delle cifre, il separatore dei gruppi, il separatore decimale, le cifre decimali, i segni positivo e negativo e il sistema di numerazione usati per visualizzare valori numerici devono essere impostati a parte nella scheda <guilabel
+>Numeri</guilabel
+>. </para>
+
+</sect2>
+
+
+<sect2 id="locale-calendar">
+
+<title
+>Calendario</title>
+
+<para
+>In questa scheda puoi selezionare le opzioni per la visualizzazione delle informazioni calendariali. Le impostazioni di base sono selezionate automaticamente in base allo stato attualmente selezionato. </para>
+
+<para
+>Nella casella <guilabel
+>Sistema calendariale</guilabel
+> puoi scegliere il sistema da usare per visualizzare e inserire date. Questo verrà preimpostato al sistema calendariale principale usato nel paese selezionato, normalmente il calendario gregoriano. Cambiare il sistema calendariale aggiornerà anche le varie caselle per i nomi della settimana con quelli nel nuovo sistema, abiliterà o disabiliterà la casella <guilabel
+>Usa l'era volgare</guilabel
+> e potrebbe cambiare il valore dell'impostazione <guilabel
+>Finestra per anni abbreviati</guilabel
+>. </para>
+
+<para
+>Nota che il calendario gregoriano usato è un ibrido del calendario giuliano fino a giovedì 4 ottobre 1582 e del gregoriano da venerdì 15 ottobre 1582, lasciando un <quote
+>buco</quote
+> di dieci giorni <quote
+>mancanti</quote
+>. È noto che questa conversione è valida per molti paesi, tra cui l'Italia, ma non per altri come Svezia o Russia; è così che le librerie &Qt; hanno deciso di implementare il calendario gregoriano e intendiamo mantenere la consistenza. </para>
+
+<para
+>Se hai selezionato il sistema calendariale gregoriano, sarà abilitata la casella <guilabel
+>Usa l'era volgare</guilabel
+>. Essa permette di scegliere se usare l'era volgare (e.v./a.e.v.) invece di quella cristiana (a.C./d.C.) nella visualizzazione e nell'inserimento delle date. Vedi la scheda <guilabel
+>Data e ora</guilabel
+> per configurare questa funzionalità. </para>
+
+<para
+>L'opzione <guilabel
+>Finestra per anni abbreviati</guilabel
+> si usa solo quando scegli di usare un formato a due cifre per gli anni (AA) nelle impostazioni del <guilabel
+>Formato di data lungo</guilabel
+> e del <guilabel
+>Formato di data breve</guilabel
+> nella scheda <guilabel
+>Data e ora</guilabel
+>. Quando si inserisce un valore breve per un anno, per esempio 10, il sistema deve indovinarne il secolo. Impostando la <guilabel
+>Finestra per anni abbreviati</guilabel
+> dici al sistema come interpretare gli anni abbreviati, per esempio se 50 deve essere 1950 o 2050. Questa finestra può essere impostata diversamente per ogni sistema calendariale, visto che tutti usano date iniziali diverse: per esempio, il calendario ebraico è nel suo 58° secolo (2010 gregoriano è approssimativamente il 5771 ebraico), quindi potrebbe usare una finestra tra il 5750 e il 5850. </para>
+
+<para
+>L'opzione <guilabel
+>Sistema di numerazione delle settimane</guilabel
+> determina come calcolare il numero della settimana. Ci sono quattro scelte:</para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Settimana ISO</guilabel
+></term>
+<listitem
+><para
+>Usa il numero di settimana standard dell'ISO. Questo userà sempre lunedì come il primo giorno della settimana ISO. Questo è il sistema più comunemente usato. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Prima settimana completa</guilabel
+></term>
+<listitem
+><para
+>La prima settimana dell'anno comincia alla prima occorrenza del <emphasis
+>primo giorno della settimana</emphasis
+>, e dura sette giorni. Tutti i giorni antecedenti alla prima settimana sono considerati parte dell'ultima settimana dell'anno precedente. Questo sistema è comunemente in uso negli Stati Uniti. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Prima settimana parziale</guilabel
+></term>
+<listitem
+><para
+>La prima settimana comincia il primo giorno dell'anno. La seconda settimana dell'anno comincia alla prima occorrenza del <emphasis
+>primo giorno della settimana</emphasis
+>, e dura sette giorni. La prima settimana potrebbe non contenere sette giorni. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Settimana semplice</guilabel
+></term>
+<listitem
+><para
+>La prima settimana comincia il primo giorno dell'anno e dura sette giorni, e tutte le nuove settimane cominceranno lo stesso giorno della settimana della prima.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Nella casella <guilabel
+>Primo giorno della settimana</guilabel
+> puoi scegliere quale giorno della settimana vada considerato il primo. Questo valore si usa spesso quando si visualizza un calendario per decidere quale giorno viene mostrato per primo. </para>
+
+<para
+>Nella casella <guilabel
+>Primo giorno lavorativo</guilabel
+> puoi scegliere quale giorno della settimana vada considerato il primo giorno lavorativo. Questo valore si usa spesso quando si visualizza un calendario per decidere quand'è il fine settimana. </para>
+
+<para
+>Nella casella <guilabel
+>Ultimo giorno lavorativo</guilabel
+> puoi scegliere quale giorno della settimana vada considerato l'ultimo giorno lavorativo. Questo valore si usa spesso quando si visualizza un calendario per decidere quand'è il fine settimana. </para>
+
+<para
+>Nella casella <guilabel
+>Giorno di osservanza religiosa speciale</guilabel
+> puoi scegliere quale giorno viene regolarmente usato per particolari osservanze religiose. Questo valore viene spesso usato per visualizzare dei giorni <quote
+>in rosso</quote
+> nei calendari. Se non hai un particolare giorno di osservanza religiosa, puoi scegliere <parameter
+>Senza / Nessuno in particolare</parameter
+>. </para>
+
+</sect2>
+
+
+<sect2 id="locale-datetime">
+
+<title
+>Data e ora</title>
+
+<para
+>In questa scheda puoi selezionare le opzioni per come inserire e mostrare le date e le ore. Le impostazioni di base sono selezionate automaticamente in base allo stato attualmente selezionato. </para>
+
+<para
+>Nella casella <guilabel
+>Formato dell'ora</guilabel
+> puoi inserire il formato che vuoi usare per inserire e visualizzare l'ora. Il formato inserito è una combinazione di codici particolari che rappresentano i componenti dell'ora e i segni usati per separarli. I codici sono elencati sotto. Puoi impostare il formato a qualsiasi combinazione che vuoi, ma dovresti sempre includere almeno una parte con le ore e una con i minuti per permetterti di inserire ore non ambigue. La casella presenta un elenco di formati di ora comuni nella lingua selezionata tra cui scegliere. </para>
+
+<itemizedlist>
+<listitem
+><para
+><parameter
+>OO</parameter
+> - l'ora come numero decimale con un orologio di 24 ore (da 00 a 23). </para
+></listitem>
+<listitem
+><para
+><parameter
+>oO</parameter
+> - l'ora come numero decimale con un orologio di 24 ore (da 0 a 23). </para
+></listitem>
+<listitem
+><para
+><parameter
+>PO</parameter
+> - l'ora come numero decimale con un orologio di 12 ore (da 01 a 12). </para
+></listitem>
+<listitem
+><para
+><parameter
+>pO</parameter
+> - l'ora come numero decimale con un orologio di 12 ore (da 1 a 12). </para
+></listitem>
+<listitem
+><para
+><parameter
+>MM</parameter
+> - i minuti come numero decimale (da 00 a 59). </para
+></listitem>
+<listitem
+><para
+><parameter
+>SS</parameter
+> - i secondi come numero decimale (da 00 a 59). </para
+></listitem>
+<listitem
+><para
+><parameter
+>AMPM</parameter
+> - antimeridiano o pomeridiano secondo l'ora. Mezzogiorno è considerato pomeridiano e mezzanotte antimeridiana. Dovresti sempre includere questo codice se usi i codici con solo 12 ore, <parameter
+>PO</parameter
+> o <parameter
+>pO</parameter
+>, per evitare ambiguità nell'inserimento delle ore. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Nella casella <guilabel
+>Simbolo antimeridiano</guilabel
+> puoi inserire il simbolo che vuoi usare per inserire o visualizzare per le ore antimeridiane. La casella presenta una serie di simboli comuni per la lingua selezionata tra cui scegliere. </para>
+
+<para
+>Nella casella <guilabel
+>Simbolo pomeridiano</guilabel
+> puoi inserire il simbolo che vuoi usare per inserire o visualizzare per le ore pomeridiane. La casella presenta una serie di simboli comuni per la lingua selezionata tra cui scegliere. </para>
+
+<para
+>Nella casella <guilabel
+>Formato di data lungo</guilabel
+> puoi inserire il formato che vuoi usare per inserire e visualizzare le date lunghe. Il formato inserito è una combinazione di codici particolari che rappresentano le componenti della data e i simboli usati per separarli. I codici sono elencati sotto. Puoi impostare il formato a qualsiasi combinazione che vuoi, ma dovresti sempre includere almeno abbastanza componenti per identificare univocamente un giorno dell'anno, per esempio un mese e un giorno, per permetterti di inserire date senza ambiguità. Se non includi un componente per l'anno, verrà usato l'anno attuale. La casella presenta una serie di formati di data comuni nella lingua selezionata tra cui scegliere. </para>
+
+<itemizedlist>
+<listitem
+><para
+><parameter
+>AAAA</parameter
+> - l'anno con secolo come numero decimale (da 0000 a 9999). </para
+></listitem>
+<listitem
+><para
+><parameter
+>AA</parameter
+> - l'anno senza secolo come numero decimale (da 00 a 99). </para
+></listitem>
+<listitem
+><para
+><parameter
+>MM</parameter
+> - il mese come numero decimale (da 01 a 12). </para
+></listitem>
+<listitem
+><para
+><parameter
+>mM</parameter
+> - il mese come numero decimale (da 1 a 12). </para
+></listitem>
+<listitem
+><para
+><parameter
+>MESE</parameter
+> - il nome esteso del mese. </para
+></listitem>
+<listitem
+><para
+><parameter
+>MESEBREVE</parameter
+> - le prime tre lettere del nome del mese. </para
+></listitem>
+<listitem
+><para
+><parameter
+>GG</parameter
+> - il giorno del mese come numero decimale (da 01 a 31). </para
+></listitem>
+<listitem
+><para
+><parameter
+>gG</parameter
+> - il giorno del mese come numero decimale (da 1 a 31). </para
+></listitem>
+<listitem
+><para
+><parameter
+>GIORNOSETTIMANA</parameter
+> - il nome esteso del giorno della settimana. </para
+></listitem>
+<listitem
+><para
+><parameter
+>GIORNOBREVE</parameter
+> - le prime tre lettere del nome del giorno della settimana. </para
+></listitem>
+<listitem
+><para
+><parameter
+>ANNOERA</parameter
+> - l'anno dell'era nel formato locale (per esempio 2010 d.C.) </para
+></listitem>
+<listitem
+><para
+><parameter
+>ERABREVE</parameter
+> - il nome abbreviato dell'era (per esempio d.C.). </para
+></listitem>
+<listitem
+><para
+><parameter
+>ANNOINERA</parameter
+> - l'anno dell'era come numero decimale (per esempio 2010). </para
+></listitem>
+<listitem
+><para
+><parameter
+>GIORNOANNO</parameter
+> - il giorno dell'anno come numero decimale. </para
+></listitem>
+<listitem
+><para
+><parameter
+>SETTIMANAISO</parameter
+> - la settimana ISO come numero decimale. </para
+></listitem>
+<listitem
+><para
+><parameter
+>GIORNOSETTIMANAISO</parameter
+> - il giorno della settimana ISO come numero decimale. </para
+></listitem>
+</itemizedlist>
+
+<para
+>Nella casella <guilabel
+>Formato di data breve</guilabel
+> puoi inserire il formato da usare per inserire e visualizzare le date brevi. Questo segue il formato del <guilabel
+>Formato di data lungo</guilabel
+>, riferisciti a quella sezione per i dettagli. La casella presenta una serie di formati di data comuni nella lingua selezionata tra cui scegliere. </para>
+
+<para
+>La casella <guilabel
+>Sistema di numerazione</guilabel
+> presenta degli insiemi di cifre che possono essere usate al posto delle cifre arabe per visualizzare le date e le ore. Se selezioni un sistema di numerazione diverso dall'arabo, verrà applicato solo ai numeri che compaiono in un contesto linguistico che lo ammette, mentre le cifre arabe saranno usate altrove; per esempio, le cifre arabo-indiane verranno applicate in arabo ma non in italiano. </para>
+
+</sect2>
+
+
+<sect2 id="locale-other">
+
+<title
+>Altro</title>
+
+<para
+>In questa scheda puoi selezionare come visualizzare altre opzioni. Le impostazioni di base sono selezionate automaticamente in base allo stato attualmente selezionato. </para>
+
+<para
+>Nella casella <guilabel
+>Dimensioni delle pagine</guilabel
+> puoi scegliere le dimensioni delle pagine da usare come predefinite per i nuovi documenti, per esempio in Words. Nota che questa impostazione non influenza le dimensioni predefinite della carta nella finestra di stampa: per impostare quelle devi usare il modulo di stampa delle &systemsettings; di &kde;. </para>
+
+<para
+>Nella casella <guilabel
+>Sistema di misurazione</guilabel
+> puoi scegliere quale sistema usare, metrico o anglosassone. </para>
+
+<para
+>Nella casella <guilabel
+>Unità delle dimensioni in byte</guilabel
+> puoi scegliere il sistema di unità da usare per visualizzare i valori in byte. Tradizionalmente, <quote
+>chilobyte</quote
+> ha a lungo voluto dire 1024 byte invece del corretto 1000, anche se non in tutti i contesti. Per ridurre la confusione puoi scegliere il sistema che preferisci. I sistemi disponibili sono elencati sotto. </para>
+
+<itemizedlist>
+<listitem
+><para
+>Lo standard delle <parameter
+>Unità IEC (KiB, MiB, ecc.)</parameter
+> è sempre in multipli di 1024. </para
+></listitem>
+<listitem
+><para
+>Lo standard <parameter
+>Unità metriche (kB, MB, ecc.)</parameter
+> è sempre in multipli di 1000. </para
+></listitem>
+<listitem
+><para
+>Lo standard <parameter
+>Unità JEDEC (KB, MB, ecc.)</parameter
+> usa le unità tradizionali come in &kde; 3.5 e altri sistemi operativi. </para
+></listitem>
+</itemizedlist>
+
+</sect2>
+
+</sect1>
+
+</article>

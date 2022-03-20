@@ -1,0 +1,230 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<article id="kdepasswd" lang="&language;">
+<title
+>Password &amp; Account utente</title>
+<articleinfo>
+<authorgroup>
+<author
+><firstname
+>Michael</firstname
+> <surname
+>Anderson</surname
+> <affiliation
+> <address
+><email
+>nosrednaekim@gmail.com</email
+></address>
+</affiliation>
+</author>
+<author
+><firstname
+>Anne-Marie</firstname
+> <surname
+>Mahfouf</surname
+> <affiliation
+> <address
+>&Anne-Marie.Mahfouf.mail;</address>
+</affiliation
+></author>
+<othercredit role="translator"
+><firstname
+>Valter</firstname
+><surname
+>Mura</surname
+><affiliation
+><address
+><email
+>valtermura@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-06-25</date>
+<releaseinfo
+>&kde; 4.11</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>utente</keyword>
+<keyword
+>account</keyword>
+<keyword
+>password</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="kcm_useraccount">
+<title
+>Informazioni utente</title>
+<sect2 id="intro">
+<title
+>Introduzione</title>
+
+<para>
+<screenshot>
+<screeninfo
+>Schermata del Gestore dell'account utente</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="password.png" format="PNG"/>
+    </imageobject>
+     <textobject>
+      <phrase
+>Il Gestore dell'account utente</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+<para
+>In questo modulo delle impostazioni di sistema si inseriscono le informazioni relative all'utente e si configurano le impostazioni di base quali la password e l'icona. Se completate, queste informazioni e impostazioni saranno utilizzate da varie applicazioni &kde; (i programmi di posta e gli elaboratori di testo, ad esempio). In esse puoi:</para>
+
+<itemizedlist>
+<listitem
+><para
+>modificare la tua icona utente</para
+></listitem>
+<listitem
+><para
+>modificare la tua password di accesso utente</para
+></listitem>
+<listitem
+><para
+>completare informazioni personali</para
+></listitem>
+<listitem
+><para
+>impostare la password di avvio</para
+></listitem>
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="themes">
+<title
+>Icona e password utente</title>
+
+<variablelist>
+<varlistentry
+><term
+>Icona utente</term>
+<listitem>
+<para
+>Questa icona è usata quando l'utente accede al sistema utilizzando un gestore per l'accesso. Facendo clic su di essa puoi modificare l'immagine,utilizzando sia un'icona predefinita sia impostandone una propria. Fai clic su <guibutton
+>Applica</guibutton
+> per confermare le modifiche. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guibutton
+>Cambia password...</guibutton
+></term>
+<listitem>
+<para
+>Facendo clic su questo pulsante verrà mostrata una finestra di dialogo in cui modificare la tua password utente. Questa password è quella con cui tu accedi al sistema. Ti verrà richiesto di digitare la vecchia password e poi due volte quella nuova. </para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="user-info">
+<title
+>Informazioni utente</title>
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Nome:</guilabel
+></term>
+<listitem>
+<para
+>Inserisci qui il nome completo dell'utente </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Organizzazione:</guilabel
+></term>
+<listitem>
+<para
+>Qui puoi aggiungere l'azienda o il gruppo al quale l'utente desidera essere associato. </para>
+</listitem>
+</varlistentry>
+<varlistentry
+><term
+><guilabel
+>Indirizzo di posta elettronica:</guilabel
+></term>
+<listitem>
+<para
+>Digita qui l'indirizzo di posta elettronica da associare a questo utente. </para>
+</listitem>
+</varlistentry>
+<varlistentry
+><term
+><guilabel
+>Server SMTP:</guilabel
+></term>
+<listitem>
+<para
+>Qui puoi indicare un server SMTP locale per l'invio della posta all'interno di una rete. </para>
+</listitem>
+</varlistentry>
+<varlistentry
+><term
+><guilabel
+>ID utente:</guilabel
+></term>
+<listitem>
+<para
+>Questa parte fornisce solo l'informazione sul tuo identificativo utente. Questo numero è definito in <filename
+>/etc/passwd</filename
+> ed è stato impostato quando il tuo utente è stato creato. </para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="password">
+<title
+>Alla richiesta di password</title>
+
+<para
+>Questa sezione ti permette di scegliere come desideri inserire la tua password quando viene richiesta. L'impostazione predefinita è un punto per ogni carattere digitato. Puoi cambiare il metodo con tre punti per ogni carattere digitato (rendendo più difficile la comprensione del numero di caratteri da parte di chi sta osservando). Puoi, inoltre, non mostrare nulla mentre digiti la password, rendendo così l'operazione ancora più sicura. </para>
+
+</sect2>
+
+</sect1>
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

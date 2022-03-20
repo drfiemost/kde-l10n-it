@@ -1,0 +1,577 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % Italian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Strumento di programmazione</title>
+
+<author
+><firstname
+>Ian</firstname
+> <othername
+>Reinhart</othername
+> <surname
+>Geiser</surname
+> <affiliation
+> <address
+> <email
+>geiseri@kde.org</email>
+</address>
+</affiliation>
+</author>
+
+<date
+>2006-06-01</date>
+<productname
+>Ambiente desktop KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle>
+<command
+>makekdewidgets</command>
+</refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+>makekdewidgets</refname>
+<refpurpose
+>Crea un'estensione di elemento grafico &Qt; da un file <literal role="extension"
+>.ini</literal
+> di descrizione dello stile. </refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>makekdewidgets</command
+> <arg
+>opzioni_Qt</arg
+> <arg
+>opzioni_KDE</arg
+> <arg choice="plain"
+><replaceable
+>file</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrizione</title>
+<para
+><command
+>makekdewidgets</command
+> costruisce estensioni per gli oggetti &Qt; da un file <literal role="extension"
+>.ini</literal
+> di descrizione dello stile. </para>
+</refsect1>
+
+<refsect1>
+<title
+>Opzioni</title>
+
+<para>
+<variablelist>
+<title
+><emphasis role="bold"
+>Argomenti:</emphasis
+></title>
+<varlistentry>
+<term>
+<replaceable
+>file</replaceable>
+</term>
+<listitem>
+<para
+>File di ingresso</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>
+<variablelist>
+<title
+><emphasis role="bold"
+>Opzioni:</emphasis
+></title>
+<varlistentry>
+<term>
+<option
+>-o &lt;file&gt;</option>
+</term>
+<listitem>
+<para
+>File di uscita</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<option
+>-n &lt;nome dell'estensione&gt;</option>
+</term>
+<listitem>
+<para
+>Nome della classe di estensioni da generare [WidgetsPlugin]</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<option
+>-g &lt;gruppo&gt;</option>
+</term>
+<listitem>
+<para
+>Nome predefinito del gruppo di elementi grafici che verrà mostrato in designer [Personalizzato]</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<option
+>-p &lt;cartella grafica&gt;</option>
+</term>
+<listitem>
+<para
+>Incorpora grafica da una cartella sorgente</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>
+<variablelist>
+<title
+><emphasis role="bold"
+>Opzioni generiche:</emphasis
+></title>
+
+<varlistentry>
+<term>
+<option
+>--help</option>
+</term>
+<listitem>
+<para
+>Mostra la guida sulle opzioni</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--help-qt</option>
+</term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per &Qt;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--help-kde</option>
+</term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per &kde;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--help-all</option>
+</term>
+<listitem>
+<para
+>Mostra tutte le opzioni</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--author</option>
+</term>
+<listitem>
+<para
+>Mostra le informazioni sull'autore</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>-v, --version</option>
+</term>
+<listitem>
+<para
+>Mostra le informazioni sulla versione</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--license</option>
+</term>
+<listitem>
+<para
+>Mostra le informazioni sulla licenza</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>
+<variablelist>
+<title
+><emphasis role="bold"
+>Opzioni di &kde;:</emphasis
+></title>
+
+<varlistentry>
+<term>
+<option
+>--caption &lt;didascalia&gt;</option>
+</term>
+<listitem>
+<para
+>Usa «didascalia» come nome nella barra del titolo</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--icon &lt;icona&gt;</option>
+</term>
+<listitem>
+<para
+>Usa «icona» come icona dell'applicazione</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--miniicon &lt;icona&gt;</option>
+</term>
+<listitem>
+<para
+>Usa «icona» come icona dell'applicazione</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--config &lt;nome_file&gt;</option>
+</term>
+<listitem>
+<para
+>Usa un file di configurazione alternativo</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--dcopserver &lt;server&gt;</option>
+</term>
+<listitem>
+<para
+>Usa il server &DCOP; specificato da «server»</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--nocrashhandler</option>
+</term>
+<listitem>
+<para
+>Disabilita la gestione dei crash per ottenere i core dump</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--waitforwm</option>
+</term>
+<listitem>
+<para
+>Aspetta un gestore di finestre compatibile con WM_NET</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--style &lt;stile&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta lo stile dell'interfaccia grafica dell'applicazione</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--geometry &lt;geometria&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta la geometria della finestra principale; vedi il manuale di X per il formato degli argomenti</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+<para>
+<variablelist>
+<title
+><emphasis role="bold"
+>Opzioni di &Qt;</emphasis
+></title>
+
+<varlistentry>
+<term>
+<option
+>--display &lt;nome_display&gt;</option>
+</term>
+<listitem>
+<para
+>Usa il display «nome_display» del server X</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--session &lt;identificativo_sessione&gt;</option>
+</term>
+<listitem>
+<para
+>Ripristina l'applicazione per l'«identificativo_sessione» dato</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--cmap</option>
+</term>
+<listitem>
+<para
+>Fa installare all'applicazione una mappa di colori privata su uno schermo a 8 bit</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--ncols &lt;conto&gt;</option>
+</term>
+<listitem>
+<para
+>Limita il numero di colori allocati nel cubo di colori su uno schermo a 8 bit, se l'applicazione usa la specifica di colore <methodname
+>QApplication::ManyColor</methodname
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--nograb</option>
+</term>
+<listitem>
+<para
+>Dice a &Qt; di non catturare mai il mouse o la tastiera</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--sync</option>
+</term>
+<listitem>
+<para
+>Passa alla modalità sincrona per il debug</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--fn, --font &lt;nome_carattere&gt;</option>
+</term>
+<listitem>
+<para
+>Definisce il carattere dell'applicazione</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--bg, --background &lt;colore&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta il colore di sfondo predefinito e una tavolozza d'applicazione (vengono calcolate le sfumature chiare e scure)</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--fg, --foreground &lt;colore&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta il colore di primo piano predefinito</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--btn, --button &lt;colore&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta il colore dei pulsanti predefinito</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--name &lt;nome&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta il nome dell'applicazione</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--title &lt;titolo&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta il titolo (didascalia) dell'applicazione</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--visual TrueColor</option>
+</term>
+<listitem>
+<para
+>Impone all'applicazione di usare una visuale TrueColor su un display a 8 bit</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--inputstyle &lt;stile_immissione&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta lo stile di immissione XIM (X Input Method). I valori possibili sono <userinput
+>onthespot</userinput
+>, <userinput
+>overthespot</userinput
+>, <userinput
+>offthespot</userinput
+> e <userinput
+>root</userinput
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--im &lt;server XIM&gt;</option>
+</term>
+<listitem>
+<para
+>Imposta il server XIM</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--noxim</option>
+</term>
+<listitem>
+<para
+>Disabilita XIM</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<option
+>--reverse</option>
+</term>
+<listitem>
+<para
+>Rispecchia l'intera disposizione degli oggetti</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Vedi anche</title>
+<variablelist>
+<varlistentry>
+<term>
+<option
+>http://developer.kde.org</option>
+</term>
+<listitem>
+<para
+>Sito Web dell'angolo degli sviluppatori di &kde;</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Errori</title>
+<para
+>Per piacere, usa <ulink url="http://bugs.kde.org"
+>bugs.kde.org</ulink
+> per segnalarli, non mandare un messaggio direttamente agli autori.</para>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,263 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="nepomuk" lang="&language;">
+<articleinfo>
+<title
+>Configurazione della ricerca desktop di Nepomuk</title>
+
+<authorgroup>
+<author
+><firstname
+>Sebastian</firstname
+><surname
+>Trüg</surname
+><email
+>trueg@kde.org</email
+></author>
+<author
+>&Anne-Marie.Mahfouf; &Anne-Marie.Mahfouf.mail;</author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-11-01</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KControl</keyword>
+<keyword
+>nepomuk</keyword>
+<keyword
+>ricerca desktop</keyword>
+</keywordset>
+</articleinfo>
+<!-- FIXME add links to 
+http://techbase.kde.org/Projects/Nepomuk 
+http://kdenepomukmanual.wordpress.com/2012/02/06/-->
+<sect1 id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>Questo modulo permette di configurare certe parti della ricerca desktop e del desktop semantico Nepomuk. Maggiori informazioni sul desktop semantico Nepomuk sono disponibili sulla <ulink url="http://nepomuk.kde.org/"
+>sua pagina Web</ulink
+>.</para>
+
+<sect2 id="basic">
+<title
+>Impostazioni di base</title>
+
+<para
+>La scheda delle impostazioni di base permette di abilitare o disabilitare il desktop semantico e i sistemi di ricerca desktop.</para>
+
+<para
+>Ci sono tre caselle:</para>
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Abilita il desktop semantico Nepomuk</guilabel
+>: abilitare il desktop semantico significa che i servizi di Nepomuk vengono eseguiti. Questi servizi forniscono la memorizzazione di dati aggiuntivi e annotazioni (i file possono essere etichettati o votati in &dolphin;, per esempio), ma anche la ricerca desktop che può essere usata con l'esecutore di &kde; o ancora con &dolphin;.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Abilita l'indicizzatore di file Nepomuk</guilabel
+>: abilitare l'indicizzatore di file Nepomuk significa che il servizio di indicizzazione dei file viene avviato in aggiunta ai servizi standard già in esecuzione. Il servizio di indicizzazione dei file esaminerà tutti i file delle cartelle configurate (vedi sotto) ed estrarrà da loro i dati aggiuntivi (come il titolo o l'autore di una canzone o anche cose più semplici come la data di creazione). Questi dati aggiuntivi vengono quindi resi disponibili attraverso la ricerca desktop come le annotazioni manuali prima descritte.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Abilita l'indicizzatore dei dati PIM</guilabel
+>: questa opzione deve essere spuntata per permettere la ricerca di tutto il testo presente in &kmail;.</para
+></listitem>
+</itemizedlist>
+
+<para
+>A destra di <guilabel
+>Abilita il desktop semantico Nepomuk</guilabel
+> puoi fare clic su <guilabel
+>Dettagli</guilabel
+> e una finestra ti informerà sullo stato della raccolta di dati aggiuntivi di &kde;: quanti file sono indicizzati e la dimensione della raccolta.</para>
+
+<para
+>Sotto la casella <guilabel
+>Abilita l'indicizzatore di file Nepomuk</guilabel
+> è indicato lo stato attuale del servizio di indicizzazione dei file. Il servizio ha quattro stati operativi normali:</para>
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>L'indicizzatore di file è inattivo</guilabel
+>: l'indicizzatore di file al momento non è attivo e sta attendendo un evento che attivi un aggiornamento; un evento può essere un nuovo file che viene creato, uno che viene modificato, o una scadenza per il controllo periodico.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Indicizzazione dei file in cartella <replaceable
+>pippo</replaceable
+></guilabel
+>: l'indicizzatore di file sta ora esaminando tutti i file nella cartella <replaceable
+>pippo</replaceable
+> e analizza i file nuovi o modificati.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Ricerca di modifiche recenti nei file per la ricerca desktop</guilabel
+>: l'indicizzatore di file sta attualmente effettuando il controllo periodico dei nuovi file in tutte le cartelle indicizzate. Questo controllo serve a trovare i file che non sono stati rilevati con il normale monitoraggio di sistema.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>L'indicizzatore file è sospeso</guilabel
+>: l'indicizzatore dei file è stato sospeso, cioè è in pausa. Questo può essere dovuto all'utente, a causa di poco spazio su disco disponibile, o al fatto che un portatile è in modalità di risparmio energetico. Negli ultimi due casi l'indicizzatore ripartirà non appena la ragione della sospensione verrà a mancare.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Oltre agli stati operativi normali, il servizio di indicizzazione può essere in uno stato di errore. Ci sono due possibilità:</para>
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Avvio del servizio di indicizzazione dei file non riuscito, forse per un errore di installazione.</guilabel
+>: questo dovrebbe avvenire raramente, e vuol dire che non è stato possibile caricare un'estensione obbligatoria. Questo può essere dovuto a un problema di installazione (dipendenze mancanti) o a una configurazione errata del sistema delle estensioni di &kde;.</para
+></listitem>
+<listitem
+><para
+>Ogni altro errore indica un problema di comunicazione con il servizio. Questi errori sono prodotti dal sottosistema &DBus;, e devono essere valutati caso per caso.</para
+></listitem>
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="file-indexing">
+<title
+>Indicizzazione</title>
+
+<para
+>Questa scheda permette di selezionare i file e le cartelle da analizzare con l'indicizzatore dei file spiegato sopra. Come impostazione predefinita, qui sono selezionate le cartelle di documenti, audio, immagini e video. </para>
+
+<para
+>Fai clic su <guibutton
+>Personalizza cartelle</guibutton
+> per selezionare e deselezionare le cartelle da esaminare alla ricerca di file da analizzare. Come impostazione predefinita, vengono analizzate la cartella Home e tutte le sue sottocartelle. Basta deselezionare una cartella per escluderla. È anche possibile includere una sottocartella di una esclusa segnandola. Ciò permette una selezione precisa delle cartelle da esaminare.</para>
+
+<para
+>Fare clic sul pulsante <guibutton
+>Avanzate</guibutton
+> permette di definire i file da escludere in base al tipo o al nome dei file. I tipi e i nomi di tutti i file trovati nelle cartelle configurate saranno confrontati con questi filtri. I file verranno analizzati solo se nessuno di questi filtri corrisponderà. Ciò è molto utile per escludere file di registro, copie di sicurezza e simili.</para>
+
+<para
+><guilabel
+>Gestione dei supporti rimovibili</guilabel
+>: Nepomuk può indicizzare i file su dispositivi rimovibili come chiavette USB o dischi esterni per effettuare ricerche da desktop veloci. Come impostazione predefinita, nessun file viene indicizzato. Questo comportamento può essere modificato qui a una di due opzioni:</para>
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Indicizza file su tutti i supporti rimovibili</guilabel
+>: i file su supporti rimovibili vengono indicizzati non appena il supporto viene montato. Attenzione: questo non include i supporti esclusi dalla seconda opzione.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Chiedi singolarmente al primo montaggio</guilabel
+>: all'utente verrà chiesto se vuole far indicizzare i file sui supporti appena montati. Dopo la decisione Nepomuk non lo chiederà una seconda volta.</para
+></listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="backup">
+<title
+>Copia di sicurezza</title>
+
+<para
+>In questa scheda puoi decidere di fare una copia di sicurezza di tutti i dati che non possono altrimenti venire recuperati. Tra questi etichette, valutazioni ma anche statistiche. Come impostazione predefinita non si fa nessuna copia di sicurezza, quindi devi decidere tu cosa vuoi fare. Hai due possibilità: copie di sicurezza automatiche e manuali.</para>
+
+<sect3 id="automatic">
+<title
+>Copie di sicurezza automatiche</title>
+<para
+>Scegli prima la <guilabel
+>Frequenza delle copie di sicurezza</guilabel
+>: questa è impostata a <guilabel
+>Disattiva copie di sicurezza automatiche</guilabel
+>, ma puoi scegliere <guilabel
+>Copia di sicurezza giornaliera</guilabel
+> o <guilabel
+>Copia di sicurezza settimanale</guilabel
+>. Imposta quindi l'<guilabel
+>Ora della copia di sicurezza</guilabel
+> a un valore appropriato con la casella numerica: si possono impostare ora, minuto e giorno della settimana per le copie di sicurezza settimanali. Infine, puoi impostare un limite per il numero di copie di sicurezza con <guilabel
+>Numero massimo di copie di sicurezza</guilabel
+>; ciò garantisce di non sprecare spazio su disco con le copie di sicurezza, e solo gli ultimi <replaceable
+>N</replaceable
+> file verranno tenuti, dove <replaceable
+>N</replaceable
+> è il numero impostato e 10 ne è il valore predefinito.</para>
+<para
+>Le tue copie di sicurezza automatiche vengono salvate localmente in questa cartella: <filename class="directory"
+>$<envar
+>KDEHOME</envar
+>/share/apps/nepomuk/backupsync/backups/</filename
+>.</para>
+</sect3>
+
+<sect3 id="tools">
+<title
+>Strumenti</title>
+<itemizedlist>
+<listitem
+><para
+>Puoi anche fare delle copie di sicurezza manuali. Queste verranno salvate in un luogo a scelta in forma di file. Fai clic su <guilabel
+>Copia di sicurezza manuale</guilabel
+> e un assistente ti guiderà. Devi prima indicare dove mettere il file della copia di sicurezza. Inserisci nel campo un percorso completo valido o usa la finestra di selezione dei file per indicarne uno.</para>
+<note
+><para
+>Puoi creare un nuovo file in una cartella a tua scelta e indicarlo.</para
+></note>
+<para
+>Premi quindi il pulsante <guibutton
+>Successivo</guibutton
+> e la finestra dovrebbe segnalare che la copia di sicurezza è stata effettuata.</para>
+</listitem>
+<listitem
+><para
+>Se vuoi in seguito ripristinare una copia di sicurezza, usa il pulsante indicato con <guilabel
+>Ripristina copia di sicurezza</guilabel
+> e segui l'assistente. La copia di sicurezza nella banca dati di Nepomuk locale. </para
+></listitem>
+</itemizedlist>
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

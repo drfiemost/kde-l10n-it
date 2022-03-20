@@ -1,0 +1,955 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+
+  <!ENTITY kappname "&rocs;">
+  <!ENTITY package "rocs">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+
+  <!ENTITY apiConsole SYSTEM "apiConsole.docbook">
+  <!ENTITY apiDatastructure SYSTEM "apiDatastructure.docbook">
+  <!ENTITY apiGraphstructure SYSTEM "apiGraphstructure.docbook">
+  <!ENTITY apiLinkedListstructure SYSTEM "apiLinkedListstructure.docbook">
+  <!ENTITY apiRootedTreestructure SYSTEM "apiRootedTreestructure.docbook">
+
+  <!ENTITY chapterImportExport SYSTEM "chapterImportExport.docbook">
+]>
+<book id="rocs" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale di &rocs;</title>
+<authorgroup>
+<author
+><personname
+> <firstname
+>Tomaz</firstname
+> <surname
+>Canabrava</surname
+> </personname
+> <email
+>tomaz.canabrava@gmail.com</email
+> </author>
+<author
+><personname
+> <firstname
+>Andreas</firstname
+> <surname
+>Cord-Landwehr</surname
+> </personname
+> <email
+>cordlandwehr@kde.org</email
+> </author>
+
+<othercredit role="translator"
+><firstname
+>Domenico</firstname
+><surname
+>Camasta</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Francesco</firstname
+><surname
+>Nigro</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico Zenith</firstname
+><surname
+></surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione di interfaccia e documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright
+><year
+>2009</year
+><holder
+>Tomaz Canabrava</holder
+></copyright>
+<copyright
+><year
+>2011-2013</year
+><holder
+>Andreas Cord-Landwehr</holder
+></copyright>
+
+<date
+>2013-07-03</date>
+<releaseinfo
+>1.10.0 &kde; 4.12</releaseinfo>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>&rocs; è uno strumento per la teoria dei grafi di &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>matematica</keyword>
+<keyword
+>matematica</keyword>
+<keyword
+>grafi</keyword>
+<keyword
+>nodo</keyword>
+<keyword
+>arco</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+<para
+>In questo capitolo daremo una panoramica delle funzionalità principali e del processo di lavoro di &rocs;. Per gli impazienti che volessero iniziare subito a usare &rocs;, suggeriamo di leggere almeno <xref linkend="introduction-nutshell"/> e usare <xref linkend="scripting"/> come riferimento nella scrittura degli algoritmi. </para>
+
+<sect1 id="introduction-goals">
+<title
+>Obiettivi, destinatari e processo di lavoro</title>
+<para
+>&rocs; è un ambiente di sviluppo integrato per la teoria dei grafi, pensato per chiunque sia interessato a tracciare e analizzare algoritmi a grafo. Ciò include esplicitamente:</para>
+<itemizedlist>
+    <listitem
+><para
+>docenti che vogliano dimostrare gli algoritmi ai loro studenti,</para
+></listitem>
+    <listitem
+><para
+>studenti che vogliono vedere e capire come funziona il loro algoritmo,</para
+></listitem>
+    <listitem
+><para
+>e chiunque sia interessato alle strutture di dati e agli algoritmi.</para
+></listitem>
+</itemizedlist>
+
+<para
+>Per tutti questi utenti, &rocs; fornisce un editor per creare le strutture di dati, un potente motore di scripting per eseguire gli algoritmi, e diversi strumenti di supporto per simulazioni ed esperimenti. </para>
+
+<para
+>Il processo di lavoro tipico con &rocs; è di cominciare creando un grafo con l'editor visuale di grafi. Lo puoi fare a mano, cioè aggiungendo elementi di dati e collegandoli, o usando uno dei generatori di strutture di dati (se disponibili per il motore di strutture di dati attualmente selezionato). I generatori di strutture di dati sono reperibili sotto <menuchoice
+><guimenu
+>Grafo</guimenu
+><guimenuitem
+>Strumenti</guimenuitem
+><guimenuitem
+>Genera grafo</guimenuitem
+></menuchoice
+>. Inoltre, puoi assegnare dei valori agli elementi della struttura di dati, a mano o con <menuchoice
+><guimenu
+>Grafo</guimenu
+><guimenuitem
+>Strumenti</guimenuitem
+><guimenuitem
+>Assegna valori</guimenuitem
+></menuchoice
+>. Infine, puoi scrivere l'algoritmo in JavaScript ed eseguirlo con la struttura di dati appena creata. Tutte le modifiche effettuate dall'algoritmo sulla struttura di dati saranno visibili direttamente sull'editor visuale di grafi. </para>
+
+<screenshot>
+<screeninfo
+>Una schermata di &rocs;.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="rocs-screenshot.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Una schermata di &rocs;.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+</sect1>
+
+<sect1 id="introduction-nutshell">
+<title
+>&rocs; in breve</title>
+<para
+>In questa sezione diamo una breve panoramica degli elementi fondamentali di &rocs;. Spieghiamo le nozioni principali delle strutture di dati, dei loro motori, e i tipi di elementi. Capire questi concetti è utile per capire come le strutture di dati possono essere create e modificate con &rocs;. </para>
+<para
+>In generale &rocs; lavora con dei progetti: quando si apre &rocs;, viene creato un progetto vuoto, e lo puoi sostituire caricando o importando un altro progetto. In questo contesto, un progetto consiste di <emphasis
+>grafi</emphasis
+> e <emphasis
+>script</emphasis
+>. </para>
+
+<sect2>
+<title
+>Grafi e motori per strutture di dati</title>
+<para
+>Un grafo rappresenta il contenuto di una lavagna nell'editor visuale di grafi. Un grafo può perciò contenere numerose strutture di dati tutte insieme, ma un solo motore per strutture di grafi. I motori per strutture di dati sono disponibili per numerosi tipi di grafi (grafi generali, liste collegate, strutture ad albero) e forniscono funzionalità particolari per un tipo di grafico specifico. Ad esempio il posizionamento automatico degli elementi, insiemi di icone speciali oppure un ampliamento dell'insieme delle funzioni di script da usare negli algoritmi (per i dettagli cerca nella sezione corrispondente del manuale). Si può modificare il motore delle strutture di dati di un grafo, ma questa operazione può portare ad una perdita di dati (ad esempio, gli archi di una circonferenza in un grafo generale non saranno aggiunti ad una struttura ad albero nel momento in cui si passa al motore per strutture ad albero). </para>
+<para
+>I grafi costituiscono anche la base per definire i tipi di puntatori e di dati. </para>
+</sect2>
+
+<sect2>
+<title
+>Strutture di dati</title>
+<para
+>Le strutture di dati sono alla base di tutte le operazioni in &rocs;. Puoi aggiungerne una o molte ad un grafo, aggiungere elementi di dati (nodi, dati) o puntatori e modificarle attraverso l'uso di script. Affinché ciò sia possibile, ogni struttura di dati è denotata da un nome unico che permette di accedervi dagli script. A seconda del motore attualmente in uso, non è sempre possibile modificare la struttura di dati in modo arbitrario (ad esempio, gli alberi non dovrebbero mai contenere cicli). Il motore delle strutture di dati in uso è determinato dal motore delle strutture di dati associato al grafo corrispondente che contiene la struttura di dati. </para>
+</sect2>
+
+<sect2>
+<title
+>Tipi di puntatori</title>
+<para
+>Attraverso le diverse tipologie di puntatori è possibile definire diversi tipi di puntatori da usare nelle strutture di dati. In altri termini, un tipo di puntatore può essere associato ad un layout (sostanzialmente un colore) specifico ed è inoltre semplice accedere solo ai puntatori di un tipo specifico attraverso gli script. Un utilizzo tipico dei puntatori è quello di implementare meta-bordi per le strutture di dati che permettano di visualizzare le relazioni i singoli dati. Inoltre se lo script dovrà identificare tipi specifici di archi (ad esempio, alberi e archi incrociati negli algoritmi di ricerca in profondità) i tipi di puntatori possono essere un elegante strumento di implementazione. </para>
+</sect2>
+
+<sect2>
+<title
+>Tipi di dati</title>
+<para
+>In numerosi problemi relativi alle strutture di dati, un insieme di singoli dati deve essere distribuito in gruppi di diverso tipo (ad esempio nei problemi di analisi dei gruppi o di copertura). Oppure, l'insieme di dati è utile per l'esecuzione di un algoritmo che specifica il tipo di un singolo dato per esprimere un particolare tipo (ad esempio nella ricerca in ampiezza). Per questi utilizzi, è possibile definire i tipi di dati. Ogni tipo è associato ad un'icona e alcuni particolari tipi sono facilmente raggiungibili attraverso gli script. </para>
+</sect2>
+
+<sect2>
+<title
+>Proprietà dinamiche</title>
+<para
+>Ogni singolo dato o puntatore può possedere molte proprietà. Alcune di queste proprietà hanno un valore predefinito dal motore delle strutture di dati. Per estendere le proprietà dei dati e dei puntatori si possono aggiungere delle <emphasis
+>proprietà dinamiche</emphasis
+>. Ogni proprietà dinamica viene identificata attraverso il nome e può contenere qualsiasi valore ad essa associato. Il nome deve cominciare con una lettera (a-z o A-Z) e può contenere solo lettere, numeri e <quote
+>_</quote
+>. Se dovessi usare un carattere non valido nel nome della proprietà, essa non verrà modificata. </para>
+<para
+>Per aggiungere una proprietà dinamica, usare le finestre <guilabel
+>Proprietà degli elementi dei dati</guilabel
+> e <guilabel
+>Proprietà dei puntatori</guilabel
+>, collocate nei menu contestuali dei rispettivi elementi o funzioni di script, come spiegato nel<xref linkend="scripting-data-structure"/>. </para>
+<para
+>Puoi anche usare gli script. Devi solo scrivere <literal
+>add_property</literal
+> con il nome e il valore della proprietà. Dopodiché, puoi usare nodo/puntatore.nomeProprietà per impostare o leggere i valori. </para>
+<para
+>Ecco un esempio di come usare le proprietà dinamiche con il motore di strutture di dati <quote
+>Graph</quote
+>: <programlisting
+>nodes = myGraph.list_nodes()
+for (var i = 0; i &lt; nodes.length; ++i ){
+    nodes[i].add_property("MyProperty", 0)
+}
+nodes[0].MyProperty = 2
+nodes[1].MyProperty = nodes[0].MyProperty + 2
+    </programlisting>
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="introduction-tutorial">
+<title
+>Esercitazione</title>
+<para
+>In questa sezione verrà elaborato un progetto di esempio per esplorare alcune tra le più importanti funzioni di &rocs;. L'obbiettivo è quello di creare un grafo e uno script che illustrino un semplice algoritmo di approssimazione di fattore 2 per trattare un problema di <emphasis
+>copertura minima dei vertici</emphasis
+>. Questo problema può essere descritto come la ricerca del più piccolo sottoinsieme C di vertici in un grafo tale che ogni arco ha almeno un'estremità in C. Si tratta di un problema NP-completo e il nostro obbiettivo è quello di trovare un'approssimazione di fattore 2 attraverso la ricerca di una corrispondenza all'interno di un grafo dato (nel seguito saranno utilizzati i termini comuni degli algoritmi per grafi: un grafo è la struttura di dati, i nodi sono i singoli elementi di dati e gli archi sono i puntatori). </para>
+<para
+>Il nostro obbiettivo è di visualizzare la corrispondenza tra l'accoppiamento e la copertura minima dei vertici. Per ottenere questo obbiettivo dobbiamo specificare due tipi di puntatori, uno per mostrare gli archi accoppiati e l'altro per mostrare gli archi ordinari; dobbiamo specificare inoltre due tipi di dati che useremo per distinguere i nodi contenuti in C da quello non contenuti in C. </para>
+
+<sect2>
+<title
+>Generare un grafo</title>
+<para
+>Per il motore di strutture di dati <quote
+>Graph</quote
+>, &rocs; mette a disposizione uno strumento di supporto capace di generare grafi. Si trova in  <menuchoice
+><guimenu
+>Grafo</guimenu
+> <guisubmenu
+>Strumenti</guisubmenu
+> <guimenuitem
+>Genera grafo</guimenuitem
+></menuchoice
+>. In questo modo si genera un <quote
+>grafo casuale</quote
+> composto di 30 nodi, 90 archi, e con seme di generazione 1 (il seme determina la casualità del grafo; partendo dallo stesso seme si riproduce lo stesso grafo). Infine, modifichiamo il nome del grafo nel pannello della struttura di dati, chiamandolo <literal
+>grafo di prova</literal
+>. </para>
+</sect2>
+
+<sect2>
+<title
+>Creazione di tipi</title>
+<para
+>Per aprire la finestra di dialogo delle proprietà per i tipi di dati e puntatori si usa il tasto <guibutton
+>Proprietà</guibutton
+> nella barra di selezione dei documenti. Per il tipo di dati si aggiunge un nuovo tipo chiamato <quote
+>C</quote
+> che riceve automaticamente l'identificativo <literal
+>1</literal
+>. Per questo tipo si seleziona l'immagine del server come icona. Successivamente si passa alla pagina relativa al tipo di puntatore, si aggiunge un nuovo puntatore chiamato <quote
+>corrispondente</quote
+> che riceve automaticamente l'identificativo <literal
+>1</literal
+> e si imposta il colore blu. </para>
+</sect2>
+
+<sect2>
+<title
+>L'algoritmo</title>
+<para
+>Al minimo è necessario implementare l'algoritmo di approssimazione. Per farlo si utilizza la seguente implementazione: </para>
+<programlisting
+>var E = testgraph.list_edges(); // insieme degli archi non esaminati
+var C = new Array();            // archi accoppiati
+while (E.length 
+> 0) {
+    var e = E[0];        // prende il primo arco e={u,v}
+    var u = e.start();
+    var v = e.end();
+    e.set_type(1);        // imposta l'arco come arco accoppiato
+    E.shift();            // elimina l'arco e (i.e., E[0]) dalla lista degli archi
+    C.push(u);            // aggiunge u a C
+    C.push(v);            // aggiunge v a C
+
+    // segna u,v come nodi di C
+    u.set_type(1);
+    v.set_type(1);
+
+    // rimuova da E tutti gli archi incidenti a u o v
+    var adjacent = u.adj_edges();
+    for (var i=0; i &lt; adjacent.length; i++) {
+        var index = E.indexOf(adjacent[i]); // trova l'indice
+        if (index!=-1) {
+            E.splice(index, 1); // elimina l'indice dopo averlo trovato
+        }
+    }
+    var adjacent = v.adj_edges();
+    for (var i=0; i &lt; adjacent.length; i++) {
+        var index = E.indexOf(adjacent[i]); // trova l'indice
+        if (index!=-1) {
+            E.splice(index, 1); // elimina l'indice dopo averlo trovato
+        }
+    }
+}
+Console.log("Vertex Cover contains " + C.length + " nodes.");
+</programlisting>
+</sect2>
+
+<sect2>
+<title
+>Eseguire l'algoritmo</title>
+<para
+>Vogliamo infine eseguire l'algoritmo. Facciamo partire l'esecuzione dal pulsante <guibutton
+>Esegui</guibutton
+> nel pannello di controllo dello script. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="user-interface">
+<title
+>L'interfaccia di &rocs;</title>
+
+<sect1 id="user-interface-all">
+<title
+>Elementi generali dell'interfaccia</title>
+<para
+>L'interfaccia si divide in diverse parti logiche, come presentato nella schermata sotto. </para>
+<screenshot>
+    <screeninfo
+>Elementi grafici dell'interfaccia di &rocs;.</screeninfo>
+    <mediaobject>
+    <imageobject>
+    <imagedata fileref="rocs-interfaces.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+    <phrase
+>Elementi grafici dell'interfaccia di &rocs;.</phrase>
+    </textobject>
+    </mediaobject>
+</screenshot>
+<variablelist>
+<varlistentry>
+    <term
+>Selettore dei documenti</term>
+    <listitem
+><para
+>In questa barra dei menu in alto devi selezionare il documento e la struttura di dati attuale. Da qui è anche possibile creare ed eliminare strutture di dati, e oltre ad accedere alle loro proprietà. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+    <term
+>Editor visuale di grafi</term>
+    <listitem
+><para
+>Questa è la lavagna dove le strutture di dati possono essere create e modificate. Facendo clic con il tasto destro sulla lavagna, su dati particolari o su puntatori si richiama un menu contestuale. Si possono usare gli strumenti della <emphasis
+>Barra dell'editor visuale di grafi</emphasis
+> per modificare gli elementi attraverso a lavagna dell'editor visuale di grafi. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+    <term
+>Barra dell'editor visuale di grafi</term>
+    <listitem
+><para
+>Questa barra fornisce tutti gli strumenti dell'editor visuale di grafi. Usa il pulsante <inlinemediaobject
+><imageobject
+><imagedata fileref="hi22-action-rocsadddata.png" format="PNG"/></imageobject
+></inlinemediaobject
+> <guibutton
+>Aggiungi elemento</guibutton
+> o <inlinemediaobject
+><imageobject
+><imagedata fileref="hi22-action-rocsaddedge.png" format="PNG"/></imageobject
+></inlinemediaobject
+><guibutton
+>Aggiungi connessione</guibutton
+> rispettivamente per creare o connettere nuovi elementi. I nuovi elementi di dati vengono aggiunti alla struttura di dati attualmente selezionata nel <emphasis
+>selettore dei documenti</emphasis
+>. Nota che sia il pulsante <guibutton
+>Aggiungi elemento</guibutton
+> che <guibutton
+>Aggiungi connessione</guibutton
+> hanno dei menu per selezionare il tipo di elementi da creare. Per maggiori dettagli si veda <xref linkend="user-interface-toolbars"/>. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+    <term
+>Barra laterale</term>
+    <listitem
+><para
+>A destra, puoi trovare la barra laterale che contiene diversi strumenti per il processo di lavoro: <itemizedlist>
+        <listitem
+><para
+><guilabel
+>Tipi di elemento</guilabel
+>: questo dà accesso immediato ai tipi di puntatori e dati disponibili.</para
+></listitem>
+        <listitem
+><para
+><guilabel
+>Diario</guilabel
+>: ogni progetto ha il suo diario, che si può usare per esempio per annotarsi compiti, risultati e osservazioni.</para
+></listitem>
+        <listitem
+><para
+><guilabel
+>Manuale</guilabel
+>: per avere accesso immediato al manuale, e attraverso questo, alla documentazione degli script, puoi aprire questo.</para
+></listitem>
+        <listitem
+><para
+><guilabel
+>API di scripting</guilabel
+>: per avere accesso immediato alla documentazione degli script, puoi aprire questo.</para
+></listitem>
+        </itemizedlist>
+    </para
+></listitem>
+</varlistentry>
+<varlistentry>
+    <term
+>Editor di script</term>
+    <listitem
+><para
+>In questo editor di testo puoi scrivere algoritmi come spiegato in dettaglio in <xref linkend="scripting"/> Puoi lavorare su diversi script allo stesso tempo aprendo o creando nuove schede. Se le modifiche attuali non sono salvate, appare un simbolo a forma di dischetto sulla linguetta. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+    <term
+>Output degli script</term>
+    <listitem
+><para
+>Quest'area di testo mostra o informazioni di debug o l'output dello script dell'algoritmo, a seconda dell'impostazione attiva in alto. Se lo script produce un errore, viene automaticamente selezionato l'output di debug. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+    <term
+>Controlli</term>
+    <listitem
+><para
+>Qui trovi i controlli per l'esecuzione degli script. Puoi eseguire lo script attualmente aperto nell'editor degli script premendo <guiicon
+>Esegui</guiicon
+>. Mentre lo script è in esecuzione, è possibile interromperlo premendo il pulsante <guiicon
+>Interrompi</guiicon
+>. L'esecuzione <guibutton
+>Un passo</guibutton
+> si ferma solo attraverso determinate parole chiave (vedi <xref linkend="scripting"/>). </para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="user-interface-toolbars">
+<title
+>Barre degli strumenti</title>
+<para
+>Ci sono diverse barre per l'editor visuale di grafi che permettono di accedere a varie funzionalità con un solo clic. Come impostazione predefinita, sono visualizzate le seguenti barre:</para>
+<itemizedlist>
+    <listitem
+><para
+>Barra principale</para
+></listitem>
+    <listitem
+><para
+>Barra di allineamento</para
+></listitem>
+</itemizedlist>
+<!--  -->
+<sect2 id="user-interface-toolbars-main">
+<title
+>Barra principale</title>
+<para
+>La <emphasis
+>barra principale</emphasis
+> consiste delle seguenti azioni. Fare clic su un'azione implica che il puntatore del mouse l'applica alla lavagna dell'editor visuale di grafi:</para>
+<itemizedlist>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsselectmove.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Sposta</guilabel
+>: per selezionare gli elementi, fai clic su un'area vuota della lavagna, tieni il mouse premuto e disegna un rettangolo che contenga alcuni elementi di dati o puntatori per selezionarli, oppure fai direttamente clic su un elemento non selezionato per selezionarlo. Se fai clic su uno o più elementi selezionati, li puoi spostare tenendo il mouse premuto e spostando il mouse. È possibile spostare gli elementi selezionati anche con i tasti freccia.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsadddata.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Aggiungi elemento</guilabel
+>: Facendo clic su un punto qualsiasi della lavagna dell'editor visuale di grafi si crea un nuovo dato che appartiene alla struttura dati attualmente selezionata. Tenendo premuto a lungo il tasto del mouse appare un menu attraverso il quale il tipo del dato appena creato può essere selezionato (ciò richiede l'esistenza di tipi di dati differenti).</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsaddedge.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Aggiungi arco</guilabel
+>: fai clic su un dato, tieni il mouse premuto, e traccia una linea a un altro dato a cui il puntatore o arco punterà. Questa azione ha successo solo se il grafo attuale permette l'aggiunta di questo arco (per esempio, in un grafo non direzionale non è possibile aggiungere archi multipli tra due dati). Mantenendo la pressione del puntatore sul tasto, appare un menu da cui è possibile selezionare il tipo a cui assegnare il puntatore appena creato.  </para
+></listitem>
+<!--FIXME no different pointer names here -->
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsdeletedata.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Elimina</guilabel
+>: fai clic su un elemento per eliminarlo. Se elimini un nodo, verranno eliminati anche tutti gli archi adiacenti.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocszoom.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Ingrandisci</guilabel
+>: fai clic sulla lavagna, tieni premuto il &LMB;, e traccia un rettangolo. La lavagna verrà ingrandita all'area selezionata. Puoi usare anche la rotellina del mouse per ingrandire e rimpicciolire. Un doppio clic del &LMB; ripristina la scala originale.</para
+></listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="user-interface-toolbars-alignment">
+<title
+>Barra di allineamento</title>
+<para
+>Puoi aggiungere la <emphasis
+>barra di allineamento</emphasis
+> facoltativa. Premere un'azione di questa barra ha un effetto immediato sui nodi attualmente selezionati:</para>
+<itemizedlist>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsaligntop.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>In alto</guilabel
+>: allinea gli elementi di dati alla posizione verticale dell'elemento più in alto. Questo ha effetto solo sulle posizioni verticali.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsalignvmiddle.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Al centro</guilabel
+>: allinea i dati alla posizione verticale data dal centro delle posizioni verticali di tutti i dati selezionati. Questo ha effetto solo sulle posizioni verticali.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsalignbottom.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Base</guilabel
+>: allinea i dati alla posizione verticale del dato più in basso. Questo ha effetto solo sulle posizioni verticali.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsalignleft.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>A sinistra</guilabel
+>: allinea i dati alla posizione orizzontale del dato più a sinistra. Questo ha effetto solo sulle posizioni orizzontali.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsalignhmiddle.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Al centro</guilabel
+>: allinea i dati alla posizione orizzontale del dato più in alto. Questo ha effetto solo sulle posizioni orizzontali.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsalignright.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>A destra</guilabel
+>: allinea i dati alla posizione orizzontale del dato più a destra. Questo ha effetto solo sulle posizioni orizzontali.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsaligncircle.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>In cerchio</guilabel
+>: allinea i dati in un cerchio del diametro pari alla massima distanza tra i dati. I dati sono posizionati nella stessa sequenza vista dal baricentro dei dati.</para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsaligntree.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Minimizza gli incroci degli archi</guilabel
+>: riorganizza i dati selezionati per minimizzare il numero di archi che si incrociano (applica l'argoritmo Fruchterman-Reingold).</para
+></listitem>
+</itemizedlist>
+</sect2>
+</sect1>
+
+<sect1 id="user-interface-documents">
+<title
+>Lavorare coi grafi</title>
+<para
+>Un progetto di &rocs; contiene uno o più grafi modificabili con l'editor visuale. Inoltre, ogni documento può contenere un numero qualsiasi di strutture di dati. Qui, le strutture di dati di un documento usano tutte lo stesso motore per strutture di dati. Questa sezione spiega come passare da un documento all'altro e come crearne di nuovi. </para>
+
+<sect2 id="user-interface-documents-selector">
+<title
+>La barra di selezione dei documenti</title>
+<para
+>La barra di selezione dei documenti si usa per selezionare il grafo attuale e la struttura di dati attuale. Quando si usa l'editor visuale dei grafi per creare elementi di strutture di dati, questi verranno automaticamente aggiunti alla struttura di dati attuale. Inoltre, questa barra dà accesso immediato all'eliminazione o alla creazione di nuove strutture nel documento attuale. </para>
+
+<itemizedlist>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsnew.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Nuovo</guilabel
+>: questa azione crea una nuova struttura di dati con uno schema automatico per il nome dato dal motore delle strutture di dati. La struttura creata viene aggiunta al grafo attualmente selezionato. </para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsdelete.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Elimina</guilabel
+>: questa azione elimina la struttura di dati attualmente selezionata nel selettore di strutture di dati del documento attuale. </para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsproperties.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Proprietà</guilabel
+> del <guilabel
+>Grafo</guilabel
+>: apre una finestra che dà accesso alle proprietà del documento oltre ai tipi di dati e puntatori del documento. </para
+></listitem>
+<listitem
+><para>
+<inlinemediaobject
+><imageobject>
+<imagedata fileref="hi22-action-rocsproperties.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Proprietà</guilabel
+> della <guilabel
+>Struttura di dati</guilabel
+>: apre una finestra che dà accesso alle proprietà della struttura di dati. </para
+></listitem>
+  </itemizedlist>
+
+<screenshot>
+<screeninfo
+>La barra principale.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="document-selector.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>La barra di selezione dei documenti.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+</sect2>
+
+<sect2 id="user-interface-documents-menu">
+<title
+>Creare e importare grafi</title>
+<para
+>Per creare un nuovo grafo o aggiungerne uno al progetto attuale, usa <menuchoice
+><guimenu
+>File</guimenu
+> <guimenuitem
+>Nuovo progetto</guimenuitem
+></menuchoice
+> oppure <menuchoice
+><guimenu
+>Grafo</guimenu
+><guimenuitem
+>Importa grafo</guimenuitem
+></menuchoice
+>. È anche possibile importare grafi da applicazioni terze (per approfondire, vedi <xref linkend="import-export"/>). </para>
+</sect2>
+
+</sect1>
+</chapter>
+
+
+<chapter id="scripting">
+<title
+>Scrivere ed eseguire algoritmi in &rocs;</title>
+
+<para
+>Internamente, &rocs; usa il motore di scripting di QtScript, un motore JavaScript specifico. È perciò richiesto che tutti gli algoritmi implementati usino JavaScript. Il funzionamento e l'uso di JavaScript non sono oggetto di questo manuale, anche se sono presenti informazioni su come accedere alle strutture di dati, agli elementi e ai puntatori delle strutture dal motore di scripting. Poiché non si usano mai le strutture di dati fondamentali, ma quelle prodotte dal motore di strutture in uso al momento, la funzionalità della struttura di dati viene estesa dal motore corrispondente, e dovresti fare riferimento alle sue funzionalità specifiche. In particolare, le i motori per strutture di dati usano dei termini comuni al loro dominio (nodi e archi nei grafi, rami e radici negli alberi, eccetera). </para>
+<para
+>È importante sapere che i cambiamenti al motore di scripting vengono immediatamente riflessi sulle proprietà della lavagna nell'editor visuale di grafi. Gli script modificano quindi direttamente le strutture dati. </para>
+
+
+<sect1 id="scripting-controls">
+<title
+>Controllare l'esecuzione degli script</title>
+ 
+
+<sect2>
+<title
+>Inclusione File</title>
+<para
+>Gli script possono includere altri script. In questo modo è possibile ridurre la dimensione degli script e migliorarne la leggibilità. Attraverso il menu <menuchoice
+><guimenu
+>Script</guimenu
+> <guimenuitem
+>Inclusioni Possibili</guimenuitem
+></menuchoice
+> puoi accedere ad una lista di script di esempio forniti da &rocs; che puoi includere negli script. Per includere uno script utilizza il seguente comando: </para>
+<programlisting
+>include_script(string path);            // percorso assoluto o relativo dello script 
+</programlisting>
+</sect2>
+
+<sect2 id="scripting-output">
+<title
+>Output degli script</title>
+<para
+>Durante l'esecuzione di un algoritmo, gli output del debug e del programma sono mostrati nell'<emphasis
+>output di debug e degli script</emphasis
+>. Se il motore di scripting individua un errore nella sintassi dello script lo mostra anche come messaggio di debug. Tutti i messaggi del programma vengono mostrati (in grassetto) insieme all'output di debug   </para>
+<para
+>Si può controllare il testo mostrato nell'output dello script attraverso le seguenti funzioni: </para>
+<programlisting
+>Console.log(string message);      // mostra il messaggio come output dello script
+Console.debug(string message);    // mostra il messaggio come output di debug
+</programlisting>
+</sect2>
+
+<sect2 id="scripting-controlling">
+<title
+>Controllare l'esecuzione degli script</title>
+<para
+>Ci sono diversi modi di esecuzione per gli script. </para>
+<para
+>Si può controllare il testo mostrato nell'output dello script attraverso le seguenti funzioni: </para>
+<itemizedlist>
+    <listitem
+><para>
+        <inlinemediaobject
+><imageobject>
+        <imagedata fileref="rocs-control-engine-run.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Esegui</guilabel
+>: fa partire lo script e lo esegue fino al termine.</para
+></listitem>
+    <listitem
+><para>
+        <inlinemediaobject
+><imageobject>
+        <imagedata fileref="rocs-control-engine-step.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Un passo</guilabel
+>: Esegue lo script fino al termine del primo passo. Un passo termina quando lo script richiama la funzione <literal
+>interrupt()</literal
+>:</para>
+    <programlisting
+>interrupt(); // termina un passo
+    </programlisting>
+    </listitem>
+    <listitem
+><para>
+        <inlinemediaobject
+><imageobject>
+        <imagedata fileref="rocs-control-engine-debug.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Debug</guilabel
+>: Esegue script in modalità debug. Lancia la finestra di dialogo di debug di QtScript.</para
+></listitem>
+    <listitem
+><para>
+        <inlinemediaobject
+><imageobject>
+        <imagedata fileref="rocs-control-engine-stop.png" format="PNG"/></imageobject>
+</inlinemediaobject
+> <guilabel
+>Stop</guilabel
+>: Ferma l'esecuzione di uno script (disponibile solo se uno script è in esecuzione).</para
+></listitem>
+</itemizedlist>
+</sect2>
+</sect1>
+</chapter>
+
+
+<chapter id="scripting-API">
+<title
+>API del motore di scripting</title>
+<para
+>Ogni motore fornisce una serie di funzioni e proprietà speciali per la struttura dati a cui si riferisce e i suoi elementi. Inoltre ogni motore fornisce le proprietà e le funzioni definite per la struttura dati di base. </para>
+&apiDatastructure; &apiGraphstructure; &apiLinkedListstructure; &apiRootedTreestructure; &apiConsole; </chapter>
+
+
+&chapterImportExport;
+
+
+<chapter id="credits">
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&rocs; </para>
+<para
+>Copyright del programma:</para>
+<itemizedlist>
+	<listitem
+><para
+>Copyright 2008 di Ugo Sangiori (ugorox@gmail.com)</para
+></listitem>
+	<listitem
+><para
+>Copyright 2008-2012 di Tomaz Canabrava (tcanabrava@kde.org)</para
+></listitem>
+	<listitem
+><para
+>Copyright 2008-2012 di Wagner Reck (wagner.reck@gmail.com)</para
+></listitem>
+	<listitem
+><para
+>Copyright 2011-2013 di Andreas Cord-Landwehr (cordlandwehr@kde.org)</para
+></listitem>
+</itemizedlist>
+
+<para
+>Copyright della documentazione:</para>
+<itemizedlist>
+	<listitem
+><para
+>Copyright della documentazione 2009 di &Anne-Marie.Mahfouf; &Anne-Marie.Mahfouf.mail;</para
+></listitem>
+	<listitem
+><para
+>Copyright della documentazione 2009 di Tomaz Canabrava (tcanabrava@kde.org)</para
+></listitem>
+	<listitem
+><para
+>Copyright della documentazione 2011-2013 di Andreas Cord-Landwehr (cordlandwehr@kde.org)</para
+></listitem>
+</itemizedlist>
+
+<para
+>Traduzione di Francesco Nigro e Federico Zenith<email
+>federico.zenith@member.fsf.org</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installazione</title>
+
+<sect1 id="getting-rocs">
+<title
+>Come ottenere &rocs;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilazione e installazione</title>
+&install.compile.documentation; </sect1>
+</appendix>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

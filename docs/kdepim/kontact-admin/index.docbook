@@ -1,0 +1,352 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+ "dtd/kdex.dtd" [
+  <!ENTITY PIM "<acronym
+>PIM</acronym
+>">
+  <!ENTITY kappname "&kontact;">
+  <!ENTITY package "kdepim">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+> 
+]>
+
+<book id="kontact-admin" lang="&language;">
+
+<bookinfo>
+<title
+>Guida dell'amministratore a &kappname;</title>
+
+<authorgroup>
+
+<author
+><firstname
+>Allen</firstname
+> <surname
+>Winter</surname
+> <affiliation
+> <address
+><email
+>allen@kdab.net</email
+></address>
+</affiliation>
+</author>
+
+</authorgroup>
+
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (YYYY-MM-DD) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date
+>2009-06-08</date>
+<releaseinfo
+>0.00.03</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract
+><para
+>Questo è il manuale per amministratori di &kappname;, la soluzione integrata per la gestione delle informazioni personali (&PIM;). &kappname; combina note applicazioni di &kde; come &kmail;, &korganizer; e &kaddressbook; in una sola interfaccia per dare facile accesso alla posta, al calendario, alla rubrica e ad altre funzionalità &PIM;. </para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdepim</keyword>
+<keyword
+>PIM</keyword>
+<keyword
+>KMail</keyword>
+<keyword
+>KOrganizer</keyword>
+<keyword
+>KAddressBook</keyword>
+<keyword
+>KNotes</keyword>
+<keyword
+>Akregator</keyword>
+<keyword
+>amministrazione</keyword>
+<keyword
+>amministra</keyword>
+<keyword
+>posta</keyword>
+<keyword
+>calendario</keyword>
+<keyword
+>contatto</keyword>
+<keyword
+>amministrazione</keyword>
+<keyword
+>amministra</keyword>
+<keyword
+>groupware</keyword>
+<keyword
+>Outlook</keyword>
+<keyword
+>Exchange</keyword>
+<keyword
+>Evolution</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- Chapter Introduction -->
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>Questo è il manuale per amministratori di &kappname;, la soluzione integrata per la gestione delle informazioni personali (&PIM;). Questo documento vuole aiutare l'amministratore di groupware nei compiti tipicamente necessari a configurare &kappname; e farlo funzionare senza problemi in vari ambienti. </para>
+
+<para
+>&kappname; combina note applicazioni di &kde; come &kmail;, &korganizer; e &kaddressbook; in una sola interfaccia per dare facile accesso alla posta, al calendario, alla rubrica e ad altre funzionalità &PIM;. </para>
+</chapter>
+
+<!-- Chapter Compatibility -->
+<chapter id="compat">
+<title
+>Problemi di compatibilità</title>
+
+<para
+>Questo capitolo spiega come far comunicare efficientemente &kappname; con varie soluzioni di groupware. </para>
+
+<sect1 id="compat-outlook">
+<title
+>Outlook ed Exchange</title>
+
+<para
+>Nella finestra di configurazione di &kappname;, sotto <menuchoice
+><guimenu
+>Posta</guimenu
+><guimenuitem
+>Varie</guimenuitem
+></menuchoice
+>, sulla scheda <guilabel
+>Inviti</guilabel
+> troverai le seguenti opzioni per far funzionare il programma con Microsoft Outlook™ in un ambiente Kolab o in un ambiente Microsoft Exchange™. </para>
+
+
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Modifica intestazioni Da: / A: nelle risposte agli inviti</guilabel
+></term>
+<listitem>
+<para
+>Abilita questa opzione per far capire a Microsoft Outlook™ le risposte agli inviti.</para>
+<para
+>Microsoft Outlook ha una serie di difetti nell'implementazione dello standard iCalendar; questa opzione ne aggira uno. Se hai problemi con utenti Outlook che non riescono ad avere le tue risposte, prova ad impostarla.</para>
+<para
+>Dettagli: quando si invia un invito iCal, questo fa avere al messaggio l'intestazione Da: uguale alla A:. Imposta anche l'intestazione X-KMail-Identity all'UIOD dell'A: e si assicura che CCN: sia vuoto. Outlook capisce la risposta solo se l'intestazione Da: è uguale all'A: del messaggio d'invito.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Spedisci gli inviti nel corpo del messaggio</guilabel
+></term>
+<listitem>
+<para
+>Gli inviti sono normalmente inviati allegati a un messaggio. Questo modifica l'invito in modo che sia invece inviati nel corpo del messaggio; ciò è necessario per inviare inviti e risposte a Microsoft Outlook. Però, quando lo si fa, non si ottengono più testi descrittivi che i programmi di posta possono leggere: perciò, per chi ha un programma di posta che non capisce gli inviti, i messaggi risultanti avranno un aspetto molto strano. Chi ha un programma che invece li capisce potrà ancora lavorare con questa impostazione.</para>
+<para
+>Dettagli: quando si invia un invito iCal, questa opzione crea il corpo del messaggio dai dati dell'allegato e imposta l'intestazione Content-Type a <quote
+>text/calendar; method=something; charset="utf-8"</quote
+>.</para>
+<para
+>Anche l'invio automatico è attivo, per cui non c'è bisogno di alcun intervento umano per la composizione.</para>
+<note
+><para
+>La cifratura e firma automatica sono disattivate.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nomi inviti compatibili con Exchange</guilabel
+></term>
+<listitem>
+<para
+>Microsoft Outlook, quando viene usato con un server Microsoft Exchange™, ha problemi a capire i messaggi di groupware conformi agli standard. Abilita questa opzione per inviare inviti groupware in un modo che Microsoft Exchange™ capisce. L'invito sarà inviato come allegato dal nome <filename
+>ical.ics</filename
+>.</para>
+<para
+>Dettagli: quando si invia un invito iCal, il messaggio avrà l'oggetto <quote
+>(Declined|Tentative|Accepted|Delegated): subject</quote
+>. L'invito sarà inviato come allegato dal nome <filename
+>ical.ics</filename
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Commenti alle risposte agli inviti compatibili con Outlook</guilabel
+></term>
+<listitem>
+<para
+>Quando l'utente dà dei commenti rispondendo agli inviti, invia il commento in un modo comprensibile da Microsoft Outlook™. Se questa opzione non è abilitata, i commenti di risposta non saranno visibili in Outlook.</para>
+<para
+>Dettagli: Alla risposta di un invito i commenti saranno inviati come proprietà DESCRIPTION di iCal invece che come proprietà COMMENT (in violazione della linea guida RFC2446).</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+</chapter>
+
+<!-- Chapter Behavior -->
+<chapter id="behavior">
+<title
+>Problemi di comportamento</title>
+
+<para
+>Questo capitolo spiega come far funzionare &kappname; più similmente ad altri programmi di groupware. </para>
+
+<sect1 id="behave-composing">
+<title
+>Composizione dei messaggi</title>
+
+<para
+>Gli utenti di Outlook sono abituati a scrivere un elenco di indirizzi nei campi A:, CC: o CCN: separati da punti e virgola (<userinput
+>;</userinput
+>) oltre a virgole (<userinput
+>,</userinput
+>). Come impostazione predefinita, &kappname; permette solo la virgola come carattere separatore di indirizzi. Per permettere anche il punto e virgola, cambia l'opzione <option
+>AllowSemicolonAsAddressSeparator</option
+> da <userinput
+>false</userinput
+> a <userinput
+>true</userinput
+> nel file <filename
+>share/config.kcfg/kmail.kcfg</filename
+> installato. </para>
+
+</sect1>
+</chapter>
+
+<!-- Chapter RFC Compromises -->
+<chapter id="nonrfc">
+<title
+>Compromessi con RFC</title>
+
+<para
+>&kappname; è progettato per funzionare al meglio possibile con un'ampia varietà di soluzioni di groupware. A tal fine, abbiamo a volte fatto compromessi progettuali a riguardo di diverse RFC di Internet che sono alla base di librerie di basso livello a cui &kappname; si affida.</para>
+
+<note
+><para
+>Non abbiamo mai deliberatamente violato alcuna RFC.</para
+></note>
+
+<para
+>Nell'elenco seguente sono riportati i compromessi con RFC fatti da &kappname; o dalle librerie di basso livello usate da &kappname;:</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Quando si scrivono le durate nei file iCalendar, &kappname; non scrive mai la proprietà DURATION in termini di settimane (cioè <userinput
+>1*DIGIT "W"</userinput
+>); invece, il numero intero di settimane viene sempre moltiplicato per sette e scritto in termini di giorni (cioè <userinput
+>1*DIGIT "D"</userinput
+>). </para>
+</listitem>
+</itemizedlist>
+
+</chapter>
+
+<!-- Chapter Common Problems -->
+<chapter id="common-problems">
+<title
+>Problemi comuni</title>
+<para
+>Questo capitolo affronta alcuni problemi comuni che un amministratore può probabilmente incontrare. </para>
+
+<sect1 id="freebusy">
+<title
+>Libero/occupato</title>
+
+<para
+>Problemi comuni con libero/occupato... </para>
+
+</sect1>
+</chapter>
+
+<!-- Chapter Credits+License -->
+<chapter id="credits-and-license">
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>Copyright della documentazione &copy; 2009 di Klarälvdalens Datakonsult AB, una compagnia del gruppo KDAB, <email
+>info@kdab.net</email
+> </para>
+
+<para
+>Traduzione di Federico Zenith<email
+>federico.zenith@member.fsf.org</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installazione</title>
+
+<sect1 id="getting-kapp">
+<title
+>Come ottenere &kappname;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilazione e installazione</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

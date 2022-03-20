@@ -1,0 +1,217 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the archivemailagent package.
+#
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: archivemailagent\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-18 05:28+0000\n"
+"PO-Revision-Date: 2014-07-30 00:04+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: addarchivemaildialog.cpp:38
+msgid "Modify Archive Mail"
+msgstr "Modifica archivio di posta"
+
+#: addarchivemaildialog.cpp:40 archivemaildialog.cpp:335
+msgid "Add Archive Mail"
+msgstr "Aggiungi archivio di posta"
+
+#: addarchivemaildialog.cpp:53
+msgid "&Folder:"
+msgstr "&Cartella:"
+
+#: addarchivemaildialog.cpp:65
+msgid "F&ormat:"
+msgstr "F&ormato:"
+
+#: addarchivemaildialog.cpp:72
+msgid "Compressed Zip Archive (.zip)"
+msgstr "Archivio compresso Zip (.zip)"
+
+#: addarchivemaildialog.cpp:73
+msgid "Uncompressed Archive (.tar)"
+msgstr "Archivio non compresso (.tar)"
+
+#: addarchivemaildialog.cpp:74
+msgid "BZ2-Compressed Tar Archive (.tar.bz2)"
+msgstr "Archivio Tar compresso in formato BZ2 (.tar.bz2)"
+
+#: addarchivemaildialog.cpp:75
+msgid "GZ-Compressed Tar Archive (.tar.gz)"
+msgstr "Archivio Tar compresso in formato GZ (.tar.gz)"
+
+#: addarchivemaildialog.cpp:80
+msgid "Archive all subfolders"
+msgstr "Archivia tutte le sottocartelle"
+
+#: addarchivemaildialog.cpp:85
+msgid "Path:"
+msgstr "Percorso:"
+
+#: addarchivemaildialog.cpp:93
+msgid "Backup each:"
+msgstr "Crea copia di sicurezza ogni:"
+
+#: addarchivemaildialog.cpp:104
+msgid "Days"
+msgstr "Giorni"
+
+#: addarchivemaildialog.cpp:105
+msgid "Weeks"
+msgstr "Settimane"
+
+#: addarchivemaildialog.cpp:106
+msgid "Months"
+msgstr "Mesi"
+
+#: addarchivemaildialog.cpp:107
+msgid "Years"
+msgstr "Anni"
+
+#: addarchivemaildialog.cpp:114
+msgid "Maximum number of archive:"
+msgstr "Numero massimo di archivi:"
+
+#: addarchivemaildialog.cpp:119
+msgid "unlimited"
+msgstr "illimitato"
+
+#: archivejob.cpp:70
+msgid "Directory does not exist. Please verify settings. Archive postponed."
+msgstr ""
+"La cartella non esiste. Verifica le impostazioni; archiviazione rimandata."
+
+#: archivejob.cpp:88
+#, kde-format
+msgid "Start to archive %1"
+msgstr "Inizio archiviazione in %1"
+
+#: archivemaildialog.cpp:42
+msgid "Configure Archive Mail Agent"
+msgstr "Configura l'agente di archiviazione della posta"
+
+#: archivemaildialog.cpp:62
+msgid "Archive Mail Agent"
+msgstr "Configura l'agente di archiviazione della posta"
+
+#: archivemaildialog.cpp:64
+msgid "Archive emails automatically."
+msgstr "Archivia automaticamente la posta elettronica."
+
+#: archivemaildialog.cpp:66
+msgid "Copyright (C) 2012, 2013, 2014 Laurent Montel"
+msgstr "Copyright (C) 2012, 2013, 2014 Laurent Montel"
+
+#: archivemaildialog.cpp:68
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: archivemaildialog.cpp:69
+msgid "Maintainer"
+msgstr "Responsabile"
+
+#: archivemaildialog.cpp:72
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Luigi Toscano"
+
+#: archivemaildialog.cpp:73
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "luigi.toscano@tiscali.it"
+
+#: archivemaildialog.cpp:150
+msgid "Name"
+msgstr "Nome"
+
+#: archivemaildialog.cpp:150
+msgid "Last archive"
+msgstr "Ultimo archivio"
+
+#: archivemaildialog.cpp:150
+msgid "Next archive in"
+msgstr "Prossimo archivio in"
+
+#: archivemaildialog.cpp:150
+msgid "Storage directory"
+msgstr "Cartella di archiviazione"
+
+#. i18n: ectx: property (text), widget (QPushButton, addItem)
+#: archivemaildialog.cpp:180 ui/archivemailwidget.ui:19
+msgid "Add..."
+msgstr "Aggiungi..."
+
+#: archivemaildialog.cpp:183
+msgid "Open Containing Folder..."
+msgstr "Apri cartella contenitore..."
+
+#: archivemaildialog.cpp:185
+msgid "Archive now"
+msgstr "Archivia ora"
+
+#: archivemaildialog.cpp:188
+msgid "Delete"
+msgstr "Elimina"
+
+#: archivemaildialog.cpp:246
+#, kde-format
+msgid "Folder: %1"
+msgstr "Cartella: %1"
+
+#: archivemaildialog.cpp:262
+#, kde-format
+msgid "Tomorrow"
+msgid_plural "%1 days"
+msgstr[0] "Domani"
+msgstr[1] "%1 giorni"
+
+#: archivemaildialog.cpp:269
+#, kde-format
+msgid "Archive will be done %1"
+msgstr "L'archivio sarà creato in data %1"
+
+#: archivemaildialog.cpp:301
+msgid "Do you want to delete selected items? Do you want to continue?"
+msgstr "Vuoi eliminare gli elementi selezionati? Vuoi continuare?"
+
+#: archivemaildialog.cpp:301
+msgid "Remove items"
+msgstr "Rimozione elementi"
+
+#: archivemaildialog.cpp:335
+msgid ""
+"Cannot add a second archive for this folder. Modify the existing one instead."
+msgstr ""
+"Impossibile aggiungere un secondo archivio per questa cartella. Modificare "
+"invece quello esistente."
+
+#: archivemailinfo.cpp:107 archivemailinfo.cpp:124
+msgctxt "Start of the filename for a mail archive file"
+msgid "Archive"
+msgstr "Archivio"
+
+#. i18n: ectx: property (text), widget (QPushButton, modifyItem)
+#: ui/archivemailwidget.ui:26
+msgid "Modify..."
+msgstr "Modifica..."
+
+#. i18n: ectx: property (text), widget (QPushButton, removeItem)
+#: ui/archivemailwidget.ui:33
+msgid "Remove"
+msgstr "Rimuovi"
+
+#~ msgid "1 day"
+#~ msgid_plural "%1 days"
+#~ msgstr[0] "1 giorno"
+#~ msgstr[1] "%1 giorni"
+
+#~ msgid "Archive done for %1"
+#~ msgstr "Archiviazione completata in %1"

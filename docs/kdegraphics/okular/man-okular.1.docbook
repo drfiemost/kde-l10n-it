@@ -1,0 +1,291 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY % Italian "INCLUDE">
+]>
+
+<!--  Please keep this man page content in sync with Command Line Options sections of Okular handbook -->
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manuale utente di KDE</title>
+<author
+><firstname
+>Yuri</firstname
+><surname
+>Chornoivan</surname
+> <contrib
+>Pagina di manuale di Okular.</contrib
+> <email
+>yurchor@ukr.net</email
+></author>
+<date
+>2013-03-09</date>
+<productname
+>KDE (Ambiente Desktop K)</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>okular</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+>okular</refname>
+<refpurpose
+>un visualizzatore universale di documenti</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis
+><command
+>okular</command
+> <arg choice="opt"
+><replaceable
+>opzioni Qt</replaceable
+></arg
+> <arg choice="opt"
+><replaceable
+>opzioni KDE</replaceable
+></arg
+> <arg choice="opt"
+><replaceable
+>opzioni di Okular</replaceable
+></arg
+> <arg choice="opt"
+><replaceable
+>URL</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id="description"
+><title
+>Descrizione</title>
+<para
+><command
+>okular</command
+> ha lo scopo di mostrare documenti in vari formati.</para>
+
+</refsect1>
+
+<refsect1 id="generic_options"
+><title
+>Opzioni generiche</title>
+<variablelist>
+  <varlistentry>
+  <term
+><option
+>--help</option
+></term>
+  <listitem>
+<para
+>Mostra la guida sulle opzioni.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--help-qt</option
+></term>
+  <listitem>
+<para
+>Mostra le opzioni specifiche per Qt.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--help-kde</option
+></term>
+  <listitem>
+<para
+>Mostra le opzioni specifiche per &kde;.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--help-all</option
+></term>
+  <listitem>
+<para
+>Mostra tutte le opzioni.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--author</option
+></term>
+  <listitem>
+<para
+>Mostra le informazioni sull'autore.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-v, --version</option
+></term>
+  <listitem>
+<para
+>Mostra le informazioni sulla versione.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--license</option
+></term>
+  <listitem>
+<para
+>Mostra le informazioni sulla licenza.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--</option
+></term>
+  <listitem>
+<para
+>Fine delle opzioni.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id="options"
+><title
+>Opzioni di Okular</title>
+<variablelist>
+  <varlistentry>
+    <term
+><option
+>-p, --page <replaceable
+>numero</replaceable
+></option
+></term>
+  <listitem>
+<para
+>Apre una pagina specificata del documento.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term
+><option
+>--presentation</option
+></term>
+  <listitem>
+<para
+>Apre il documento in modalità presentazione</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term
+><option
+>--print</option
+></term>
+  <listitem>
+<para
+>Avvia mostrando la finestra di stampa.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term
+><option
+>--unique</option
+></term>
+  <listitem>
+<para
+>Controllo "istanza unica".</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term
+><option
+>--noraise</option
+></term>
+  <listitem>
+<para
+>Permette di evitare che la finestra di Okular si rialzi dopo l'avvio.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id="arguments"
+><title
+>Argomenti</title>
+<variablelist>
+  <varlistentry>
+    <term
+><option
+>URL</option
+></term>
+  <listitem>
+    <para
+>L'indirizzo del documento da aprire. Nel caso di documenti PDF, il nome può essere specificato come <replaceable
+>nome_documento</replaceable
+>#<replaceable
+>nome_destinazione</replaceable
+>, dove <replaceable
+>nome_destinazione</replaceable
+> è l'identificativo di una destinazione presente nel documento.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id="feedback"
+><title
+>Segnalazioni</title>
+<para
+>Su IRC, irc.freenode.net #okular o tramite posta elettronica, okular-devel@kde.org o sul web, &lt;<ulink url="http://okular.kde.org/"
+>http://okular.kde.org/</ulink
+>&gt;</para>
+</refsect1>
+
+<refsect1>
+<title
+>Vedi anche</title>
+<para
+>Documentazione utente più dettagliata è disponibile da <ulink url="help:/kig"
+>help:/okular</ulink
+> (inserisci questo come <acronym
+>URL</acronym
+> in &konqueror;, o esegui <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/okular</parameter
+></userinput
+>).</para>
+</refsect1>
+
+<refsect1 id="copyright"
+><title
+>Copyright</title>
+<para
+>Copyright &copy; 2002 Wilco Greven, Christophe Devriese</para>
+<para
+>Copyright &copy; 2004-2005 Enrico Ros</para>
+<para
+>Copyright &copy; 2005 Piotr Szymanski</para>
+<para
+>Copyright &copy; 2004-2012 Albert Astals Cid</para>
+<para
+>Copyright &copy; 2006-2009 Pino Toscano</para>
+<para
+>Licenza: GNU General Public Version 2 &lt;<ulink url="http://www.gnu.org/licenses/gpl-2.0.html"
+>http://www.gnu.org/licenses/gpl-2.0.html</ulink
+>&gt;</para>
+</refsect1>
+</refentry>
+

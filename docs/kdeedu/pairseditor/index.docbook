@@ -1,0 +1,318 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<book id="pairseditor" lang="&language;">
+<bookinfo>
+<title
+>Manuale dell'editor di Pairs</title>
+<authorgroup>
+<author>
+<personname
+><firstname
+>Questa documentazione è stata convertita dalla pagina <ulink url="http://userbase.kde.org/Pairs/Editor"
+>Pairs/Editor</ulink
+> dell'UserBase di KDE.</firstname
+> <surname
+></surname
+> </personname>
+      </author>
+<othercredit role="translator"
+><firstname
+>Pino</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>toscano.pino@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+      </authorgroup>
+<legalnotice
+>&FDLNotice;</legalnotice>
+<date
+>2012-12-30</date>
+      <releaseinfo
+>1.0.0 (&kde; SC 4.10)</releaseinfo>
+<abstract>
+<para
+>L'editor di <application
+>Pairs</application
+> fa parte del progetto <application
+>Pairs</application
+>. Può essere usato per creare e modificare temi per <application
+>Pairs</application
+>.</para>
+      </abstract>
+      <keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Pairs</keyword>
+<keyword
+>Educazione</keyword>
+<keyword
+>Suono</keyword>
+<keyword
+>Immagine</keyword>
+<keyword
+>tema</keyword>
+<keyword
+>editor</keyword>
+</keywordset>
+</bookinfo>
+<!--userbase <timestamp
+>2012-12-30T14:09:02Z</timestamp
+>-->
+
+<!--userbase-content-->
+<chapter id="pairs-editor"
+><title
+>Editor di Pairs</title>
+<para
+>L'editor di <application
+>Pairs</application
+> fa parte del progetto <application
+>Pairs</application
+>. Può essere usato per creare e modificare temi per <application
+>Pairs</application
+>. </para>
+<para>
+<screenshot>
+<screeninfo
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pairseditor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<sect1 id="main-toolbar"
+><title
+>Barra principale</title>
+<para
+>Contiene 5 pulsanti che possono essere ridimensionati o di cui è possibile modificare il testo. </para>
+<sect2 id="new"
+><title
+>Nuovo</title>
+<para
+>Il pulsante può essere usato per creare un nuovo tema. </para>
+</sect2>
+<sect2 id="open"
+><title
+>Apri</title>
+<para
+>Questo pulsante può essere usato per aprire un tema esistente. </para>
+</sect2>
+<sect2 id="save-save-as"
+><title
+>Salva/salva come</title>
+<para
+>Questi due pulsanti sono usati per salvare il tema creato. </para>
+</sect2>
+<sect2 id="try"
+><title
+>Prova</title>
+<para
+>Il pulsante <guilabel
+>Prova</guilabel
+> è usato per provare il tema creato. Sarà avviato <application
+>Pairs</application
+> con il nuovo tema. </para>
+</sect2>
+</sect1>
+<sect1 id="creating-a-new-theme"
+><title
+>Creare un nuovo tema</title>
+<para
+>Creare un tema nuovo è abbastanza semplice e può essere fatto seguendo i passi seguenti: </para>
+<itemizedlist>
+<listitem
+><para
+>Imposta un titolo, una descrizione, un autore, una data ed una versione per il nuovo tema</para
+></listitem>
+<listitem
+><para
+>Il <guilabel
+>Tipo principale</guilabel
+> descrive il tipo di un tema. Ad esempio, il tipo <guilabel
+>Immagine</guilabel
+> è usato per temi in cui si devono accoppiare immagini.</para
+></listitem>
+<listitem
+><para
+>Includi un'immagine per i dorsi. Questa immagine sarà mostrata in <application
+>Pairs</application
+> sul dorso delle carte.</para
+></listitem>
+</itemizedlist>
+<para>
+<screenshot>
+<screeninfo
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pairseditor1.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<itemizedlist>
+<listitem
+><para
+>Aggiungi elementi al tema premendo <inlinemediaobject
+> <imageobject
+> <imagedata fileref="Icon-list-add.png" format="PNG"/> </imageobject
+> </inlinemediaobject
+> e aggiungendo immagini, parole o suoni agli elementi. Gli elementi sono usati per definire le relazioni tra due immagini, parole o suoni. Ad esempio, aggiungendo due immagini in un elemento sarà creata una coppia delle due. Nel caso di suoni, due suoni sono aggiunti in un elemento per crearne una coppia. Allo stesso modo, aggiungendo un suono e un'immagine assieme in un elemento sarà creata una coppia dei due.</para
+></listitem>
+</itemizedlist>
+<para>
+<screenshot>
+<screeninfo
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pairseditor2.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<itemizedlist>
+<listitem
+><para
+>Includi un <guilabel
+>Suono per ritrovamento</guilabel
+>. Un suono per ritrovamento è un suono che viene riprodotto in <application
+>Pairs</application
+> quando l'elemento viene correttamente accoppiato.</para
+></listitem>
+</itemizedlist>
+<para>
+<screenshot>
+<screeninfo
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pairseditor3.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<itemizedlist>
+<listitem
+><para
+>Aggiungi più elementi. Aggiungere elementi aumenta il numero di coppie nel gioco, e questo può essere utile se c'è bisogno di avere più risultati.</para
+></listitem>
+</itemizedlist>
+<para>
+<screenshot>
+<screeninfo
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pairseditor4.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<itemizedlist>
+  <listitem
+><para
+>Dopo aver effettuato i passi scritti sopra, salva il tema e premi il pulsante <guilabel
+>Prova</guilabel
+>. Sarà avviato <application
+>Pairs</application
+> con il tuo tema.</para
+></listitem>
+</itemizedlist>
+<para>
+<informaltable>
+  <tgroup cols="2">
+  <tbody>
+  <row>
+<entry>
+<para>
+<screenshot>
+<screeninfo
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pairseditor5.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+</entry>
+<entry>
+<para>
+<screenshot>
+<screeninfo
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="pairseditor6.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+</entry>
+  </row>
+  </tbody>
+  </tgroup>
+</informaltable>
+</para>
+</sect1>
+</chapter>
+
+<!--userbase-content-->
+<chapter id="credits">
+<title
+>Riconoscimenti e licenza</title>
+      <para
+>Copyright della documentazione - vedi la <ulink url="http://userbase.kde.org/index.php?title=Pairs/Editor&amp;action=history"
+>cronologia della pagina Pairs/Editor</ulink
+> di UserBase</para>
+      <para
+>Traduzione italiana di Pino Toscano <email
+>toscano.pino@tiscali.it</email
+></para
+> 
+&underFDL; </chapter>
+&documentation.index;
+</book>

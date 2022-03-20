@@ -1,0 +1,22 @@
+<chapter id="introduction">
+<title
+>Panoramica</title>
+
+<para
+>&policykit-kde; è un'implementazione dello strumento PolicyKit conforme all'aspetto di &kde;.</para>
+
+<para
+>PolicyKit permette di gestire le password facilmente e in sicurezza, e può essere usato dalla applicazioni per chiedere una password agli utenti. Ogni applicazione definisce una serie di azioni che possono essere eseguite dal loro programma. L'applicazione chiamerà PolicyKit per vedere se l'utente può eseguire una certa azione, se no l'applicazione può presentare una finestra di autenticazione in cui l'utente può inserire la sua password, la password di root, la password di un certo gruppo di utenti o anche presentare l'impronta digitale.</para>
+
+<para
+>&policykit-kde; è costituito da due applicazioni: l'agente di autorizzazione che riceve le richieste di autenticazione, e mostra una finestra per richiedere la password; e il gestore delle autorizzazioni, usato principalmente dagli amministratori di sistema che potrebbero voler cambiare il comportamento predefinito delle politiche di un programma.</para>
+
+<para
+>Per gli sviluppatori di &Qt; e &kde; c'è una libreria &Qt; che permette una facile integrazione tra un'applicazione e PolicyKit.</para>
+
+<para
+>Per maggiori informazioni sul funzionamento di PolicyKit, la sua progettazione e l'API vedi <ulink url="http://hal.freedesktop.org/docs/PolicyKit/"
+>il manuale di riferimento della libreria di PolicyKit</ulink
+>.</para>
+
+</chapter>

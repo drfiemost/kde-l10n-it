@@ -1,0 +1,520 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" 
+"dtd/kdex.dtd" [
+  <!ENTITY kappname "&kuser;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="kuser" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale di &kuser;</title>
+<authorgroup>
+<author
+><firstname
+>Matt</firstname
+> <surname
+>Johnston</surname
+> <affiliation
+> <address
+>&Matt.Johnston.mail;</address>
+</affiliation>
+</author>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <affiliation
+> <address
+>&Lauri.Watts.mail;</address>
+</affiliation>
+<contrib
+>Revisore</contrib>
+</othercredit>
+<othercredit role="reviewer"
+><firstname
+>Jonathan</firstname
+> <surname
+>Singer</surname
+> <affiliation
+> <address
+>&Jonathan.Singer.mail;</address>
+</affiliation>
+<contrib
+>Revisore</contrib>
+</othercredit>
+<othercredit role="translator"
+><firstname
+>Valerio</firstname
+> <surname
+>Passini</surname
+> <contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+> <surname
+>Zenith</surname
+> <affiliation
+> <address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+> </affiliation
+><contrib
+>Manutenzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Matt.Johnston;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2013-06-22</date>
+<releaseinfo
+>3.9 (&kde; 4.11)</releaseinfo>
+
+<abstract
+><para
+>Questa documentazione descrive la versione 3.9 di &kuser;. Questo programma permette di amministrare gli utenti e i gruppi sul tuo sistema.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>kuser</keyword>
+<keyword
+>utente</keyword>
+<keyword
+>amministrazione</keyword>
+<keyword
+>amministrazione</keyword>
+<keyword
+>strumenti</keyword>
+<keyword
+>gruppo</keyword>
+<keyword
+>password</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="start">
+<title
+>Per iniziare</title>
+
+<para
+>&kuser; permette di amministrare gli utenti e i gruppi sul sistema. </para>
+<para
+>Questa è una rapida introduzione a &kuser;. Per informazioni più dettagliate, vedi l'<link linkend="using"
+>uso</link
+>.</para>
+
+<para
+>In realtà non c'è bisogno di fare niente per iniziare ad usare &kuser;, eccetto la <link linkend="customizing"
+>configurazione</link
+>.</para>
+
+<para
+>Se non si avvia &kuser; in modalità amministrativa, si verrà avvisati che il file <filename
+>/etc/shadow</filename
+> non è leggibile.</para>
+
+<!--not in 4.4>
+para
+>When you have made the changes you want, you must
+<guimenuitem
+>Save</guimenuitem
+> them for them to take effect. Either
+choose the Toolbar icon, or use the <guimenu
+>File</guimenu
+> menu.</para>
+-->
+
+</chapter>
+
+<chapter id="using">
+<title
+>Uso</title>
+
+<sect1 id="sec1mainwindow">
+<title
+>Finestra principale</title>
+
+<para
+>&kuser; è un'applicazione molto semplice. Nella finestra principale puoi vedere due schede: l'elenco degli utenti e quello dei gruppi. Per modificare un utente o un gruppo, facci clic. Apparirà la finestra delle proprietà dell'utente o del gruppo.</para>
+<screenshot>
+<screeninfo
+>La finestra principale di &kuser;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="kuser.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>La finestra principale di &kuser;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+</sect1>
+
+<sect1 id="properties">
+<title
+>Proprietà di gruppi e utenti</title>
+
+<sect2 id="user-properties">
+<title
+>La finestra delle proprietà dell'utente</title>
+
+<para
+>La finestra delle proprietà dell'utente ha due schede.</para>
+
+<!-- is this still valid for 4.4?
+<para
+>The number of tabs depends on the type of the user storage system
+and whether quotas are being used. Additional tabs will appear if you
+have shadow passwords, or any other similar things such as
+<filename
+>/etc/master.passwd</filename
+> in BSD flavor Unices.</para>
+-->
+<sect3 id="user-info">
+<title
+>La scheda <guilabel
+>Informazioni sull'utente</guilabel
+></title>
+
+<para
+>Nella scheda <guilabel
+>Informazioni sull'utente</guilabel
+> si possono modificare: </para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Nome utente</guilabel
+> con appunto il nome dell'utente, e un pulsante <guibutton
+>Imposta password</guibutton
+> per questo account,</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Identificativo dell'utente</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Nome completo</guilabel
+></para
+></listitem>
+<listitem
+><para
+>La <guilabel
+>Shell di login</guilabel
+> (l'elenco delle shell di login è preso dal file <filename
+>/etc/shells</filename
+>)</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Cartella Home</guilabel
+></para
+></listitem>
+<listitem
+><para
+>Due indirizzi d'ufficio</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Indirizzo</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Account disattivato</guilabel
+></para
+></listitem>
+</itemizedlist>
+
+</sect3>
+
+<sect3 id="password-management-info">
+<title
+>La scheda <guilabel
+>Gestione password</guilabel
+></title>
+
+<para
+>La scheda <guilabel
+>Gestione password</guilabel
+> apparirà in modalità amministrativa se hai password shadow o cose simili, come <filename
+>/etc/master.passwd</filename
+> negli Unix alla BSD.</para>
+
+<!--para
+>In the <guilabel
+>Extended Info</guilabel
+> tab you can modify
+parameters related to extended account control: </para-->
+
+<itemizedlist>
+<listitem
+><para
+>Il numero minimo di giorni tra i cambiamenti di password</para
+></listitem>
+<listitem
+><para
+>Il numero di giorni dopo i quali la password scade se non è stata cambiata</para
+></listitem>
+<listitem
+><para
+>Il numero di giorni prima della scadenza in cui l'utente sarà avvertito</para
+></listitem>
+<listitem
+><para
+>Se e quando un account sarà disattivato se la password scade</para
+></listitem>
+<listitem
+><para
+>Una certa data di scadenza dell'account</para
+></listitem>
+<listitem
+><para
+><guilabel
+>Classe</guilabel
+> (sui sistemi <acronym
+>BSD</acronym
+>)</para
+></listitem>
+</itemizedlist>
+<para
+>La data dell'ultimo cambiamento di password è visualizzata in alto della finestra.</para>
+
+
+</sect3>
+<!-- no quota in kde 3.5 - 4.11, 
+was removed with http://lists.kde.org/?l=kde-commits&m=108486541029598&w=2
+<sect2 id="quota">
+<title
+><guilabel
+>Quota</guilabel
+> Tab</title>
+
+<para
+>You will probably see the <guilabel
+>Quota</guilabel
+> tab only if you
+have at least one mounted volume with quota enabled and a quota file
+present. There you may modify all quota related parameters: </para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>File Soft Quota</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>File Hard Quota</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>File Time Limit (Grace 
+Period)</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>iNode Soft Quota</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>iNode Hard Quota</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>iNode Time Limit (Grace 
+Period)</guilabel
+></para
+></listitem>
+</itemizedlist>
+
+<para
+> All these parameters can be changed for each file system that has user
+quota enabled. File systems can be changed using the <guilabel
+>Quota
+Filesystem</guilabel
+> box.</para>
+
+</sect2>
+-->
+<sect3 id="group">
+<title
+>La scheda <guilabel
+>Gruppi</guilabel
+></title>
+
+<para
+>La scheda <guilabel
+>Gruppi</guilabel
+> contiene tutte le informazioni sulla partecipazione nei gruppi dell'utente selezionato. Il gruppo primario al quale appartiene l'utente è configurato con il pulsante <guilabel
+>Imposta come primario</guilabel
+>. L'utente può essere assegnato a gruppi aggiuntivi segnandoli nel riquadro grande.</para>
+
+</sect3>
+</sect2>
+
+<sect2 id="group-properties">
+<title
+>Proprietà di gruppo</title>
+
+<para
+>La finestra <guilabel
+>Proprietà di gruppo</guilabel
+> contiene un elenco di tutti gli utenti nel gruppo selezionato a sinistra e un elenco di tutti gli altri utenti.</para
+> 
+<para
+>Seleziona un utente in uno o entrambi gli elenchi e usa i pulsanti <guibutton
+>Aggiungi</guibutton
+> o <guibutton
+>Rimuovi</guibutton
+> per gestire i membri del gruppo.</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="managing-users-groups">
+<title
+>Gestire utenti o gruppi</title>
+
+<para
+>Per aggiungere un utente o un gruppo al sistema, scegli <guimenuitem
+>Aggiungi</guimenuitem
+> dal menu <guimenu
+>Utente</guimenu
+> o dal menu <guimenu
+>Gruppi</guimenu
+>, oppure fai clic sul pulsante <guiicon
+>Aggiungi</guiicon
+> nella barra degli strumenti.</para>
+<para
+>Un utente o gruppo selezionato possono anche essere modificati allo stesso modo.</para>
+</sect1>
+</chapter>
+
+<chapter id="customizing">
+<title
+>Personalizzare &kuser;</title>
+
+<sect1 id="defaults">
+<title
+>Modificare le impostazioni predefinite della creazione degli utenti</title>
+
+<para
+>Per modificare le impostazioni predefinite di creazione degli utenti puoi usare la scheda <guilabel
+>Connessione</guilabel
+> nella pagina <guilabel
+>Generale</guilabel
+> della finestra di configurazione di &kuser;, che è accessibile dal menu <menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura &kuser;</guimenuitem
+></menuchoice
+>.</para
+> 
+<para
+>Lì puoi cambiare le impostazioni predefinite usate quando si crea un nuovo utente: la shell e la cartella Home (o il volume delle cartelle Home). Puoi scegliere se fare una cartella Home alla <quote
+>creazione</quote
+> o meno, e se copiare uno scheletro (file di configurazione standard) nella cartella Home o meno. Puoi anche attivare il meccanismo <guilabel
+>Gruppi privati degli utenti</guilabel
+>, che crea un nuovo gruppo personale alla creazione di un nuovo utente, e rimuove il gruppo personale alla rimozione dell'utente.</para>
+<!--not in kde 4.4
+<para
+>The skeleton files for new users can be specified in the <guilabel
+>Sources
+</guilabel
+> tab.</para>
+-->
+<!--FIXME missing
+Password Policy tab 
+Times for password changes and expiration of passwords and accounts
+
+Files page
+Location of user and group data files
+shadow passwords
+
+LDAP page preferences for users in a local network 
+Connection tab
+Settings tabs
+Samba tabs
+  -->
+</sect1>
+</chapter>
+
+<chapter id="credits">
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&kuser;</para>
+
+<para
+>Copyright del programma 1997-2000 di Denis Pershin<email
+>dyp@inetlab.com</email
+></para>
+
+<para
+>Copyright della documentazione 1997-2000 di Denis Pershin<email
+>dyp@inetlab.com</email
+></para>
+<para
+>Copyright della documentazione 2000 di &Matt.Johnston; &Matt.Johnston.mail;</para>
+<para
+>Valerio Passini</para
+><para
+>Federico Zenith <email
+>zenith@chemeng.ntnu.no</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+&documentation.index; 
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+End:
+-->
+

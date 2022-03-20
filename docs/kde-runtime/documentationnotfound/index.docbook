@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<article id="documentationnotfound" lang="&language;">
+<title
+>Documentazione non trovata</title>
+<articleinfo>
+<authorgroup>
+<author
+><firstname
+>Jack</firstname
+> <surname
+>Ostroff</surname
+> <affiliation
+> <address
+><email
+>ostroffjh@users.sourceforge.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-21</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+
+</articleinfo>
+
+<para
+>La documentazione richiesta non è stata trovata sul tuo computer. Normalmente, &kde; cerca i manuali delle applicazioni in un luogo variabile a seconda di come &kde; è stato installato sul computer. Ci può essere una serie di motivi per cui non ha potuto trovare la documentazione richiesta. Il documento potrebbe non esistere, o potrebbe non essere stato installato assieme all'applicazione.</para>
+
+<para
+>Come risolvere il problema:</para>
+
+<para
+>Comincia a cercare la documentazione richiesta sul <ulink url="http://docs.kde.org/"
+>sito della documentazione di &kde;</ulink
+>. Se la trovi sul sito, la tua distribuzione potrebbe avere un pacchetto apposito a sé (chiamato per esempio kdepim-doc per tutte le applicazioni del modulo kdepim, come &kmail;, &kontact; eccetera). Usa il gestore dei pacchetti della tua distribuzione per trovare e installare la documentazione mancante.</para>
+
+<para
+>Se usi una distribuzione basata sul codice sorgente, come Gentoo, assicurati che non ci siano delle impostazioni di configurazione (su Gentoo, i contrassegni USE) che potrebbero aver impedito l'installazione della documentazione. </para>
+
+<para
+>Se hai fatto tutto questo, ma vedi ancora questa pagina invece del manuale dell'applicazione, hai probabilmente trovato un errore nel sistema di aiuto di &kde;. In questo caso, per piacere, segnalalo sul <ulink url="http://bugs.kde.org/"
+>sito degli errori di &kde;</ulink
+>. </para>
+
+<para
+>Se non hai trovato la documentazione sul <ulink url="http://docs.kde.org/"
+>sito della documentazione di &kde;</ulink
+>, l'applicazione potrebbe non avere una documentazione non in rete. Segnala la cosa sul <ulink url="http://bugs.kde.org/"
+>sito degli errori di &kde;</ulink
+>. </para>
+
+<para
+>In caso che l'applicazione non abbia documentazione non in rete, dovresti usare le risorse in rete della <ulink url="http://userbase.kde.org/"
+>documentazione UserBase</ulink
+> e i <ulink url="http://forum.kde.org/"
+>forum della comunità di &kde;</ulink
+> per cercare aiuto. </para>
+
+</article>

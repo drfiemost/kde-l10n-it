@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+	
+<article lang="&language;" id="mbox">
+<title
+>mbox</title>
+<articleinfo>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Bertjan</firstname
+><surname
+>Broeksema</surname
+></personname
+> <email
+>broeksema@kde.org</email
+></author>
+<othercredit role="translator"
+><firstname
+>Luigi</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>luigi.toscano@tiscali.it</email
+></address
+></affiliation
+> <contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<date
+>2009-11-05</date>
+
+ 
+</articleinfo>
+
+<para
+>Il formato di file mbox rappresenta un modo semplice ma piuttosto inefficiente di immagazzinare messaggi di posta elettronica. Tutti i messaggi sono concatenati uno dopo l'altro nello stesso file, divisi da una riga speciale che funge da separatore. Questo rende il tutto decisamente pesante quando ci sono molti messaggi di posta elettronica nello stesso file.</para
+> 
+
+</article>

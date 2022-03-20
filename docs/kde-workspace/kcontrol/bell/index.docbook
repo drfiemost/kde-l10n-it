@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+ <!ENTITY % addindex "IGNORE">
+ <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="system-bell">
+<title
+>Campanella di sistema</title>
+<articleinfo>
+<authorgroup>
+<author
+><firstname
+>Pat</firstname
+><surname
+>Dowler</surname
+></author>
+<author
+><firstname
+>Matthias</firstname
+><surname
+>Hoelzer</surname
+></author>
+<author
+><firstname
+>Mike</firstname
+><surname
+>McBride</surname
+></author>
+
+<othercredit role="translator"
+><firstname
+>Pino</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>toscano.pino@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2011-11-28</date>
+<releaseinfo
+>&kde; 4.8</releaseinfo>
+</articleinfo>
+
+<para
+>La campanella di sistema o "bip" è una caratteristica del server X, che cerca di far buon uso dell'hardware disponibile. </para>
+
+<para
+>&kde; normalmente non usa la campanella di sistema; usa, invece, notifiche di sistema proprie, che possono includere voci nei log, messaggi a comparsa, o "bip" propri. Puoi configurarli nel modulo di &systemsettings; <guilabel
+>Gestione delle notifiche</guilabel
+>.</para>
+
+<note
+><para
+>Non è sempre possibile per il server X riuscire a produrre un suono esattamente con i parametri impostati a causa delle limitazioni hardware. Per esempio, sulla maggior parte dei PC, il controllo del volume non è molto buono e per questo il server X simula il volume basso con una durata ridotta del suono. Quindi, se sembra che le impostazioni non abbiano effetto, ciò è dovuto al server X e/o all'hardware che non supporta niente di meglio.</para
+></note>
+
+<para
+>Scegli <guilabel
+>Usa campanella di sistema invece degli avvisi di sistema</guilabel
+>, quindi puoi impostare i parametri seguenti per la campanella:</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Volume</guilabel
+> (percentuale del volume <quote
+>massimo</quote
+>)</term>
+<listitem
+><para
+>Qui puoi regolare il volume della campanella di sistema.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Tono</guilabel
+> (in Hz)</term>
+<listitem
+><para
+>Qui puoi regolare il tono della campanella di sistema.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Durata</guilabel
+> (in millisecondi)</term>
+<listitem
+><para
+>Qui puoi regolare la durata della campanella di sistema.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Per ulteriori impostazioni della campanella, consulta il modulo <guilabel
+>Accessibilità</guilabel
+> di &systemsettings;.</para>
+
+<para
+>Puoi usare il pulsante <guibutton
+>Prova</guibutton
+> per ascoltare il suono della campanella come impostato.</para>
+
+</article>

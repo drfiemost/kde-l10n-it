@@ -1,0 +1,244 @@
+# translation of akonaditray.po to Italian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the akonaditray package.
+#
+# Dario Panico <Dareus_Persarumrex@fastwebnet.it>, 2008.
+# Antonino Arcudi <antonino.arcudi@gmail.com>, 2009.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonaditray\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-12-14 01:34+0000\n"
+"PO-Revision-Date: 2012-07-19 02:52+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Dario Panico, Antonino Arcudi"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "dareus.persarumrex@gmail.com, antonino.arcudi@gmail.com"
+
+#: backupassistant.cpp:42
+msgid ""
+"The backup cannot be made. Either the mysqldump application is not "
+"installed, or the bzip2 application is not found. Please install those and "
+"make sure they can be found in the current path. Restart this Assistant when "
+"this is fixed."
+msgstr ""
+"La copia di sicurezza non può essere creata. O l'applicazione mysqldump non "
+"è installata o non è stata trovata l'applicazione bzip2. Installale e "
+"assicurati che possano essere trovate nel percorso attuale. Riavvia "
+"l'assistente quando questo è stato risolto."
+
+#: backupassistant.cpp:47
+msgid ""
+"Please select the file where to store the backup, give it the extension .tar."
+"bz2"
+msgstr ""
+"Seleziona il file in cui salvare la copia di sicurezza, dagli l'estensione ."
+"tar.bz2"
+
+#: backupassistant.cpp:50
+msgid "&Click Here to Select the Backup Location..."
+msgstr "Fai &clic qui per scegliere la posizione della copia di sicurezza..."
+
+#: backupassistant.cpp:53
+msgid "Press 'Next' to start the Backup"
+msgstr "Premi «Prossimo» per avviare la creazione della copia di sicurezza"
+
+#: backupassistant.cpp:57
+msgid "Welcome to the Backup Assistant"
+msgstr "Benvenuto nell'assistente per le copie di sicurezza"
+
+#: backupassistant.cpp:62
+msgid "Making the backup"
+msgstr "Creazione della copia di sicurezza in corso"
+
+#: backupassistant.cpp:83
+msgid "Save As"
+msgstr "Salva come"
+
+#: backupassistant.cpp:99
+msgid "Please be patient, the backup is being created..."
+msgstr "Sii paziente, creazione della copia di sicurezza in corso..."
+
+#: backupassistant.cpp:106
+msgid ""
+"The backup has been made. Please verify manually if the backup is complete. "
+"Also note that KWallet stored passwords are not in the backup, you might "
+"want to verify you have a backup of those elsewhere."
+msgstr ""
+"La copia di sicurezza è stato creata. Controlla manualmente se la copia è "
+"completa. Nota anche che le password salvate in KWallet non si trovano in "
+"essa, potresti voler verificare di avere una copia di quelle da qualche "
+"altra parte."
+
+#: backupassistant.cpp:112
+msgid ""
+"The backup process ended unexpectedly. Please report a bug, so we can find "
+"out what the cause is."
+msgstr ""
+"Il processo di creazione della copia di sicurezza è terminato "
+"inaspettatamente. Segnala il bug, così che noi possiamo capire quale sia la "
+"causa."
+
+#: dock.cpp:64
+msgid "Akonadi"
+msgstr "Akonadi"
+
+#: dock.cpp:70
+msgid "&Stop Akonadi"
+msgstr "&Ferma Akonadi"
+
+#: dock.cpp:71
+msgid "S&tart Akonadi"
+msgstr "&Avvia Akonadi"
+
+#: dock.cpp:72
+msgid "Make &Backup..."
+msgstr "Avvia creazione della co&pia di sicurezza..."
+
+#: dock.cpp:73
+msgid "&Restore Backup..."
+msgstr "&Ripristina copia di sicurezza..."
+
+#: dock.cpp:74
+msgid "&Configure..."
+msgstr "&Configura..."
+
+#: dock.cpp:101 dock.cpp:155
+msgid "Akonadi available"
+msgstr "Akonadi disponibile"
+
+#: dock.cpp:102 dock.cpp:156
+msgid "The Akonadi server has been started and can be used now."
+msgstr "Il server Akonadi è stato avviato ed ora può essere usato."
+
+#: dock.cpp:110 dock.cpp:158
+msgid "Akonadi not available"
+msgstr "Akonadi non disponibile"
+
+#: dock.cpp:111 dock.cpp:159
+msgid ""
+"The Akonadi server has been stopped, Akonadi related applications can no "
+"longer be used."
+msgstr ""
+"Il server Akonadi è stato fermato, le applicazioni che dipendono da Akonadi "
+"non possono più essere usate."
+
+#: dock.cpp:165
+msgid "Akonadi is running"
+msgstr "Akonadi è in esecuzione"
+
+#: dock.cpp:165
+msgid "Akonadi is not running"
+msgstr "Akonadi non è in esecuzione"
+
+#: dock.cpp:178 dock.cpp:192
+#, kde-format
+msgctxt "<source>: <error message>"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: dock.cpp:184
+msgid "Akonadi message"
+msgstr "Messaggio di Akonadi"
+
+#: dock.cpp:198
+msgid "Akonadi error"
+msgstr "Errore di Akonadi"
+
+#: main.cpp:52
+msgid "AkonadiTray"
+msgstr "AkonadiTray"
+
+#: main.cpp:54
+msgid "System tray application to control basic Akonadi functions"
+msgstr ""
+"Applicazione del vassoio di sistema per controllare le funzioni di base di "
+"Akonadi"
+
+#: main.cpp:56
+msgid "(c) 2008 Omat Holding B.V."
+msgstr "(c) 2008 Omat Holding B.V."
+
+#: main.cpp:58
+msgid "Tom Albers"
+msgstr "Tom Albers"
+
+#: main.cpp:58
+msgid "Maintainer and Author"
+msgstr "Responsabile e autore"
+
+#: restoreassistant.cpp:41
+msgid ""
+"The backup cannot be restored. Either the mysql application is not "
+"installed, or the bzip2 application is not found. Please install those and "
+"make sure they can be found in the current path. Restart this Assistant when "
+"this is fixed."
+msgstr ""
+"La copia di sicurezza non può essere ripristinata. O l'applicazione mysql "
+"non è installata o non è stata trovata l'applicazione bzip2. Installale e "
+"assicurati che possano essere trovate nel percorso attuale. Riavvia "
+"l'assistente quando questo è stato risolto."
+
+#: restoreassistant.cpp:46
+msgid ""
+"Please select the file to restore. Note that restoring a backup will "
+"overwrite all existing data. You might want to make a backup first and "
+"please consider closing all Akonadi applications (but do not stop the "
+"akonadi server)."
+msgstr ""
+"Seleziona il file da ripristinare. Nota che il ripristino di una copia di "
+"sicurezza sovrascriverà i dati esistenti. Potresti voler prima fare una "
+"copia di sicurezza e considera di chiudere tutte le applicazioni Akonadi (ma "
+"non fermare il server akonadi)."
+
+#: restoreassistant.cpp:51
+msgid "&Click Here to Select the File to Restore..."
+msgstr "Fai &clic qui per selezionare il file da ripristinare..."
+
+#: restoreassistant.cpp:54
+msgid "Press 'Next' to start the Restore"
+msgstr "Premi «Prossimo» per avviare il ripristino"
+
+#: restoreassistant.cpp:58
+msgid "Welcome to the Restore Assistant"
+msgstr "Benvenuto nell'assistente al ripristino"
+
+#: restoreassistant.cpp:63
+msgid "Restoring"
+msgstr "Ripristino in corso"
+
+#: restoreassistant.cpp:89
+msgid "Please be patient, the backup is being restored..."
+msgstr "Sii paziente, ripristino della copia di sicurezza in corso..."
+
+#: restoreassistant.cpp:96
+msgid ""
+"The backup has been restored. Note that KWallet stored passwords are not "
+"restored, so applications might ask for those."
+msgstr ""
+"La copia di sicurezza è stato ripristinata. Nota che le password salvate in "
+"KWallet non sono state ripristinate, quindi le applicazioni potrebbero "
+"richiederle."
+
+#: restoreassistant.cpp:101
+msgid ""
+"The restore process ended unexpectedly. Please report a bug, so we can find "
+"out what the cause is."
+msgstr ""
+"Il processo di ripristino è terminato inaspettatamente. Segnala il bug, così "
+"che noi possiamo capire quale sia la causa."
+
+#~ msgid "Quit"
+#~ msgstr "Esci"

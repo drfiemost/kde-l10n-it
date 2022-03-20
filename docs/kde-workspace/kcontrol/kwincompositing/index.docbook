@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="kwincompositing" lang="&language;">
+<articleinfo>
+
+<title
+>Effetti del desktop</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-12-05</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KControl</keyword>
+<keyword
+>desktop</keyword>
+<keyword
+>effetti</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="desktop-effects">
+<title
+>Effetti del desktop</title>
+
+<sect2 id="desktop-effects-intro">
+<title
+>Introduzione</title>
+
+<para
+>Questo modulo viene usato per configurare gli effetti del desktop di &kde;.</para>
+
+
+<para
+>Questo pannello è diviso in tre schede: <guilabel
+>Generale</guilabel
+>, <guilabel
+>Tutti gli effetti</guilabel
+> e <guilabel
+>Avanzate</guilabel
+>.</para>
+
+<sect3 id="desktop-effects-general">
+<title
+>La scheda <guilabel
+>Generale</guilabel
+></title>
+
+<para
+>In cima a questa scheda nella sezione <guilabel
+>Attivazione</guilabel
+> c'è una casella indicata con <guilabel
+>Abilita gli effetti del desktop all'avvio</guilabel
+>. Se questa casella non è spuntata, tutti gli effetti visivi sono disattivati.</para>
+<para
+>Tutti gli effetti del desktop possono essere attivati e disattivati con la scorciatoia globale <keycombo action="simul"
+>&Alt;&Shift;<keycap
+>F12</keycap
+></keycombo
+>. </para>
+<para
+>Sotto la sezione ci sono alcune impostazioni per gli effetti del desktop più semplici, come la gestione delle finestre migliorata, animazioni varie, effetti per passaggio tra desktop, e la velocità di animazione.</para>
+</sect3>
+
+<sect3 id="desktop-alleffects">
+<title
+>La scheda <guilabel
+>Tutti gli effetti</guilabel
+></title>
+
+<para
+>La parte principale di questa pagina è un elenco di tutti gli effetti disponibili raggruppati per <guilabel
+>Accessibilità</guilabel
+>, <guilabel
+>Aspetto</guilabel
+>, <guilabel
+>Carino</guilabel
+>, <guilabel
+>Focus</guilabel
+>, <guilabel
+>Strumenti</guilabel
+> e <guilabel
+>Gestione delle finestre</guilabel
+>. Usa la barra di ricerca incrementale sopra l'elenco per cercare tra i suoi elementi.</para>
+
+<para
+>Segna un effetto nell'elenco per abilitarlo. Visualizza la finestra di <guilabel
+>Informazioni</guilabel
+> facendo clic sul pulsante delle informazioni alla destra della voce dell'elenco. Alcuni effetti permettono di impostare alcune opzioni: in questo caso c'è un pulsante degli strumenti a sinistra del pulsante delle informazioni. Facci clic per aprire una finestra di configurazione.</para>
+</sect3>
+
+<sect3 id="desktop-advanced">
+<title
+>La scheda <guilabel
+>Avanzate</guilabel
+></title>
+
+<para
+>In questa scheda puoi selezionare un <guilabel
+>Tipo di composizione</guilabel
+> e il <guilabel
+>Sistema grafico Qt</guilabel
+>. Nelle due sezioni successive puoi configurare le <guilabel
+>Opzioni generali</guilabel
+> e le <guilabel
+>Opzioni per OpenGL</guilabel
+>. </para>
+</sect3>
+
+
+</sect2>
+
+</sect1>
+
+</article>

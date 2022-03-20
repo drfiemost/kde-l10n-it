@@ -1,0 +1,170 @@
+# translation of akonadi_kabc_resource.po to Italian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_kabc_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-12-07 02:52+0100\n"
+"PO-Revision-Date: 2009-07-06 22:16+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kresourceassistant.cpp:54
+msgctxt "@info"
+msgid ""
+"<title>Introduction</title><para>This assistant will guide you through the "
+"necessary steps to use a traditional KDE resource plugin to populate a "
+"folder of your Akonadi personal information setup with data otherwise not "
+"yet accessible through native Akonadi resources.</para><para>The setup "
+"process consists of three steps:</para><para><list><item>Step 1: Selecting a "
+"plugin suitable for the kind of data source you want to add;</"
+"item><item>Step 2: Providing the selected plugin with information on where "
+"to find and how to access the data;</item><item>Step 3: Naming the resulting "
+"data source so you can easily identify it in any application presenting you "
+"a choice of which data to process.</item></list></para>"
+msgstr ""
+"<title>Introduzione</title><para>Questo assistente ti guiderà attraverso i "
+"passi necessari per usare un'estensione relativa alle risorse tradizionali "
+"di KDE per riempire una cartella della tua configurazione del gestore di "
+"informazioni personali in Akonadi con dati altrimenti non ancora accessibili "
+"tramite risorse native di Akonadi.</para><para>Il processo di impostazione è "
+"composto da tre passi:</para><para><list><item>Passo 1: selezionare "
+"un'estensione adatta per il tipo di dati da aggiungere;</item><item>Passo 2: "
+"fornire all'estensione selezionata le informazioni necessarie per trovare ed "
+"accedere ai dati;</item><item>passo 3: rinominare la fonte dati così "
+"ottenuta in modo da identificarla facilmente in ogni applicazione che "
+"richieda di scegliere quali dati elaborare.</item></list></para>"
+
+#: kresourceassistant.cpp:126
+msgctxt "@info"
+msgid "No description available"
+msgstr "Nessuna descrizione disponibile"
+
+#: kresourceassistant.cpp:163
+#, kde-format
+msgctxt "@title:group"
+msgid "%1 Plugin Settings"
+msgstr "Impostazioni dell'estensione %1"
+
+#: kresourceassistant.cpp:169
+msgctxt "@info"
+msgid "No plugin specific configuration available"
+msgstr "Non è disponibile nessuna configurazione specifica dell'estensione"
+
+#: kresourceassistant.cpp:245
+msgctxt "@info"
+msgid ""
+"The settings on this page allow you to customize how the data from the "
+"plugin will fit into your personal information setup."
+msgstr ""
+"Le impostazioni in questa pagina consentono di personalizzare il modo in cui "
+"i dati forniti dall'estensione si integreranno con la tua configurazione del "
+"gestore di informazioni personali."
+
+#: kresourceassistant.cpp:261
+#, kde-format
+msgctxt "@title:group general resource settings"
+msgid "%1 Folder Settings"
+msgstr "Impostazioni della cartella %1"
+
+#: kresourceassistant.cpp:264
+msgctxt "@label resource name"
+msgid "Name:"
+msgstr "Nome:"
+
+#: kresourceassistant.cpp:272
+msgctxt "@option:check if resource is read-only"
+msgid "Read-only"
+msgstr "Sola lettura"
+
+#: kresourceassistant.cpp:326
+msgctxt "@title user visible resource type"
+msgid "Address Book"
+msgstr "Rubrica indirizzi"
+
+#: kresourceassistant.cpp:328
+msgctxt "@title user visible resource type"
+msgid "Calendar"
+msgstr "Calendario"
+
+#: kresourceassistant.cpp:333
+msgctxt "@title:window"
+msgid "KDE Compatibility Assistant"
+msgstr "Assistente di compatibilità di KDE"
+
+#: kresourceassistant.cpp:343
+msgctxt "@title assistant dialog step"
+msgid "Step 1: Select a KDE resource plugin"
+msgstr "Passo 1: seleziona un'estensione di risorse di KDE"
+
+#: kresourceassistant.cpp:348
+msgctxt "@title assistant dialog step"
+msgid "Step 2: Configure the selected KDE resource plugin"
+msgstr "Passo 2: configura l'estensione di risorse di KDE selezionata"
+
+#: kresourceassistant.cpp:352
+msgctxt "@title assistant dialog step"
+msgid "Step 3: Choose target folder properties"
+msgstr "Passo 3: scegli le proprietà della cartella di destinazione"
+
+#~ msgctxt "@info:status"
+#~ msgid "Changing address book plugin configuration"
+#~ msgstr "Modifica della configurazione dell'estensione rubrica indirizzi"
+
+#~ msgctxt "@info:status"
+#~ msgid "Acquiring address book plugin configuration"
+#~ msgstr "Acquisizione della configurazione dell'estensione rubrica indirizzi"
+
+#~ msgctxt "@info:status"
+#~ msgid "No KDE address book plugin configured yet"
+#~ msgstr "Estensione rubrica indirizzi di KDE non ancora configurata"
+
+#~ msgctxt "@info:status"
+#~ msgid "Initialization based on newly created configuration failed."
+#~ msgstr ""
+#~ "L'inizializzazione basata sulla nuova configurazione non è riuscita."
+
+#~ msgctxt "@info:status"
+#~ msgid "Loading of address book failed."
+#~ msgstr "Caricamento della rubrica indirizzi non riuscito."
+
+#~ msgctxt "@info:status"
+#~ msgid "Loading address book"
+#~ msgstr "Caricamento rubrica indirizzi"
+
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "Request for data of a specific distribution list failed because there is "
+#~ "no such list"
+#~ msgstr ""
+#~ "La richiesta dei dati di una particolare lista di distribuzione non è "
+#~ "riuscita perché la lista non esiste"
+
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "Request for data of a specific address book entry failed because there is "
+#~ "no such entry"
+#~ msgstr ""
+#~ "La richiesta dei dati di una particolare voce della rubrica indirizzi non "
+#~ "è riuscita perché la voce richiesta non esiste"
+
+#~ msgctxt "@info:status"
+#~ msgid ""
+#~ "Request for saving the address book failed. Probably locked by another "
+#~ "application"
+#~ msgstr ""
+#~ "La richiesta di salvataggio della rubrica indirizzi non è riuscita. "
+#~ "Probabilmente la rubrica è bloccata da un'altra applicazione"
+
+#~ msgctxt "@info:status"
+#~ msgid "Initialization based on stored configuration failed."
+#~ msgstr ""
+#~ "L'inizializzazione basata sulla configurazione memorizzata non è riuscita."

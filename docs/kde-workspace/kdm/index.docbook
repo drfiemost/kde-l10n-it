@@ -1,0 +1,2520 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY kappname "&kdm;">
+  <!ENTITY package "kdebase">
+  <!ENTITY kdmrc "<filename
+>kdmrc</filename
+>">
+  <!ENTITY ksmserver "<application
+>ksmserver</application
+>">
+  <!ENTITY kdesktop "<application
+>kdesktop</application
+>">
+  <!ENTITY XDMCP "<acronym
+>XDMCP</acronym
+>">
+  <!ENTITY xdm "<application
+>xdm</application
+>">
+  <!ENTITY kdmrc-ref SYSTEM "kdmrc-ref.docbook">
+  <!ENTITY theme-ref SYSTEM "theme-ref.docbook">
+  <!ENTITY % addindex "INCLUDE">
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="kdm" lang="&language;">
+<bookinfo>
+<title
+>Manuale di &kdm;</title>
+
+<authorgroup>
+<author
+>&Oswald.Buddenhagen; &Oswald.Buddenhagen.mail; </author
+><!-- 
+<othercredit role="developer">
+&Oswald.Buddenhagen; &Oswald.Buddenhagen.mail;
+<contrib
+>Developer</contrib>
+</othercredit>
+<othercredit role="reviewer">
+&Lauri.Watts; &Lauri.Watts.mail;
+<contrib
+>Reviewer</contrib>
+</othercredit
+> -->
+
+<othercredit role="translator"
+><firstname
+>Massimiliano</firstname
+><surname
+>Donno</surname
+><contrib
+>Traduzione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione</contrib
+></othercredit
+> 
+
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Neal.Crook;</holder>
+</copyright>
+
+<copyright>
+<year
+>2002</year
+><year
+>2007</year>
+<holder
+>&Oswald.Buddenhagen;</holder>
+</copyright>
+
+<copyright>
+<year
+>2003</year>
+<holder
+>&Lauri.Watts;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2007-12-07</date>
+<releaseinfo
+>0.06.00</releaseinfo>
+
+<abstract>
+<para
+>Questo documento descrive &kdm;, il gestore dello schermo di &kde;. &kdm; è anche noto come <quote
+>gestore degli accessi</quote
+>.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdm</keyword>
+<keyword
+>xdm</keyword>
+<keyword
+>gestore dello schermo</keyword>
+<keyword
+>gestore del desktop</keyword>
+<keyword
+>gestore degli accessi</keyword>
+</keywordset>
+</bookinfo>
+
+<!-- ********************************************************************** -->  
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&kdm; fornisce un'interfaccia grafica che permette di accedere al sistema. Chiede il nome dell'utente e la password, autentica l'utente e apre una <quote
+>sessione</quote
+>. &kdm; è superiore a &xdm;, il gestore dello schermo di X, per molte ragioni.</para>
+
+</chapter>
+
+<!-- Chapters to write -->
+<!-- * Just enough config to get it to run and login to KDE 
+     * Adding more session types (GNOME, etc)
+     * Adding other customizations to XSession (ssh/gpg-agent, etc)
+     * Further customization to KDM (via the kcontrol module, and by 
+       hand)
+     * XDMCP by query
+     * XDMCP by broadcast
+     * Sound transparency (if Ade can tell me how!)
+     * Pull in all options from the KControl Module
+     * More resources
+-->
+
+<chapter id="quickstart">
+<title
+>Guida rapida</title>
+
+<para
+>Questa è una guida rapida per utenti che rispondono al seguente modello:</para>
+
+<itemizedlist>
+<listitem>
+<para
+>X è configurato e funziona con il comando <command
+>startx</command
+> dalla riga di comando.</para>
+</listitem>
+<listitem>
+<para
+>Ogni utente usa generalmente un solo gestore di finestre o ambiente desktop, e non cambia questa scelta molto spesso, o gli va bene modificare un solo file di testo per cambiare la loro scelta.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Questo scenario è sufficiente per molti ambienti in cui un singolo o più utenti di solito avviano il PC e si identificano per accedere al loro ambiente preferito.</para>
+
+<procedure>
+<title
+>Impostare una sessione predefinita</title>
+<step>
+<para
+>Crea o apri il file <filename
+>~/.xinitrc</filename
+></para>
+<para
+>Se hai già un file <filename
+>~/.xinitrc</filename
+> funzionante, vai al prossimo passo.</para>
+</step>
+<step>
+<para
+>Se ancora non esiste, aggiungi una riga in <filename
+>~/.xinitrc</filename
+> per avviare il tuo gestore delle finestre o ambiente desktop preferito.</para>
+<para
+>Per &kde; dovresti scrivere:</para>
+<screen
+><userinput
+>startkde</userinput
+></screen>
+<para
+>Per altri gestori delle finestre o ambienti desktop, dovresti consultare la loro documentazione per vedere qual è il comando esatto.</para>
+</step>
+<step
+><para
+>Crea un collegamento così:</para>
+<screen
+><userinput
+><command
+>ln</command
+> <option
+>-s</option
+> <parameter
+>~/.xinitrc ~/.xsession</parameter
+></userinput
+></screen>
+</step>
+</procedure>
+
+<para
+>A questo punto, digitare <userinput
+><command
+>startx</command
+></userinput
+> dalla riga di comando dovrebbe avviare X con una sessione di &kde;. Il prossimo passo è provare &kdm;.</para>
+
+<para
+>Come <systemitem class="username"
+>root</systemitem
+> digita <userinput
+><command
+>kdm</command
+></userinput
+> dal prompt.</para>
+
+<para
+>Dovresti vedere una finestra d'accesso, descritta più in dettaglio nel<xref linkend="login"/>.</para>
+
+<para
+>Digitare nome utente e password nei rispettivi campi e lasciare selezionato <option
+>predefinito</option
+> come tipo di sessione dovrebbe avviare &kde; per l'utente immesso.</para>
+
+<para
+>Se ci sono altri utenti da configurare, bisogna ripetere la procedura appena descritta per ciascuno di loro.</para>
+
+<note>
+<para
+>Questa è una guida rapida solo parziale. Probabilmente vorrai anche personalizzare ulteriormente &kdm;, per esempio per nascondere i nomi degli altri utenti, o per permettere più sessioni, o per altro ancora. Leggi il resto di questo manuale per socprire come farlo.</para>
+</note>
+
+</chapter>
+
+<chapter id="login"
+> 
+<title
+>La finestra di accesso</title
+> 
+
+<para
+>L'interfaccia utente di &kdm; è costituita da alcune finestre. Quella principale contiene:</para>
+<itemizedlist>
+
+<listitem>
+<para
+>Degli elementi grafici per autenticarsi. Quando è selezionato il metodo <quote
+>classici</quote
+>, sono:</para>
+<itemizedlist>
+
+<listitem>
+<para
+>Un campo <guilabel
+>Nome utente</guilabel
+> per inserire il nome utente.</para>
+</listitem>
+
+<listitem>
+<para
+>Un campo <guilabel
+>Password</guilabel
+> per inserire la password.</para>
+</listitem>
+
+</itemizedlist>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo) Un elenco con il nome di ogni utente e una sua immagine (per esempio una foto). Un clic sulla voce equivale a scrivere il nome dell'utente associatovi nel campo <guilabel
+>Nome utente</guilabel
+>.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo) Una regione a destra o al di sopra dell'area di autenticazione che può essere usata per visualizzare un'immagine statica o un orologio analogico.</para>
+</listitem>
+
+<listitem>
+<para
+>Un pulsante <guibutton
+>Accedi</guibutton
+> che conferma la combinazione di nome utente e password, e tenta di avviare una sessione del tipo selezionato.</para>
+</listitem>
+
+<listitem>
+<para
+>Un pulsante <guibutton
+>Menu</guibutton
+> che apre un menu con le seguenti azioni:</para>
+<itemizedlist>
+
+<listitem>
+<para
+>(Facoltativo) Un elemento <guimenuitem
+>Tipo di sessione</guimenuitem
+> per scegliere il tipo della sessione (ambiente desktop, gestore delle finestre) da avviare. Vedi <xref linkend="different-window-managers-with-kdm"/> per sapere come configurare diversi tipi di sessione.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo) Un <guimenuitem
+>Metodo di autenticazione</guimenuitem
+> per attivare diversi metodi di autenticazione, come i classici nome utente e password, smart card, dati biometrici, eccetera. Gli autenticatori veri e propri sono combinazioni di moduli <acronym
+>PAM</acronym
+> e moduli di interfaccia corrispondenti (<quote
+>estensioni di conversazione</quote
+>). Vedi <xref linkend="option-pluginslogin"/>.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo su schermi locali) Un elemento <guimenuitem
+>Cambia utente</guimenuitem
+> per passare tra sessioni locali che girano su diversi terminali virtuali sullo stesso computer.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo su schermi locali) Un elemento <guimenuitem
+>Riavvia il server X</guimenuitem
+> che termina il server X attuale, ne avvia un altro e visualizza una nuova finestra d'accesso. Lo puoi usare se la schermata sembra in modo sbagliata.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo su schermi remoti) Un pulsante <guimenuitem
+>Chiudi la connessione</guimenuitem
+> per chiudere le connessioni al server &XDMCP; a cui sei attualmente connesso. Se sei arrivato qui tramite un selettore di host, questa azione ti ci riporterà, altrimenti scegliere questa opzione riavvia nuovamente il server X locale e fa ricomparire la finestra d'accesso.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo su schermi locali) Un elemento <guimenuitem
+>Accesso remoto</guimenuitem
+> che visualizza un selettore di host con i server &XDMCP; a cui si può accedere.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo su schermi locali) Un elemento <guimenuitem
+>Accesso alla console</guimenuitem
+>, che chiude l'accesso grafico e ti lascia alla console testuale. Vedi <xref linkend="option-consolettys"/> e <xref linkend="option-servertty"/>.</para>
+</listitem>
+
+<listitem>
+<para
+>(Facoltativo) Un pulsante <guibutton
+>Spegni</guibutton
+> che fa comparire la finestra di <guilabel
+>Spegni</guilabel
+>.</para>
+</listitem>
+
+</itemizedlist>
+</listitem>
+
+</itemizedlist>
+
+<para
+>La finestra <guilabel
+>Spegni</guilabel
+> presenta una serie di pulsanti per eseguire una di queste azioni:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Spegni il computer</term
+> 
+<listitem>
+<para
+>Arresta il sistema in maniera controllata, pronto per lo staccare la corrente.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Riavvia il computer</term>
+<listitem>
+<para
+>Arresta e riavvia il sistema. Per sistemi che usano <application
+>Lilo</application
+> o <application
+>Grub</application
+> come gestore d'avvio, una casella a cascata facoltativa permette di scegliere quale sistema operativo caricare al riavvio.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Pianifica</term
+> 
+<listitem>
+<para
+>Se questa opzione è abilitata, puoi usarla per entrare in una finestra di spegnimento più complessa. Vedi <xref linkend="option-scheduledsd"/> per i dettagli.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Premere il pulsante <guibutton
+>Annulla</guibutton
+> fa tornare alla finestra principale di &kdm;. </para>
+
+</chapter>
+
+<!-- *********************************************************************** -->
+<chapter id="configuring-kdm">
+<title
+>Configurare &kdm;</title>
+
+<para
+>Questo capitolo presuppone che &kdm; sia già in funzione sul sistema, e che vuoi semplicemente cambiarne il comportamento in qualche rispetto.</para>
+
+<para
+>Quando &kdm; parte, legge la sua configurazione dalla cartella <filename class="directory"
+>$<envar
+>KDEDIR</envar
+>/share/config/kdm/</filename
+> (potrebbe anche essere <filename class="directory"
+>/etc/kde4/kdm/</filename
+> o qualcos'altro sul sistema).</para>
+
+<para
+>Il file di configurazione principale è &kdmrc;; tutti gli altri file sono riferiti da lì e potrebbero avere qualsiasi nome ed essere ovunque sul sistema, ma di solito ciò non ha molto senso per ovvie ragioni. Un'eccezione particolare è il riferimento ai file di configurazione di un &xdm; giàinstallato; però quando si installa un nuovo &kdm;, esso importerà le impostazioni da quei file se trova un &xdm; già installato.</para>
+
+<para
+>Poiché &kdm; deve va eseguito prima che dell'accesso di qualsiasi utente, non è legato a nessun singolo utente. Quindi non è possibile usare un file di configurazione specifico per utente, ma tutti condividono il file &kdmrc; comune. Ne segue che la configurazione di &kdm; può essere alterata solo da quegli utenti che hanno i permessi di scrittura su <filename
+>$<envar
+>KDEDIR</envar
+>/share/config/kdm/kdmrc</filename
+>, che normalmente è ristretta all'amministratore del sistema, cioè <systemitem class="username"
+>root</systemitem
+>.</para>
+
+<para
+>Puoi vedere il file &kdmrc; attualmente in uso sul sistema, e puoi configurare &kdm; modificando questo file. In alternativa puoi usare lo strumento grafico di configurazione fornito dalle &systemsettings; (il modulo <guilabel
+>Schermata d'accesso</guilabel
+> nella categoria <guilabel
+>Amministrazione di sistema</guilabel
+>. </para>
+
+<para
+>Il resto di questo capitolo descrive la configurazione di &kdm; tramite il modulo delle &systemsettings; e il <link linkend="kdm-files"
+>prossimo capitolo</link
+> descrive le opzioni disponibili in &kdmrc; stesso. Se devi solo configurare gli utenti locali, il modulo delle &systemsettings; dovrebbe bastare. Se devi configurare gli accessi remoti, o vuoi avere sessioni multiple di &kdm; in esecuzione, devi leggere oltre.</para>
+
+<!-- this sect is up to date for 4.4-->
+<sect1 id="kdm-kcontrol-module">
+<sect1info>
+<authorgroup>
+<author
+>&Thomas.Tanghus; &Thomas.Tanghus.mail;</author>
+<author
+>&Steffen.Hansen; &Steffen.Hansen.mail;</author>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+</authorgroup>
+</sect1info>
+
+<title
+>Il modulo di gestione degli accessi delle &systemsettings;</title>
+
+<para
+>Usando questo modulo puoi configurare il gestore grafico degli accessi di &kde;, &kdm;. Puoi cambiare l'aspetto della schermata di accesso, chi può usare il gestore degli accessi e chi può spegnere il computer.</para>
+
+<note
+><para
+>Tutte le impostazioni saranno scritte nel file di configurazione &kdmrc;, che nel suo stato iniziale contiene molti commenti per aiutarti a configurare &kdm;. Se usi questo modulo delle &systemsettings;, i commenti saranno rimossi. Tutte le opzioni disponibili in &kdmrc; sono spiegate nel<xref linkend="kdm-files"/>.</para>
+
+<para
+>Le opzioni elencate in questo capitolo sono riferite agli equivalenti in &kdmrc;. Tutte le opzioni disponibili nel modulo delle &systemsettings; sono anche direttamente disponibili in &kdmrc;, ma non è vero il contrario.</para
+></note>
+
+<para
+>Per organizzare tutte queste opzioni, il modulo si divide in varie sezioni: <link linkend="kdmconfig-general"
+><guilabel
+>Generale</guilabel
+></link
+>, <link linkend="kdmconfig-dialog"
+><guilabel
+>Finestra</guilabel
+></link
+>, <link linkend="kdmconfig-background"
+><guilabel
+>Sfondo</guilabel
+></link
+>, <link linkend="kdmconfig-theme"
+><guilabel
+>Tema</guilabel
+></link
+>, <link linkend="kdmconfig-shutdown"
+><guilabel
+>Spegnimento</guilabel
+></link
+>, <link linkend="kdmconfig-users"
+><guilabel
+>Utenti</guilabel
+></link
+> e <link linkend="kdmconfig-convenience"
+><guilabel
+>Comodità</guilabel
+></link
+>.</para>
+
+<para
+>Puoi cambiare sezione con le linguette in alto nella finestra.</para>
+
+<note
+><para
+>Puoi apportare modifiche solo se hai aperto il modulo con privilegi amministrativi.</para
+></note>
+
+<sect2 id="kdmconfig-general">
+<title
+>Generale</title>
+
+<para
+>Innanzi tutto c'è una casella per selezionare la lingua della finestra d'accesso, corrispondente all'opzione <option
+>Language</option
+> in &kdmrc;.</para>
+
+<para
+>Nella sezione <guilabel
+>Aspetto</guilabel
+> hai la scelta di usare &kdm; con dei temi. Se è segnato <guilabel
+>Utilizza finestra di benvenuto con tema</guilabel
+>, le impostazioni delle schede <guilabel
+>Finestra</guilabel
+> e <guilabel
+>Sfondo</guilabel
+> non possono essere configurate a parte.</para>
+
+<para
+>Mentre lo stile di &kde; dipende dalle impostazioni del singolo utente, lo stile usato da &kdm; può essere configurato usando <guilabel
+>Stile interfaccia grafica</guilabel
+> e <guilabel
+>Schema di colori</guilabel
+>. Queste corrispondono alle opzioni <link linkend="option-guistyle"
+><option
+>GUIStyle</option
+></link
+> e <link linkend="option-colorscheme"
+><option
+>ColorScheme</option
+></link
+> in &kdmrc;.</para>
+
+<para
+>Dalla sezione <guilabel
+>Caratteri</guilabel
+> di questa scheda puoi cambiare i caratteri usati nella finestra d'accesso. Ci sono solo i caratteri disponibili a tutti gli utenti, e non i caratteri installati per singoli utenti.</para>
+
+<para
+>Puoi selezionare tre differenti stili di caratteri in questa sezione (<guilabel
+>Generale</guilabel
+>, <guilabel
+>Carattere per errori</guilabel
+>, <guilabel
+>Benvenuto</guilabel
+>). Quando fai clic sul pulsante <guibutton
+>Scegli</guibutton
+> appare una finestra da cui puoi selezionare le nuove caratteristiche per lo stile dei caratteri.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Si usa il carattere <guilabel
+>Generale</guilabel
+> in tutte le altre parti della finestra di accesso.</para>
+</listitem>
+<listitem>
+<para
+>Il <guilabel
+>Carattere per errori</guilabel
+> si usa quando l'accesso non riesce.</para>
+</listitem>
+<listitem>
+<para
+>Il carattere di <guilabel
+>Benvenuto</guilabel
+> si usa per il titolo, detto anche <quote
+>stringa di benvenuto</quote
+>.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Puoi anche spuntare la casella <guilabel
+>Utilizza l'anti-aliasing per i caratteri</guilabel
+> se vuoi caratteri lisci nella finestra di accesso.</para>
+
+</sect2>
+
+<sect2 id="kdmconfig-dialog">
+<title
+>Finestra</title>
+
+<para
+>Da questa pagina puoi cambiare l'aspetto di &kdm;, il gestore grafico degli accessi di &kde;, nella modalità senza temi.</para>
+
+<para
+>La frase di <guilabel
+>Benvenuto</guilabel
+> è il titolo della schermata di accesso. Impostarla è utile se hai molti server a cui gli utenti potrebbero accedere. Puoi usare diversi segnaposti, descritti assieme alla chiave corrispondente <link linkend="option-greetstring"
+><option
+>GreetString</option
+></link
+> in &kdmrc;. </para>
+
+<para
+>Puoi quindi scegliere di mostrare l'orologio di sistema, un logo o nulla di particolare nella finestra di accesso. Seleziona la tua scelta con il pulsante a scelta multipla <guilabel
+>Area del logo</guilabel
+>. Questo corrisponde <link linkend="option-logoarea"
+><option
+>LogoArea</option
+></link
+> in &kdmrc;.</para>
+
+<para
+>Se hai scelto <guilabel
+>Mostra il logo</guilabel
+> puoi ora sceglierne uno:</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Trascina un'immagine sul pulsante del logo.</para>
+</listitem>
+<listitem>
+<para
+>Fai clic sul pulsante del logo e seleziona una nuova immagine dalla finestra di selezione.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Se non specifichi un logo, sarà mostrato il logo predefinito <filename
+>$<envar
+>KDEDIR</envar
+>/share/apps/kdm/pics/kdelogo.xpm</filename
+>.</para>
+
+<para
+>Normalmente la finestra di accesso è centrata. Trascina l'ancora per spostare il centro della finestra nella posizione desiderata. È possibile anche farlo con la tastiera: usa i tasti freccia, o <keycap
+>Home</keycap
+> per centrare. Nota che le proporzioni della finestra d'accesso saranno probabilmente diverse. Questo corrisponde all'opzione <link linkend="option-greeterpos"
+><option
+>GreeterPos</option
+></link
+> di &kdmrc;.</para>
+
+</sect2>
+
+<sect2 id="kdmconfig-background">
+<title
+>Sfondo</title>
+
+<para
+>Qui puoi cambiare lo sfondo del desktop che sarà visualizzato prima dell'accesso di un utente. Selezionare <guilabel
+>Abilita sfondo</guilabel
+> permette di modificare le opzioni di questa scheda.</para>
+
+<para
+>Questa scheda si divide in tre aree:</para>
+
+<orderedlist>
+<listitem>
+<para
+>Un'area per selezionare le immagini di sfondo;</para>
+</listitem>
+<listitem>
+<para
+>Lo schermo d'anteprima dello sfondo;</para>
+</listitem>
+<listitem>
+<para
+>Un'area per scegliere il colore di sfondo.</para>
+</listitem>
+</orderedlist>
+
+<variablelist>
+<varlistentry>
+<term
+>Schermo d'anteprima</term>
+<listitem>
+<para
+>Questa è un riquadro d'anteprima. Dà un'idea di cosa aspettarsi a ogni modifica.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sfondo</guilabel
+></term>
+<listitem>
+<para
+>Questa sezione permette di caricare un'immagine di sfondo sopra alla sfumatura scelta nella sezione sottostante.</para>
+
+<para
+>Qui ci sono tre scelte a disposizione:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Nessuna immagine</guilabel
+></term>
+<listitem>
+<para
+>Non verrà mostrata nessuna immagine di sfondo. Valgono ancora i colori e gli schemi specificati sotto.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Immagine</guilabel
+></term>
+<listitem>
+<para
+>Come sfondo dei desktop selezionati sarà usata un'immagine sola.</para>
+<para
+>Sotto si può regolare in dettaglio come l'immagine vada posizionata e riscalata.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sequenza di immagini</guilabel
+></term>
+<listitem>
+<para
+>&kde; permette di avere una sequenza di immagini di sfondo automatica. Per abilitare questa possibilità, premi il pulsante <guibutton
+>Impostazioni...</guibutton
+>. Nella finestra che apparirà, puoi scegliere qualsiasi immagine o cartella di immagini disponibile sul computer, usando il pulsante <guibutton
+>Aggiungi</guibutton
+> per navigare tra i file. Il pulsante <guibutton
+>Rimuovi</guibutton
+> toglierà la voce attualmente selezionata dall'elenco.</para>
+
+<para
+>Puoi scegliere per quanto un'immagine viene visualizzata nella casella <guilabel
+>Cambia immagine dopo</guilabel
+>, e puoi scegliere <guibutton
+>Mostra le immagini in ordine casuale</guibutton
+> se non vuoi che sia seguito l'ordine dell'elenco.</para>
+
+<tip
+><para
+>Visualizzare le immagini di sfondo implica tenere le immagini in memoria. Se ne hai poca, è meglio usare un'immagine piccola e ripetuta, o non usarne nessuna.</para>
+
+<para
+>Riscalare e centrare un'immagine piccola implica comunque mantenere in memoria un'immagine delle dimensioni del monitor.</para
+></tip>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Opzioni</guilabel
+></term>
+<listitem>
+
+<variablelist
+><!-- Positioning -->
+<title
+><guilabel
+>Posizione:</guilabel
+></title>
+<varlistentry>
+<term
+>Centrata</term>
+<listitem
+><para
+>L'immagine viene centrata nello schermo senza cambiarne le dimensioni. Il colore di sfondo è presente in tutti i punti che l'immagine di sfondo non copre.</para
+> </listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Ripetuta</term>
+<listitem
+><para
+>L'immagine viene ripetuta fino a che l'intero desktop viene coperto. La prima immagine va nell'angolo in alto a sinistra, e scendendo verso l'angolo in basso a destra l'immagine viene ripetuta.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Centrata e ripetuta</term>
+<listitem
+><para
+>L'immagine viene ripetuta fino a che l'intero desktop viene coperto. La prima immagine parte dal centro dello schermo, mentre gli altri duplicati si dipartono da destra, sinistra, sopra e sotto questa.</para>
+</listitem
+></varlistentry>
+<varlistentry>
+<term
+>Centrata e massimizzata</term>
+<listitem
+><para
+>L'immagine viene messa al centro dello schermo e viene riscalata fino a coprire il desktop, ma non viene alterato il rapporto delle dimensioni dell'immagine originale. In questo modo l'immagine non si distorce. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Massimizzata e ripetuta</term>
+<listitem>
+<para
+>L'immagine viene messa nell'angolo dello schermo e viene riscalata fino a coprire il desktop, ma non viene alterato il rapporto delle dimensioni dell'immagine originale. In questo modo l'immagine non si distorce. Se rimane dello spazio a disposizione, l'immagine verrà duplicata fino a riempirlo. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Riscalata</term>
+<listitem
+><para
+>L'immagine viene scalata per coprire completamente il desktop. Verrà stirata per arrivare a tutti e quattro gli angoli. L'immagine potrebbe risultarne deformata.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Centrata autoadattante</term>
+<listitem>
+<para
+>Se l'immagine si adatta alle dimensioni del desktop, questa modalità funziona come la Centrata. Se l'immagine è più grande del desktop, viene ridotta per adattarsi, mantenendo le proporzioni. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Scala e taglia</term>
+<listitem>
+<para
+>Si ingrandisce l'immagine senza distorcerla finché copre il desktop in larghezza e altezza (ritagliandola, se necessario), e quindi la si centra sul desktop.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<variablelist
+><!-- Colors -->
+<varlistentry>
+<term
+><guilabel
+>Colori:</guilabel
+></term>
+<listitem>
+<para
+>La prima casella a cascata permette di scegliere il tipo di colore, sfumatura o schema da visualizzare sotto (o in sostituzione) all'immagine di sfondo.</para>
+<tip
+><para
+>Se vuoi usare un'immagine come sfondo, puoi saltare questa parte della finestra.</para>
+<para
+>Però, se l'immagine scelta non copre tutto il desktop, i colori scelti saranno visibili nello spazio restante.</para
+></tip>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Tinta unita</guilabel
+></term>
+<listitem
+><para
+>Con questa scelta scegli un colore con la prima barra dei colori, con il quale verrà colorato tutto lo sfondo.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Sfumatura orizzontale</guilabel
+></term>
+<listitem
+><para
+>Scegliendo questa modalità, i due colori scelti con i pulsanti del colore sono disegnati da &kde; partendo dal colore primario sul lato sinistro dello schermo e sfumando lentamente nel secondario sul lato destro.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Sfumatura verticale</guilabel
+></term>
+<listitem
+><para
+>Scegliendo questa modalità, i due colori scelti con i pulsanti del colore sono disegnati da &kde; partendo dal colore primario sul lato superiore dello schermo e sfumando lentamente nel secondario sul lato inferiore.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Sfumatura piramidale</guilabel
+></term>
+<listitem
+><para
+>Scegliendo questa modalità, i due colori scelti con i pulsanti del colore sono disegnati da &kde; partendo dal colore primario negli angoli dello schermo e sfumando lentamente nel secondario al centro.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Sfumatura a incrocio di tubi</guilabel
+></term>
+<listitem
+><para
+>Scegliendo questa modalità, i due colori scelti con i pulsanti del colore sono disegnati da &kde; partendo dal colore primario in ogni angolo dello schermo e sfumando lentamente nel secondario al centro. La forma è tuttavia diversa dalla sfumatura piramidale.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Sfumatura ellittica</guilabel
+></term>
+<listitem
+><para
+>Scegliendo questa modalità, i due colori scelti con i pulsanti del colore sono disegnati da &kde; partendo dal colore primario dagli angoli dello schermo e sfumando lentamente nel secondario al centro, seguendo uno schema ellittico.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><replaceable
+>Motivo</replaceable
+></term>
+<listitem>
+<para
+>Il resto di questo elenco contiene i nomi dei vari motivi o trame che puoi scegliere.</para>
+<para
+>Per maggiori informazioni sui motivi, vedi <xref linkend="bkgnd-patterns"/>.</para>
+
+<para
+>Seleziona il colore primario con la prima barra di colore. Se hai scelto un motivo che richiede di impostarne due, il secondo potrà essere impostato con il pulsante apposito.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+</variablelist>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Sfumatura:</guilabel
+></term>
+<listitem>
+<para
+>La casella a cascata indicata con <guilabel
+>Sfumatura</guilabel
+> contiene le opzioni per eseguire una transizione graduale (sfumatura) dall'immagine di sfondo allo sfondo stesso.</para>
+
+<orderedlist>
+<listitem
+><para
+>Una casella a cascata permette di selezionare la modalità di sfumatura. Molte delle modalità sono simili a quelli per i colori di sfondo. Seleziona la modalità dall'elenco, e lo schermo d'anteprima te ne mostrerà il risultato.</para
+></listitem>
+<listitem
+><para
+>Il cursore <guilabel
+>Bilanciamento</guilabel
+> regola la sfumatura. Il risultato è visibile immediatamente nello schermo d'anteprima.</para
+></listitem>
+<listitem
+><para
+>La casella <guilabel
+>Ruoli invertiti</guilabel
+> inverte i ruoli di immagine e sfondo per alcuni tipi di sfumatura.</para>
+</listitem>
+</orderedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<sect3 id="bkgnd-advanced">
+<title
+>Opzioni avanzate</title>
+<para
+>Sotto lo schermo d'anteprima c'è un pulsante indicato con <guibutton
+>Opzioni avanzate</guibutton
+>.</para>
+
+<para
+>Per usare un programma esterno per determinare e modificare lo sfondo di &kde;, seleziona <guilabel
+>Utilizza il seguente programma per disegnare lo sfondo</guilabel
+>. Sono elencati i programmi di &kde; disponibili, selezionane uno per abilitarlo.</para>
+
+<!--Not in 4.4
+<para
+>To add a third party application (&eg;
+<application
+>XEarth</application
+>) you may use the
+<guibutton
+>Add...</guibutton
+> button.  A dialog will open allowing you
+to choose your application, and fill in other data about it.  You may
+remove any entries from this list by selecting it and pressing the
+<guibutton
+>Remove</guibutton
+> button.</para>
+
+<para
+>Using third party external programs to modify or change the
+background is beyond the scope of this document, see their respective
+documentation for the format of command-line switches and other
+configuration information.</para>
+
+<para
+>Also in this section you may choose to set the color of text
+that is used for icons on the desktop.  If you find icon text
+difficult to read against a wallpaper or pattern, you can choose a
+solid color to show beneath text, or enable a shadow under the text to
+enhance its appearance.</para>
+
+<para
+>It is possible to set how many lines of text will be shown beneath each icon with the <guilabel
+>Lines for icon text:</guilabel
+>   If the text is longer than can be shown in the configured number of lines, it will be truncated.  You can also set a value for the <guilabel
+>Width for icon text:</guilabel
+> option.  The value is in pixels, and the default is <guilabel
+>Auto</guilabel
+>, which is a default calculated based on the current font.
+</para>
+
+<para
+>Finally you can set the <guilabel
+>Size of the background
+cache:</guilabel
+>.  The default (2048 KB) is usually a safe
+choice.</para>
+-->
+</sect3>
+
+<sect3 id="bkgnd-patterns">
+<title
+>Aggiungere, rimuovere e modificare sfondi e motivi</title>
+
+<para
+>C'è un pulsante sotto lo schermo di anteprima indicato con <guibutton
+>Scarica nuovi sfondi</guibutton
+> che aiuta a trovare nuove immagini di sfondo da una selezione di immagini popolari dal sito Web <ulink url="http://www.kde-look.org"
+>KDE-Look</ulink
+>. Ovviamente puoi scegliere qualsiasi immagine a disposizione come sfondo, ovunque sia sul disco fisso. Per far apparire un'immagine nell'elenco per tutti gli utenti, dovresti salvarla nella cartella <filename class="directory"
+>$<envar
+>KDEDIR</envar
+>/share/wallpapers</filename
+>.</para>
+
+<para
+>Un motivo è un file di immagine che &kde; usa come modello per disegnare lo sfondo. Il file fornisce la forma, ma &kde; ne decide il colore. &kde; contiene diversi motivi, e ne puoi anche aggiungere di nuovi.</para>
+
+<para
+>Per aggiungere un nuovo motivo disponibile a tutti gli utenti del sistema, metti il file nella cartella <filename class="directory"
+>$<envar
+>KDEDIR</envar
+>/share/apps/kdm/patterns/</filename
+>.</para>
+
+<para
+>Copia un file <literal role="extension"
+>.desktop</literal
+> da questa cartella, e rinominalo come il nuovo file di motivo. Modificane i contenuti per adattarsi al nuovo motivo.</para>
+
+<para
+>Per aggiungere un motivo per un solo utente, metti i file nella cartella <filename class="directory"
+>$<envar
+>KDEHOME</envar
+>/share/apps/kdm/patterns/</filename
+>.</para>
+
+<para
+>Per i migliori risultati, il motivo dovrebbe essere un file PNG in scala di grigi.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2 id="kdmconfig-theme">
+<title
+>Tema</title>
+<para
+>Questa pagina comprende tre sezioni:</para>
+
+<para
+>Un elenco di temi installati, da cui ne puoi selezionare uno da usare.</para>
+
+<para
+>Una schermata con un'anteprima del tema selezionato e informazioni aggiuntive come <guilabel
+>Copyright</guilabel
+> e <guilabel
+>Descrizione</guilabel
+>.</para>
+
+<para
+>Due pulsanti per installare o rimuovere un tema, e un pulsante per avviare la finestra <guilabel
+>Scarica le Novità</guilabel
+> da cui scaricare nuovi temi.</para>
+
+<note
+><para
+>Le impostazioni su questa pagina sono disponibili sono in modalità a tema.</para
+></note>
+
+</sect2>
+
+<sect2 id="kdmconfig-shutdown">
+<title
+>Spegnimento</title>
+
+<para
+><guilabel
+>Autorizza a spegnere il computer</guilabel
+></para>
+<para
+>Usa questa casella a cascata per scegliere chi ha il permesso di spegnere il computer:</para>
+<itemizedlist>
+<listitem>
+<para
+><guilabel
+>Nessuno</guilabel
+>: nessuno può spegnere il computer usando &kdm;. Devi prima accedere ed eseguire un comando.</para>
+</listitem>
+<listitem>
+<para
+><guilabel
+>Tutti</guilabel
+>: tutti possono spegnere il computer usando &kdm;.</para>
+</listitem>
+<listitem
+><para
+><guilabel
+>Solo root</guilabel
+>: &kdm; richiede di inserire la password di <systemitem
+>root</systemitem
+> per spegnere il computer.</para
+></listitem
+> 
+</itemizedlist>
+
+<para
+>Puoi configurare indipendentemente chi è autorizzato a dare il comando di spegnimento per gli utenti in <guilabel
+>Locale</guilabel
+> e in <guilabel
+>Remoto</guilabel
+>.</para>
+
+<para
+><emphasis
+>Comandi</emphasis
+></para
+> <para
+>Usa queste caselle di testo per definire i comandi esatti di spegnimento.</para
+> <para
+>Il comando di <guilabel
+>Arresto</guilabel
+> è predefinito come <command
+>/sbin/halt</command
+>. Il comando di <guilabel
+>Riavvio</guilabel
+> è predefinito come <command
+>/sbin/reboot</command
+>.</para>
+
+<para
+>Quando la casella <guilabel
+>Gestore dell'avvio</guilabel
+> è impostata a <guilabel
+>Grub</guilabel
+> o <guilabel
+>Lilo</guilabel
+>, al riavvio &kdm; offrirà opzioni specifiche per questi gestori. Nota che questa opzione non è disponibile su tutti i sistemi operativi.</para>
+
+</sect2>
+
+<sect2 id="kdmconfig-users">
+<title
+>Utenti</title>
+
+<para
+>Da qui si può cambiare il modo in cui gli utenti sono rappresentati nella finestra di accesso.</para>
+
+<para
+>Indipendentemente dagli utenti che specifichi per nome, puoi usare l'<guilabel
+>UID di sistema</guilabel
+> per specificare un intervallo di <acronym
+>UID</acronym
+> validi da mostrare nella lista. Come impostazione predefinita gli identificativi inferiori a 1000, che di solito sono utenti demoni o di sistema, e superiori a 30000 non vengono mostrati.</para>
+
+<para
+>Puoi disabilitare del tutto la lista di utenti in &kdm; nella sezione <guilabel
+>Utenti</guilabel
+>. Puoi scegliere tra:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mostra lista</guilabel
+></term>
+<listitem>
+<para
+>Mostra solo gli utenti che non hai specificatamente escluso nell'elenco a fianco.</para>
+<para
+>Se non spunti questa casella, non verrà mostrata nessuna lista. Questa è l'impostazione più sicura, perché un aggressore dovrebbe indovinare anche il nome di un utente oltre alla sua password. È l'opzione preferibile anche nel caso si abbiano più che una manciata di utenti da elencare, altrimenti la lista potrebbe diventare ingombrante.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Completamento automatico</guilabel
+></term>
+<listitem>
+<para
+>Se questa opzione è selezionata, &kdm; completerà automaticamente i nomi degli utenti mentre vengono scritti nella casella di testo.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Selezione inversa</guilabel
+></term>
+<listitem>
+<para
+>Permette di selezionare una lista di utenti da mostrare, mentre tutti gli altri utenti <emphasis
+>non</emphasis
+> saranno visualizzati.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Puoi anche abilitare la casella di spunta <guilabel
+>Ordina gli utenti</guilabel
+> per ordinare alfabeticamente la lista. Se questa opzione è disabilitata, gli utenti verranno mostrati secondo l'ordine del file delle password. &kdm; inoltre completerà automaticamente i nomi degli utenti se l'opzione <guilabel
+>Completamento automatico</guilabel
+> è abilitata.</para>
+
+<para
+>Se scegli di mostrare gli utenti, la finestra di accesso mostrerà le immagini (da te selezionate) degli utenti nella lista. Chi vuole accedere al sistema seleziona la sua immagine e il suo nome, immette la password e viene autenticato.</para>
+
+<para
+>Se permetti l'immagine degli utenti, puoi configurare la <guilabel
+>Sorgente immagini utenti</guilabel
+>:</para>
+
+<para
+>Qui puoi specificare il posto in cui &kdm; prenderà le immagini che rappresentano gli utenti. <guilabel
+>Sistema</guilabel
+> rappresenta la cartella globale; queste sono le immagini che puoi impostare qui sotto. <guilabel
+>Utente</guilabel
+> significa che &kdm; deve leggere il file <filename
+>$<envar
+>HOME</envar
+>/.face.icon</filename
+> dell'utente. Le due opzioni in mezzo definiscono l'ordine di preferenza se entrambe le sorgenti sono disponibili. </para>
+
+<para
+>Se scegli di non mostrare gli utenti, la finestra di accesso sarà un po' più tradizionale. Gli utenti devono inserire il loro nome e la loro password per avere accesso. Questa il modo preferito nel caso tu abbia molti utenti.</para>
+
+</sect2>
+
+<sect2 id="kdmconfig-convenience">
+<title
+>Comodità</title>
+
+<para
+>Nella scheda <guilabel
+>Comodità</guilabel
+> puoi configurare alcune opzioni che rendono la vita facile ai pigroni, come l'accesso automatico o disattivare le password.</para>
+
+<important
+><para
+>Pensaci due volte prima di usare queste opzioni. Ogni opzione nella scheda <guilabel
+>Comodità</guilabel
+> è in grado di compromettere seriamente la sicurezza del sistema. In pratica queste opzioni vanno usate in ambienti assolutamente non critici, per esempio un computer privato a casa. </para
+></important>
+
+<sect3 id="loginmanager-convenience-autologin">
+<title
+>Accesso automatico</title>
+
+<para
+>L'accesso automatico dà a chiunque accesso a certi account del sistema senza autenticazione. Puoi abilitarlo con l'opzione <guilabel
+>Abilita accesso automatico</guilabel
+>.</para>
+
+<para
+>Puoi scegliere l'account da usare per l'accesso automatico dalla casella a cascata <guilabel
+>Utente</guilabel
+>.</para>
+
+<para
+>Con <guilabel
+>Blocca la sessione</guilabel
+>, la sessione automaticamente avviata sarà immediatamente bloccata (ammesso che sia una sessione di &kde;). Si può usare per ottenere un accesso accelerato ma limitato ad un utente.</para>
+
+<!-- is this true?-->
+<para
+>L'accesso automatico può essere soppresso premendo il tasto &Shift; immediatamente al passaggio del server X alla modalità grafica e rilasciandolo all'apparire del cursore di attesa di &kdm;.</para>
+</sect3>
+
+<sect3 id="loginmanager-convenience-preselecteduser">
+<title
+><guilabel
+>Utente preselezionato</guilabel
+></title>
+
+<para
+>Puoi anche scegliere quale utente viene <quote
+>preselezionato</quote
+> quando parte &kdm;. Inizialmente è <guilabel
+>Nessuno</guilabel
+>, ma puoi scegliere <guilabel
+>Precedente</guilabel
+> se vuoi che &kdm; parta con l'utente l'utente che ha effettuato l'ultimo accesso, o puoi <guilabel
+>Specifica</guilabel
+>re un certo utente che sarà sempre selezionato dalla lista. Puoi anche fare in modo che &kdm; dia il <guilabel
+>Focus alla password</guilabel
+>, di modo che dopo aver raggiunto la schermata di accesso di &kdm; si possa subito scrivere la password.</para>
+
+</sect3>
+
+<sect3 id="loginmanager-convenience-nopasswd">
+<title
+><guilabel
+>Accesso senza password</guilabel
+></title>
+
+<para
+>Usando questa funzionalità, puoi permettere ad alcuni utenti di accedere senza fornire una password. Questa funzionalità si abilita con l'opzione <guilabel
+>Abilita accesso senza password</guilabel
+>.</para>
+
+<para
+>Sotto questa opzione c'è una lista di utenti del sistema. Puoi abilitare l'accesso senza password agli utenti elencati spuntando le caselle a sinistra del nome. Come impostazione predefinita questa opzione è disabilitata per tutti gli utenti.</para>
+
+<important
+><para
+>Di nuovo, questa opzione è da usare esclusivamente in ambienti sicuri. Se abiliti questa funzione su di un sistema pubblico, devi assicurarti che solo utenti con forti restrizioni la possano usare, per esempio gli ospiti (account <systemitem
+>guest</systemitem
+>).</para
+></important>
+
+<para
+>L'opzione <guilabel
+>Nuovo accesso automatico dopo il crash del server X</guilabel
+> permette di saltare la procedura di autenticazione solo se il server X è andato accidentalmente in crash.</para>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</chapter>
+
+&kdmrc-ref;
+
+&theme-ref;
+
+<!-- ************************************************************ -->   
+<chapter id="configuring-your-system-for-kdm">
+<title
+>Configurare il sistema per usare &kdm;</title>
+
+<para
+>Questo capitolo presuppone che il sistema sia già configurato per partire con &X-Window;, e che tu debba solo riconfigurarlo per permettere l'accesso grafico.</para>
+
+<sect1 id="setting-up-kdm">
+<title
+>Configurare &kdm;</title>
+
+<para
+>La cosa fondamentale che controlla se il computer si avvia con un prompt dal terminale (modo console) o con la finestra di accesso grafica è il runlevel predefinito. Il runlevel è impostato dal programma <application
+><ulink url="man:init"
+>/sbin/init</ulink
+></application
+> sotto il controllo del file di configurazione <filename
+>/etc/inittab</filename
+>. I runlevel predefiniti usati da diversi sistemi &UNIX; (e diverse distribuzioni di &Linux;) variano, ma se guardi nel file <filename
+>/etc/inittab</filename
+> l'inizio dovrebbe essere qualcosa di simile:</para>
+
+<screen
+># Default runlevel. The runlevels used by RHS are:
+# 0 - halt (Do NOT set initdefault to this)
+# 1 - Single user mode
+# 2 - Multiuser, without NFS
+# 3 - Full multiuser mode
+# 4 - unused
+# 5 - X11
+# 6 - reboot (Do NOT set initdefault to this)
+
+id:3:initdefault:  
+</screen>
+
+<para
+>Tranne l'ultima riga di questa porzione di file, sono tutti commenti. I commenti indicano che il runlevel 5 è usato da X11 e il runlevel 3 è usato per il modo multiutente senza X11 (modo console). L'ultima riga specifica che il runlevel predefinito del sistema è 3. Se il sistema usa la modalità d'accesso grafica (per esempio con &xdm;), il suo runlevel sarà quello specificato per X11.</para>
+
+<para
+>Il runlevel con accesso grafico (&xdm;) per alcune distribuzioni &Linux; è:</para>
+
+<itemizedlist>
+<listitem
+><para
+>5 per &RedHat; 3.x e successivi e per &Mandrake;</para
+></listitem>
+<listitem
+><para
+>4 per Slackware</para
+></listitem>
+<listitem
+><para
+>3 per &SuSE; 4.x e 5.x</para
+></listitem>
+</itemizedlist>
+
+<para
+>Il primo passo nella configurazione del sistema è assicurarsi di poter avviare &kdm; dalla riga di comando. Fatto questo, puoi cambiare la configurazione del sistema in modo che &kdm; parta automaticamente a ogni avvio del sistema.</para>
+
+<para
+>Per testare &kdm; devi prima portare il sistema a un runlevel che non esegua &xdm;. Per farlo devi dare un comando del genere:</para>
+
+<screen
+><command
+>/sbin/init <option
+><replaceable
+>3</replaceable
+></option
+></command
+></screen>
+
+<para
+>Al posto del numero <replaceable
+>3</replaceable
+> devi specificare il runlevel appropriato per la modalità console del sistema.</para>
+
+<para
+>Se il sistema usa <abbrev
+>PAM</abbrev
+>, come è normale per le distribuzioni &Linux; e &Solaris; recenti, devi controllare che la configurazione di <abbrev
+>PAM</abbrev
+> permetta l'autenticazione tramite un servizio chiamato <literal
+>kde</literal
+>. Se precedentemente sei riuscito a usare &xdm;, non devi cambiare nulla nella configurazione di <abbrev
+>PAM</abbrev
+> per usare &kdm;. I file di configurazione sono <filename
+>/etc/pam.conf</filename
+> o <filename
+>/etc/pam.d/kde</filename
+>. Informazioni sulla configurazione di <abbrev
+>PAM</abbrev
+> esulano da questo manuale, ma <abbrev
+>PAM</abbrev
+> è fornito con una documentazione estensiva (prova a guardare in <filename
+>/usr/share/doc/*pam*/html/</filename
+>).</para>
+
+<para
+>Adesso è ora di testare &kdm; con questo comando:</para>
+
+<screen
+><command
+>kdm <option
+>-nodaemon</option
+></command
+>
+</screen>
+
+<para
+>Se ottieni una finestra di accesso di &kdm; e riesci ad accedere, va tutto bene. La cosa principale che può andare storta è che il linker di runtime non riesca a trovare le librerie condivise di &Qt; o di &kde;. Se hai una distribuzione binaria delle librerie di &kde;, assicurati che &kdm; sia installato dove le librerie credono che &kde; sia installato, e cerca di impostare alcune variabili d'ambiente per indicare dove sono le librerie di &kde; e &Qt;.</para>
+
+<para
+>Per esempio:</para>
+
+<screen
+><command
+>export 
+<option
+>KDEDIR=<replaceable
+>/opt/kde</replaceable
+></option
+></command>
+<command
+>export 
+<option
+>QTDIR=<replaceable
+>/usr/lib/qt4</replaceable
+></option
+></command>
+<command
+>export 
+<option
+>PATH=<replaceable
+>$KDEDIR/bin:$QTDIR/bin:$PATH</replaceable
+></option
+></command>
+<command
+>export 
+<option
+>LD_LIBRARY_PATH=<replaceable
+>$KDEDIR/lib:$QTDIR/lib</replaceable
+></option
+></command
+>
+</screen>
+
+<para
+>Se ancora non funziona, prova ad eseguire &xdm;, per vedere se il sistema non ha qualche altro problema serio di configurazione di X.</para>
+
+<para
+>Quando riesci ad avviare &kdm; correttamente, puoi iniziare a rimpiazzare &xdm; con &kdm;. Di nuovo, questo dipende dalla distribuzione.</para>
+
+<itemizedlist>
+<listitem>
+<para
+>Per &RedHat;, modifica il file <filename
+>/etc/inittab</filename
+>; cerca questa riga:</para>
+<screen
+>x:5:respawn:/usr/X11/bin/xdm -nodaemon</screen>
+<para
+>e sostituiscila con:</para>
+<screen
+>x:5:respawn:/opt/kde/bin/kdm</screen>
+<para
+>Questo dice a <command
+>init</command
+>(8) di resuscitare &kdm; quando il sistema è nel runlevel 5. Nota che &kdm; non richiede l'opzione <option
+>-nodaemon</option
+>.</para>
+</listitem>
+<listitem>
+<para
+>Per &Mandrake;, il runlevel per X11 in <filename
+>/etc/inittab</filename
+> invoca lo script <filename
+>/etc/X11/prefdm</filename
+>, che è impostato per selezionare tra diversi gestori grafici, incluso &kdm;. Assicurati che tutti i percorsi siano quelli giusti per la tua installazione.</para
+> 
+</listitem>
+<listitem>
+<para
+>Per &SuSE;, modifica il file <filename
+>/sbin/init.d/xdm</filename
+> aggiungendo una prima riga:</para>
+
+<screen
+>. /etc/rc.config
+DISPLAYMANAGER=kdm
+export DISPLAYMANAGER</screen>
+</listitem>
+<listitem
+><para
+>Per FreeBSD, modifica il file <filename
+>/etc/ttys</filename
+> e cerca la linea:</para>
+<screen
+>ttyv8   "/usr/X11R6/bin/xdm -nodaemon"  xterm   off secure</screen>
+<para
+>e modificala così:</para>
+<screen
+>ttyv8   "/opt/kde/bin/kdm"  xterm   on secure</screen>
+</listitem>
+
+<listitem
+><para
+>La maggior parte delle altre distribuzioni sono varianti di una di queste.</para
+></listitem>
+</itemizedlist>
+
+<para
+>A questo punto, puoi provare &kdm; ancora una volta portando il sistema al runlevel che dovrebbe ora eseguire &kdm;. Per farlo inserisci questo comando:</para>
+
+<screen
+><command
+>/sbin/init <option
+><replaceable
+>5</replaceable
+></option
+></command
+>
+</screen>
+
+<para
+>Al posto del numero <replaceable
+>5</replaceable
+> dovresti specificare il runlevel appropriato per eseguire X11 sul sistema.</para>
+
+<para
+>Il passo finale è modificare il parametro <parameter
+>initdefault</parameter
+> nel file <filename
+>/etc/inittab</filename
+> per specificare il runlevel appropriato per X11.</para>
+
+<warning
+><para
+>Prima di fare questa modifica, assicurati di avere un modo di riavviare il sistema se qualcosa va storto. Potrebbe essere, per esempio, un disco di ripristino fornito con la tua distribuzione, oppure uno appositamente creato, come ad esempio <literal
+>tomsrtbt</literal
+>. Ignora questo avvertimento a tuo rischio e pericolo.</para
+></warning>
+
+<para
+>Questo di solito vuol dire modificare la riga:</para>
+<screen
+>id:3:initdefault:</screen>
+<para
+>in</para>
+<screen
+>id:5:initdefault:</screen>
+
+<para
+>Quando riavvii il sistema, dovresti ritrovarti la schermata di accesso grafico di &kdm;.</para>
+
+<para
+>Se questo passo non riesce, il problema più probabile è che l'ambiente usato all'avvio è diverso da quello usato per fare le prove da riga di comando. Se stai tentando di far coesistere due versioni di &kde;, fai particolare attenzione a verificare che le variabili d'ambiente <envar
+>PATH</envar
+> e <envar
+>LD_LIBRARY_PATH</envar
+> siano consistenti, e che gli script di avvio non tentino in qualche modo di modificarle.</para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="different-window-managers-with-kdm">
+<title
+>Supportare più gestori delle finestre</title>
+
+<para
+>&kdm; rileva la maggior parte dei gestori delle finestre e degli ambienti desktop durante l'esecuzione. Installarne uno nuovo dovrebbe renderlo automaticamente disponibile nel sottomenu <guilabel
+>Tipo di sessione</guilabel
+> nella finestra principale di &kdm;.</para>
+
+<para
+>Se hai un gestore molto recente, o qualcosa che &kdm; non supporta, la prima cosa da controllare è che il programma da eseguire sia nel percorso della variabile d'ambiente <envar
+>PATH</envar
+>, e non sia stata rinominato dal distributore in qualcosa di inatteso.</para>
+
+<para
+>Se il tipo di sessione non è ancora supportato da &kdm; (magari perché è troppo recente), puoi aggiungerlo abbastanza facilmente.</para>
+
+<para
+>I tipi di sessione sono definiti da file <firstterm
+>.desktop</firstterm
+> situati nelle cartelle elencate in <link linkend="option-sessionsdirs"
+><option
+>SessionDirs</option
+></link
+>. L'ultima cartella elencata contiene i tipi di sessione predefiniti del sistema ed è <filename class="directory"
+>$<envar
+>KDEDIR</envar
+>/share/apps/kdm/sessions</filename
+> in un'installazione dal codice sorgente. Gli aggiornamenti dei programmi di solito finiscono per sovrascrivere qualsiasi cosa scritta qui, quindi non è una buona idea per metterci una configurazione. Invece, dovrebbe essere inserita prima una cartella di configurazione a parte. Questa è impostata a <filename class="directory"
+>$<envar
+>KDEDIR</envar
+>/share/config/kdm/sessions</filename
+> in un'installazione dal codice sorgente, ma i distributori la cambiano spesso in qualcosa come <filename class="directory"
+>/etc/kde4/kdm/sessions</filename
+>. Ti basta aggiungere qui un file <literal role="extension"
+>.desktop</literal
+> dal nome appropriato.</para>
+
+<programlisting
+>[Desktop Entry]
+Encoding=UTF-8 <lineannotation
+>Questo è fisso a <option
+>UTF-8</option
+> e
+può essere omesso</lineannotation>
+Type=XSession <lineannotation
+>Questo è fisso a <option
+>XSession</option
+> e 
+può essere omesso</lineannotation>
+Exec=<replaceable
+>nome dell'eseguibile</replaceable
+> <lineannotation
+>Passato a
+<command
+>eval exec</command
+> in una shell Bourne</lineannotation>
+TryExec=<replaceable
+>nome dell'eseguibile</replaceable
+> <lineannotation
+>Supportato
+ma non necessario</lineannotation>
+Name=<replaceable
+>nome da mostrare nella lista delle sessioni in &kdm; </replaceable
+></programlisting>
+
+<para
+>Ci sono anche tre tipi <quote
+>magici</quote
+>:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Predefinito</term>
+<listitem>
+<para
+>La sessione predefinita di &kdm; è normalmente &kde;, ma può essere configurata dall'amministratore del sistema. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Personalizzato</term>
+<listitem>
+<para
+>La sessione personalizzata eseguirà la sessione in <filename
+>~/.xsession</filename
+>, se esiste, altrimenti tornerà alla sessione predefinita. </para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Sicuro (failsafe)</term>
+<listitem>
+<para
+>La sessione sicura eseguirà una sessione molto semplice, ed è utile per il debugging. </para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Per sostituire un tipo di sessione, copia il file <literal role="extension"
+>.desktop</literal
+> dalla cartella dei dati alla cartella di configurazione, e modificalo come ti pare. Per rimuovere un tipo di sessione già presente, la si può <quote
+>mettere in ombra</quote
+> con dei file <literal role="extension"
+>.desktop</literal
+> contenenti <userinput
+>Hidden=true</userinput
+>. Per le sessioni magiche non esistono file <literal role="extension"
+>.desktop</literal
+> predefiniti, ma &kdm; fa finta che ci siano, quindi le puoi sovrascrivere come ogni altro tipo.</para>
+
+</chapter>
+
+<chapter id="xdmcp-with-kdm">
+<title
+>Usare &kdm; per l'autenticazione remota (&XDMCP;)</title>
+
+<para
+>&XDMCP; è uno standard dell'Open Group, il protocollo di controllo dei gestori di schermi X (<foreignphrase lang="en"
+>X Display Manager Control Protocol</foreignphrase
+>). Si usa per configurare connessioni tra sistemi remoti in rete.</para>
+
+<para
+>&XDMCP; è utile in situazioni con molti utenti, dove ci sono utenti con i loro terminali, ed un potente server che fornisce le risorse per eseguire varie sessioni di X. Per esempio &XDMCP; è un buon metodo per riutilizzare vecchi computer: un Pentium o anche un 486 con 16 MB di RAM è sufficiente per far funzionare X, e con &XDMCP; si può eseguire una sessione dell'ultimo &kde; dal server. Dalla parte del server, una volta che si esegue una sessione di &kde; (o altri ambienti), eseguirne un'altra richiede pochissime risorse aggiuntive.</para>
+
+<para
+>Tuttavia, permettere un altro metodo di autenticazione sulla macchina ha ovviamente implicazioni di sicurezza. Dovresti eseguire questo servizio solo se devi permettere a server X remoti di autenticarsi sul sistema. Utenti che hanno un solo computer &UNIX; non dovrebbero averne bisogno.</para>
+
+</chapter>
+
+<chapter id="advanced-topics">
+<title
+>Argomenti avanzati</title>
+
+<sect1 id="command-sockets">
+<title
+>Socket di comando</title>
+
+<para
+>Questa è una opzione che puoi usare per controllare &kdm; a distanza. È stata ideata principalmente per essere usata da &ksmserver; e &kdesktop; da una sessione in esecuzione, ma ci sono anche altre applicazioni.</para>
+
+<para
+>I socket sono dei socked di dominio &UNIX; che risiedono nelle sottocartelle della cartella specificata da <userinput
+><option
+>FifoDir</option
+>=</userinput
+>. La sottocartella è la chiave dell'indirizzamento e della sicurezza; tutti i socket sono chiamati <filename
+>socket</filename
+> e hanno i permessi <literal
+>rw-rw-rw-</literal
+> (0666). Questo perché alcuni sistemi non tengono conto dei permessi per i file socket.</para>
+
+<para
+>Ci sono due tipi di socket: quello globale (dmctl) e quelli per ogni display (dmctl-&lt;display&gt;).</para>
+
+<para
+>La sottocartella di quello globale è di proprietà di root, le sottocartelle di quelli di ogni display sono di proprietà dell'utente di cui è la sessione (root o l'utente connesso). Il gruppo di appartenenza delle sottocartelle può essere impostato tramite <userinput
+><option
+>FifoGroup</option
+>=</userinput
+>, altrimenti è root. I permessi delle sottocartelle sono <literal
+>rwxr-x---</literal
+> (0750).</para>
+
+<para
+>I campi di un comando sono separati da tabulazioni (<token
+>\t</token
+>), i campi di una lista da spazi; gli spazio letterale all'interno nei campi delle liste sono indicati con <token
+>\s</token
+>.</para>
+
+<para
+>Il comando è terminato da un a capo (<token
+>\n</token
+>).</para>
+
+<para
+>Lo stesso vale per le risposte. La risposta alla riuscita è <returnvalue
+>ok</returnvalue
+>, possibilmente seguita dall'informazione richiesta. La risposta all'errore è una parola che indica l'errore (per esempio <returnvalue
+>perm</returnvalue
+>, <returnvalue
+>noent</returnvalue
+>, eccetera) seguita da una spiegazione più lunga.</para>
+
+<variablelist>
+<title
+>Comandi globali:</title>
+
+<varlistentry>
+<term
+><command
+>login</command
+> <option
+>display</option
+> (<parameter
+>now</parameter
+> | <parameter
+>schedule</parameter
+>) <parameter
+>utente</parameter
+> <parameter
+>password</parameter
+> [argomenti_di_sessione]</term>
+<listitem>
+<para
+>Autentica l'utente su di un display specifico. Se viene specificato <parameter
+>now</parameter
+>, una eventuale sessione in corso viene terminata, altrimenti l'accesso viene eseguito dopo che viene chiusa la sessione attuale. Gli argomenti_di_sessione sono contenuti con sequenze di escape come per printf per .dmrc. Le chiavi non elencate verranno prese da quelle precedentemente salvate.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>resume</command
+></term>
+<listitem>
+<para
+>Forza il ritorno dalla modalità console, anche se ci sono accessi TTY ancora attivi.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>manage</command
+> <parameter
+>display</parameter
+> [<parameter
+>classe_display</parameter
+> [<parameter
+>nome_autenticazione</parameter
+> <parameter
+>dati_autenticazione</parameter
+>]]</term>
+<listitem>
+<para
+>Inizia a gestire il display esterno indicato.</para>
+<para
+><parameter
+>classe_display</parameter
+>, se specificato e non vuoto, sarà usato per far corrispondere la configurazione; vedi <xref linkend="kdm-files"/>. </para>
+<para
+>Si devono passare <parameter
+>nome_autenticazione</parameter
+> e <parameter
+>dati_autenticazione</parameter
+> se il display richiede l'autorizzazione di X. Il formato è lo stesso della seconda e terza colonna del risultato di <command
+>xauth list</command
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>unmanage</command
+> <parameter
+>display</parameter
+></term>
+<listitem>
+<para
+>Smetti di gestire il display esterno indicato.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<variablelist>
+<title
+>Comandi per display singolo:</title>
+<varlistentry>
+<term
+><command
+>lock</command
+></term>
+<listitem>
+<para
+>Il display è indicato come bloccato. Se il server X va in crash in questo stato, non verrà eseguito nessun accesso automatico anche se questa opzione è attiva.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>unlock</command
+></term>
+<listitem>
+<para
+>Inverte l'effetto di <command
+>lock</command
+>, e riabilita l'accesso automatico.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>suicide</command
+></term>
+<listitem>
+<para
+>La sessione attuale viene forzatamente interrotta. Non verrà fatto nessun tentativo di accesso automatico, ma verrà eseguito un comando <command
+>login</command
+> pianificato.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<variablelist>
+<title
+>Comandi per tutti i socket</title>
+
+<varlistentry>
+<term
+><command
+>caps</command
+></term>
+<listitem>
+<para
+>Restituisce una lista delle capacità di questi socket:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><returnvalue
+>kdm</returnvalue
+></term>
+<listitem>
+<para
+>Identifica &kdm;, in caso anche altri gestori implementino questo protocollo.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><returnvalue
+>list</returnvalue
+>, <returnvalue
+>lock</returnvalue
+>, <returnvalue
+>suicide</returnvalue
+>, <returnvalue
+>login</returnvalue
+>, <returnvalue
+>resume</returnvalue
+>, <returnvalue
+>manage</returnvalue
+> </term>
+<listitem>
+<para
+>Il rispettivo comando è supportato.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><returnvalue
+>bootoptions</returnvalue
+></term>
+<listitem>
+<para
+>I comandi <command
+>listbootoptions</command
+> e <command
+>shutdown</command
+> sono supportati.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><returnvalue
+>shutdown &lt;lista&gt;</returnvalue
+></term>
+<listitem>
+<para
+><command
+>shutdown</command
+> è supportato e permesso per tutti gli utenti nella lista (separati da virgole). <returnvalue
+>*</returnvalue
+> indica tutti gli utenti autenticati.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><returnvalue
+>nuke &lt;lista&gt;</returnvalue
+></term>
+<listitem>
+<para
+>Lo spegnimento forzato può essere eseguito dagli utenti nella lista.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><returnvalue
+>nuke</returnvalue
+></term>
+<listitem>
+<para
+>Lo spegnimento forzato può essere eseguito da chiunque.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><returnvalue
+>reserve &lt;numero&gt;</returnvalue
+></term>
+<listitem>
+<para
+>Vengono configurati dei display di riserva, e ne sono disponibili attualmente <returnvalue
+>numero</returnvalue
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>list</command
+> [<parameter
+>all</parameter
+> | <parameter
+>alllocal</parameter
+>]</term>
+<listitem>
+<para
+>Restituisce una lista delle sessioni attuali. Come impostazione predefinita vengono elencate tutte le sessioni (questo è utile nel caso di un avviso di spegnimento). Se viene specificato <parameter
+>all</parameter
+>, vengono elencate anche le sessioni passive. Se viene specificato <parameter
+>alllocal</parameter
+> vengono elencate anche le sessioni passive, ma non a meno di quelle remote (questo è utile nel caso di un agente di cambio degli utenti veloce).</para>
+<para
+>Ogni voce delle sessioni è una tupla separata da virgole di:</para>
+<itemizedlist>
+<listitem
+><para
+>Display o nome del terminale TTY</para
+></listitem>
+<listitem
+><para
+>Nome del terminale virtuale per le sessioni locali, nome dell'host remoto prefissato con <literal
+>@</literal
+> per le sessioni TTY remote, altrimenti vuoto</para
+></listitem>
+<listitem
+><para
+>Nome dell'utente autenticato, vuoto per le sessioni passive e sessioni remote (modalità del selettore locale)</para
+></listitem>
+<listitem
+><para
+>Tipo di sessione per le sessioni locali attive, nome dell'host remoto per le sessioni remote, vuoto per le sessioni passive.</para
+></listitem>
+<listitem
+><para
+>Un campo con flag:</para>
+<itemizedlist
+><listitem
+><para
+><literal
+>*</literal
+> per il display appartenente al socket richiedente.</para
+></listitem>
+<listitem
+><para
+><literal
+>!</literal
+> per le sessioni che non possono essere terminate dal socket richiedente.</para
+></listitem>
+<listitem
+><para
+><literal
+>t</literal
+> per le sessioni TTY.</para
+></listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<para
+>In futuro potrebbero essere aggiunti nuovi campi.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>reserve</command
+></term>
+<listitem>
+<para
+>Avvia uno schermo di accesso di riserva. Se nessuno accede entro un certo tempo, lo schermo viene rimosso. Lo schermo viene rimosso anche quando la sua sessione termina.</para>
+<para
+>Permesso solo sui socket dei display locali e sul socket globale.</para
+> 
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>activate</command
+> (<parameter
+>vt</parameter
+>|<parameter
+>display</parameter
+>)</term>
+<listitem>
+<para
+>Salta ad un particolare terminale virtuale (VT). Il terminale può essere specificato direttamente (per esempio <parameter
+>vt3</parameter
+>) o tramite un display che lo sta usando (per esempio <parameter
+>:2</parameter
+>).</para>
+<para
+>Permesso solo sui socket dei display locali e sul socket globale.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>listbootoptions</command
+></term>
+<listitem>
+<para
+>Elenca le opzioni di avvio disponibili.</para>
+<para
+>Il valore restituito contiene questi elementi:</para>
+<itemizedlist>
+<listitem>
+<para
+>Un elenco di opzioni d'avvio (come mostrate in &kdm; stesso).</para>
+</listitem>
+<listitem>
+<para
+>L'opzione d'avvio predefinita.</para>
+</listitem>
+<listitem>
+<para
+>L'opzione d'avvio attuale.</para>
+</listitem>
+</itemizedlist>
+<para
+>Le opzioni predefinita e attuale sono indici (che partono da zero) nella lista delle opzioni d'avvio. Se una non è impostata o non è determinabile, è -1.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>shutdown</command
+> (<parameter
+>reboot</parameter
+> | <parameter
+>halt</parameter
+>) [<parameter
+>=<replaceable
+>bootchoice</replaceable
+></parameter
+>] (<parameter
+>ask</parameter
+>|<parameter
+>trynow</parameter
+>|<parameter
+>forcenow</parameter
+>|<parameter
+>schedule</parameter
+>|<parameter
+>start (<parameter
+>-1</parameter
+>|<parameter
+>end (<parameter
+>force</parameter
+>|<parameter
+>forcemy</parameter
+>|<parameter
+>cancel)</parameter
+>)</parameter
+>)</parameter
+>)</term>
+<listitem>
+<para
+>Richiede uno spegnimento del sistema, sia esso un riavvio o uno spegnimento completo.</para>
+<para
+>Si può specificare la scelta del sistema operativo per il prossimo riavvio dalla lista restituita da <command
+>listbootoptions</command
+>.</para>
+<para
+>Gli spegnimenti richiesti dai socket per singolo display vengono eseguiti quando termina la sessione di quel display. Una richiesta del genere può far apparire una finestra a comparsa di conferma o di autenticazione.</para>
+<para
+><parameter
+>start</parameter
+> è l'ora per cui è pianificato lo spegnimento. Se inizia con un segno più, è un tempo da aggiungere all'ora attuale. Zero significa subito.</para>
+<para
+><parameter
+>end</parameter
+> è il termine ultimo entro il quale eseguire lo spegnimento se ci sono sessioni attive ancora in esecuzione. Se inizia con un segno più, il tempo viene aggiunto all'ora riportata nel parametro start. -1 significa un'attesa infinita. Se arriva il tempo di scadenza e ci sono ancora sessioni in esecuzione &kdm; può fare una delle seguenti cose:</para>
+<itemizedlist>
+<listitem
+><para
+><parameter
+>cancel</parameter
+> - rinuncia allo spegnimento</para
+></listitem>
+<listitem
+><para
+><parameter
+>force</parameter
+> - forza lo spegnimento</para
+></listitem>
+<listitem
+><para
+><parameter
+>forcemy</parameter
+> - forza lo spegnimento solo se tutte le sessioni attive appartengono all'utente richiedente. Solo per i socket per singolo display.</para
+></listitem>
+</itemizedlist>
+<para
+><parameter
+>start</parameter
+> e <parameter
+>end</parameter
+> sono espressi in secondi dall'epoca &UNIX;.</para>
+<para
+><parameter
+>trynow</parameter
+> è un sinonimo di <parameter
+>0 0 cancel</parameter
+>, <parameter
+>forcenow</parameter
+> di <parameter
+>0 0 force</parameter
+> e <parameter
+>schedule</parameter
+> per <parameter
+>0 -1</parameter
+>.</para>
+<para
+><parameter
+>ask</parameter
+> tenta uno spegnimento immediato e interagisce con l'utente se ci sono ancora sessioni attive. Solo per socket per singolo display.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>shutdown cancel</command
+> [<parameter
+>local</parameter
+>|<parameter
+>global</parameter
+>}</term>
+<listitem>
+<para
+>Annulla uno spegnimento programmato in precedenza. Il socket globale annulla sempre gli spegnimenti in attesa, mentre i socket per singolo display annullano solo le rispettive richieste di spegnimento.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><command
+>shutdown status</command
+></term>
+<listitem>
+<para
+>Restituisce una lista con informazioni sugli spegnimenti.</para>
+<para
+>Le voci sono tuple separate da virgole di:</para>
+<itemizedlist>
+<listitem>
+<para
+>(<returnvalue
+>global</returnvalue
+>|<returnvalue
+>local</returnvalue
+>): spegnimenti in attesa contro quelli accodati. Una voce locale viene restituita solo da un socket per singolo display.</para>
+</listitem>
+<listitem
+><para
+>(<returnvalue
+>halt</returnvalue
+>|<returnvalue
+>reboot</returnvalue
+>)</para
+></listitem>
+<listitem
+><para
+>start</para
+></listitem>
+<listitem
+><para
+>end</para
+></listitem>
+<listitem
+><para
+>("ask"|"force"|"forcemy"|"cancel")</para
+></listitem>
+<listitem
+><para
+>Identificativo numerico dell'utente che ha richiesto lo spegnimento, -1 per il socket globale.</para
+></listitem>
+<listitem
+><para
+>Il sistema operativo da caricare al riavvio, oppure «-» se non scelto.</para
+></listitem>
+</itemizedlist>
+<para
+>In futuro potrebbero essere aggiunti nuovi campi.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>Ci sono due modi per usare i socket:</para>
+<itemizedlist>
+<listitem>
+<para
+>Connettercisi direttamente. La variabile FifoDir viene esportata come $<envar
+>DM_CONTROL</envar
+>; il nome dei socket per singolo display possono essere ricavati da $<envar
+>DISPLAY</envar
+>.</para>
+</listitem>
+<listitem>
+<para
+>Usando il comando <command
+>kdmctl</command
+> (per esempio in uno script di shell). Prova <command
+>kdmctl</command
+> <option
+>-h</option
+> per saperne di più.</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Ecco un esempio di script bash <action
+>riavviare in FreeBSD</action
+>:</para>
+
+<programlisting
+>if kdmctl | grep -q shutdown; then
+  IFS=$'\t'
+  set -- `kdmctl listbootoptions`
+  if [ "$1" = ok ]; then
+    fbsd=$(echo "$2" | tr ' ' '\n' | sed -ne 's,\\s, ,g;/freebsd/I{p;q}')
+    if [ -n "$fbsd" ]; then
+      kdmctl shutdown reboot "=$fbsd" ask &gt; /dev/null
+    else
+      echo "FreeBSD non disponibile."
+    fi
+  else
+    echo "Opzioni di avvio non disponibili."
+  fi
+else
+  echo "Impossibile riavviare il sistema."
+fi</programlisting>
+
+</sect1>
+</chapter>
+
+<chapter id="Other-Information">
+<title
+>Altre fonti di informazioni</title>
+
+<para
+>Poiché &kdm; discende da &xdm;, la <ulink url="man:xdm"
+>pagina man di &xdm;</ulink
+> può fornire utili informazioni di base. Per i problemi relativi ad X, prova le pagine man di <ulink url="man:X"
+>X</ulink
+> e <ulink url="man:startx"
+>startx</ulink
+>. Se hai domande su &kdm; che non hanno risposta in questo manuale, ti rimane la possibilità di studiarne il codice sorgente. </para>
+
+</chapter>
+
+
+<chapter id="credits"
+><title
+>Riconoscimenti e licenza</title>
+
+<para
+>&kdm; è derivato da &xdm;, © Keith Packard, MIT X Consortium.</para>
+
+<para
+>&kdm; 0.1 è stato scritto da &Matthias.Ettrich;. Versioni successive fino a &kde; 2.0.x sono state scritte da &Steffen.Hansen;. Alcune nuove funzioni per &kde; 2.1.x e una riscrittura più ampia per &kde; 2.2.x sono state fatte da &Oswald.Buddenhagen;.</para>
+
+<para
+>Altre parti del codice di &kdm; sono copyright degli autori, e distribuite secondo i termini della licenza <ulink url="common/gpl-license.html"
+>&GNU; GPL</ulink
+>. Chiunque può effettuare modifiche a &kdm; e ridistribuire il codice risultante, a patto che i nomi degli autori siano indicati.</para>
+
+<para
+>&kdm; richiede le librerie &Qt;, che sono copyright di TrollTech AS.</para>
+
+<para
+>Hanno contribuito alla documentazione: <itemizedlist>
+
+<listitem
+><para
+>Documentazione scritta da &Steffen.Hansen; &Steffen.Hansen.mail;</para
+></listitem>
+
+<listitem
+><para
+>Documentazione estesa da Gregor Zumstein <email
+>zumstein@ssd.ethz.ch</email
+>. Ultimo aggiornamento 9 agosto 1998.</para
+></listitem>
+
+<listitem
+><para
+>Documentazione rivista per &kde; 2 da &Neal.Crook; &Neal.Crook.mail;. L'ultimo aggiornamento è del 6 agosto 2000.</para
+></listitem>
+
+<listitem
+><para
+>Documentazione rivista e estesa per &kde; 2.2 e 4.0 da &Oswald.Buddenhagen; &Oswald.Buddenhagen.mail;. L'ultimo aggiornamento è del 7 dicembre 2007.</para
+></listitem>
+
+</itemizedlist
+></para>
+
+<para
+>Copyright della documentazione di &Steffen.Hansen;, Gregor Zumstein, &Neal.Crook; e &Oswald.Buddenhagen;. Il documento include grandi parti della pagina man di &xdm;, che è &copy; di Keith Packard. La documentazione sul formato dei temi è fortemente basata sul manuale di GDM, &copy; di Martin K. Pedersen, George Lebl, &RedHat; Inc. e Sun Microsystems Inc.</para>
+
+<para
+>Traduzione di Massimiliano Donno e Federico Zenith<email
+>federico.zenith@member.fsf.org</email
+></para
+> 
+&underFDL; </chapter>
+
+<glossary id="glossary">
+<title
+>Glossario</title>
+
+<glossentry id="gloss-greeter">
+<glossterm
+>Benvenuto</glossterm>
+<glossdef
+><para
+>Il benvenuto è la finestra di accesso, cioè la parte di &kdm; vista dall'utente.</para>
+</glossdef>
+</glossentry>
+
+<glossentry>
+<glossterm id="gloss-entropy"
+>entropia</glossterm>
+<glossdef
+><para
+>L'entropia di un sistema è la misura della sua imprevedibilità. È usata nella generazione di numeri casuali.</para>
+</glossdef>
+</glossentry>
+
+</glossary>
+</book>
+<!--
+Local Variables:
+mode: xml
+sgml-omittag: nil
+sgml-shorttag: t
+End:
+-->
+

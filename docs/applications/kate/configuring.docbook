@@ -1,0 +1,1244 @@
+<chapter id="configuring-kate">
+<chapterinfo>
+<authorgroup>
+<author
+>&Anders.Lund; &Anders.Lund.mail;</author>
+<othercredit role="translator"
+><firstname
+>Nicola</firstname
+><surname
+>Ruggero</surname
+><contrib
+>Traduzione della documentazione.</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Luciano</firstname
+><surname
+>Montanaro</surname
+><contrib
+>Aggiornamento della traduzione per &kate; 2.5.6</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Aggiornamento per &kde; 4.3 e manutenzione</contrib
+></othercredit
+> 
+</authorgroup>
+</chapterinfo>
+<title
+>Configurare &kate;</title>
+
+<sect1 id="configuring-overview">
+<title
+>Panoramica</title>
+<para>
+<indexterm>
+<primary
+>configurazione</primary>
+<secondary
+>impostazioni</secondary>
+<tertiary
+>preferenze</tertiary
+></indexterm>
+<anchor id="find"/> <anchor id="find-again"/> <anchor id="replace"/> <anchor id="undo"/> <anchor id="redo"/> &kate; offre molti modi per adattare l'applicazione alle proprie esigenze. I più importanti sono: </para>
+
+<variablelist>
+<varlistentry>
+<term id="configure"
+>La finestra di configurazione</term>
+<listitem
+><para
+>Lo strumento principale di configurazione permette di configurare l'applicazione &kate;, il componente editor e l'uso delle estensioni.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term id="settings"
+>Il menu <guimenu
+>Impostazioni</guimenu
+></term>
+<listitem
+><para
+>Permette di cambiare le impostazioni usate più spesso e di aprire la finestra di configurazione.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Il menu <guimenu
+>Visualizza</guimenu
+></term>
+<listitem
+><para
+>Permette di dividere il riquadro attuale, oltre a visualizzare le aree delle icone e dei numeri di riga per il documento su cui stai attualmente lavorando.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Il terminale integrato usa la configurazione definita nelle &systemsettings;, e può anche essere configurato facendo clic con il &RMB; per visualizzare un menu contestuale.</para>
+
+</sect1>
+
+<sect1 id="configuring-kate-configdialog">
+<title
+>La finestra di configurazione principale</title>
+
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="configdialog01.png"/>
+</imageobject>
+</mediaobject>
+
+<para
+>La finestra di configurazione di &kate; mostra a sinistra un albero di argomenti, e a destra la pagina di configurazione corrispondente all'argomento selezionato.</para>
+
+<para
+>La configurazione è divisa in due gruppi, cioè: <itemizedlist>
+<listitem
+><para
+><link linkend="config-dialog"
+>Configurazione dell'applicazione</link>
+</para
+></listitem>
+<listitem
+><para
+><link linkend="config-dialog-editor"
+>Configurazione del componente editor</link
+></para
+></listitem>
+
+</itemizedlist>
+
+</para>
+
+</sect1>
+
+<sect1 id="config-dialog">
+<title
+>La configurazione dell'applicazione &kate;</title>
+<para
+>Questo gruppo contiene le pagine per configurare l'applicazione principale di &kate;</para>
+
+<sect2 id="config-dialog-general">
+<title
+>Generale</title>
+<para
+>Questa sezione contiene alcune opzioni globali di &kate;.</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><anchor id="config-general-behavior"/>
+<guilabel
+>Comportamento</guilabel
+></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+<term
+><anchor id="config-dialog-general-warn-mod"/>
+<guilabel
+>Avverti se dei file vengono modificati da altri processi</guilabel
+></term>
+<listitem
+><para
+>Se questa opzione è abilitata, &kate; segnalerà i file modificati dall'esterno dell'applicazione ogni volta che la finestra principale verrà attivata. Potrai gestire più file modificati alla volta, e puoi ricaricare, salvare o scartare i file modificati in gruppi.</para>
+<para
+>Se non è abilitata, &kate; chiederà che cosa fare quando un file modificato dall'esterno viene attivato nell'applicazione.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry
+><!-- /behavior group -->
+
+<varlistentry>
+<term
+><anchor id="config-general-meta-data"/>
+<guilabel
+>Informazioni aggiuntive</guilabel
+></term>
+ <listitem>
+
+<variablelist>
+<varlistentry>
+<term
+><anchor id="config-general-keep-meta-information"/>
+<guilabel
+>Ricorda le informazioni aggiuntive</guilabel
+></term>
+<listitem
+><para
+>Se questa opzione è abilitata, &kate; memorizzerà i dati aggiuntivi come i segnalibri e la configurazione della sessione anche quando chiudi i documenti. I dati saranno usati se il documento non è stato modificato alla riapertura.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><anchor id="config-general-delete-meta-information-after"/>
+<guilabel
+>Elimina informazioni aggiuntive inutilizzate dopo</guilabel
+></term>
+<listitem
+><para
+>Imposta il massimo numero di giorni per cui conservare le informazioni aggiuntive per i file precedentemente aperti. Questo permette di mantenere la banca dati delle informazioni aggiuntive entro dimensioni ragionevoli.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</listitem>
+</varlistentry
+><!-- /meta data group -->
+
+</variablelist>
+</sect2>
+
+<sect2 id="config-dialog-sessions">
+<title
+>Sessioni</title>
+
+<para
+>Questa sezione contiene opzioni relative all'<link linkend="fundamentals-using-sessions"
+>uso delle sessioni</link
+>.</para>
+
+<variablelist>
+
+<varlistentry>
+<term
+><anchor id="config-dialog-sessions-elements"/>
+<guilabel
+>Elementi delle sessioni</guilabel
+></term>
+<listitem>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Includi la configurazione della finestra</guilabel
+></term>
+<listitem
+><para
+>Se questa opzione è abilitata, &kate; salverà la configurazione della finestra con ogni sessione.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry
+><!-- /elements of sessions -->
+
+<varlistentry>
+<term
+><anchor id="config-dialog-sessions-startup-behavior"/>
+<guilabel
+>Comportamento all'avvio dell'applicazione</guilabel
+></term>
+<listitem>
+<para
+>Seleziona il comportamento di &kate; all'avvio. Questa impostazione può essere ignorata specificando cosa fare dalla <link linkend="command-line-options"
+>riga di comando</link
+>.</para>
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Avvia nuova sessione</guilabel
+></term>
+<listitem
+><para
+>Con questa opzione, &kate; creerà una nuova sessione senza nome all'avvio dell'applicazione.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Carica l'ultima sessione usata</guilabel
+></term>
+<listitem
+><para
+>&kate; userà la sessione usata più di recente all'avvio. È comodo se vuoi usare sempre la stessa sessione o se la cambi raramente.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guilabel
+>Scegli a mano una sessione</guilabel
+></term>
+<listitem
+><para
+>&kate; mostrerà una finestrella per la scelta della sessione preferita, o caricherà la predefinita se non ne sono state salvate. Questo è il comportamento predefinito. È comodo se usi molte sessioni diverse di frequente.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry
+><!-- /startup behavior -->
+
+</variablelist>
+<para
+>Tutte le modifiche ai dati della sessione (file aperti e, se abilitata, la configurazione delle finestre) saranno sempre salvate.</para>
+
+</sect2>
+
+<sect2 id="config-dialog-plugins">
+<title
+>Estensioni</title>
+
+<para
+>Questa pagina fornisce un elenco delle estensioni installate in &kate;. Ciascuna estensione è rappresentata dal suo nome e da una breve descrizione. Puoi spuntare la casella di una voce per abilitarne l'estensione. </para>
+
+<para
+>Se un'estensione ha delle opzioni di configurazione, apparirà una sezione per accedervi come figlia di questa pagina.</para>
+
+<para
+>Per maggiori informazioni sulle estensioni disponibili, vedi <xref linkend="plugins"/>.</para>
+
+</sect2>
+
+<sect2 id="config-dialog-treeview">
+<title
+>Documenti</title
+> <!-- Tree View was renamed to Documents - http://commit-digest.org/issues/2011-08-28/ -->
+<!-- Tree View plugin http://kate-editor.org/2010/09/10/tree-view-plugin-introduction/ -->
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Sfumature sfondo</guilabel
+></term>
+<listitem
+><para
+>Questa sezione permette di abilitare e disabilitare l'indicazione delle attività recenti attraverso le ombreggiature dello sfondo, e di scegliere quali colori usare se la usi. Vedi la sezione <link linkend="kate-mdi-tools-file-list"
+>sull'elenco dei documenti</link
+> per maggiori informazioni su questa funzione.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ordina per</guilabel
+></term>
+<listitem
+><para
+>Imposta il tipo di ordinamento da dare ai documenti. Può anche essere cambiato con il menu del &RMB; dall'elenco dei documenti.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Modalità di visualizzazione</guilabel
+></term>
+<listitem
+><para
+>Questo dà due opzioni che influenzano la visualizzazione della vista dei documenti. L'opzione <guilabel
+>Vista ad albero</guilabel
+> visualizzerà i documenti in un albero sotto le cartelle in cui si trovano, mentre l'opzione <guilabel
+>Vista a elenco</guilabel
+> li visualizzerà come un elenco semplice. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra il percorso completo</guilabel
+></term>
+<listitem
+><para
+>Quando la vista ad albero e questa opzione sono abilitate, le voci delle cartelle visualizzate nella vista dei documenti mostreranno il percorso completo alla cartella oltre al suo nome. Non ha alcun effetto nella vista a elenco.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+</sect1>
+&configuring-part-sections; <sect1 id="config-variables">
+<title
+>Configurazione con le variabili dei documenti</title>
+
+<para
+>Le variabili di &kappname; sono l'implementazione di KatePart delle variabili dei documenti, simili ai file modeline di &Emacs; e di <application
+>vi</application
+>. Nella componente KatePart le righe hanno la seguente forma: <userinput
+>kate: NOME_VARIABILE VALORE; [ NOME_VARIABILE VALORE; ... ]</userinput
+>. Le righe possono naturalmente essere in un commento, se il formato del file lo prevede. I nomi delle variabili sono costituiti da una sola parola (cioè senza spazi), e tutto quello che c'è fino al successivo punto e virgola è il valore. Il punto e virgola è necessario.</para>
+
+<para
+>Ecco un esempio di riga di variabili, che impone le regole di rientro per un file C++, Java o JavaScript: <programlisting
+>// kate: replace-tabs on; indent-width 4; indent-mode cstyle;</programlisting>
+</para>
+
+<note
+><para
+>Le righe di variabili vengono cercate solo nelle prime e nelle ultime dieci righe.</para
+></note>
+
+<para
+>Inoltre, le variabili dei documenti possono essere messe in un file di nome <filename
+>.kateconfig</filename
+> in qualsiasi cartella, e le impostazioni configurate saranno applicate come se le modeline fossero inserite su ogni file nella cartella e nelle sue sottocartelle, fino alla <link linkend="pref-open-save-advanced"
+>profondità di ricerca configurata</link
+>. Le variabili dei documenti in <filename
+>.kateconfig</filename
+> usano la stessa sintassi delle modeline.</para>
+
+<para
+>In KatePart ci sono variabili per gestire quasi tutte le configurazioni; inoltre, anche le estensioni possono usare le variabili, il che andrebbe documentato nel manuale dell'estensione.</para>
+
+<sect2 id="config-variables-howto">
+<title
+>Come &kappname; usa le variabili</title>
+
+<para
+>Quando legge la configurazione, KatePart cerca i questi posti (nell'ordine): <itemizedlist
+><listitem
+><para
+>la configurazione globale;</para
+></listitem
+><listitem
+><para
+>valori facoltativi di sessione;</para
+></listitem
+><listitem
+><para
+>la configurazione <quote
+>Tipi di file</quote
+>;</para
+></listitem
+> <listitem
+><para
+>variabili del documento in <filename
+>.kateconfig</filename
+>;</para
+></listitem
+><listitem
+><para
+>variabili del documento presenti nel documento stesso;</para
+></listitem
+> <listitem
+><para
+>impostazioni modificate in fase di modifica da menu o dalla riga di comando.</para
+></listitem
+></itemizedlist
+>Come puoi vedere, le variabili del documento possono essere sostituite solo da modifiche fatte al momento dell'esecuzione. Ogni volta che un documento viene salvato, le sue variabili verranno rilette e sovrascriveranno i cambiamenti fatti con voci di menu o dalla riga di comando.</para>
+
+<para
+>Ogni variabile non elencata qui sotto può essere inserita nel documento e ritrovata da altri oggetti, come estensioni, che possono usarle per i propri scopi. Per esempio, la modalità di rientro variabile usa le variabili dei documenti per la propria configurazione.</para>
+
+<para
+>Le variabili qui elencate documentano &kappname; versione 3.7. In futuro potrebbero essere aggiunte altre variabili. Ci sono tre possibili tipi di valori per le variabili, con le seguenti espressioni valide: <itemizedlist>
+<listitem
+><para
+>BOOL - on|off|true|false|1|0</para
+></listitem>
+<listitem
+><para
+>INT - un numero intero</para
+></listitem>
+<listitem
+><para
+>STRING - qualsiasi altra cosa</para
+></listitem>
+</itemizedlist>
+</para>
+
+</sect2>
+
+<sect2 id="config-variables-list">
+<title
+>Variabili disponibili</title>
+
+<variablelist>
+
+<varlistentry id="variable-auto-center-lines">
+<term
+><cmdsynopsis
+><command
+>auto-center-lines</command
+><arg
+>INT</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il numero di righe autocentranti.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-auto-insert-doxygen">
+<term
+><cmdsynopsis
+><command
+>auto-insert-doxygen</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva l'inserimento dell'asterisco iniziale nei commenti Doxygen. Non ha effetto se non si usa il rientro automatico in stile C. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-background-color">
+<term
+><cmdsynopsis
+><command
+>background-color</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il colore di sfondo del documento. Il valore deve essere qualcosa leggibile come un colore valido, come <userinput
+>#ff0000</userinput
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-backspace-indents">
+<term
+><cmdsynopsis
+><command
+>backspace-indents</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Abilita o disabilita la rimozione del rientro alla pressione di &Backspace;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-block-selection">
+<term
+><cmdsynopsis
+><command
+>block-selection</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la <link linkend="kate-part-selection-block"
+>selezione a blocchi</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-byte-order-marker">
+<term
+><cmdsynopsis
+><command
+>bom | byte-order-marker</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva l'indicatore dell'ordine dei byte quando si salvano file in formato Unicode (utf8, utf16, utf32).</para>
+<para
+>Da: &kate; 3.4 (&kde; 4.4)</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-encoding">
+<term
+><cmdsynopsis
+><command
+>encoding</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta la codifica da usare per caricare o salvare il file. Siccome le variabili del documento verranno lette dopo il caricamento, questo ha effetto solo sul salvataggio. Se lo metti in un file <filename
+>.kateconfig</filename
+>, avrà effetto anche sul caricamento.</para>
+<para
+>Da: &kate; 3.10 (&kde; 4.10)</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-bracket-highlight-color">
+<term
+><cmdsynopsis
+><command
+>bracket-highlight-color</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il colore per l'evidenziazione delle parentesi. Deve essere qualcosa leggibile come un colore valido, come <userinput
+>#ff0000</userinput
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-current-line-color">
+<term
+><cmdsynopsis
+><command
+>current-line-color</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il colore della riga attuale. Il valore deve essere qualcosa leggibile come un colore valido, come <userinput
+>#ff0000</userinput
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-default-dictionary">
+<term
+><cmdsynopsis
+><command
+>default-dictionary</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il dizionario predefinito da usare per il controllo ortografico.</para>
+<para
+>Da: &kate; 3.4 (&kde; 4.4)</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-dynamic-word-wrap">
+<term
+><cmdsynopsis
+><command
+>dynamic-word-wrap</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva l'<link linkend="kate-part-auto-wrap"
+>andata a capo dinamica</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-end-of-line">
+<term
+><cmdsynopsis
+><command
+>eol | end-of-line</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta la modalità di fine riga. Le impostazioni valide sono <userinput
+>unix</userinput
+>, <userinput
+>mac</userinput
+> e <userinput
+>dos</userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-folding-markers">
+<term
+><cmdsynopsis
+><command
+>folding-markers</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la visualizzazione degli <ulink url="help:/kate/advanced-editing-tools-code-folding.html"
+>indicatori di raggruppamento</ulink
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-font-size">
+<term
+><cmdsynopsis
+><command
+>font-size</command
+><arg
+>INT</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta la dimensione in punti dei caratteri del documento.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-font">
+<term
+><cmdsynopsis
+><command
+>font</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il carattere del documento. Il valore deve essere un nome di carattere valido, per esempio <userinput
+>courier</userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-syntax">
+<term
+><cmdsynopsis
+><command
+>hl | syntax</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta l'evidenziazione della sintassi. Le stringhe valide sono tutti i nomi disponibili nel menu. Per esempio, per il C++ basta scrivere <userinput
+>C++</userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-icon-bar-color">
+<term
+><cmdsynopsis
+><command
+>icon-bar-color</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il colore della barra delle icone. Il valore deve essere qualcosa leggibile come un colore valido, come <userinput
+>#ff0000</userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-icon-border">
+<term
+><cmdsynopsis
+><command
+>icon-border</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la visualizzazione del bordo delle icone.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-indent-mode">
+<term
+><cmdsynopsis
+><command
+>indent-mode</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta la modalità di rientro automatico. Sono riconosciute le opzioni <userinput
+>none</userinput
+>, <userinput
+>normal</userinput
+>, <userinput
+>cstyle</userinput
+>, <userinput
+>haskell</userinput
+>, <userinput
+>lilypond</userinput
+>, <userinput
+>lisp</userinput
+>, <userinput
+>python</userinput
+>, <userinput
+>ruby</userinput
+> e <userinput
+>xml</userinput
+>. Vedi <xref linkend="kate-part-autoindent"/> per i dettagli.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-indent-pasted-text">
+<term
+><cmdsynopsis
+><command
+>indent-pasted-text</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la regolazione del rientro del testo incollato dagli appunti.</para>
+<para
+>Da: &kate; 3.11 (&kde; 4.11)</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-indent-width">
+<term
+><cmdsynopsis
+><command
+>indent-width</command
+><arg
+>INT</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta la larghezza del rientro.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-keep-extra-spaces">
+<term
+><cmdsynopsis
+><command
+>keep-extra-spaces</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta se tenere gli spazi aggiuntivi quando si calcola la larghezza del rientro.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-line-numbers">
+<term
+><cmdsynopsis
+><command
+>line-numbers</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la visualizzazione del numero di riga.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-mixed-indent">
+<term
+><cmdsynopsis
+><command
+>mixed-indent</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva il rientro misto, come in &Emacs;.</para>
+<para
+>Nota: deprecato da &kate; 3 in &kde; 4. Questa variabile è ignorata, in futuro imposta invece <command
+>replace-tabs on;</command
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-newline-at-eof">
+<term
+><cmdsynopsis
+><command
+>newline-at-eof</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Aggiungi una riga vuota alla fine del file (EOF) al salvataggio del documento.</para>
+<para
+>Da: &kate; 3.9 (&kde; 4.9)</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-overwrite-mode">
+<term
+><cmdsynopsis
+><command
+>overwrite-mode</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la modalità sovrascrittura.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-persistent-selection">
+<term
+><cmdsynopsis
+><command
+>persistent-selection</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la <link linkend="kate-part-selection-persistent"
+>selezione persistente</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-remove-trailing-space">
+<term
+><cmdsynopsis
+><command
+>remove-trailing-space</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la ripulitura dinamica a fine riga.</para>
+<para
+>Nota: deprecata da &kde; 4.10. Usa invece <link linkend="variable-remove-trailing-spaces"
+> remove-trailing-spaces</link
+> con l'opzione desiderata. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-remove-trailing-spaces">
+<term
+><cmdsynopsis
+><command
+>remove-trailing-spaces</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Rimuove gli spazi finali durante il salvataggio del documento. Le opzioni valide sono:</para>
+<itemizedlist>
+<listitem
+><para
+><userinput
+>none</userinput
+>, <userinput
+>-</userinput
+> o <userinput
+>0</userinput
+>: non rimuovere mai gli spazi finali.</para
+></listitem>
+<listitem
+><para
+><userinput
+>modified</userinput
+>, <userinput
+>mod</userinput
+>, <userinput
+>+</userinput
+> o <userinput
+>1</userinput
+>: rimuovi gli spazi finali solo nelle righe modificate. Le righe modificate vengono evidenziate dal sistema di evidenziazione delle righe.</para
+></listitem>
+<listitem
+><para
+><userinput
+>all</userinput
+>, <userinput
+>*</userinput
+> o <userinput
+>2</userinput
+>: rimuovi gli spazi finali in tutto il documento.</para
+></listitem>
+</itemizedlist>
+<para
+>Da: &kde; 4.10. Questo rende obsolete le opzioni <userinput
+>remove-trailing-space</userinput
+> e <userinput
+>replace-trailing-space-save</userinput
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-replace-tabs-save">
+<term
+><cmdsynopsis
+><command
+>replace-tabs-save</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la conversione di tabulazioni in spazi in fase di salvataggio.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-replace-tabs">
+<term
+><cmdsynopsis
+><command
+>replace-tabs</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la conversione dinamica di tabulazioni in spazi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-replace-trailing-space-save">
+<term
+><cmdsynopsis
+><command
+>replace-trailing-space-save</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la ripulitura della fine della riga in fase di salvataggio.</para>
+<para
+>Nota: deprecata da &kde; 4.10. Usa invece <link linkend="variable-remove-trailing-spaces"
+> remove-trailing-spaces</link
+> con l'opzione desiderata. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-scheme">
+<term
+><cmdsynopsis
+><command
+>scheme</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta lo schema di colori. Per avere effetto, La stringa deve essere il nome di uno schema di colori presente nella configurazione.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-selection-color">
+<term
+><cmdsynopsis
+><command
+>selection-color</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il colore della selezione. Il valore deve essere qualcosa leggibile come un colore valido, come <userinput
+>#ff0000</userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-show-tabs">
+<term
+><cmdsynopsis
+><command
+>show-tabs</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva il carattere di tabulazione visibile.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-smart-home">
+<term
+><cmdsynopsis
+><command
+>smart-home</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva la <link linkend="pref-edit-cursor-selection"
+>navigazione all'inizio intelligente</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-space-indent">
+<term
+><cmdsynopsis
+><command
+>space-indent</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva il rientro con spazi.</para>
+<para
+>Nota: deprecato da &kate; 3 in &kde; 4. Il rientro misto è il comportamento predefinito. Imposta <command
+>replace-tabs on;</command
+> per avere un rientro con soli spazi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-tab-indents">
+<term
+><cmdsynopsis
+><command
+>tab-indents</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva il rientro col tasto &Tab;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-tab-width">
+<term
+><cmdsynopsis
+><command
+>tab-width</command
+><arg
+>INT</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta la larghezza a schermo del carattere di tabulazione.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-undo-steps">
+<term
+><cmdsynopsis
+><command
+>undo-steps</command
+><arg
+>INT</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il numero di annullamenti da ricordare.</para>
+<para
+>Nota: deprecato da &kate; 3 in &kde; 4. Questa variabile è ignorata. Il numero massimo di annullamenti è illimitato.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-word-wrap-column">
+<term
+><cmdsynopsis
+><command
+>word-wrap-column</command
+><arg
+>INT</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta la larghezza dell'<link linkend="kate-part-auto-wrap"
+>andata a capo dinamica</link
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-word-wrap-marker-color">
+<term
+><cmdsynopsis
+><command
+>word-wrap-marker-color</command
+><arg
+>STRING</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Imposta il colore per l'indicatore di andata a capo. Il valore deve essere qualcosa leggibile come un colore valido, come <userinput
+>#ff0000</userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry id="variable-word-wrap">
+<term
+><cmdsynopsis
+><command
+>word-wrap</command
+><arg
+>BOOL</arg
+></cmdsynopsis
+></term>
+<listitem
+><para
+>Attiva o disattiva l'andata a capo statica.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+</sect1>
+
+</chapter>

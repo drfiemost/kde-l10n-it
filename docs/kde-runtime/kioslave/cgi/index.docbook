@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+	
+<article lang="&language;" id="cgi">
+<title
+>cgi</title>
+<articleinfo>
+<authorgroup>
+<author
+>&Lauri.Watts;&Lauri.Watts.mail;</author>
+<othercredit role="translator"
+><firstname
+>Luciano</firstname
+><surname
+>Montanaro</surname
+> <contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+</articleinfo>
+
+<para
+>Lo slave <acronym
+>CGI</acronym
+> fornisce un metodo per eseguire programmi <acronym
+>CGI</acronym
+> senza avere un server Web. Questo può essere utile, per esempio, per provare localmente i programmi <acronym
+>CGI</acronym
+> o per usare motori di ricerca che forniscono solo interfacce <acronym
+>CGI</acronym
+>, come quello di <application
+>Doxygen</application
+>.</para>
+
+<para
+>Il kioslave implementa il protocollo <command
+>cgi:</command
+>. Usa il nome del file dell'&URL; dato e cerca in un elenco configurabile di cartelle.</para>
+<para
+>L'elenco di cartelle può essere recuperato con il comando <userinput
+><command
+>kde4-config</command
+> <option
+>--path cgi</option
+> </userinput
+>. Il valore predefinito è <filename class="directory"
+>$<envar
+>HOME</envar
+>/.kde4/cgi-bin/</filename
+>.</para>
+
+<para
+>Usa il modulo delle &systemsettings; <guilabel
+>Script CGI</guilabel
+> (avviato con <userinput
+><command
+>kcmshell4</command
+> <option
+>kcmcgi</option
+> </userinput
+>) per aggiungere o rimuovere i percorsi in cui si cercano script <acronym
+>CGI</acronym
+>.</para>
+
+<para
+>Se questo kioslave trova un eseguibile con il nome dato lo esegue, passa l'argomento dell'&URL; ed imposta le variabili di ambiente necessarie ai programmi <acronym
+>CGI</acronym
+>.</para>
+
+</article>
+<!-- 
+[kde-doc-english] Documentation/Example for CGI kioslave
+Juergen Pfennig <info@j-pfennig.de>
+http://lists.kde.org/?l=kde-doc-english&m=115118709706164&w=2 -->

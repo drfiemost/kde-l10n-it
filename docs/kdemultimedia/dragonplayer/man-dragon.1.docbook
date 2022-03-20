@@ -1,0 +1,215 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY % Italian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manuale utente di KDE</title>
+<author
+><firstname
+>Praveen</firstname
+><surname
+>Arimbrathodiyil</surname
+> <contrib
+>Pagina man di Dragon Player.</contrib
+> <email
+>pravi.a@gmail.com</email
+></author>
+<date
+>2012-03-16</date>
+<productname
+>Ambiente desktop KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>dragon</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+>dragon</refname>
+<refpurpose
+>un lettore video facile da usare</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis
+><command
+>dragon</command
+> <arg choice="opt"
+><replaceable
+>opzioni di Qt</replaceable
+></arg
+> <arg choice="opt"
+><replaceable
+>opzioni di KDE</replaceable
+></arg
+> <arg choice="opt"
+><replaceable
+>URL</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+
+<refsect1 id="description"
+><title
+>Descrizione</title>
+<para
+>Il lettore <command
+>dragon</command
+> riproduce audio e video in diversi formati.</para>
+
+</refsect1>
+
+<refsect1 id="generic_options"
+><title
+>Opzioni generali</title>
+<variablelist>
+  <varlistentry>
+  <term
+><option
+>--help</option
+></term>
+  <listitem>
+<para
+>Mostra la guida alle opzioni.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--help-qt</option
+></term>
+  <listitem>
+<para
+>Mostra le opzioni specifiche per Qt.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--help-kde</option
+></term>
+  <listitem>
+<para
+>Mostra le opzioni specifiche per &kde;.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--help-all</option
+></term>
+  <listitem>
+<para
+>Mostra tutte le opzioni.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--author</option
+></term>
+  <listitem>
+<para
+>Mostra le informazioni sull'autore.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-v, --version</option
+></term>
+  <listitem>
+<para
+>Mostra le informazioni sulla versione.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--license</option
+></term>
+  <listitem>
+<para
+>Mostra le informazioni sulla licenza.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--</option
+></term>
+  <listitem>
+<para
+>Fine delle opzioni.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id="options"
+><title
+>Opzioni</title>
+<variablelist>
+  <varlistentry>
+  <term
+><option
+>--play-dvd</option
+></term>
+  <listitem>
+<para
+>Riproduci DVD.</para>
+  </listitem>
+  </varlistentry>
+</variablelist>
+</refsect1>
+
+<refsect1 id="feedback"
+><title
+>Segnalazioni</title>
+<para
+>Su IRC a irc.freenode.net #dragonplayer, o per posta a imonroe@kde.org, o sul Web a &lt;<ulink url="http://multimedia.kde.org"
+>http://multimedia.kde.org</ulink
+>&gt;</para>
+</refsect1>
+
+<refsect1>
+<title
+>Vedi anche</title>
+<para
+>Una documentazione più dettagliata è disponibile a <ulink url="help:/dragonplayer"
+>help:/dragonplayer</ulink
+> (inserisci questo <acronym
+>URL</acronym
+> in &konqueror; o esegui <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/dragonplayer</parameter
+></userinput
+>).</para>
+</refsect1>
+
+<refsect1 id="copyright"
+><title
+>Copyright</title>
+<para
+>© 2006 di Max Howell</para>
+<para
+>© 2007 di Ian Monroe</para>
+<para
+>Licenza: GNU General Public Version 2 &lt;<ulink url="http://www.gnu.org/licenses/gpl-2.0.html"
+>http://www.gnu.org/licenses/gpl-2.0.html</ulink
+>&gt;</para>
+</refsect1>
+</refentry>
+

@@ -1,0 +1,536 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY kappname "&knetwalk;">
+<!ENTITY package "kdegames">
+<!ENTITY % Italian "INCLUDE"
+> 
+<!ENTITY % addindex "IGNORE">
+]>
+
+<book id="knetwalk" lang="&language;">
+<bookinfo>
+<title
+>Manuale di &knetwalk;</title>
+
+<authorgroup>
+<author
+><firstname
+>Fela</firstname
+> <surname
+>Winkelmolen</surname
+> <affiliation
+> <address
+><email
+>fela.kde@gmail.com</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Luciano</firstname
+><surname
+>Montanaro</surname
+><affiliation
+><address
+><email
+>mikelima@cirulla.net</email
+></address
+></affiliation
+><contrib
+>Traduzione del manuale</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<holder
+>Fela Winkelmolen</holder>
+</copyright>
+    
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2007-11-13</date>
+<releaseinfo
+>3.0.0</releaseinfo>
+
+<abstract>
+<para
+>&knetwalk;, un gioco per amministratori di sistema.</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdegames</keyword>
+<keyword
+>gioco</keyword>
+<keyword
+>gioco di logica</keyword>
+<keyword
+>knetwalk</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&knetwalk; è un gioco di logica per singolo giocatore. </para>
+
+<para
+>L"obiettivo del gioco è di far partire una LAN, connettendo tutti i terminali al server, nel numero di mosse più breve possibile. </para>
+</chapter>
+
+<chapter id="how-to-play">
+<title
+>Come si gioca</title>
+
+<para
+>Al giocatore si presenta una griglia rettangolare contenente un server, molti terminali e spezzoni di cavo. L'obiettivo del gioco è di ruotare questi elementi finché tutti i clienti non sono connessi al server, e nessun filo rimane disconnesso. Opzionalmente, puoi provare a raggiungere un punteggio alto minimizzando il numero di rotazioni richieste. </para>
+
+<para
+>Un clic col tasto sinistro su un riquadro lo ruota in senso antiorario, mentre con il tasto destro la rotazione è in senso orario. Un clic col tasto centrale lo indica come bloccato ed impedisce che venga ruotato a meno di sbloccarlo con un altro clic del tasto centrale; ciò può essere utile per indicare i riquadri di cui si conosce l'orientazione corretta. La barra di stato mostra il numero di clic fino alla mossa attuale. </para>
+
+</chapter>
+
+<chapter id="rules-strategies-tips">
+<title
+>Regole del gioco, strategie e suggerimenti</title>
+
+<sect1 id="rules">
+<title
+>Regole</title>
+<itemizedlist>
+<listitem
+><para
+>C'è una sola soluzione corretta per ciascun livello.</para
+></listitem>
+<listitem
+><para
+>Al livello di difficoltà <guilabel
+>Molto difficile</guilabel
+> le connessioni possono fare il giro da sinistra a destra e dal basso all'alto.</para
+></listitem>
+<listitem
+><para
+>Il gioco termina quando tutti i terminali e tutti i cavi sono connessi al server.</para
+></listitem>
+<listitem
+><para
+>Il punteggio rappresenta il numero di clic che sono stati usati per completare la partita. I punteggi più bassi sono i migliori.</para
+></listitem>
+</itemizedlist>
+</sect1>
+
+<sect1 id="stategies-and-tips">
+<title
+>Strategie e trucchi</title>
+<itemizedlist>
+<listitem
+><para
+>Comincia a cercare i quadrati la cui orientazione può essere determinata facilmente.</para
+></listitem>
+<listitem
+><para
+>Una volta che sei sicuro dell'orientazione del quadrato, puoi indicarlo usando il &MMB;. Ciò è particolarmente utile nei livelli più difficili.</para
+></listitem>
+<listitem
+><para
+>Cerca i cavi a forma di I o di T vicino ai bordi, e quelli a forma di L negli angoli. La posizione di questi pezzi è facile da determinare, a meno che non si giochi al livello di difficoltà <guilabel
+>Molto difficile</guilabel
+>.</para
+></listitem>
+<listitem
+><para
+>Quando si gioca al livello di difficoltà <guilabel
+>Molto difficile</guilabel
+> è utile iniziare dai riquadri quasi vuoti, se ci sono, e vicini alle regioni contenenti molti terminali raggruppati.</para
+></listitem>
+<listitem
+><para
+>Anche quando si gioca allo stesso livello di difficoltà alcune partite sono più facili di altre, Riavvia il gioco so vuoi provare con una configurazione iniziale diversa.</para
+></listitem>
+<listitem
+><para
+>Se vuoi fare un buon punteggio, fai una mossa solo quando sei sicuro.</para
+></listitem>
+</itemizedlist>
+</sect1>
+
+</chapter>
+
+<chapter id="interface-overview">
+<title
+>Panoramica dell'interfaccia</title>
+
+<sect1 id="game-menu">
+<title
+>Menu <guimenu
+>Partita</guimenu
+></title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Nuova</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Comincia una nuova partita. Crea un livello casuale usando il livello di difficoltà attuale. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+><guimenu
+>Partita</guimenu
+><guimenuitem
+>Mostra punteggi</guimenuitem
+></menuchoice
+></term>
+<listitem>
+<para
+>Mostra una finestra con la classifica dei punteggi migliori per i vari livelli di difficoltà. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partita</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Abbandona il programma. </para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+
+
+
+<sect1 id="settings-menu">
+<title
+>Il menu <guimenu
+>Impostazioni</guimenu
+></title>
+
+<variablelist>
+
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Mostra la barra degli strumenti</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Mostra o nasconde la barra degli strumenti. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Mostra la barra di stato</guimenuitem
+> </menuchoice
+></term>
+<listitem>
+<para
+>Mostra o nasconde la barra di stato. </para>
+</listitem>
+</varlistentry>
+
+<!--
+<varlistentry>
+<term
+><menuchoice>
+<guimenu
+>Settings</guimenu>
+<guimenuitem
+>Themes</guimenuitem>
+</menuchoice
+></term>
+<listitem
+><para>
+<action
+>Choose a graphical theme for the game. Which themes are available depends on the current installation.</action>
+</para
+></listitem>
+</varlistentry>
+-->
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guisubmenu
+>Difficoltà</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Ti permette di impostare il livello di difficoltà tramite un sub-menu.</para>
+<para
+>Ci sono quattro livelli di difficoltà: <itemizedlist>
+<listitem
+><para
+><guimenuitem
+>Facile</guimenuitem
+>: 5 righe, 5 colonne, senza arrotolamento.</para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Medio</guimenuitem
+>: 7 righe, 7 colonne, senza arrotolamento.</para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Difficile</guimenuitem
+>: 9 righe, 9 colonne, senza arrotolamento.</para
+></listitem>
+<listitem
+><para
+><guimenuitem
+>Molto difficile</guimenuitem
+>: 9 righe, 9 colonne, con arrotolamento.</para
+></listitem>
+</itemizedlist>
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura le scorciatoie...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para>
+<action
+>Apre una finestra di dialogo per ridefinire le scorciatoie da tastiera.</action>
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Configura la barra degli strumenti...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Mostra l'abituale modulo di &kde; per configurare le icone della barra degli strumenti.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Impostazioni</guimenu
+><guimenuitem
+>Configura le notifiche...</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+>Questa voce mostra la finestra standard di configurazione delle notifiche di &kde;, da cui puoi cambiare le notifiche (suoni, messaggi visibili &etc;) usati da &knetwalk;.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help">
+<title
+>Il menu <guimenu
+>Aiuto</guimenu
+></title>
+&help.menu.documentation; </sect1>
+
+<sect1 id="keybindings">
+<title id="keybindings-title"
+>Scorciatoie</title>
+
+<para
+>Le scorciatoie standard sono:</para>
+
+<table>
+<title
+>Scorciatoie</title>
+<tgroup cols="2">
+<tbody>
+<row>
+<entry
+>Inizia una nuova partita</entry>
+<entry>
+<keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo>
+</entry>
+</row>
+<row>
+<entry
+>Mostra i punteggi migliori</entry>
+<entry>
+<keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo>
+</entry>
+</row>
+<row>
+<entry
+>Esci</entry>
+<entry>
+<keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo>
+</entry>
+</row>
+<row>
+<entry
+>Aiuto</entry>
+<entry
+><keycap
+>F1</keycap
+></entry>
+</row>
+<row>
+<entry
+>Che cos'è?</entry>
+<entry>
+<keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo>
+</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+</sect1>
+</chapter>
+
+
+<chapter id="credits">
+<title
+>Riconoscimenti e Licenza</title>
+
+<para
+>&knetwalk; </para>
+<para
+>Copyright del programma 2004–2007 di Andi Peredri, Thomas Nagy e Fela Winkelmolen <email
+>fela.kde@gmail.com</email
+> </para>
+<para
+>Copyright della documentazione 2007 di Fela Winkelmolen <email
+>fela.kde@gmail.com</email
+> </para>
+
+<para
+>Traduzione della documentazione di Luciano Montanaro<email
+>mikelima@cirulla.net</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installazione</title>
+
+<sect1 id="getting-knetwalk">
+<title
+>Dove trovare &knetwalk;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilazione ed installazione</title>
+&install.compile.documentation; </sect1>
+</appendix>
+
+
+&documentation.index; 
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:t
+End:
+-->
+

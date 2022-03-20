@@ -1,0 +1,49 @@
+# translation of akonadi_localbookmarks_resource.po to Italian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_localbookmarks_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-02-06 03:28+0100\n"
+"PO-Revision-Date: 2010-07-22 00:41+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: localbookmarksresource.cpp:67
+msgctxt "Filedialog filter for *.xml"
+msgid "XML Bookmark file"
+msgstr "File di segnalibri XML"
+
+#: localbookmarksresource.cpp:68
+msgid "Select Bookmarks File"
+msgstr "Seleziona il file dei segnalibri"
+
+#: localbookmarksresource.cpp:93
+msgid "Item is not a bookmark"
+msgstr "L'elemento non è un segnalibro"
+
+#: localbookmarksresource.cpp:100
+msgid "Bookmark group not found"
+msgstr "Gruppo di segnalibri non trovato"
+
+#: localbookmarksresource.cpp:186 localbookmarksresource.cpp:197
+msgid "Bookmark collection is invalid"
+msgstr "La raccolta dei segnalibri non è valida"
+
+#. i18n: ectx: label, entry (Path), group (General)
+#: localbookmarksresource.kcfg:10
+msgid "Path to iCal file."
+msgstr "Percorso del file iCal."
+
+#. i18n: ectx: label, entry (ReadOnly), group (General)
+#: localbookmarksresource.kcfg:14
+msgid "Do not change the actual backend data."
+msgstr "Non modificare i dati attuali del motore."

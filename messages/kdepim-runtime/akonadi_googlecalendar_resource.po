@@ -1,0 +1,361 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the akonadi_google_resource package.
+#
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_google_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-04-15 12:40+0000\n"
+"PO-Revision-Date: 2014-03-06 23:58+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../common/googleresource.cpp:70
+msgid "Waiting for KWallet..."
+msgstr "In attesa di KWallet..."
+
+#: ../common/googleresource.cpp:99
+msgid "Aborted"
+msgstr "Interrotto"
+
+#: ../common/googleresource.cpp:122 ../common/googleresource.cpp:161
+#: ../common/googleresource.cpp:305
+msgid "Configured account does not exist"
+msgstr "L'account configurato non esiste"
+
+#: ../common/googleresource.cpp:127 ../common/googleresource.cpp:169
+#: ../common/googleresource.cpp:267 ../common/googleresource.cpp:309
+#: ../common/googleresource.cpp:415
+msgctxt "@info:status"
+msgid "Ready"
+msgstr "Pronto"
+
+#: ../common/googleresource.cpp:214
+msgid "Unknown Account"
+msgstr "Account sconosciuto"
+
+#: ../common/googleresource.cpp:233 ../common/googleresource.cpp:246
+#: ../common/googleresource.cpp:380
+msgid "Failed to refresh tokens"
+msgstr "Aggiornamento dei token non riuscito"
+
+#: ../common/googleresource.cpp:245
+msgid "Invalid reply"
+msgstr "Risposta non valida"
+
+#: ../common/googleresource.cpp:293
+msgid "Can't access KWallet"
+msgstr "Impossibile accedere a KWallet"
+
+#: ../common/googleresource.cpp:334
+msgid "Configured account has been removed"
+msgstr "L'account configurato è stato rimosso"
+
+#: ../common/googleresource.cpp:367 ../common/googleresource.cpp:368
+msgctxt "@info:status"
+msgid "Resource is not configured"
+msgstr "La risorsa non è configurata"
+
+#: ../common/googlesettingsdialog.cpp:60
+msgid "Accounts"
+msgstr "Account"
+
+#: ../common/googlesettingsdialog.cpp:69
+msgid "&Add"
+msgstr "&Aggiungi"
+
+#: ../common/googlesettingsdialog.cpp:74
+msgid "&Remove"
+msgstr "&Rimuovi"
+
+#: ../common/googlesettingsdialog.cpp:79
+msgid "Refresh"
+msgstr "Aggiorna"
+
+#: ../common/googlesettingsdialog.cpp:83
+msgid "Enable interval refresh"
+msgstr "Abilita aggiornamento periodico"
+
+#: ../common/googlesettingsdialog.cpp:87
+msgid "Refresh interval:"
+msgstr "Intervallo di aggiornamento:"
+
+#: ../common/googlesettingsdialog.cpp:90
+msgid " minute"
+msgid_plural " minutes"
+msgstr[0] " minuto"
+msgstr[1] " minuti"
+
+#: ../common/googlesettingsdialog.cpp:166
+#, kde-format
+msgid ""
+"Do you really want to revoke access to account <b>%1</b>?<p>This will revoke "
+"access to all resources using this account!</p>"
+msgstr ""
+"Vuoi davvero revocare l'accesso all'account <b>%1</b>?<p>Questa operazione "
+"provocherà la revoca dell'accesso a tutte la risorse che usano questo "
+"account!</p>"
+
+#: ../common/googlesettingsdialog.cpp:169
+msgid "Revoke Access?"
+msgstr "Revoca accesso?"
+
+#: calendarresource.cpp:102
+msgid "not configured"
+msgstr "non configurato"
+
+#: calendarresource.cpp:102
+#, kde-format
+msgctxt "%1 is account name (user@gmail.com)"
+msgid "Google Calendars and Tasks (%1)"
+msgstr "Calendari e Attività Google (%1)"
+
+#: calendarresource.cpp:178 calendarresource.cpp:294
+msgid "The top-level collection cannot contain any tasks or events"
+msgstr ""
+"La collezione di livello principale non può contenere attività o eventi"
+
+#: calendarresource.cpp:210 calendarresource.cpp:248
+msgid "Invalid payload type"
+msgstr "Tipo di contenuto non valido"
+
+#: calendarresource.cpp:281
+#, kde-format
+msgid "Invalid payload type. Expected event or todo, got %1"
+msgstr ""
+"Tipo di contenuto non valido. Erano attesi un evento o una cosa da fare, è "
+"stato ricevuto %1"
+
+#: calendarresource.cpp:299
+msgid "Moving tasks between task lists is not supported"
+msgstr ""
+"Lo spostamento delle attività tra gli elenchi di attività non è supportato."
+
+#: calendarresource.cpp:332 calendarresource.cpp:361 calendarresource.cpp:384
+msgid "Unknown collection mimetype"
+msgstr "Tipo MIME della collezione sconosciuto"
+
+#: calendarresource.cpp:637 calendarresource.cpp:680
+#, kde-format
+msgid "Failed to delete task: %1"
+msgstr "Eliminazione non riuscita dell'attività: %1"
+
+#. i18n: ectx: label, entry (Calendars), group (General)
+#: settingsbase.kcfg:21
+msgid "IDs of calendars in collection"
+msgstr "Identificativi dei calendari nella collezione"
+
+#. i18n: ectx: label, entry (TaskLists), group (General)
+#: settingsbase.kcfg:25
+msgid "IDs of task lists in collection"
+msgstr "Identificativi degli elenchi delle attività nella collezione"
+
+#: settingsdialog.cpp:53
+msgid "Calendars"
+msgstr "Calendari"
+
+#: settingsdialog.cpp:61 settingsdialog.cpp:94
+msgid "Reload"
+msgstr "Ricarica"
+
+#: settingsdialog.cpp:69
+msgctxt "Followed by a date picker widget"
+msgid "&Fetch only new events since"
+msgstr "&Recupera solo i nuovi eventi a partire da"
+
+#: settingsdialog.cpp:86
+msgid "Tasklists"
+msgstr "Elenchi delle attività"
+
+#~ msgid "Invalid item payload."
+#~ msgstr "Contenuto non valido dell'elemento."
+
+#~ msgid "Invalid payload mimetype. Expected %1, found %2"
+#~ msgstr ""
+#~ "Tipo MIME del contenuto non valido. Era atteso %1, è stato trovato %2"
+
+#~ msgctxt "%1 is account name (user@gmail.com)"
+#~ msgid "Google Contacts (%1)"
+#~ msgstr "Contatti Google (%1)"
+
+#~ msgctxt "@info:status"
+#~ msgid "Retrieving photos"
+#~ msgstr "Recupero delle foto"
+
+#~ msgid "Invalid source or destination collection"
+#~ msgstr "Collezione non valida (sorgente o destinazione)"
+
+#~ msgctxt "@info:status"
+#~ msgid "Removing contact"
+#~ msgstr "Rimozione del contatto"
+
+#~ msgctxt "Name of a group of contacts"
+#~ msgid "Coworkers"
+#~ msgstr "Colleghi"
+
+#~ msgctxt "Name of a group of contacts"
+#~ msgid "Friends"
+#~ msgstr "Amici"
+
+#~ msgctxt "Name of a group of contacts"
+#~ msgid "Family"
+#~ msgstr "Familiari"
+
+#~ msgctxt "Name of a group of contacts"
+#~ msgid "Other Contacts"
+#~ msgstr "Altri contatti"
+
+#~ msgid "Other Contacts"
+#~ msgstr "Altri contatti"
+
+#~ msgid "Invalid collection"
+#~ msgstr "Collezione non valida"
+
+#~ msgid "Unknown payload type '%1'"
+#~ msgstr "Tipo di contenuto «%1» sconosciuto"
+
+#~ msgid "Received an invalid reply"
+#~ msgstr "Ricevuta una risposta non valida"
+
+#~ msgid "Failed to fetch calendars: %1"
+#~ msgstr "Recupero non riuscito dei calendari: %1"
+
+#~ msgid "Failed to fetch event: %1"
+#~ msgstr "Recupero non riuscito dell'evento: %1"
+
+#~ msgid "Expected a single item, server sent %1 items."
+#~ msgstr "Era atteso un singolo elemento, il server ne ha inviati %1."
+
+#~ msgid "Failed to fetch events: %1"
+#~ msgstr "Recupero non riuscito degli eventi: %1"
+
+#~ msgid "Failed to create a new event: %1"
+#~ msgstr "Creazione di un nuovo evento non riuscita: %1"
+
+#~ msgid "Failed to update an event: %1"
+#~ msgstr "Aggiornamento non riuscito per un evento: %1"
+
+#~ msgid "Failed to delete event: %1"
+#~ msgstr "Eliminazione non riuscita dell'evento: %1"
+
+#~ msgid "Failed to move event: %1"
+#~ msgstr "Spostamento non riuscito dell'evento: %1"
+
+#~ msgid "Failed to fetch task lists"
+#~ msgstr "Recupero non riuscito degli elenchi delle attività"
+
+#~ msgid "Failed to fetch task: %1"
+#~ msgstr "Recupero non riuscito dell'attività: %1"
+
+#~ msgid "Failed to fetch tasks: %1"
+#~ msgstr "Recupero non riuscito delle attività: %1"
+
+#~ msgid "Failed to create a task: %1"
+#~ msgstr "Creazione non riuscita di un'attività : %1"
+
+#~ msgid "Failed to update task: %1"
+#~ msgstr "Aggiornamento non riuscito per un attività: %1"
+
+#~ msgid "Failed to delete task (2): %1"
+#~ msgstr "Eliminazione non riuscita dell'attività (2): %1"
+
+#~ msgid "Failed to delete task (5): %1"
+#~ msgstr "Eliminazione non riuscita dell'attività (5): %1"
+
+#~ msgid "Error while talking to Google"
+#~ msgstr "Errore durante la comunicazione con Google"
+
+#~ msgid ""
+#~ "Do you really want to remove calendar <b>%1</b>?<p>This will remove the "
+#~ "calendar from Google servers as well!</p>"
+#~ msgstr ""
+#~ "Vuoi davvero rimuovere il calendario <b>%1</b>?<p>Questa operazione "
+#~ "rimuoverà il calendario anche dai server di Google!</p>"
+
+#~ msgid "Remove Calendar?"
+#~ msgstr "Rimuovi calendario?"
+
+#~ msgid ""
+#~ "Do you really want to remove tasklist <b>%1</b>?<p>This will remove the "
+#~ "tasklist from Google servers as well!</p>"
+#~ msgstr ""
+#~ "Vuoi davvero rimuovere l'elenco delle attività <b>%1</b>?<p>Questa "
+#~ "operazione rimuoverà l'elenco anche dai server di Google!</p>"
+
+#~ msgid "Remove tasklist?"
+#~ msgstr "Rimuovi elenco delle attività?"
+
+#~ msgid "Calendar Editor"
+#~ msgstr "Editor calendario"
+
+#~ msgctxt "calendar name"
+#~ msgid "Name:"
+#~ msgstr "Nome:"
+
+#~ msgid "Description:"
+#~ msgstr "Descrizione:"
+
+#~ msgid "Location:"
+#~ msgstr "Posizione:"
+
+#~ msgid "Timezone:"
+#~ msgstr "Fuso orario:"
+
+#~ msgid "Calendar Resource Settings"
+#~ msgstr "Impostazioni risorsa calendario"
+
+#~ msgid "Add"
+#~ msgstr "Aggiungi"
+
+#~ msgid "Edit"
+#~ msgstr "Modifica"
+
+#~ msgctxt "reload the tasks"
+#~ msgid "Reload"
+#~ msgstr "Ricarica"
+
+#~ msgid "Tasklist Editor"
+#~ msgstr "Editor elenchi attività"
+
+#~ msgctxt "task list name"
+#~ msgid "Name:"
+#~ msgstr "Nome:"
+
+#~ msgid "My Contacts"
+#~ msgstr "I miei contatti"
+
+#~ msgid "Initial item fetching failed"
+#~ msgstr "Scaricamento iniziale degli elementi non riuscito"
+
+#~ msgid "Invalid Payload"
+#~ msgstr "Contenuto non valido"
+
+#~ msgid "Failed to create a contact"
+#~ msgstr "Creazione non riuscita di un contatto"
+
+#~ msgid "Failed to update contact"
+#~ msgstr "Aggiornamento non riuscito di un contatto"
+
+#~ msgid "Failed to update a contact"
+#~ msgstr "Aggiornamento non riuscito di un contatto"
+
+#~ msgid "An error occurred"
+#~ msgstr "Si è verificato un errore"
+
+#~ msgid "Group Editor"
+#~ msgstr "Editor gruppi"
+
+#~ msgid "Group Name:"
+#~ msgstr "Nome del gruppo"
+
+#~ msgid "Contacts Resource Settings"
+#~ msgstr "Impostazioni risorsa contatti"
+
+#~ msgid "Failed to fetch contact"
+#~ msgstr "Recupero non riuscito delle informazioni sul contatto"

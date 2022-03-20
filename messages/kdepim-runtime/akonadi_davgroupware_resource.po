@@ -1,0 +1,654 @@
+# translation of akonadi_davgroupware_resource.po to Italian
+#
+# Vincenzo Reale <smart2128@baslug.org>, 2009, 2010.
+# Nicola Ruggero <nicola@nxnt.org>, 2010, 2011.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_davgroupware_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-10-10 06:10+0000\n"
+"PO-Revision-Date: 2014-03-30 15:54+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../common/davcollectiondeletejob.cpp:55
+#, kde-format
+msgid ""
+"There was a problem with the request. The collection has not been deleted "
+"from the server.\n"
+"%1 (%2)."
+msgstr ""
+"Problema con la richiesta. La collezione non è stata eliminata dal server.\n"
+"%1 (%2)."
+
+#: ../common/davcollectionmodifyjob.cpp:63
+msgid "No properties to change or remove"
+msgstr "Nessuna proprietà da cambiare o rimuovere"
+
+#: ../common/davcollectionmodifyjob.cpp:115
+#, kde-format
+msgid ""
+"There was a problem with the request. The item has not been modified on the "
+"server.\n"
+"%1 (%2)."
+msgstr ""
+"Problema con la richiesta. L'elemento non è stato modificato sul server.\n"
+"%1 (%2)."
+
+#: ../common/davcollectionmodifyjob.cpp:141
+msgid "There was an error when modifying the properties"
+msgstr "Errore nella modifica delle proprietà"
+
+#: ../common/davcollectionmodifyjob.cpp:149
+msgid ""
+"\n"
+"The server returned more information:\n"
+msgstr ""
+"\n"
+"Il server ha fornito più informazioni:\n"
+
+#: ../common/davcollectionsfetchjob.cpp:135 ../common/davitemfetchjob.cpp:83
+#: ../common/davitemsfetchjob.cpp:75 ../common/davitemslistjob.cpp:94
+#: ../common/davprincipalhomesetsfetchjob.cpp:82
+#: ../common/davprincipalsearchjob.cpp:93
+#: ../common/davprincipalsearchjob.cpp:229
+#, kde-format
+msgid ""
+"There was a problem with the request.\n"
+"%1 (%2)."
+msgstr ""
+"Problema con la richiesta.\n"
+"%1 (%2)."
+
+#: ../common/davcollectionsfetchjob.cpp:153
+msgid "Error setting focus for XQuery"
+msgstr "Errore impostando il fuoco su XQuery"
+
+#: ../common/davcollectionsfetchjob.cpp:159
+msgid "Invalid XQuery submitted by DAV implementation"
+msgstr "XQuery non valida inviata dall'implementazione DAV"
+
+#: ../common/davcollectionsfetchjob.cpp:170
+msgid "Invalid responses from backend"
+msgstr "Risposta non valida dal backend"
+
+#: ../common/davitemcreatejob.cpp:74
+#, kde-format
+msgid ""
+"There was a problem with the request. The item has not been created on the "
+"server.\n"
+"%1 (%2)."
+msgstr ""
+"Problema con la richiesta. L'elemento non è stato creato sul server.\n"
+"%1 (%2)."
+
+#: ../common/davitemdeletejob.cpp:60
+#, kde-format
+msgid ""
+"There was a problem with the request. The item has not been deleted from the "
+"server.\n"
+"%1 (%2)."
+msgstr ""
+"Problema con la richiesta. L'elemento non è stato eliminato dal server.\n"
+"%1 (%2)."
+
+#: ../common/davitemmodifyjob.cpp:70
+#, kde-format
+msgid ""
+"There was a problem with the request. The item was not modified on the "
+"server.\n"
+"%1 (%2)."
+msgstr ""
+"Problema con la richiesta. L'elemento non è stato modificato sul server.\n"
+"%1 (%2)."
+
+#: ../common/davitemsfetchjob.cpp:38
+msgid "Protocol for the collection does not support MULTIGET"
+msgstr "Il protocollo della collezione non supporta MULTIGET"
+
+#: ../common/davprincipalsearchjob.cpp:212
+msgid ""
+"The server encountered an error that prevented it from completing your "
+"request"
+msgstr "Errore nel server. Impossibile completare la richiesta"
+
+#: ../common/davprincipalsearchjob.cpp:220
+msgid "Invalid username/password"
+msgstr "Username o password non validi"
+
+#: ../common/davprincipalsearchjob.cpp:222
+msgid "Access forbidden"
+msgstr "Accesso vietato"
+
+#: ../common/davprincipalsearchjob.cpp:224
+msgid "Resource not found"
+msgstr "Risorsa non trovata"
+
+#: ../common/davprincipalsearchjob.cpp:226
+msgid "HTTP error"
+msgstr "Errore HTTP"
+
+#: ../common/davutils.cpp:182 ../common/davutils.cpp:216
+msgid "CalDav"
+msgstr "CalDav"
+
+#: ../common/davutils.cpp:185 ../common/davutils.cpp:218
+msgid "CardDav"
+msgstr "CardDav"
+
+#: ../common/davutils.cpp:188 ../common/davutils.cpp:220
+msgid "GroupDav"
+msgstr "GroupDav"
+
+#: configdialog.cpp:43
+msgid "Protocol"
+msgstr "Protocollo"
+
+#: configdialog.cpp:43 urlconfigurationdialog.cpp:232
+msgid "URL"
+msgstr "URL"
+
+#: configdialog.cpp:101
+msgid ""
+"Another configuration entry already uses the same URL/protocol couple.\n"
+"Please use a different URL"
+msgstr ""
+"Un'altra voce di configurazione utilizza già la stessa coppia URL/"
+"protocollo.\n"
+"Usa un URL diverso"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: configdialog.ui:17
+msgid "General Configuration"
+msgstr "Configurazione generale"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: configdialog.ui:28
+msgid "Display name:"
+msgstr "Nome visualizzato:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: configdialog.ui:41
+msgid "Refresh every:"
+msgstr "Aggiorna ogni:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: configdialog.ui:63
+msgid "minutes"
+msgstr "minuti"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: configdialog.ui:88
+msgid "Username:"
+msgstr "Nome utente:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: configdialog.ui:122
+msgid "Password:"
+msgstr "Password:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: configdialog.ui:164
+msgid "Server Configuration"
+msgstr "Configurazione server"
+
+#. i18n: ectx: property (text), widget (KPushButton, addButton)
+#: configdialog.ui:177
+msgid "Add"
+msgstr "Aggiungi"
+
+#. i18n: ectx: property (text), widget (QPushButton, searchButton)
+#: configdialog.ui:184 searchdialog.ui:139
+msgid "Search"
+msgstr "Cerca"
+
+#. i18n: ectx: property (text), widget (KPushButton, removeButton)
+#: configdialog.ui:191
+msgid "Remove"
+msgstr "Rimuovi"
+
+#. i18n: ectx: property (text), widget (KPushButton, editButton)
+#: configdialog.ui:198
+msgid "Edit"
+msgstr "Modifica"
+
+# CHECK AGAIN
+#: davfreebusyhandler.cpp:57
+#, kde-format
+msgid "No schedule-outbox found for %1"
+msgstr "Casella di posta in uscita per la programmazione non trovata per %1"
+
+#: davfreebusyhandler.cpp:181 davfreebusyhandler.cpp:191
+msgid "Invalid response from the server"
+msgstr "Risposta non valida dal server"
+
+#: davfreebusyhandler.cpp:201
+msgid "Unable to parse free-busy data received"
+msgstr "Impossibile elaborare i dati libero/occupato ricevuti"
+
+#: davgroupwareresource.cpp:163
+msgid "Unable to retrieve free-busy info while offline"
+msgstr ""
+"Impossibile recuperare le informazioni libero/occupato in modalità fuori "
+"linea"
+
+#: davgroupwareresource.cpp:239
+msgid "Fetching collections"
+msgstr "Recupero delle collezioni"
+
+#: davgroupwareresource.cpp:268
+#, kde-format
+msgid "Asked to retrieve items for an unknown collection: %1"
+msgstr ""
+"È stato richiesto di recuperare gli elementi di una collezione sconosciuta: "
+"%1"
+
+#: davgroupwareresource.cpp:319
+#, kde-format
+msgid "Invalid collection for item %1."
+msgstr "Collezione non valida per l'elemento %1."
+
+#: davgroupwareresource.cpp:560
+#, kde-format
+msgid "Unable to remove collection: %1"
+msgstr "Impossibile rimuovere la collezione: %1"
+
+#: davgroupwareresource.cpp:580
+#, kde-format
+msgid "Unable to retrieve collections: %1"
+msgstr "Impossibile recuperare le collezioni: %1"
+
+#: davgroupwareresource.cpp:681 davgroupwareresource.cpp:761
+#, kde-format
+msgid "Unable to retrieve items: %1"
+msgstr "Impossibile recuperare gli elementi: %1"
+
+#: davgroupwareresource.cpp:819
+#, kde-format
+msgid "Unable to retrieve item: %1"
+msgstr "Impossibile recuperare l'elemento: %1"
+
+#: davgroupwareresource.cpp:864
+#, kde-format
+msgid "Unable to add item: %1"
+msgstr "Impossibile aggiungere l'elemento: %1"
+
+#: davgroupwareresource.cpp:899
+#, kde-format
+msgid "Unable to change item: %1"
+msgstr "Impossibile modificare l'elemento: %1"
+
+#: davgroupwareresource.cpp:947
+#, kde-format
+msgid "Unable to remove item: %1"
+msgstr "Impossibile rimuovere l'elemento: %1"
+
+#: davgroupwareresource.cpp:972 davgroupwareresource.cpp:973
+msgid "The resource is not configured yet"
+msgstr "La risorsa non è ancora configurata"
+
+#. i18n: ectx: label, entry (settingsVersion), group (General)
+#: davgroupwareresource.kcfg:10
+msgid "Settings Version"
+msgstr "Versione impostazioni"
+
+#. i18n: ectx: label, entry (displayName), group (General)
+#: davgroupwareresource.kcfg:14 urlconfigurationdialog.cpp:232
+msgid "Display name"
+msgstr "Nome visualizzato"
+
+#. i18n: ectx: label, entry (refreshInterval), group (General)
+#: davgroupwareresource.kcfg:18
+msgid "Refresh every"
+msgstr "Aggiorna ogni"
+
+#. i18n: ectx: label, entry (remoteUrls), group (General)
+#: davgroupwareresource.kcfg:22
+msgid "Remote URLs"
+msgstr "URL remoti"
+
+#. i18n: ectx: label, entry (defaultUsername), group (General)
+#: davgroupwareresource.kcfg:26
+msgid "User name"
+msgstr "Nome utente"
+
+#. i18n: ectx: label, entry (collectionsUrlsMappings), group (General)
+#: davgroupwareresource.kcfg:30
+msgid ""
+"String representation of the mappings between discovered collections and "
+"configured URLs"
+msgstr ""
+"Rappresentazione in stringa della mappatura tra collezioni scoperte e URL "
+"configurati"
+
+#. i18n: ectx: label, entry (readOnly), group (General)
+#: davgroupwareresource.kcfg:34
+msgid "Do not change the actual backend data."
+msgstr "Non modificare i dati attuali del motore."
+
+#. i18n: ectx: label, entry (AccountId), group (General)
+#: davgroupwareresource.kcfg:38
+msgid "The account id in WebAccounts framework."
+msgstr "L'ID dell'account nel sistema WebAccounts."
+
+# FIXME: original string
+#. i18n: ectx: label, entry (AccountServices), group (General)
+#: davgroupwareresource.kcfg:41
+msgid "Account enabled services"
+msgstr "Account dei servizi abilitati"
+
+#: searchdialog.cpp:43
+msgid "Add selected items"
+msgstr "Aggiungi elementi selezionati"
+
+#: searchdialog.cpp:132 searchdialog.cpp:175
+#, kde-format
+msgid ""
+"An error occurred when executing search:\n"
+"%1"
+msgstr ""
+"Si è verificato un errore durante la ricerca:\n"
+"%1"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useDefaultCreds)
+#: searchdialog.ui:20 urlconfigurationdialog.ui:77
+msgid "Use global credentials"
+msgstr "Usa credenziali globali"
+
+#. i18n: ectx: property (text), widget (QRadioButton, useSpecificCreds)
+#: searchdialog.ui:30 urlconfigurationdialog.ui:87
+msgid "Use specific credentials"
+msgstr "Usa credenziali specifiche"
+
+#. i18n: ectx: property (title), widget (QGroupBox, credentialsGroup)
+#: searchdialog.ui:37 urlconfigurationdialog.ui:94
+msgid "Credentials"
+msgstr "Credenziali"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: searchdialog.ui:49 urlconfigurationdialog.ui:106
+msgid "Username"
+msgstr "Nome utente"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: searchdialog.ui:65 setupwizard.cpp:214 urlconfigurationdialog.ui:122
+msgid "Password"
+msgstr "Password"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: searchdialog.ui:84
+msgid "Search URL"
+msgstr "Cerca URL"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: searchdialog.ui:94
+msgid "Search for"
+msgstr "Cerca"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, searchType)
+#: searchdialog.ui:104
+msgid "a person named"
+msgstr "una persona con nome"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, searchType)
+#: searchdialog.ui:109
+msgid "a contact with email"
+msgstr "un contatto con indirizzo di posta"
+
+#: settings.cpp:552
+#, kde-format
+msgid "A password is required for user %1"
+msgstr "È richiesta una password per l'utente %1"
+
+#: settings.cpp:558
+msgid "Password: "
+msgstr "Password: "
+
+#: setupwizard.cpp:137
+msgid "DAV groupware configuration wizard"
+msgstr "Configurazione guidata DAV groupware"
+
+#: setupwizard.cpp:203
+msgid "Login Credentials"
+msgstr "Credenziali di accesso"
+
+#: setupwizard.cpp:204
+msgid "Enter your credentials to login to the groupware server"
+msgstr "Inserisci le credenziali per accedere al server groupware"
+
+#: setupwizard.cpp:209
+msgid "User"
+msgstr "Utente"
+
+#: setupwizard.cpp:243
+msgid "Predefined provider found"
+msgstr "Trovato provider predefinito"
+
+#: setupwizard.cpp:244
+msgid "Select if you want to use the auto-detected provider"
+msgstr "Seleziona se vuoi usare il provider rilevato automaticamente"
+
+#: setupwizard.cpp:259
+msgid "No, choose another server"
+msgstr "No, scegli un altro server"
+
+#: setupwizard.cpp:266
+#, kde-format
+msgid ""
+"Based on the email address you used as a login, this wizard\n"
+"can configure automatically an account for %1 services.\n"
+"Do you wish to do so?"
+msgstr ""
+"Questa procedura guidata può configurare automaticamente un account per i "
+"servizi di %1 basandosi sull'indirizzo email che hai usato per l'accesso.\n"
+"Vuoi proseguire?"
+
+#: setupwizard.cpp:270
+#, kde-format
+msgid "Yes, use %1 as provider"
+msgstr "Si, usa %1 come provider"
+
+#: setupwizard.cpp:297
+msgid "Groupware Server"
+msgstr "Server groupware "
+
+#: setupwizard.cpp:298
+msgid "Select the groupware server the resource shall be configured for"
+msgstr "Seleziona il server groupware per il quale configurare la risorsa"
+
+#: setupwizard.cpp:324
+msgid "Use one of those servers:"
+msgstr "Usa uno di questi server:"
+
+#: setupwizard.cpp:334
+msgid "Configure the resource manually"
+msgstr "Configura manualmente la risorsa"
+
+#: setupwizard.cpp:370
+msgid "Connection"
+msgstr "Connessione"
+
+#: setupwizard.cpp:371
+msgid "Enter the connection information for the groupware server"
+msgstr "Inserisci le informazioni di connessione per il server groupware"
+
+#: setupwizard.cpp:379
+msgid "Host"
+msgstr "Host"
+
+#: setupwizard.cpp:382
+msgid "Installation path"
+msgstr "Percorso di installazione"
+
+#: setupwizard.cpp:385
+msgid "Use secure connection"
+msgstr "Usa connessione sicura"
+
+#: setupwizard.cpp:411
+msgid "Final URL (CalDav)"
+msgstr "URL finale (CalDav)"
+
+#: setupwizard.cpp:416
+msgid "Final URL (CardDav)"
+msgstr "URL finale (CardDav)"
+
+#: setupwizard.cpp:421
+msgid "Final URL (GroupDav)"
+msgstr "URL finale (GroupDav)"
+
+#: setupwizard.cpp:478 setupwizard.cpp:484
+msgid "Test Connection"
+msgstr "Prova la connessione"
+
+#: setupwizard.cpp:479
+msgid ""
+"You can test now whether the groupware server can be accessed with the "
+"current configuration"
+msgstr ""
+"Puoi provare subito se il server groupware è accessibile con la "
+"configurazione attuale"
+
+#: setupwizard.cpp:525
+#, kde-format
+msgid "An error occurred: %1"
+msgstr "Si è verificato un errore: %1"
+
+#: setupwizard.cpp:528
+msgid "Connected successfully"
+msgstr "Connesso correttamente"
+
+#. i18n: ectx: property (title), widget (KButtonGroup, remoteProtocol)
+#: urlconfigurationdialog.ui:29
+msgid "Remote calendar access protocol"
+msgstr "Protocollo di accesso al calendario remoto"
+
+#. i18n: ectx: property (text), widget (QRadioButton, caldav)
+#: urlconfigurationdialog.ui:38
+msgid "CalDAV"
+msgstr "CalDAV"
+
+#. i18n: ectx: property (text), widget (QRadioButton, carddav)
+#: urlconfigurationdialog.ui:48
+msgid "CardDAV"
+msgstr "CardDAV"
+
+#. i18n: ectx: property (text), widget (QRadioButton, groupdav)
+#: urlconfigurationdialog.ui:55
+msgid "GroupDAV"
+msgstr "GroupDAV"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: urlconfigurationdialog.ui:68
+msgid "Remote calendar access"
+msgstr "Accesso al calendario remoto"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: urlconfigurationdialog.ui:139
+msgid "Remote URL"
+msgstr "URL remoto"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: urlconfigurationdialog.ui:152
+msgid "Discovered collections"
+msgstr "Collezioni rilevate"
+
+#. i18n: ectx: property (text), widget (KPushButton, fetchButton)
+#: urlconfigurationdialog.ui:173
+msgid "Fetch"
+msgstr "Scarica"
+
+#~ msgid "The server returned invalid data"
+#~ msgstr "Il server ha restituito dati non validi"
+
+#~ msgid "Client did not create a UID for item %1."
+#~ msgstr "Il client non ha creato un UID per l'elemento %1."
+
+#~ msgid "Unable to retrieve added item %1."
+#~ msgstr "Impossibile recuperare l'elemento %1 aggiunto."
+
+#~ msgid "The remote item has been locked, try again later"
+#~ msgstr "L'elemento remoto è bloccato, prova più tardi"
+
+#~ msgid ""
+#~ "The server encountered an error that prevented it from completing your "
+#~ "request."
+#~ msgstr "Errore nel server. Impossibile completare la richiesta"
+
+#~ msgid "Citadel"
+#~ msgstr "Citadel"
+
+#~ msgid "DAViCal"
+#~ msgstr "DAViCal"
+
+#~ msgid "eGroupware"
+#~ msgstr "eGroupware"
+
+#~ msgid "OpenGroupware"
+#~ msgstr "OpenGroupware"
+
+#~ msgid "ScalableOGo"
+#~ msgstr "ScalableOGo"
+
+#~ msgid "Scalix"
+#~ msgstr "Scalix"
+
+#~ msgid "Zarafa"
+#~ msgstr "Zarafa"
+
+#~ msgid "Zimbra"
+#~ msgstr "Zimbra"
+
+#~ msgid "DAVical"
+#~ msgstr "DAVical"
+
+#~ msgid "The server requires to be authenticated"
+#~ msgstr "Il server richiede l'autenticazione"
+
+#~ msgid "Store the password in KWallet"
+#~ msgstr "Memorizza la password in KWallet"
+
+#~ msgid "Please enter the password for %1 at %2"
+#~ msgstr "Inserisci la password per %1 su %2"
+
+#~ msgid "Store password"
+#~ msgstr "Memorizza la password"
+
+#~ msgid "Using GroupDAV"
+#~ msgstr "Utilizzare GroupDAV"
+
+#~ msgid "Using CalDAV"
+#~ msgstr "Utilizzare CalDAV"
+
+#~ msgid "Using CardDAV"
+#~ msgstr "Utilizzare CardDAV"
+
+#~ msgid "No protocol configured"
+#~ msgstr "Non è stato configurato alcun protocollo"
+
+#~ msgid "Authentication"
+#~ msgstr "Autenticazione"
+
+#~ msgid "Remote access protocol"
+#~ msgstr "Protocollo di accesso remoto"
+
+#~ msgid "Backend requires authentication"
+#~ msgstr "Il motore richiede l'autenticazione"
+
+#~ msgid "Unable to find an upload request for URL %1."
+#~ msgstr "Impossibile trovare una richiesta di invio per l'URL %1."
+
+#~ msgid "No calendars found"
+#~ msgstr "Non è stato trovato alcun calendario"
+
+#~ msgid "Problem with the retrieval job"
+#~ msgstr "Problema con l'operazione di recupero"
+
+#~ msgid "Form"
+#~ msgstr "Modulo"

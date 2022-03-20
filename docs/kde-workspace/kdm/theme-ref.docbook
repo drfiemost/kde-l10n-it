@@ -1,0 +1,1740 @@
+<chapter id="kdm-themes">
+  <title
+>Creazione temi per il Gestore di accessi &kdm;</title>
+
+  <para
+>Questa sezione descrive la creazione di temi per il Gestore degli accessi. Per esempi dotati di screenshot, vedi i temi standard installati e i temi su<ulink type="http" url="http://www.kde-look.org/index.php?xcontentmode=40"
+>, il sito su cui sono raccolti i temi</ulink
+>. </para>
+
+  <sect1 id="theme-overview">
+    <title
+>Panoramica dei temi</title>
+
+    <para
+>I temi di &kdm; possono essere realizzati usando un file XML che segue le specifiche in <filename
+>$<envar
+>KDEDIR</envar
+>/share/apps/doc/kdm/greeter.dtd</filename
+>. I file dei temi sono salvati nella cartella <filename class="directory"
+>$<envar
+>KDEDIR</envar
+>/share/apps/kdm/themes/<replaceable
+>nome del tema</replaceable
+> </filename
+>. La cartella del tema dovrebbe contenere un file chiamato <filename
+>KdmGreeterTheme.desktop</filename
+> che ha un formato simile agli altri file <filename class="extension"
+>.desktop</filename
+> e contiene qualcosa di simile a questo: <programlisting
+>[KdmGreeterTheme]
+Greeter=cerchi.xml
+Name=Cerchi
+Description=Tema con cerchi blu
+Author=Bond, James Bond
+Copyright=(c) 2002 Bond, James Bond
+Screenshot=screenshot.png
+</programlisting>
+    </para>
+
+    <para
+>I campi <literal
+>Name</literal
+>, <literal
+>Description</literal
+>, <literal
+>Author</literal
+> e <literal
+>Copyright</literal
+> possono essere tradotti come negli altri file <filename class="extension"
+>.desktop</filename
+>. Tutti i file che sono menzionati dovrebbero trovarsi nella cartella del tema stesso. Il campo <literal
+>Screenshot</literal
+> punta a un file che dovrebbe essere uno screenshot 200x150 del tema in azione (va bene lo stesso non averne uno, ma se c'è è meglio). Il campo <literal
+>Greeter</literal
+> punta ad un file XML che contiene la descrizione del tema. </para>
+
+    <!--
+    <para>
+      Once a theme is installed, it can be tested with the
+      <command
+>gdmthemetester</command
+> program.  This program assumes that
+      the X server supports a nested server command.  This command takes two
+      arguments, first the environment that should be used.  The environment
+      can be one of the following values: console, console-timed, flexi,
+      remote-flexi, or xdmcp.  The &quot;console&quot; option tests the
+      theme as it would be shown on an attached display.  The
+      &quot;console-timed&quot; option tests the theme as it would be shown
+      on an attached display with timed login enabled.  The &quot;flexi&quot;
+      option tests the theme as it would be shown on an attached flexible
+      display (such as started via Xnest).  Finally, the &quot;xdmcp&quot;
+      option tests the theme as it would be shown for remote XDMCP 
+      displays.  The second argument is the theme name.  For example, to 
+      test how the circles theme would look in XDMP remote display mode,
+      you would run the following command:
+    </para>
+
+<cmdsynopsis>
+  <command
+>gdmthemetester</command
+> <arg
+>xdmcp</arg
+> <arg
+><replaceable
+>circles</replaceable
+></arg>
+</cmdsynopsis>
+
+    <para>
+      When developing a theme, make sure to test all the environments, and
+      make sure to test how the caps lock warning looks by pressing the caps
+      lock key.  Running <command
+>gdmthemetester</command
+> is also a good way
+      to take screenshots of &kdm; themes.  Simply take a screenshot of the
+      theme running in the nested display window.  This can be done in GNOME
+      by focusing the nested login window and pressing Alt-PrintScreen.
+    </para>
+    -->
+
+    <para
+>Una volta che il tema è stato pienamente testato, crea un archivio che contenga la cartella che dovrebbe essere installata in <filename class="directory"
+>$<envar
+>KDEDIR</envar
+>/share/apps/kdm/themes</filename
+>. Questo è il formato standard in cui distribuire i temi per &kdm;. </para>
+  </sect1>
+
+  <sect1 id="theme-format">
+    <title
+>Descrizione dettagliata del formato XML del tema</title>
+
+    <sect2 id="greeter-tag">
+      <title
+>Nodo principale</title>
+
+      <para
+>I temi di &kdm; sono file XML con una tag «greeter» come radice. Il nodo di primo livello è un <link linkend="item-nodes"
+>nodo oggetto</link
+> di tipo <literal
+>rect</literal
+> con un <link linkend="fixed-nodes"
+>layout fisso</link
+> implicito. </para>
+
+      <!--
+      <para>
+        You may specify a Qt GUI style to
+        be used with this theme by using the gui-style attribute in the
+          greeter tag as in the following example.
+ gui-style=&quot;Plastique&quot;
+      </para>
+      -->
+
+<programlisting
+>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE greeter SYSTEM "greeter.dtd"&gt;
+&lt;greeter&gt;
+[...]
+&lt;/greeter&gt;
+</programlisting>
+
+      <para
+>Il contenuto del tag «greeter» può essere uno dei nodi descritti nella prossima sezione di questo documento. Alcuni di questi nodi sono contenitori (nodi di layout, nodi oggetto) che possono contenere a loro volta altri nodi. </para>
+    </sect2>
+
+    <sect2 id="item-nodes">
+      <title
+>Nodi oggetto</title>
+
+      <para
+>Un tema &kdm; è creato specificando una gerarchia di elementi e nodi di layout. I nodi oggetto possono avere il seguente valore per l'attributo <literal
+>type</literal
+>: </para>
+
+      <variablelist>
+
+        <varlistentry>
+          <term
+>button</term>
+          <listitem>
+            <para
+>Un campo pulsante. Questo campo usa un pulsante Qt. </para>
+            <para
+>É anche possibile far agire qualunque altro elemento come un pulsante impotando il suo attributo <literal
+>button</literal
+> = <literal
+>true</literal
+>. Comunque è meglio usare pulsanti Qt nei temi &kdm; poiché questi sono accessibili da utenti diversamente abili. </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>entry</term>
+          <listitem>
+            <para
+>Un oggetto di inserimento come una casella di testo o una casella combinata. Nota che questo è solo un segnaposto per gli oggetti Qt.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>label</term>
+          <listitem>
+            <para
+>Un'etichetta di testo. Deve contenere o un nodo <link linkend="text-nodes"
+><literal
+>text</literal
+> </link
+> o un nodo <link linkend="stock-nodes"
+><literal
+>stock</literal
+></link
+> per specificare il testo. </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>list</term>
+          <listitem>
+            <para
+>Oggetto con la lista con le immagini degli utenti.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>pixmap</term>
+          <listitem>
+            <para
+>Un'immagine raster in un formato che Qt supporta, &eg; PNG, JPEG, Tiff, ecc.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>rect</term>
+          <listitem>
+            <para
+>Un rettangolo semplice.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>svg</term>
+          <listitem>
+            <para
+>Un'immagine vettoriale nel formato SVG.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <para
+>Per esempio: <programlisting>
+&lt;item type=&quot;label&quot;&gt;
+</programlisting
+> Un oggetto che agisce come un pulsante: <programlisting
+>&lt;item type=&quot;rect&quot; id=&quot;disconnect_button&quot; button=&quot;true&quot;&gt;.
+</programlisting>
+      </para>
+
+      <para
+>Di default, la schermata di accesso di &kdm; scomparirà dopo l'autenticazione. Questo può causare uno sfarfallio tra la schermata di accesso e la sessione. L'attributo <literal
+>background</literal
+> permette agli utenti di specificare quali elementi del tema costituiscono l'immagine di sfondo. Quando usato,questo farà sì che &kdm; rimuoverà tutti gli elementi non di sfondo dallo schermo e disegnerà i rimanenti oggetti <literal
+>background</literal
+> sullo sfondo. Ciò può essere sfruttato per realizzare una transizione graduale tra la schermata di accesso e la sessione: <programlisting>
+&lt;item type=&quot;rect&quot; background=&quot;true&quot;&gt;
+  &lt;normal file="background.svg"/&gt;
+  &lt;pos x=&quot;0&quot; y=&quot;0&quot; width=&quot;100%&quot; height=&quot;-75&quot;/&gt;
+&lt;/item&gt;
+</programlisting
+> Per usare un diverso sfondo per la transizione da quello della schermata di accesso, il tema dovrebbe specificare due nodi oggetto (che potrebbero contenere pixmap o immagini svg, per esempio). L'oggetto che corrisponde allo sfondo del gestore non dovrebbe avere la proprietà <literal
+>background</literal
+> mentre l'oggetto che corrisponde allo sfondo della transizione dovrebbe avere la proprietà <literal
+>background</literal
+>. Per esempio: <programlisting
+>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE greeter SYSTEM &quot;greeter.dtd&quot;&gt;
+&lt;greeter&gt;
+  &lt;item type=&quot;rect&quot; background=&quot;true&quot;&gt;
+    &lt;normal file="sfondo_per_accesso.svg"/&gt;
+    &lt;pos x=&quot;0&quot; y=&quot;0&quot; width=&quot;100%&quot; height=&quot;100%&quot;/&gt;
+  &lt;/item&gt;
+  &lt;item type=&quot;rect&quot;&gt;
+    &lt;normal file="sfondo_per_accesso.svg"/&gt;
+    &lt;pos x=&quot;0&quot; y=&quot;0&quot; width=&quot;100%&quot; height=&quot;100%&quot;/&gt;
+  &lt;/item&gt;
+  [...]
+&lt;/greeter&gt;
+</programlisting>
+
+      </para>
+
+      <para
+>Nelle configurazioni multi schermo, i temi posso anche specificare l'aspetto degli altri schermi diversi da quello in cui è attivo il gestore degli accessi, ma in genere vi appariranno solo gli oggetti di sfondo. Per specificare su quale/i schermo/i deve essere visualizzato un elemento si può usare l'attributo <literal
+>screen</literal
+> con un valore scelto tra <literal
+>greeter</literal
+>, <literal
+>other</literal
+> o <literal
+>all</literal
+>, che indicano rispettivamente lo schermo in cui è presente il gestore degli accessi, tutti gli schermi in cui non è presente il gestore degli accessi, e tutti gli schermi. </para>
+
+      <variablelist>
+        <para
+>Ad ogni elemento può essere dato un nome tramite l'attributo <literal
+>id</literal
+>. Certi id sono riconosciuti da &kdm; per dare a quegli oggetti funzioni speciali: </para>
+
+        <!--
+        <varlistentry>
+          <term
+><literal
+>list</literal
+> items</term>
+          <listitem>
+
+            <para>
+              List items by default display as lists, but the
+              <literal
+>combo=&quot;true&quot;</literal
+> attribute can be used
+              to specify combo box style (combo style supported since &kde; ).
+              Some predefined lists may be included in a theme by using the
+              following id values.  Customized lists may also be defined,
+              which are explained below.
+            </para>
+
+            <segmentedlist>
+              <?dbhtml list-presentation="table"?>
+              <segtitle
+>Id</segtitle
+><segtitle
+>Function</segtitle>
+
+              <seglistitem>
+                <seg
+>session</seg>
+                <seg
+>A list of available sessions, which allows the user to
+                  pick the session to use.  Supported since &kde; .</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>language</seg>
+                <seg
+>A list of available languages, which allows the user to
+                  pick the language to use.  Supported since &kde; .</seg>
+              </seglistitem>
+
+            </segmentedlist>
+          </listitem>
+        </varlistentry>
+        -->
+
+        <varlistentry>
+          <term
+>oggetti <literal
+>button</literal
+>e oggetti con l'attributo <literal
+>button=&quot;true&quot;</literal
+>.</term>
+
+          <listitem>
+            <para
+>I pulsanti solitamente fanno da interruttori per certe azioni.In più &kdm; nasconderà i pulsanti le cui azioni non sono disponibili. </para>
+
+            <segmentedlist>
+              <?dbhtml list-presentation="table"?>
+              <segtitle
+>Id</segtitle
+><segtitle
+>Azione</segtitle>
+
+              <seglistitem>
+                <seg
+>chooser_button</seg>
+                <seg
+>Avvia il selettore XDMCP.</seg>
+              </seglistitem>
+
+              <!--
+              <seglistitem>
+                <seg
+>custom_cmd_button[0-9]</seg>
+                <seg
+>Runs the <filename
+>n-th</filename
+> custom command.</seg>
+              </seglistitem>
+              -->
+
+              <seglistitem>
+                <seg
+>disconnect_button</seg>
+                <seg
+>Disconnette dalla sessione remota.</seg>
+              </seglistitem>
+
+              <!--
+              <seglistitem>
+                <seg
+>language_button</seg>
+                <seg
+>Open the language selection menu.</seg>
+              </seglistitem>
+              -->
+
+              <!--
+              <seglistitem>
+                <seg
+>halt_button</seg>
+                <seg
+>Power off the system.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>reboot_button</seg>
+                <seg
+>Restart the system.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>suspend_button</seg>
+                <seg
+>Suspend the system.</seg>
+              </seglistitem>
+              -->
+
+              <seglistitem>
+                <seg
+>session_button</seg>
+                <seg
+>Apre il menu di selezione della sessione.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>system_button</seg>
+                <seg
+>Apre un menu omnicomprensivo con svariate opzioni e azioni, a seconda della configurazione.</seg>
+              </seglistitem>
+            </segmentedlist>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>oggetti <literal
+>label</literal
+></term>
+
+          <listitem>
+            <para
+>&kdm; mostrerà/nasconderà queste etichette e imposterà il testo in base allo stato della finestra di accesso. </para>
+
+            <segmentedlist>
+              <?dbhtml list-presentation="table"?>
+              <segtitle
+>Id</segtitle
+><segtitle
+>Funzione</segtitle>
+
+              <!--
+              <seglistitem>
+                <seg
+>pam-prompt</seg>
+                <seg
+>Label that displays the <acronym
+>PAM</acronym
+> prompt.
+                  This is the prompt that <acronym
+>PAM</acronym>
+                  uses to ask for username, password, etc.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>pam-message</seg>
+                <seg
+>Label that displays the <acronym
+>PAM</acronym
+> message.
+                  These are messages that <acronym
+>PAM</acronym
+>/&kdm; gives
+                  about state of the account, help about the prompts and other
+                  information.</seg>
+              </seglistitem>
+              -->
+
+              <seglistitem>
+                <seg
+>pam-error</seg>
+                <seg
+>Questo mostra il messaggio <guilabel
+>Accesso non riuscito.</guilabel
+>.</seg>
+              </seglistitem>
+
+            </segmentedlist>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>Oggetti che incorporano widget</term>
+
+          <listitem>
+            <para
+>&kdm; incorporerà particolari widget Qt in questi oggetti. </para>
+
+            <segmentedlist>
+              <?dbhtml list-presentation="table"?>
+              <segtitle
+>Id</segtitle
+><segtitle
+>Funzione</segtitle>
+
+              <seglistitem>
+                <seg
+>user-entry</seg>
+                <seg
+>Campo di inserimento del nome utente.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>pw-entry</seg>
+                <seg
+>Campo di inserimento della password.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>domain-entry</seg>
+                <seg
+>Alcune estensioni di tipo <quote
+>conversation</quote
+> usano questo campo per richiedere il nome di dominio. Se questo campo è presente, il relativo elemento contenitore dovrebbe avere <link linkend="show-nodes"
+>mostra nodi</link
+> con il tipo <literal
+>plugin-domain-entry</literal
+>.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>talker</seg>
+                <seg
+>Questo elemento dovrebbe essere del tipo <literal
+>rect</literal
+>. Rappresenta la <quote
+>parte principale</quote
+> del gestore degli accessi: contiene gli oggetti <literal
+>label</literal
+> e <literal
+>entry</literal
+> che riguardano il processo di autenticazione. Se una data estensione di tipo <quote
+>conversation</quote
+> non può soddisfare le necessità degli altri oggetti, questa cerca di incorporare un complesso widget con un proprio layout dentro questo oggetto, sovrascrivendo così interamente il <quote
+>talker</quote
+> del tema. Per essere precisi i temi di &kdm;non necessitano per nulla di fornire dei design <quote
+>talker</quote
+>, perché tutte le estensioni di autenticazione di &kdm; sono in grado di fare uso dell'oggetto <literal
+>talker</literal
+>. </seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>userlist</seg>
+                <seg
+>Questo oggetto deve essere del tipo <literal
+>list</literal
+>. Se l'opzione lista utenti è selezionata, &kdm;incorporerà qui il widget lista utenti. Altrimenti questo oggetto è nascosto.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>xconsole</seg>
+                <seg
+>Questo oggetto dovrebbe essere del tipo <literal
+>rect</literal
+>. Se l'opzione integrata <command
+>xconsole</command
+> è compilata e attivata, &kdm; incorporerà il widget del log della console qui. Altrimenti questo oggetto è nascosto.</seg>
+              </seglistitem>
+
+            </segmentedlist>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+>Altri oggetti</term>
+
+          <listitem>
+            <para
+>&kdm; mostrerà/nasconderà questi oggetti in base alla configurazione e allo stato attuale del gestore accessi. &kdm; non impone requisiti di tipo su di loro, ma solitamente gli si assegna un tipo specifico. </para>
+
+            <segmentedlist>
+              <?dbhtml list-presentation="table"?>
+              <segtitle
+>Id</segtitle
+><segtitle
+>Mostra solo quando...</segtitle>
+
+              <seglistitem>
+                <seg
+>timed-label</seg>
+                <seg
+>... accesso temporizzato in corso.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>caps-lock-warning</seg>
+                <seg
+>... Bloc Maiusc è acceso.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>xauth-warning</seg>
+                <seg
+>... l' &X-Server; non richiede nessuna X autorizzazione per connettersi.</seg>
+              </seglistitem>
+
+              <!--
+              <seglistitem>
+                <seg
+>pam-error-logo</seg>
+                <seg
+>... a pam-error message is being displayed.
+                  This is useful for displaying an <guiicon
+>Attention</guiicon>
+                  icon, for example.</seg>
+              </seglistitem>
+              -->
+
+              <seglistitem>
+                <seg
+>userlist-rect</seg>
+                <seg
+>... la lista utente è attiva. Dall'annidamento dell'oggetto <literal
+>userlist</literal
+> in questo, è possibile creare qualcosa di simile ad una cornice intorno alla lista e averla mostrata solo quando la lista lista è mostrata.</seg>
+              </seglistitem>
+
+              <seglistitem>
+                <seg
+>xconsole-rect</seg>
+                <seg
+>... l'opzione integrata <command
+>xconsole</command
+> è attiva. Analogo a <literal
+>userlist-rect</literal
+>.</seg>
+              </seglistitem>
+
+            </segmentedlist>
+          </listitem>
+        </varlistentry>
+
+      </variablelist>
+
+    </sect2>
+
+    <sect2 id="layout-nodes">
+      <title
+>Nodi contenitori di layout</title>
+
+      <para
+>I nodi di layout appaiono dentro nodi oggetto e contengono a loro volta nodi oggetto. Il tipo del nodo di layout determina la disposizione dei nodi figli. Un nodo oggetto può contenere on nodo di layout di ogni tipo. </para>
+
+      <sect3 id="box-nodes">
+        <title
+>Nodi casella</title>
+
+        <para
+>I nodi casella automaticamente dispongono i loro figli in linea. Sono specificati come segue: <programlisting>
+&lt;box orientation=&quot;<replaceable
+>allineamento</replaceable
+>&quot; min-width=&quot;<replaceable
+>num</replaceable
+>&quot; min-height=&quot;<replaceable
+>num</replaceable
+>&quot;
+    xpadding=&quot;<replaceable
+>num</replaceable
+>&quot; ypadding=&quot;<replaceable
+>num</replaceable
+>&quot; spacing=&quot;<replaceable
+>num</replaceable
+>&quot;
+    homogeneous=&quot;<replaceable
+>bool</replaceable
+>&quot;&gt;
+</programlisting
+> Dove per<replaceable
+>num</replaceable
+> si intende il numero di pixel e <replaceable
+>bool</replaceable
+> significa o <literal
+>true</literal
+> o <literal
+>false</literal
+>. Il valore <replaceable
+>allineamento</replaceable
+> può essere o <literal
+>horizontal</literal
+> o <literal
+>vertical</literal
+>. Se tu lasci qualche attributo spento, sarà 0 di default per i numeri, <literal
+>false</literal
+> per le variabili e <literal
+>vertical</literal
+> per l'orientamento. </para>
+
+        <para
+>La spaziatura è la distanza tra elementi figli adiacenti. Il riempimento è il margine esterno della casella. Se la casella è omogenea, la stessa quantità di spazio è assegnata per ogni elemento figlio. </para>
+      </sect3>
+
+      <sect3 id="fixed-nodes">
+        <title
+>Nodi fissi</title>
+
+        <para
+>Fisso è un contenitore che ha i suoi figli disposti in precise coordinate. La dimensione di questo contenitore è il più piccolo rettangolo che contiene tutti i figli.Fisso non ha attributi extra e così usa soltanto: <programlisting>
+&lt;fixed&gt;
+</programlisting
+> Dunque metti al suo interno altri oggetti con la corretta posizione. </para>
+      </sect3>
+
+    </sect2>
+
+    <sect2 id="position-nodes">
+      <title
+>Nodi di posizione</title>
+
+      <para
+>Ogni oggetto può specificare la sua posizione tramite il nodo <literal
+>pos</literal
+>. Per esempio: <programlisting
+>&lt;pos x=&quot;0&quot; y=&quot;4&quot; width=&quot;100%&quot; height=&quot;100%&quot;/&gt;
+</programlisting>
+      </para>
+
+      <para
+>Se la dimensione non è specificata, verrà impostata la dimensione «naturale» dell'oggetto, chiamata la dimensione suggerimento. N.B. Non tutti gli oggetti hanno una dimensione suggerimento utile. </para>
+
+      <para
+>Sia la posizione che la dimensione possono essere date in percentuale e saranno calcolate relativamente alla dimensione dell'elemento contenitore che le racchiude in questo caso. Per elementi di primo livello sulla percentuale dell'intero schermo. Aggiungendo gli accenti circonflessi (<literal
+>^</literal
+>) alla specificazione della dimensione è possibile modificarla per essere relativa alla dimensione dell'elemento che contiene e così via. </para>
+
+      <para
+>Se l'oggetto contiene una casella, <literal
+>width</literal
+> e <literal
+>height</literal
+> possono essere specificate per essere <literal
+>box</literal
+> intendendo che devono essere la larghezza e l'altezza della casella, che includono gli oggetti nella casella più il riempimento. </para>
+
+      <para
+>Uno tra <literal
+>width</literal
+> e <literal
+>height</literal
+> può essere specificato come <literal
+>scale</literal
+> intendendo che esso dovrebbe essere in scala con la scala delle altre dimensioni relativamente alla dimensione suggerita. Usa questa possibilità per mantenere automaticamente l'aspetto delle immagini riscalate. </para>
+
+      <para
+>Se è specificato l'attributo <literal
+>expand</literal
+> ed è impostato su <literal
+>true</literal
+>, questo elemento sarà espanso il più possibile nella casella che lo racchiude (questo significa che riceverà più spazio se disponibile). </para>
+
+      <para
+>Se <literal
+>width</literal
+> o <literal
+>height</literal
+> sono numeri, un valore negativo rappresenta una sporgenza dalla dimensione del contenitore. N.B. È possibile specificare una sporgenza positiva scrivendo due segni meno. </para>
+
+      <para
+>In entrambi i casi è possibile vincolare la dimensione finale con gli attributi <literal
+>min-width</literal
+>, <literal
+>min-height</literal
+>, <literal
+>max-width</literal
+> e <literal
+>max-height</literal
+> che possono essere specificati allo stesso modo di <literal
+>width</literal
+> e <literal
+>height</literal
+>. </para>
+
+      <para
+>Se <literal
+>x</literal
+> o <literal
+>y</literal
+> sono numeri, un valore negativo indica una posizione da destra e dal basso, diversamente dal default che è da sinistra dall'alto. </para>
+
+      <para
+>È anche possibile specificare a quale punto nell'oggetto si riferisca la posizione. Questo è chiamato ancora e può essere o <literal
+>c</literal
+> per centro o uno tra <literal
+>n</literal
+>, <literal
+>ne</literal
+>, <literal
+>e</literal
+>, <literal
+>se</literal
+>, <literal
+>s</literal
+>, <literal
+>sw</literal
+>, <literal
+>w</literal
+> and <literal
+>nw</literal
+> or <literal
+>c</literal
+> che stanno per i diversi lati/angoli come per una mappa topografica, L'impostazione di default è <literal
+>nw</literal
+>, che è l'angolo in alto a sinistra. Ad esempio: <programlisting
+>&lt;pos x=&quot;10%&quot; y=&quot;50%&quot; anchor=&quot;w&quot; width=&quot;80%&quot; height=&quot;95&quot;/&gt;
+</programlisting>
+      </para>
+
+    </sect2>
+
+    <sect2 id="show-nodes">
+      <title
+>Mostra nodi</title>
+
+      <!-- not really implemented
+      <para>
+        Some items may only display in certain modes, like when doing a
+        remote display.  Multiple values can be specified and must be
+        separated with commas.  The following values are possible:
+      </para>
+
+      <para>
+        <filename
+>console</filename
+> - In console mode.
+      </para>
+      <para>
+        <filename
+>console-fixed</filename
+> - In console non-flexi mode.
+      </para>
+      <para>
+        <filename
+>console-flexi</filename
+> - In console &amp; flexi mode.
+      </para>
+      <para>
+        <filename
+>flexi</filename
+> - In flexi mode.
+      </para>
+      <para>
+        <filename
+>remote</filename
+> - In remote mode.
+      </para>
+      <para>
+        <filename
+>remote-flexi</filename
+> - In remote &amp; flexi mode.
+      </para>
+
+      <para>
+        For example:
+<programlisting
+>
+&lt;show modes=&quot;flexi,remote&quot;/&gt;
+</programlisting>
+      </para>
+      -->
+
+      <para
+>Puoi specificare l'attributo <literal
+>type</literal
+> per indicare che certi oggetti devono essere mostrati solo se è impostato il tipo. Inserire prima del tipo un punto esclamativo (<literal
+>!</literal
+>) inverte la condizione. I valori validi includono i seguenti: </para>
+        <segmentedlist>
+          <?dbhtml list-presentation="table"?>
+          <segtitle
+>Tipo</segtitle
+><segtitle
+>Mostra se...</segtitle>
+
+          <seglistitem>
+            <seg
+><literal
+>chooser</literal
+></seg>
+            <seg
+>passare all'accesso remoto è consentito.</seg>
+          </seglistitem>
+
+          <!--
+          <seglistitem>
+            <seg
+><literal
+>custom_cmd[0-9]</literal
+></seg>
+            <seg
+><literal
+>n-th</literal
+> CustomCommand is specified in
+              the &kdm; configuration.</seg>
+          </seglistitem>
+          -->
+
+          <seglistitem>
+            <seg
+><literal
+>halt</literal
+> e <literal
+>reboot</literal
+></seg>
+            <seg
+>spegnere il sistema è consentito.</seg>
+          </seglistitem>
+
+          <!--
+          <seglistitem>
+            <seg
+><literal
+>suspend</literal
+></seg>
+            <seg
+>suspending the system is permitted.</seg>
+          </seglistitem>
+          -->
+
+          <seglistitem>
+            <seg
+><literal
+>system</literal
+></seg>
+            <seg
+>nessuna condizione (sempre impostato in &kdm;).</seg>
+          </seglistitem>
+
+          <!--
+          <seglistitem>
+            <seg
+><literal
+>timed</literal
+></seg>
+            <seg
+>a timed login is being counted down.</seg>
+          </seglistitem>
+          -->
+
+          <seglistitem>
+            <seg
+><literal
+>plugin-</literal
+><replaceable
+>nome</replaceable
+></seg>
+            <seg
+>l'estensione di tipo <quote
+>conversation</quote
+> fornisce un corrispondente campo d'inserimento.</seg>
+          </seglistitem>
+
+        </segmentedlist>
+
+
+      <para
+>Per esempio: <programlisting
+>&lt;show type=&quot;chooser&quot;/&gt;
+</programlisting>
+      </para>
+
+      <para
+>Altrimenti puoi specificare i valori <literal
+>min-screen-width</literal
+> o <literal
+>min-screen-height</literal
+> per indicare che certi oggetti devono essere mostrati solo se la risoluzione dello schermo è maggiore o uguale a quella specificata. Ad esempio: <programlisting
+>&lt;show min-screen-height=&quot;768&quot;/&gt;
+</programlisting>
+      </para>
+
+    </sect2>
+
+    <sect2 id="nor-act-pre-nodes">
+      <title
+>Nodi normale/attivo/preilluminato</title>
+
+      <para
+>L'aspetto di molti oggetti può essere regolato tramite i seguenti tag: </para>
+
+      <variablelist>
+        <varlistentry>
+          <term
+><literal
+>normal</literal
+></term>
+          <listitem>
+            <para
+>Stato normale.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term
+><literal
+>prelight</literal
+></term>
+          <listitem>
+            <para
+>Quando il mouse passa sull'oggetto.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term
+><literal
+>active</literal
+></term>
+          <listitem>
+            <para
+>Quando si fa clic sull'oggetto.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <variablelist>
+
+        <para
+>L'esatto insieme di attributi disponibili dipende dal tipo di oggetto: </para>
+
+        <varlistentry>
+          <term
+><literal
+>rect</literal
+></term>
+          <listitem>
+            <para>
+<programlisting
+>&lt;normal color=&quot;#000000&quot; alpha=&quot;0.0&quot;/&gt;
+</programlisting>
+Entrambi gli attributi possono essere omessi, nel qual caso viene usato il default (l'esempio rappresenta i default). <literal
+>alpha</literal
+> è un numero a virgola mobile tra 0 (trasparente) e 1 (opaco). <literal
+>color</literal
+> è un indicatore seguito da un numero esadecimale a sei cifre; il formato è <quote
+><literal
+>#</literal
+><replaceable
+>rrggbb</replaceable
+></quote
+>. Alternativamente, <literal
+>color</literal
+> può essere specificato come numero esadecimale a otto cifre, nel qual caso le prime due cifre sono il valore alpha. </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+><literal
+>label</literal
+></term>
+          <listitem>
+            <para>
+<programlisting
+>&lt;normal color=&quot;#ffffff&quot; alpha=&quot;1.0&quot; font=&quot;Sans 14&quot;/&gt;
+</programlisting>
+<literal
+>alpha</literal
+> e <literal
+>color</literal
+> sono specificati come negli oggetti <quote
+>rect</quote
+>. </para>
+            <para
+><literal
+>font</literal
+> segue il formato «<replaceable
+>lista famiglia</replaceable
+>&nbsp;<replaceable
+>opzioni stile</replaceable
+>&nbsp;<replaceable
+>dimensione</replaceable
+>». Ogni parte è facoltativa. </para>
+            <para
+><replaceable
+>lista famiglia</replaceable
+> è una lista di famiglie di font come «helvetica», «monospace», ecc. </para>
+            <para
+><replaceable
+>opzioni stile</replaceable
+> è una lista di parole chiave dallo stile, spessore e spaziatura dalle categorie; al massimo uno da ogni categoria. Lo stile può essere <literal
+>normal</literal
+>, <literal
+>italic</literal
+> o <literal
+>oblique</literal
+>. Spessore può essere <literal
+>ultra-light</literal
+>, <literal
+>light</literal
+>, <literal
+>medium</literal
+>, <literal
+>semi-bold</literal
+>, <literal
+>bold</literal
+>, <literal
+>ultra-bold</literal
+> o <literal
+>heavy</literal
+>. Spaziature ammesse sono <literal
+>ultra-condensed</literal
+>, <literal
+>extra-condensed</literal
+>, <literal
+>condensed</literal
+>, <literal
+>semi-condensed</literal
+>, <literal
+>normal</literal
+>, <literal
+>semi-expanded</literal
+>, <literal
+>expanded</literal
+>, <literal
+>extra-expanded</literal
+> e <literal
+>ultra-expanded</literal
+>. </para>
+            <para
+><replaceable
+>dimensione</replaceable
+> è o un numero a virgola mobile che rappresenta la dimensione in punti (0,35277 mm) o un intero seguito da <literal
+>px</literal
+> che rappresenta la dimensione in pixel. Dimensioni in punti sono preferibili, essendo indipendenti dalla risoluzione dello schermo. </para>
+            <para
+>Se qualche attributo non è specificato, sono usati i valori dei <link linkend="style-nodes"
+>nodi stile</link
+>. Se questo non restituisce informazioni sul colore del testo della finestra, verrà usato il bianco. La font di default è configurata in &kdmrc;. </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term
+><literal
+>pixmap</literal
+></term>
+          <term
+><literal
+>svg</literal
+></term>
+          <listitem>
+            <para>
+<programlisting
+>&lt;normal file=&quot;immagine.png&quot; tint=&quot;#dddddd&quot; alpha=&quot;1.0&quot;/&gt;
+</programlisting>
+            </para>
+
+            <para
+><literal
+>file</literal
+> specifica il file contenente l'immagine. Percorsi relativi sono relativi alla cartella del tema. </para>
+
+            <para
+><literal
+>wallpaper</literal
+> può essere usato al posto di un <literal
+>file</literal
+> per &kdm; cercare le immagini nelle solite posizioni degli sfondi di &kde;Gli sfondi di Plasma sono supportati. </para>
+
+            <para
+><literal
+>element</literal
+> specifica l'id di un elemento di un file SVG. Se vuoto, sarà disegnata l'intera immagine SVG. </para>
+
+            <para
+>Per i nodi <literal
+>pixmap</literal
+>,è possibile fornire immagini multiple, in modo che l'immagine di migliore qualità per una data risoluzione venga usata. I file devono avere il formato che corrisponda  a <replaceable
+>nomebase</replaceable
+><literal
+>x-</literal
+><replaceable
+>larghezza</replaceable
+><literal
+>x</literal
+><replaceable
+>altezza</replaceable
+><literal
+>.</literal
+><replaceable
+>estensione</replaceable
+>. Se il file non esiste e non è uno sfondo di Plasma, &kdm; accetterà solo una corrispondenza perfetta altrimenti tornerà al file originale. Se non vi è corrispondenza diretta cercherà di trovare un'immagine le cui dimensioni siamo le più vicine possibili. </para>
+
+            <!--
+            <para>
+              Note that an alternative image file can be specified using the
+              <literal
+>altfile</literal
+><optional
+><replaceable
+>n</replaceable
+></optional>
+              attribute.  &kdm; will use the last valid image filename
+              specified.  For example:
+<programlisting
+>
+&lt;normal file=&quot;picture.png&quot; altfile1=&quot;distribution-blah-image.png&quot; altfile2=&quot;distribution-foo-image.png&quot;/&gt;
+</programlisting>
+              If <filename
+>distribution-foo-image.png</filename
+> is a valid
+              image filename it will be used.
+              Otherwise distribution-blah-image.png will be used if valid.
+              This feature is supported since &kde; .
+            </para>
+            -->
+
+            <para
+>La modalità <literal
+>ridimensionamento</literal
+> specifica come sistemare la dimensione dell'immagine che non corrisponde alla dimensione dell'elemento.<literal
+>libero</literal
+> (predefinito) significa semplicemente ridimensionare l'immagine alla dimensione corretta, possibilmente senza mantenere il rapporto delle dimensioni. Le altre due modalità preservano il rapporto delle dimensioni dell'immagine: <literal
+>adatta</literal
+> significa ingrandire l'immagine fino alla dimensione massima che si adatta alla geometria dell'elemento. L'immagine verrà centrata. L'area restante non verrà disegnata da questo elemento, quindi verrà posizionata sopra un <literal
+>rettangolo</literal
+> di colore pieno. <literal
+>ritaglia</literal
+> significa ingrandire l'immagine fino alla dimensione minima che riempe completamente la geometria dell'elemento. L'immagine verrà tagliata simmetricamente. </para>
+
+            <para
+><literal
+>tint</literal
+> e <literal
+>alpha</literal
+> costituiscono specifiche sul colore come negli oggetti <literal
+>rect</literal
+>. Ogni pixel dell'immagine è moltiplicato con questo colore per ogni componente. </para>
+          </listitem>
+        </varlistentry>
+
+      </variablelist>
+
+    </sect2>
+
+    <sect2 id="style-nodes">
+      <title
+>Nodi stile oggetto</title>
+
+      <para
+>Questo tag rende possibile cambiare l'aspetto di etichette e oggetti Qt incorporati nel tema (es., linee di modifica, pulsanti o liste utenti). Le impostazioni di stile sono ereditate dagli oggetti figli, ma possono essere sovrascritte individualmente. I default sono presi da &kdmrc;. </para>
+
+      <para
+>L'attributo <literal
+>font</literal
+> definisce la font di tutti gli oggetti. Per oggetti con funzione di input questo può essere sovrascritto con l'attributo <literal
+>edit-font</literal
+>. Le font sono specificate come in <link linkend="nor-act-pre-nodes"
+>nodi normale/attivo/preilluminato</link
+>. </para>
+
+      <para
+>Solitamente, il motore dei temi prova a rimuovere ogni cornice dagli oggetti Qt, così essi si fondono nel tema senza problemi. Nei casi in cui non lo si desidera, l'attributo <literal
+>frame</literal
+> può essere impostato su <literal
+>true</literal
+>. </para>
+
+      <para
+>L' attributo dello stile dell'<literal
+>interfaccia</literal
+> può essere usato per sovrascrivere lo stile Qt per gli oggetti incorporati. Quello predefinito è dato da <option
+>GUIStyle</option
+> nel file &kdmrc; </para>
+
+      <para
+>È possibile specificare quasi l'intera palette per gli oggetti come documentato sul<ulink type="http" url="http://doc.trolltech.com/4.3/qpalette.html"
+>sito di Trolltech</ulink
+>. I nomi degli attributi sono composti da un'estensione, un ruolo di colore e un suffisso. Possibili scopi sono - ordinati per precedenza crescente - <literal
+>all-</literal
+> per tutti i gruppi di colori, nessun estensione per i gruppi di colore attivi e inattivi e <literal
+>active-</literal
+>, <literal
+>inactive-</literal
+> e <literal
+>disabled-</literal
+> per il gruppo di colori corrispondente. I ruoli di colore supportati sono <literal
+>window</literal
+>, <literal
+>window-text</literal
+>, <literal
+>base</literal
+>, <literal
+>alternate-base</literal
+>, <literal
+>text</literal
+>, <literal
+>bright-text</literal
+>, <literal
+>highlight</literal
+>, <literal
+>highlighted-text</literal
+>, <literal
+>button</literal
+> e <literal
+>button-text</literal
+>. Il suffisso può essere <literal
+>-color</literal
+> o <literal
+>-alpha</literal
+> con il rispettivo significato come in <link linkend="nor-act-pre-nodes"
+>nodi normale/attivo/preilluminato</link
+>. </para>
+
+      <para
+>Come alternativa a specificare la paletta nella riga, l'attributo <literal
+>colorscheme</literal
+> può essere usato per caricare uno schema di colori per &kde; completo. Quello predefinito è dato da <option
+>ColorScheme</option
+> in &kdmrc;. Specifiche individuali di <literal
+>color</literal
+> sovrascriveranno i colori impostati dallo schema. </para>
+
+      <para
+>Esempio: <programlisting
+>&lt;style edit-font=&quot;Comic 16&quot; text-color=&quot;#dddddd&quot; frame=&quot;true&quot;/&gt;
+</programlisting>
+      </para>
+    </sect2>
+
+    <sect2 id="color-nodes">
+      <title
+>Nodi colore per il navigatore visuale</title>
+
+      <para
+>I nodi di colore permettono di sovrascrivere il colore di sfondo degli oggetti nel navigatore visuale. <literal
+>labelcolor</literal
+> e <literal
+>altlabelcolor</literal
+> sono essenzialemente equivalenti a <literal
+>all-base-color</literal
+> o rispettivamente <literal
+>all-alternate-base-color</literal
+> in <link linkend="style-nodes"
+>nodi di stile</link
+>. Solo se <literal
+>labelcolor</literal
+> è specificato, sfondi a voci alterne sono disabilitati. </para>
+
+      <para>
+<programlisting
+>&lt;color labelcolor=&quot;#80ffffff&quot; altlabelcolor=&quot;#80f0f0f0&quot;/&gt;
+</programlisting>
+      </para>
+    </sect2>
+
+    <sect2 id="text-nodes">
+      <title
+>Nodi di testo</title>
+
+      <para
+>Le etichette usano tag di testo. Possono essere usate per mostrare testi tradotti come segue (se l'attributo <literal
+>xml:lang</literal
+> è omesso, il locale POSIX viene assunto): <programlisting
+>&lt;text xml:lang=&quot;fr&quot;&gt;Option&lt;/text&gt;
+</programlisting>
+      </para>
+
+      <!--
+      <para>
+        You can include pango markup in the text nodes for labels, however
+        you must encode it.  So for example to have the label of
+        &quot;foo&lt;sup&gt;bar&lt;/sup&gt;&quot;, you must type:
+<programlisting
+>
+&lt;text&gt;&quot;foo&lt;sup&gt;bar&lt;/sup&gt;&quot;&lt;/text&gt;
+</programlisting>
+      </para>
+      -->
+
+      <para
+>I nodi di testo possono contenere le seguenti sequenze di caratteri speciali che saranno tradotte come segue: </para>
+
+      <segmentedlist>
+        <?dbhtml list-presentation="table"?>
+        <segtitle
+>Sequenza</segtitle
+><segtitle
+>Espansione</segtitle>
+
+        <seglistitem>
+          <seg
+>%%</seg>
+          <seg
+>Un carattere %</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%c</seg>
+          <seg
+>Ora e data dell'orologio</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%d</seg>
+          <seg
+>Mostra nome (variabile d'ambiente <envar
+>DISPLAY</envar
+>)</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%h</seg>
+          <seg
+>Nome host (output di <function
+>gethostname</function
+>)</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%m</seg>
+          <seg
+>Nome della macchina (<structfield
+>machine</structfield
+> parte dell'output di <function
+>uname</function
+>)</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%n</seg>
+          <seg
+>Nome del nodo (<structfield
+>nodename</structfield
+> parte dell'output di <function
+>uname</function
+>)</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%o</seg>
+          <seg
+>Nome di dominio (output di <function
+>getdomainname</function
+>)</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%r</seg>
+          <seg
+>Nome versione (<structfield
+>release</structfield
+> parte dell'output di <function
+>uname</function
+>)</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%s</seg>
+          <seg
+>Nome del sistema (<structfield
+>sysname</structfield
+> parte dell'output di <function
+>uname</function
+>)</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%t</seg>
+          <seg
+>Numero di secondi entro cui sarà effettuato l'accesso automatico, più l'appropriata forma internazionalizzata del plurale di «secondo»</seg>
+        </seglistitem>
+
+        <seglistitem>
+          <seg
+>%u</seg>
+          <seg
+>Nome utente per l'accesso automatico</seg>
+        </seglistitem>
+
+        <!-- Need to switch to richtext painting for this purpose.
+        <seglistitem>
+          <seg
+>\n</seg>
+          <seg
+>Newline</seg>
+        </seglistitem>
+        -->
+
+        <seglistitem>
+          <seg
+>_</seg>
+          <seg
+>Rende il carattere seguente un acceleratore</seg>
+        </seglistitem>
+
+      </segmentedlist>
+
+      <para
+><literal
+>%t</literal
+> e <literal
+>%u</literal
+> sono pensati per essere usati solo internamente per mostrare il messaggio <literal
+>timed-label</literal
+>, che è automaticamente aggiornato ogni secondo. </para>
+    </sect2>
+
+    <sect2 id="stock-nodes">
+      <title
+>Nodi predefiniti</title>
+
+      <para
+>Certe etichette localizzate comunemente possono essere specificate tramite i tag predefiniti. Il tag <literal
+>text</literal
+> è ignorato se viene usato il tag <literal
+>stock</literal
+>. Dovresti usare le etichette predefinite piuttosto che inserire tutte le traduzioni nei temi. Questo comporta tempi di caricamento più veloci e traduzioni sensibilmente migliori. Sono validi i seguenti valori: </para>
+
+      <segmentedlist>
+        <?dbhtml list-presentation="table"?>
+        <segtitle
+>Tipo</segtitle
+><segtitle
+>Espansione</segtitle>
+
+        <!--
+        <seglistitem>
+          <seg
+>ok</seg>
+          <seg
+><quote
+>_OK</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>cancel</seg>
+          <seg
+>_Cancel</seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>options</seg>
+          <seg
+>_Options</seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>custom_cmd[0-9]</seg>
+          <seg
+>Obtained from the config file.</seg>
+        </seglistitem>
+        -->
+        <seglistitem>
+          <seg
+>caps-lock-warning</seg>
+          <seg
+><quote
+>Blocco maiuscole è inserito</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>chooser</seg>
+          <seg
+><quote
+>XDMCP Choose_r</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>quit</seg>
+          <seg
+><quote
+>_Esci</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>disconnect</seg>
+          <seg
+><quote
+>Disconn_etti</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>halt</seg>
+          <seg
+><quote
+>Speg_ni</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>language</seg>
+          <seg
+><quote
+>Lin_gua</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>accesso</seg>
+          <seg
+><quote
+>_Accesso</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>session</seg>
+          <seg
+><quote
+>_Tipo di sessione</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>reboot</seg>
+          <seg
+><quote
+>Riavvia</quote
+></seg>
+        </seglistitem>
+        <!--
+        <seglistitem>
+          <seg
+>suspend</seg>
+          <seg
+><quote
+>Sus_pend</quote
+></seg>
+        </seglistitem>
+        -->
+        <seglistitem>
+          <seg
+>system</seg>
+          <seg
+><quote
+>_Menu</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>timed-label</seg>
+          <seg
+><quote
+>L'utente %u effettuerà il login in %t</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>domain-label</seg>
+          <seg
+><quote
+>_Dominio:</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>username-label</seg>
+          <seg
+><quote
+>Nome _utente:</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>password-label</seg>
+          <seg
+><quote
+>_Password:</quote
+></seg>
+        </seglistitem>
+        <seglistitem>
+          <seg
+>welcome-label</seg>
+          <seg
+><quote
+>Benvenuto su %h</quote
+></seg>
+        </seglistitem>
+
+      </segmentedlist>
+
+      <para
+>Per esempio: <programlisting
+>&lt;stock type=&quot;welcome-label&quot;/&gt;
+</programlisting>
+      </para>
+    </sect2>
+
+    <sect2 id="buddy-nodes">
+      <title
+>Nodi compagno</title>
+
+      <para
+>Agli oggetti che non attivano direttamente un'azione si può assegnare un compagno. Al compagno è passato il fuoco di input quando l'oggetto è attivato (con un clic o un acceleratore della <literal
+>label</literal
+> è premuto). </para>
+
+      <para
+>Il compagno è collegato tramite id con l'attributo <literal
+>idref</literal
+>. Ovviamente gli deve essere fornito un ID. Per esempio: <programlisting
+>&lt;item type=&quot;label&quot;&gt;
+  &lt;stock type=&quot;username-label&quot;/&gt;
+  &lt;buddy idref=&quot;user-entry&quot;/&gt;
+  [...]
+&lt;/item&gt;
+[...]
+&lt;item type=&quot;entry&quot; id=&quot;user-entry&quot;&gt;
+  [...]
+&lt;/item&gt;
+</programlisting>
+      </para>
+    </sect2>
+
+  </sect1>
+
+</chapter>

@@ -1,0 +1,233 @@
+<chapter id="kate-mdi">
+<chapterinfo>
+<authorgroup>
+<author
+>&Anders.Lund; &Anders.Lund.mail;</author>
+<othercredit role="translator"
+><firstname
+>Nicola</firstname
+> <surname
+>Ruggero</surname
+> <affiliation
+><address
+><email
+>nicola@nxnt.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione.</contrib
+></othercredit
+> 
+</authorgroup>
+</chapterinfo>
+<title
+>Lavorare con &kate; <acronym
+>MDI</acronym
+></title>
+
+<sect1 id="kate-mdi-overview">
+<title
+>Panoramica</title>
+
+<para
+>Finestra, Vista, Documento, Cornice, Editor... Che cosa sono tutti queste voci nella terminologia di &kate;, e come ottenerne il massimo? Questo capitolo spiegherà tutte queste cose e molto di più.</para>
+
+<sect2 id="kate-mdi-overview-mainwindow">
+
+<title
+>La finestra principale</title>
+
+<para
+><indexterm
+><primary
+>Finestra principale</primary
+></indexterm
+> La finestra principale di &kate; è una finestra standard di &kde;, con l'aggiunta di barre laterali contenenti viste degli strumenti. Ha una barra dei menu con tutti i menu più comuni e qualcuno in più, e una barra degli strumenti che dà accesso ai comandi usati più spesso.</para>
+
+<para
+>La parte più importante della finestra è l'area dell'editor che, per impostazione predefinita, visualizza un solo componente dell'editor di testo, nel quale puoi lavorare con i tuoi documenti.</para>
+
+<para
+>La capacità di agganciarsi del pannello è usata per i pannelli degli strumenti:</para>
+
+<itemizedlist>
+<listitem
+><para
+><link linkend="kate-mdi-tools-file-list"
+>L'elenco dei documenti</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="kate-application-plugin-fsbrowser"
+>Il selettore dei file</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="kate-mdi-tools-konsole"
+>Il Terminale integrato</link
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>E forse altri pannelli di strumenti, per esempio forniti da un'estensione.</para>
+
+<para
+>Le viste degli strumenti possono essere posizionate in una barra laterale; per muovere uno strumento fai clic sul suo pulsante dalla barra e selezionalo dal menu &RMB;.</para>
+
+<para
+>La vista di uno strumento può essere indicata come <emphasis
+>persistente</emphasis
+> dal menu del &RMB;. La barra laterale può contenere più strumenti per volta, in modo che quando uno strumento è persistente gli altri possono essere mostrati in contemporanea.</para>
+
+</sect2>
+
+
+</sect1>
+
+<sect1 id="kate-mdi-editor">
+
+<title
+>L'Area dell'editor</title>
+
+<para
+><indexterm
+><primary
+>Area dell'editor</primary
+></indexterm
+> &kate; ha la capacità di avere più di un documento aperto allo stesso tempo, e inoltre di dividere l'area dell'editor in qualsiasi numero di finestre, in maniera simile a &konqueror; o al popolare <application
+>emacs</application
+>. In questa maniera puoi vedere diversi documenti allo stesso tempo, o più istanze dello stesso documento, per esempio se il tuo documento contiene definizioni all'inizio e le vuoi vedere spesso per riferimento. Oppure puoi vedere l'header del sorgente di un programma in una finestra, mentre modifichi il file di implementazione in un'altra.</para>
+
+<para
+>Quando un documento è disponibile in più di un editor, i cambiamenti effettuati su uno degli editor saranno immediatamente riflessi negli altri. Questo include la selezione e la modifica del testo. Le operazioni di ricerca o i movimenti del cursore si rifletteranno solo nell'editor corrente.</para>
+
+<para
+>Attualmente non è possibile avere più istanze aperte dello stesso documento, nel senso che in una istanza compaiono le modifiche che si stanno facendo mentre nell'altra no.</para>
+
+<para
+>Quando dividi l'editor in due finestre, viene diviso in due riquadri della stessa dimensione, che visualizzano entrambi il documento corrente dell'editor. Il nuovo riquadro sarà in basso (nel caso di divisione orizzontale) o a destra (divisione verticale). Il nuovo riquadro sarà attivato, il che viene palesato dalla presenza del cursore lampeggiante.</para>
+
+</sect1>
+
+<sect1 id="kate-mdi-tools-file-list">
+<title
+>L'elenco dei documenti</title>
+
+<para
+><indexterm
+><primary
+>Elenco dei documenti</primary
+></indexterm
+> L'elenco dei documenti mostra una elenco di tutti i documenti attualmente aperti in &kate;. I file modificati avranno una piccola icona a forma di <guiicon
+>dischetto</guiicon
+> alla loro sinistra per indicarne lo stato.</para>
+
+<para
+>Come impostazione predefinita, l'elenco dei documenti compare in <guimenuitem
+>Modalità ad albero</guimenuitem
+>, che mostra la struttura delle cartelle attorno a tutti i documenti aperti. È disponibile anche la <guimenuitem
+>Modalità a lista</guimenuitem
+>, che mostra un semplice elenco di tutti i documenti aperti. Puoi cambiare modalità facendo clic destro sull'elenco e selezionando dal menu <guisubmenu
+>Modalità di visualizzazione</guisubmenu
+>.</para>
+
+<para
+>Se due o più file con lo stesso nome (situati in cartelle diverse) sono aperti, al nome del secondo e successivi verrà aggiunto un <quote
+>&lt;2&gt;</quote
+> e così via. Il suggerimento del file mostrerà il suo nome e percorso completo, permettendoti di scegliere quello che desideri.</para
+> <para
+>Per visualizzare un documento nel riquadro attivo, fai clic sul nome del documento nella lista.</para>
+
+<para
+>Puoi ordinare l'elenco in alcuni modi diversi facendo clic con il tasto destro e selezionando una voce dal menu <guisubmenu
+>Ordina per</guisubmenu
+>. Le opzioni sono: <variablelist>
+
+<varlistentry>
+<term
+><guimenuitem
+>Ordine di apertura</guimenuitem
+></term>
+<listitem
+><para
+>Elenca i documenti nell'ordine di apertura</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Nome documento</guimenuitem
+></term>
+<listitem
+><para
+>Elenca i documenti alfabeticamente per nome.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guimenuitem
+>Percorso documenti</guimenuitem
+></term>
+<listitem
+><para
+>Elenca i documenti alfabeticamente per il loro percorso.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</para>
+
+<para
+>L'elenco dei documenti, come impostazione predefinita, indica la cronologia ombreggiando il colore di sfondo delle voci dei documenti più recenti. Se il documento viene modificato, vene miscelato un altro colore. I documenti più recenti hanno colori più vivi, quindi è facile trovare i documenti su cui stai lavorando. Questa funzionalità può essere disabilitata dalla <link linkend="config-dialog-documentlist"
+>pagina <guilabel
+>Vista ad albero</guilabel
+></link
+> del pannello di configurazione.</para>
+<!-- Tree View was renamed to Documents - http://commit-digest.org/issues/2011-08-28/ -->
+<para
+>La posizione predefinita dell'elenco nella finestra di &kate; è a sinistra dell'area dell'editor.</para>
+</sect1>
+
+<!-- command line + Terminal-->
+
+<sect1 id="kate-mdi-tools-konsole">
+<title
+>Il terminale integrato</title>
+
+<para
+><indexterm
+><primary
+>Terminale integrato</primary
+></indexterm
+> Il terminale integrato è una copia della &konsole;, il terminale di &kde;, per tua comodità. È disponibile dal menu <menuchoice
+><guimenu
+>Visualizza</guimenu
+><guisubmenu
+>Viste degli strumenti</guisubmenu
+><guimenuitem
+>Mostra terminale</guimenuitem
+></menuchoice
+>, e sarà attivato ogni volta che viene aperto. Inoltre, se l'opzione di <link linkend="config-dialog-general-sync-konsole"
+>sincronizzazione di &konsole; con il documento attivo</link
+> è abilitata, il terminale passa alla cartella del documento corrente appena viene visualizzato oppure quando il documento cambia, ogni qualvolta sia possibile.</para>
+
+<para
+>La posizione standard nella finestra di &kate; è in basso, sotto l'area dell'editor.</para>
+
+<para
+>Puoi configurare la &konsole; usando il suo menu contestuale. Per ulteriori informazioni, vedi <ulink url="help:/konsole/index.htm"
+>il manuale di &konsole;</ulink
+>.</para>
+
+<para
+>L'emulatore di terminale incorporato è fornito dall'estensione Strumento di terminale, che è abilitato come impostazione predefinita.</para>
+
+</sect1>
+
+</chapter>

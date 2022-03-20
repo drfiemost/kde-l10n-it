@@ -1,0 +1,429 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the akonadi_facebook_resource package.
+#
+# Valter Mura <valtermura@gmail.com>, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_facebook_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-02-19 02:33+0000\n"
+"PO-Revision-Date: 2014-03-05 12:31+0100\n"
+"Last-Translator: Valter Mura <valtermura@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: facebookresource.cpp:134
+msgid "Unable to login to Facebook, authentication failure."
+msgstr "Impossibile accedere a Facebook, l'autenticazione non è riuscita."
+
+#: facebookresource.cpp:178
+msgid "Preparing sync of friends list."
+msgstr "Sincronizzazione della lista di amici."
+
+#: facebookresource.cpp:187
+msgid "Preparing sync of events list."
+msgstr "Sincronizzazione della lista di eventi."
+
+#: facebookresource.cpp:197
+msgid "Preparing sync of notes list."
+msgstr "Sincronizzazione della lista di note."
+
+#: facebookresource.cpp:207
+msgid "Preparing sync of posts."
+msgstr "Preparazione della sincronizzazione dei post."
+
+#: facebookresource.cpp:219
+msgid "Preparing sync of notifications."
+msgstr "Preparazione della sincronizzazione delle notifiche."
+
+#: facebookresource.cpp:277
+msgctxt "@title: addressbook name"
+msgid "Friends on Facebook"
+msgstr "Amici su Facebook"
+
+#: facebookresource.cpp:290
+msgctxt "@title: events collection title"
+msgid "Events on Facebook"
+msgstr "Eventi su Facebook"
+
+#: facebookresource.cpp:303
+msgctxt "@title: notes collection"
+msgid "Notes on Facebook"
+msgstr "Note su Facebook"
+
+#: facebookresource.cpp:316
+msgctxt "@title: posts collection"
+msgid "Posts on Facebook"
+msgstr "Post su Facebook"
+
+#: facebookresource.cpp:337
+msgctxt "@title: notifications collection"
+msgid "Notifications on Facebook"
+msgstr "Notifiche su Facebook"
+
+#: facebookresource.cpp:375
+#, kde-format
+msgid "Unable to delete note from server: %1"
+msgstr "Impossibile eliminare la nota dal server: %1"
+
+#: facebookresource_events.cpp:47
+#, kde-format
+msgid "Unable to get events from server: %1"
+msgstr "Impossibile recuperare gli eventi dal server: %1"
+
+#: facebookresource_events.cpp:78
+#, kde-format
+msgid "Unable to get list of events from server: %1"
+msgstr "Impossibile recuperare la lista di eventi dal server: %1"
+
+#: facebookresource_events.cpp:106
+msgid "All events fetched from server."
+msgstr "Tutti gli eventi sono stati recuperati."
+
+#: facebookresource_friends.cpp:48
+#, kde-format
+msgid "Unable to get list of existing friends from the Akonadi server: %1"
+msgstr ""
+"Impossibile recuperare la lista degli amici esistenti dal server Akonadi: %1"
+
+#: facebookresource_friends.cpp:63
+msgid "Retrieving friends list."
+msgstr "Recupero della lista di amici."
+
+#: facebookresource_friends.cpp:80
+#, kde-format
+msgid "Unable to get list of friends from server: %1"
+msgstr "Impossibile recuperare la lista degli amici dal server: %1"
+
+#: facebookresource_friends.cpp:126
+msgid "Retrieving friends' details."
+msgstr "Recupero dei dettagli degli amici."
+
+#: facebookresource_friends.cpp:157
+#, kde-format
+msgid "Unable to retrieve friends' information from server: %1"
+msgstr "Impossibile recuperare le informazioni degli amici dal server: %1"
+
+#: facebookresource_friends.cpp:162
+msgid "Retrieving friends' photos."
+msgstr "Recupero delle foto degli amici."
+
+#: facebookresource_friends.cpp:191
+#, kde-format
+msgid "Updated one friend from the server."
+msgid_plural "Updated %1 friends from the server."
+msgstr[0] "È stato aggiornato un amico dal server."
+msgstr[1] "Sono stati aggiornati %1 amici dal server."
+
+#: facebookresource_friends.cpp:194
+msgid "Finished, no friends needed to be updated."
+msgstr "Terminato, nessun amico da aggiornare."
+
+#: facebookresource_friends.cpp:209
+#, kde-format
+msgid "Unable to retrieve friends' photo from server: %1"
+msgstr "Impossibile recuperare le foto degli amici dal server: %1"
+
+#: facebookresource_friends.cpp:249
+#, kde-format
+msgid "Unable to get information about friend from server: %1"
+msgstr "Impossibile recuperare le informazioni sugli amici dal server: %1"
+
+#: facebookresource_notes.cpp:47
+#, kde-format
+msgid "Unable to get notes from server: %1"
+msgstr "Impossibile recuperare le note dal server: %1"
+
+#: facebookresource_notes.cpp:73
+msgid "All notes fetched from server."
+msgstr "Tutte le note sono state recuperate."
+
+#: facebookresource_notes.cpp:87
+#, kde-format
+msgid "Unable to get information about note from server: %1"
+msgstr "Impossibile recuperare le informazioni sulle note dal server: %1"
+
+#: facebookresource_notes.cpp:108
+#, kde-format
+msgid "Unable to get upload note to server: %1"
+msgstr "Impossibile caricare la nota nel server: %1"
+
+#: facebookresource_notifications.cpp:54
+#, kde-format
+msgid "Unable to get notifications from server: %1"
+msgstr "Impossibile recuperare le notifiche dal server: %1"
+
+#: facebookresource_notifications.cpp:99
+msgid "All notifications fetched from server."
+msgstr "Tutte le notifiche sono state recuperate."
+
+#: facebookresource_notifications.cpp:130
+msgid "Facebook Notifications"
+msgstr "Notifiche di Facebook"
+
+#: facebookresource_notifications.cpp:197
+msgctxt "@info:tooltip"
+msgid "Open browser"
+msgstr "Apri browser"
+
+#: facebookresource_notifications.cpp:210
+#, kde-format
+msgctxt ""
+"This string is appended to a Facebook notification displayed in "
+"KNotification, indicating how many more notifications were received, but are "
+"not displayed. So the KNotification meaning will be 'You have X new Facebook "
+"notifications, here's the first one and then there are Y more"
+msgid "...and one more"
+msgid_plural "...and %1 more"
+msgstr[0] "...più una"
+msgstr[1] "...più %1"
+
+#: facebookresource_notifications.cpp:219
+msgid "Mark all notifications as read"
+msgstr "Segna tutte le notifiche come lette"
+
+#: facebookresource_notifications.cpp:225
+msgid "Hide"
+msgstr "Nascondi"
+
+#: facebookresource_notifications.cpp:236
+#, kde-format
+msgctxt ""
+"This string is appended at the end of Facebook notifications displayed in "
+"the system notifications, indicating there are more notifications, which are "
+"not displayed."
+msgid "...and 1 more"
+msgid_plural "...and %1 more"
+msgstr[0] "...più una"
+msgstr[1] "...più %1"
+
+#: facebookresource_notifications.cpp:244
+#, kde-format
+msgid "New Facebook Notification"
+msgid_plural "%1 New Facebook Notifications"
+msgstr[0] "Nuova notifica di Facebook"
+msgstr[1] "%1 nuove notifiche di Facebook"
+
+#: facebookresource_notifications.cpp:269
+#, kde-format
+msgid "You have one new Facebook notification"
+msgid_plural "You have %1 new Facebook notifications"
+msgstr[0] "Hai una nuova notifica di Facebook"
+msgstr[1] "Hai %1 nuove notifiche di Facebook"
+
+#: facebookresource_posts.cpp:48
+#, kde-format
+msgid "Unable to get posts from server: %1"
+msgstr "Impossibile recuperare i post dal server: %1"
+
+#: facebookresource_posts.cpp:74
+msgid "All posts fetched from server."
+msgstr "Tutti i post sono stati recuperati."
+
+#: facebookresource_posts.cpp:88
+#, kde-format
+msgid "Unable to get information about post from server: %1"
+msgstr "Impossibile recuperare le informazioni sul post dal server: %1"
+
+#: facebookresource_posts.cpp:121
+#, kde-format
+msgctxt ""
+"This is a string putting together two previously translated strings, "
+"resulting form is eg '1 comment, 3 likes'. Main purpose of this is to give "
+"the ability to change the comma delimiter to something more appropriate for "
+"some languages."
+msgid "%1, %2"
+msgstr "%1, %2"
+
+#: facebookresource_posts.cpp:163
+msgctxt ""
+"This string is used in a sentence 'Some Name on Facebook: Just had lunch.', "
+"so should be translated in such form. This string is defined by the resource "
+"and the whole sentence is composed in the UI."
+msgid "on Facebook"
+msgstr "su Facebook"
+
+#: facebookresource_posts.cpp:181
+#, kde-format
+msgid "Unable to post the status to server: %1"
+msgstr "Impossibile inviare lo stato al server: %1"
+
+#: facebookresource_posts.cpp:201
+#, kde-format
+msgctxt "Text denoting how many comments given post have"
+msgid "1 comment"
+msgid_plural "%1 comments"
+msgstr[0] "Un commento"
+msgstr[1] "%1 commenti"
+
+#: facebookresource_posts.cpp:204
+#, kde-format
+msgctxt "Text denoting how many 'facebook likes' given post have"
+msgid "1 like"
+msgid_plural "%1 likes"
+msgstr[0] "1 mi piace"
+msgstr[1] "%1 mi piace"
+
+#. i18n: ectx: label, entry (AccountId), group (Authentication)
+#: settingsbase.kcfg:17
+msgid "The account id in KAccounts framework."
+msgstr "L'id dell'account nell'infrastruttura KAccounts."
+
+#. i18n: ectx: label, entry (AccountServices), group (Authentication)
+#: settingsbase.kcfg:20
+msgid "The account services configured in KAccounts framework."
+msgstr "I servizi dell'account configurati nell'infrastruttura KAccounts."
+
+#: settingsdialog.cpp:42
+msgid "About"
+msgstr "Informazioni su"
+
+#: settingsdialog.cpp:45
+msgid "Facebook Settings"
+msgstr "Impostazioni Facebook"
+
+#: settingsdialog.cpp:116
+msgid "Authenticated."
+msgstr "Autenticato."
+
+#: settingsdialog.cpp:118
+#, kde-format
+msgid "Authenticated as <b>%1</b>."
+msgstr "Autenticato come <b>%1</b>."
+
+#: settingsdialog.cpp:156
+msgid "Facebook"
+msgstr "Facebook"
+
+#: settingsdialog.cpp:196
+msgid "Akonadi Facebook Resource"
+msgstr "Risorsa Facebook di Akonadi"
+
+#: settingsdialog.cpp:198
+msgid ""
+"Makes your friends, events, notes, posts and messages on Facebook available "
+"in KDE via Akonadi."
+msgstr ""
+"Ti permette di disporre in KDE dei tuoi amici, gli eventi, le note, i post e "
+"i messaggi di Facebook, tramite Akonadi."
+
+#: settingsdialog.cpp:201
+msgid "Copyright (C) 2010,2011,2012,2013 Akonadi Facebook Resource Developers"
+msgstr ""
+"Copyright (C) 2010,2011,2012,2013 Gli sviluppatori della Risorsa Facebook di "
+"Akonadi"
+
+#: settingsdialog.cpp:203
+msgid "Martin Klapetek"
+msgstr "Martin Klapetek"
+
+#: settingsdialog.cpp:204
+msgid "Developer"
+msgstr "Sviluppatore"
+
+#: settingsdialog.cpp:206
+msgid "Thomas McGuire"
+msgstr "Thomas McGuire"
+
+#: settingsdialog.cpp:207
+msgid "Past Maintainer"
+msgstr "Responsabile precedente"
+
+#: settingsdialog.cpp:209
+msgid "Roeland Jago Douma"
+msgstr "Roeland Jago Douma"
+
+#: settingsdialog.cpp:210
+msgid "Past Developer"
+msgstr "Sviluppatore precedente"
+
+#: settingsdialog.cpp:212
+msgid "Till Adam"
+msgstr "Till Adam"
+
+#: settingsdialog.cpp:213
+msgid "MacOS Support"
+msgstr "Supporto per MacOS"
+
+#: settingsdialog.cpp:216
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Valter Mura"
+
+#: settingsdialog.cpp:217
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "valtermura@gmail.com"
+
+#. i18n: ectx: property (whatsThis), widget (QLabel, label_2)
+#: settingsdialog.ui:19
+msgid ""
+"Your Internet Service Provider gave you a <em>user name</em> which is used "
+"to authenticate you with their servers. It usually is the first part of your "
+"email address (the part before <em>@</em>)."
+msgstr ""
+"Il tuo fornitore di servizi Internet (Internet Service Provider) ti ha "
+"assegnato un <em>nome utente</em> da utilizzare per l'autenticazione con i "
+"suoi server. In genere è la prima parte del tuo indirizzo di posta "
+"elettronica (quella prima della <em>@</em>)."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: settingsdialog.ui:22
+msgid "Account &name:"
+msgstr "&Nome account:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, nameEdit)
+#: settingsdialog.ui:32
+msgid "Name displayed in the list of accounts"
+msgstr "Nome visualizzato nell'elenco degli account"
+
+#. i18n: ectx: property (whatsThis), widget (KLineEdit, nameEdit)
+#: settingsdialog.ui:35
+msgid "Account name: This defines the name displayed in the account list."
+msgstr ""
+"Nome account: definisce il nome visualizzato nell'elenco degli account."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: settingsdialog.ui:56
+msgid "Not yet authenticated with Facebook."
+msgstr "Non ancora autenticato in Facebook."
+
+#. i18n: ectx: property (text), widget (QPushButton, authenticateButton)
+#: settingsdialog.ui:63
+msgid "Authenticate..."
+msgstr "Autentica..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: settingsdialog.ui:77
+msgid ""
+"In order to access your Facebook data in KDE, you need to authenticate this "
+"application with Facebook. To do so, click the above button and follow the "
+"instructions on the screen."
+msgstr ""
+"Per accedere ai tuoi dati Facebook in KDE, devi autenticare questa "
+"applicazione in Facebook. Per farlo, premi il pulsante sopra e segui le "
+"istruzioni a video."
+
+#. i18n: ectx: property (text), widget (QLabel, authenticationLabel)
+#: settingsdialog.ui:109
+msgid "TextLabel"
+msgstr "EtichettaDiTesto"
+
+#. i18n: ectx: property (text), widget (QPushButton, resetButton)
+#: settingsdialog.ui:116
+msgid "Reset"
+msgstr "Azzera"
+
+#. i18n: ectx: property (text), widget (QLabel, enableNotificationsLabel)
+#: settingsdialog.ui:123
+msgid "Display Facebook notifications:"
+msgstr "Mostra le notifiche di Facebook:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, enableNotificationsCheckBox)
+#: settingsdialog.ui:130
+msgid "Enabled"
+msgstr "Attivato"

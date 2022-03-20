@@ -1,0 +1,43 @@
+<chapter id="howitworks">
+<title
+>Come funziona</title>
+
+<sect1 id="howitworks-overview">
+<title
+>Panoramica</title>
+
+<para
+>PolicyKit funziona in modo semplice, ma richiede alcune modifiche strutturali da parte delle applicazioni che vogliono usarlo per richiedere delle password.</para>
+</sect1>
+
+<sect1 id="howitworks-problem">
+<title
+>Il problema</title>
+
+<para
+>Nelle applicazioni grafiche, il modo più comune per ottenere privilegi amministrativi è avviare il programma come root, ma in questo modo si incorre in diversi rischi di sicurezza. Inoltre, manca una buona mappatura delle azioni: vale a dire, non c'è modo di separare azioni come l'installazione di nuovi pacchetti o l'aggiornamento del sistema; tutti gli utenti devono avere la password di root. Un altro approccio comune è usare <command
+>sudo</command
+>, ma, una volta che un'applicazione viene avviata con <command
+>sudo</command
+>, l'utente avrà gli stessi diritti di root. Se per esempio un'applicazione grafica ha una finestra di selezione dei file, e quella finestra è in esecuzione come root, l'utente potrebbe eliminare qualsiasi file sulla sua macchina, o copiare i file di altri utenti. </para>
+</sect1>
+
+<sect1 id="howitworks-solution">
+<title
+>La soluzione</title>
+
+<para
+>Il problema viene risolto da PolicyKit. L'applicazione deve solo separare il codice privilegiato in un'altra applicazione, spesso chiamata <emphasis
+>aiutante</emphasis
+> (che non ha un'interfaccia grafica), quindi mappa le azioni desiderate in un file <literal role="extension"
+>.policy</literal
+>. Quindi PolicyKit carica questo file, e può quindi autenticare le applicazioni per eseguire queste azioni. L'uso di applicazioni attivate attraverso &DBus; è il modo migliore se non l'unico di far girare un'applicazione aiutante con privilegi amministrativi.</para>
+
+<para
+>Con questa struttura l'applicazione grafica chiama un'azione dell'applicazione aiutante attraverso &DBus;, che avvierà l'aiutante con privilegi amministrativi, e informandola di quale azione è stata richiesta da quale applicazione. L'applicazione aiutante chiama l'agente PolicyKit per vedere se l'applicazione può fare quel compito, e segnala se è riuscita ad effettuare l'azione richiesta. Nel caso che l'aiutante si sia resa conto di non avere abbastanza diritti, l'interfaccia dovrà quindi chiedere a PolicyKit di ottenere un'autorizzazione.</para>
+
+<para
+>Quando PolicyKit riceve la richiesta di ottenere un'autorizzazione, incarica un agente disponibile, che potrebbe essere &policykit-kde; se disponibile. Dopo un'autenticazione riuscita, l'applicazione grafica deve chiamare l'aiutante per farle ripetere l'operazione.</para>
+</sect1>
+
+</chapter>

@@ -1,0 +1,144 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<article id="workspaceoptions" lang="&language;">
+<articleinfo>
+<title
+>Spazio di lavoro</title>
+<authorgroup>
+<author
+>&Marco.Martin;&Marco.Martin.mail;</author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2011-08-24</date>
+<releaseinfo
+>&kde; 4.7</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>desktop</keyword>
+<keyword
+>spazio di lavoro</keyword>
+<keyword
+>ultraportatile</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="workspace">
+<title
+>Spazio di lavoro</title>
+
+<para
+>Questo è un modulo per configurare le opzioni globali dello spazio di lavoro Plasma. </para>
+
+<sect2 id="form-factor">
+<title
+>Tipo di spazio di lavoro</title>
+<para
+>In questa sezione puoi configurare il tipo di spazio di lavoro che userai. Al momento ci sono due opzioni:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Desktop</guilabel
+></term>
+<listitem>
+<para
+>Uno spazio di lavoro ottimizzato per i computer desktop e laptop tradizionali.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ultraportatile</guilabel
+></term>
+<listitem>
+<para
+>Uno spazio di lavoro ottimizzato per gli ultraportatili, e in generale per i dispositivi a risoluzione inferiore.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="dashboard">
+<title
+>Quadro degli strumenti</title>
+<para
+>Nella sezione del quadro degli strumenti puoi configurare il comportamento del quadro degli strumenti di Plasma. Al momento ci sono due opzioni: </para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mostra gli oggetti del desktop</guilabel
+></term>
+<listitem>
+<para
+>Il quadro degli strumenti mostrerà gli stessi oggetti presenti sul desktop.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Mostra un'altra serie di oggetti</guilabel
+></term>
+<listitem>
+<para
+>Il quadro degli strumenti mostrerà una serie di oggetti diversa da quella presente sul desktop.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="informational-tips">
+<title
+>Suggerimenti informativi</title>
+<para
+>I <guilabel
+>Mostra suggerimenti informativi</guilabel
+> vengono visualizzati quando si passa sugli elementi del pannello di Plasma o sul desktop.</para>
+</sect2>
+</sect1>
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->
+

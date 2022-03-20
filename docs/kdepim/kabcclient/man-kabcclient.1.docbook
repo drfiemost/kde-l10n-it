@@ -1,0 +1,620 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manuale utente di &kde;</title>
+<author
+><firstname
+>Kevin</firstname
+> <surname
+>Krammer</surname
+> <affiliation
+> <address
+><email
+>kevin.krammer@gmx.at</email
+></address>
+  </affiliation>
+  <contrib
+>Autore</contrib>
+</author>
+<date
+>2005-09-08</date>
+<productname
+>K Desktop Environment</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kabcclient</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+<refnamediv id='name'>
+<refname
+>kabcclient</refname>
+<refpurpose
+>client da riga di comando per la rubrica indirizzi di &kde;</refpurpose>
+</refnamediv>
+<!-- body begins here -->
+<refsynopsisdiv id='synopsis'>
+<cmdsynopsis
+><command
+>kabcclient</command
+> <group
+> <arg choice="opt"
+>-A</arg
+> <arg choice="opt"
+>-R</arg
+> <arg choice="opt"
+>-M</arg
+> <arg choice="opt"
+>-S</arg
+> <arg choice="opt"
+>-L</arg
+> </group
+> <arg choice="opt"
+>--match-case</arg
+> <arg choice="opt"
+>--nosave</arg
+> <arg choice="opt"
+>-ic <replaceable
+>codec</replaceable
+></arg
+> <arg choice="opt"
+>-if <replaceable
+>formato</replaceable
+></arg
+> <arg choice="opt"
+>-if-opts <replaceable
+>opzioni-formato</replaceable
+></arg
+> <arg choice="opt"
+>-oc <replaceable
+>codec</replaceable
+></arg
+> <arg choice="opt"
+>-of <replaceable
+>formato</replaceable
+></arg
+> <arg choice="opt"
+>-of-opts <replaceable
+>opzioni-formato</replaceable
+></arg
+> <arg choice="opt"
+> dati-in-ingresso </arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1 id='description'>
+<title
+>Descrizione</title
+> 
+<para
+><command
+>kabcclient</command
+> consente l'accesso da riga di comando alla rubrica indirizzi di &kde;, ad esempio in script di shell. Supporta input da standard input o attraverso ulteriori argomenti da riga di comando. Il risultato è sempre scritto su standard output.</para>
+</refsect1>
+
+<refsect1 id='options'>
+<title
+>Opzioni</title>
+<variablelist>
+
+<varlistentry>
+<term
+><emphasis
+>Modalità operative</emphasis
+></term>
+<listitem>
+<variablelist>
+
+<varlistentry>
+  <term
+><option
+>-A, --add</option
+></term>
+  <listitem>
+<para
+>Aggiungi un nuovo contatto alla rubrica</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-R, --remove</option
+></term>
+  <listitem>
+<para
+>Rimuovi un contatto esistente dalla rubrica</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-M, --merge</option
+></term>
+  <listitem>
+<para
+>Fondi i dati in ingresso con i dati di un contatto esistente della rubrica. Questo accoda i nuovi dati a quelli preesistenti</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-S, --search</option
+></term>
+  <listitem>
+<para
+>Ricerca i contatti corrispondenti nella rubrica</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-L, --list</option
+></term>
+  <listitem>
+<para
+>Elenca tutti i contatti della rubrica</para>
+  </listitem>
+  </varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term
+><emphasis
+>Opzioni di input</emphasis
+></term>
+<listitem>
+<variablelist>
+
+  <varlistentry>
+  <term
+><option
+>-ic, --input-codec</option
+></term>
+  <listitem>
+<para
+>Filtra il testo in input in base alla codifica specificata. Vedi <option
+>-ic</option
+><replaceable
+> help</replaceable
+> per ulteriori informazioni sui codec di input. Il valore predefinito è <emphasis
+>local</emphasis
+> che causa l'utilizzo delle impostazioni correnti del <citerefentry
+><refentrytitle
+>locale</refentrytitle
+><manvolnum
+>5</manvolnum
+></citerefentry
+></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-if, --input-format</option
+></term>
+  <listitem>
+<para
+>Analizza il testo in input in base alle regole di formattazione specificate. Vedi <option
+>-if</option
+><replaceable
+> help</replaceable
+> per i formati disponibili. Quello predefinito è <emphasis
+>search</emphasis
+></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+>Invece di leggere il testo in input, kabcclient può mostrare una finestra di dialogo per selezionare i contatti specificando il formato di input</term>
+  <listitem>
+<para
+><emphasis
+>dialog</emphasis
+></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-if-opts, --input-format-options</option
+></term>
+  <listitem>
+<para
+>Ulteriori opzioni per il formato di input scelto. Possono essere opzionali oppure obbligatorie, in base al formato. Vedi <option
+>-if-opts</option
+><replaceable
+> help</replaceable
+> per le opzioni disponibili per il formato</para>
+  </listitem>
+  </varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><emphasis
+>Opzioni di output</emphasis
+></term>
+<listitem>
+<variablelist>
+
+  <varlistentry>
+  <term
+><option
+>-oc, --output-codec</option
+></term>
+  <listitem>
+<para
+>Filtra il testo in output in base alla codifica specificata. Vedi <option
+>-oc</option
+><replaceable
+> help</replaceable
+> per ulteriori informazioni sui codec di output. Il valore predefinito è <emphasis
+>local</emphasis
+> che causa l'utilizzo delle impostazioni correnti del <citerefentry
+><refentrytitle
+>locale</refentrytitle
+><manvolnum
+>5</manvolnum
+></citerefentry
+></para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-of, --output-format</option
+></term>
+  <listitem>
+<para
+>Formatta il testo in output in base alle regole di formattazione specificate. Vedi <option
+>-of</option
+><replaceable
+> help</replaceable
+> per i formati disponibili. Quello predefinito è <emphasis
+>vCard</emphasis
+>.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>-of-opts, --output-format-options</option
+></term>
+  <listitem>
+<para
+>Ulteriori opzioni per il formato di output scelto. Possono essere opzionali oppure obbligatorie, in base al formato. Vedi <option
+>-of-opts</option
+><replaceable
+> help</replaceable
+> per le opzioni disponibili per il formato</para>
+  </listitem>
+  </varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><emphasis
+>Ulteriori opzioni</emphasis
+></term>
+<listitem>
+<variablelist>
+
+  <varlistentry>
+  <term
+><option
+>--match-case</option
+></term>
+  <listitem>
+<para
+>Considera le maiuscole nel confrontare il testo in input con i contatti della rubrica</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><option
+>--nosave</option
+></term>
+  <listitem>
+<para
+>Effettua operazioni che modificano le informazioni, come <option
+>-A, -R</option
+> o <option
+>-M</option
+> solo in memoria, senza riportare i cambiamenti nella rubrica</para>
+  </listitem>
+  </varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1 id='diagnostics'>
+<title
+>Diagnostiche</title>
+<para
+>Come da prassi, un valore di uscita pari a zero indica successo. In base alla modalità operativa scelta un valore di uscita diverso da zero indica un particolare problema incontrato dall'applicazione</para>
+<variablelist>
+
+<varlistentry>
+<term
+><emphasis
+>AGGIUNTA</emphasis
+></term>
+<listitem>
+<variablelist>
+
+  <varlistentry>
+  <term
+><literal
+>1</literal
+></term>
+  <listitem>
+<para
+>Lettura non riuscita del testo in input</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><literal
+>2</literal
+></term>
+  <listitem>
+<para
+>Creazione non riuscita di un contatto in base al testo in input, ad esempio nessun dato o dati formattati male per il formato di input scelto</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><literal
+>3</literal
+></term>
+  <listitem>
+<para
+>Salvataggio non riuscito delle modifica alla rubrica. Può essere causato, ad esempio, da altre applicazioni che bloccano l'accesso alla rubrica.</para>
+  </listitem>
+  </varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><emphasis
+>RIMOZIONE</emphasis
+></term>
+<listitem>
+<variablelist>
+
+  <varlistentry>
+  <term
+><literal
+>1</literal
+></term>
+  <listitem>
+<para
+>Lettura non riuscita del testo in input</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><literal
+>2</literal
+></term>
+  <listitem>
+<para
+>Il programma non può rimuovere alcun contatto dalla rubrica. Può essere dovuto ad un'analisi non corretta dei campi in input, all'assenza di contatti corrispondenti o al contrario alla presenza di più di un contatto corrispondente nella rubrica. Nell'ultimo caso un messaggio di errore viene scritto sullo standard error</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><literal
+>3</literal
+></term>
+  <listitem>
+<para
+>Salvataggio non riuscito delle modifica alla rubrica. Può essere causato, ad esempio, da altre applicazioni che bloccano l'accesso alla rubrica.</para>
+  </listitem>
+  </varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><emphasis
+>FUSIONE</emphasis
+></term>
+<listitem>
+<variablelist>
+
+  <varlistentry>
+  <term
+><literal
+>1</literal
+></term>
+  <listitem>
+<para
+>Lettura non riuscita del testo in input</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><literal
+>2</literal
+></term>
+  <listitem>
+<para
+>Il programma non può fondere i dati in input con alcun contatto dalla rubrica. Può essere dovuto ad un'analisi non corretta dei campi in input, all'assenza di contatti corrispondenti o al contrario alla presenza di più di un contatto corrispondente nella rubrica. Nell'ultimo caso un messaggio di errore viene scritto sullo standard error</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><literal
+>3</literal
+></term>
+  <listitem>
+<para
+>Salvataggio non riuscito delle modifica alla rubrica. Può essere causato, ad esempio, da altre applicazioni che bloccano l'accesso alla rubrica.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><emphasis
+>RICERCA</emphasis
+></term>
+  <term
+><literal
+>1</literal
+></term>
+  <listitem>
+<para
+>Lettura non riuscita del testo in input</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term
+><literal
+>2</literal
+></term>
+  <listitem>
+<para
+>Il programma non può trovare alcun contatto corrispondente nella rubrica. Può essere dovuto ad un'analisi non corretta dei campi in input o all'assenza di contatti corrispondenti nella rubrica.</para>
+  </listitem>
+  </varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1 id='examples'>
+<title
+>Esempi</title>
+<para
+><emphasis
+>Ricerca di contatti con Joe nel nome o nell'indirizzo di posta</emphasis
+></para>
+<literallayout
+>kabcclient -S Joe
+</literallayout>
+
+<para
+><emphasis
+>La stessa cosa, ma considerando le maiuscole</emphasis
+></para>
+<literallayout
+>kabcclient --match-case -S Joe
+</literallayout>
+
+<para
+><emphasis
+>La stessa cosa, ma leggendo il testo in ingresso da standard input</emphasis
+></para>
+<literallayout
+>echo "Joe" | kabcclient --match-case -S
+</literallayout>
+
+<para
+><emphasis
+>Cerca di aggiungere un nuovo contatto usando i dati da un indirizzo di posta elettronica formattato</emphasis
+></para>
+<literallayout
+>kabcclient --nosave --add -if email "Marilyn Monroe &lt;mmonroe@moviestars.com&gt;"
+</literallayout
+> 
+
+<para
+><emphasis
+>La stessa cosa, ma stavolta salvando le modifiche alla rubrica</emphasis
+></para>
+<literallayout
+>kabcclient --add -if email "Marilyn Monroe &lt;mmonroe@moviestars.com&gt;"
+</literallayout>
+
+<para
+><emphasis
+>Elenca i formati di input disponibili</emphasis
+></para>
+<literallayout
+>kabcclient -if help
+</literallayout>
+
+<para
+><emphasis
+>Elenca i formati di output disponibili</emphasis
+></para>
+<literallayout
+>kabcclient -of help
+</literallayout>
+
+<para
+><emphasis
+>Elenca le opzioni disponibili per il formato di output 'email'</emphasis
+></para>
+<literallayout
+>kabcclient -of email -of-opts help
+</literallayout>
+
+<para
+><emphasis
+>Elenca tutti gli indirizzi di posta elettronica per tutti i contatti contenenti 'Marilyn'</emphasis
+></para>
+<literallayout
+>kabcclient -of email -of-opts allemails -S Marilyn
+</literallayout>
+
+<para
+><emphasis
+>Rimuovi tutti i contatti selezionati dall'utente nella finestra di dialogo di selezione dei contatti</emphasis
+></para>
+<literallayout
+>kabcclient --remove -if dialog
+</literallayout>
+
+<para
+><emphasis
+>Esporta i contatti selezionati su un file vCard (formato di output predefinito)</emphasis
+></para>
+<literallayout
+>kabcclient -S -if dialog &gt; contatti.vcf
+</literallayout>
+
+</refsect1>
+
+<refsect1 id='author'
+><title
+>Autore</title>
+<para
+>Questa pagina di manuale è stata scritta da Kevin Krammer &lt;kevin.krammer@gmx.at&gt; Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 2 any later version published by the Free Software Foundation.</para>
+
+<para
+>Nei sistemi Debian, il testo completo della GNU General Public License può essere trovato in /usr/share/common-licenses/GPL.</para>
+</refsect1>
+</refentry>

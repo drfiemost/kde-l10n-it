@@ -1,0 +1,304 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<article id="autostart" lang="&language;">
+<articleinfo>
+<title
+>Avvio automatico</title>
+<authorgroup>
+<author
+>&Anne-Marie.Mahfouf;</author>
+<othercredit role="translator"
+><firstname
+>Valter</firstname
+><surname
+>Mura</surname
+><affiliation
+><address
+><email
+>valtermura@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-12-05</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>avvio automatico</keyword>
+<keyword
+>file desktop</keyword>
+<keyword
+>file script</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="kcm_autostart">
+<title
+>Gestore avvio automatico</title>
+
+<para
+>Questo modulo è uno strumento di configurazione per la gestione dei programmi da avviare con la tua copia di &kde;. Esso ti permette di aggiungere e gestire programmi o script da eseguire automaticamente all'avvio della tua sessione &kde;. </para>
+
+<note
+><para
+>Nota che in questo modulo tutte le modifiche sono immediatamente applicate.</para
+></note>
+
+<para
+>Il programma analizza <filename
+>~/.config/autostart/</filename
+>, la tua cartella <filename class="directory"
+>KDE Autostart</filename
+>  (<filename class="directory"
+>$KDEHOME/Autostart</filename
+> è l'impostazione predefinita), le cartelle <filename class="directory"
+>$KDEHOME/env</filename
+> e <filename class="directory"
+>$KDEHOME/shutdown</filename
+> per verificare e visualizzare quali programmi e script sono ivi già presenti, permettendone una facile gestione. </para>
+<!--Found this on forum.kde.org:
+The following folders are all checked for .desktop files:
+~/[.kde4|.kde]/Autostart 
+~/[.kde4|.kde]/share/autostart
+~/.config/autostart
+~/.local/share/autostart
+~/Desktop/autostart
+/etc/xdg/autostart
+/usr/share/autostart
+see also http://www.sharpley.org.uk/node/8
+-->
+<note
+><para
+>Nota che puoi cambiare la posizione della tua cartella <filename class="directory"
+>Autostart</filename
+> in <menuchoice
+><guimenu
+>Dettagli dell'account</guimenu
+> <guimenuitem
+>Percorsi</guimenuitem
+></menuchoice
+> nella categoria <guilabel
+>Aspetto e comportamento comune</guilabel
+> delle &systemsettings; e impostare una cartella diversa da <filename class="directory"
+>$KDEHOME/Autostart</filename
+>.</para
+></note>
+<!-- add info about system autostart desktop files, which are not handled here?
+eg /usr/share/autostart/kalarm.autostart.desktop installed with kalarm on my 11.04 system
+kalarm has a settings option "Start at login" which handles the autostart
+how to prevent eg kopete from autostart at login?
+-->
+<sect2 id="current">
+<title
+>Visualizzazione dei file</title>
+<para
+>La parte principale del modulo mostra i programmi caricati all'avvio di &kde;, inclusi gli script avviati prima o durante l'avvio di &kde; o alla sua chiusura.</para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Nome</guilabel
+></term>
+<listitem>
+<para
+>Non puoi eliminare questa colonna. Essa dichiara il nome del programma o lo script che si desidera avviare con &kde;. Il nome è estratto dalla chiave Nome dal file desktop per un programma, e dal nome_file per uno script. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Comando</guilabel
+></term>
+<listitem>
+<para
+>Questa colonna elenca i comandi avviati per l'avvio del programma. Essi possono essere modificati tramite il pulsante <guibutton
+>Proprietà</guibutton
+> o facendo doppio clic nella riga del programma/script. Il comando è estratto dalla chiave Exec dal file desktop. </para>
+<para
+>Il comando per uno script è il percorso ad esso. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Stato</guilabel
+></term>
+<listitem>
+<para
+>Questa impostazione è disponibile solo per i programmi collegati tramite i file desktop. Puoi conservare un programma nella cartella <filename class="directory"
+>Autostart</filename
+> ma disabilitarne l'esecuzione all'avvio di &kde;. Se imposti l'opzione <guilabel
+>Disabilitato</guilabel
+>, esso non verrà eseguito all'avvio del sistema. </para>
+<para
+>L'impostazione <guilabel
+>Disabilitato</guilabel
+> di un programma imposta la proprietà «Hidden» a «true» nel file desktop all'interno della cartella <filename class="directory"
+>Autostart</filename
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Avvio</guilabel
+></term>
+<listitem>
+<para
+>I programmi (file desktop) possono essere eseguiti solo all'avvio. Gli script possono essere eseguiti all'<guilabel
+>avvio</guilabel
+>, alla <guilabel
+>chiusura</guilabel
+> o all'<guilabel
+>avvio pre-KDE</guilabel
+>. Questa colonna permette di modificare quando deve essere eseguito uno script. Avvio è quando &kde; parte, Chiusura quando esci da una sessione di &kde; e Avvio pre-KDE è prima dell'avvio di &kde;. </para>
+<para
+>Gli script e i file desktop impostati per essere eseguiti all'<guilabel
+>avvio</guilabel
+> sono copiati o collegati simbolicamente in <filename class="directory"
+>$KDEHOME/Autostart</filename
+> e sono eseguiti durante l'avvio di &kde;. </para>
+<para
+>Gli script impostati per essere eseguiti alla <guilabel
+>chiusura</guilabel
+> sono copiati o collegati simbolicamente nella directory <filename class="directory"
+>$KDEHOME/shutdown</filename
+> e sono eseguiti automaticamente durante l'arresto di &kde; dopo che l'utente ha terminato la propria sessione. </para>
+<para
+>Gli script impostati per essere eseguiti all'<guilabel
+>avvio pre-&kde;</guilabel
+> sono copiati o collegati simbolicamente in <filename class="directory"
+>$KDEHOME/env</filename
+> e sono ricavati durante l'avvio di &kde; (lo script <filename
+>startkde</filename
+> cercherà gli script qui). </para>
+<note
+><para
+>Per le modalità <guilabel
+>Avvio pre-&kde;</guilabel
+> e <guilabel
+>Chiusura</guilabel
+>, &kde; potrà leggere solo gli script con estensione <filename
+>sh</filename
+>. </para
+></note>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="actions">
+<title
+>Azioni</title>
+<para
+>Sulla destra sono presenti alcuni pulsanti che permettono la modifica della configurazione di Autostart. Puoi aggiungere e rimuovere programmi o script, o cambiarne le proprietà. </para>
+
+<variablelist>
+<varlistentry
+><term
+><guibutton
+>Aggiungi programma</guibutton
+></term>
+<listitem>
+<para
+>Premendo questo pulsante viene mostrata la finestra di dialogo standard di &kde; <guilabel
+>Scegli applicazione</guilabel
+> che permette di scegliere quale programma vuoi avviare. Dopo aver scelto il programma e premuto il pulsante <guibutton
+>OK</guibutton
+> ti saranno mostrate le proprietà del programma. </para>
+<para
+>Questo copierà il programma file desktop nella cartella <filename class="directory"
+>Autostart</filename
+>. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guibutton
+>Aggiungi script</guibutton
+></term>
+<listitem>
+<para
+>Questo pulsante apre una finestra di dialogo in cui verrà chiesta la posizione dello script da aggiungere. Se mantieni attiva l'opzione <guilabel
+>Crea come collegamento</guilabel
+> (predefinito), allora lo script sarà aggiunto come collegamento simbolico. Se disattivi questa opzione, lo script verrà invece copiato nella cartella locale corrispondente. </para>
+</listitem>
+</varlistentry>
+<varlistentry
+><term
+><guibutton
+>Rimuovi</guibutton
+></term>
+<listitem>
+<para
+>«Rimuovi» rimuoverà immediatamente il file desktop per il programma, lo script o il collegamento simbolico nella cartella <filename class="directory"
+>Autostart</filename
+>. </para>
+</listitem>
+</varlistentry>
+<varlistentry
+><term
+><guibutton
+>Proprietà</guibutton
+></term>
+<listitem>
+<para
+>Questo pulsante (attivabile solo per programmi tipo file Desktop) permette di modificare le proprietà del programma o dello script. Saranno presenti le proprietà generali, i permessi, un'anteprima, quando possibile, e le proprietà delle applicazioni collegate ai programmi. </para>
+</listitem>
+</varlistentry>
+<varlistentry
+><term
+><guibutton
+>Avanzate</guibutton
+></term>
+<listitem>
+<para
+>Questo pulsante si applica solamente ai programmi (&ie; i file desktop). Una finestra di dialogo chiede se desideri che il programma si avvi automaticamente solo in &kde; (e non in altri ambienti desktop eseguibili nel sistema). Il programma, come impostazione predefinita, si avvierà automaticamente in tutti gli ambienti desktop da te eseguibili. Attivando l'opzione <guilabel
+>Avvio automatico solo in KDE</guilabel
+>, eseguirai il programma solo se avvii l'ambiente desktop &kde;. </para>
+<para
+>Questo imposta il valore KDE alla chiave OnlyShowIn del programma file Desktop. </para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+</article>
+<!-- see also Service Manager - Startup Services:
+This shows all KDE services that can be loaded on KDE startup. Checked services will be invoked on next startup.
+
+and Session Management - Restore sessions?
+-->
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

@@ -1,0 +1,126 @@
+# translation of kcal_akonadi.po to Italian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the kcal_akonadi package.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcal_akonadi\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-08-20 04:36+0200\n"
+"PO-Revision-Date: 2010-06-18 21:40+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: resourceakonadi.cpp:371
+msgctxt "@info access to the source's backend possible"
+msgid "Online"
+msgstr "In linea"
+
+#: resourceakonadi.cpp:373
+msgctxt "@info currently no access to the source's backend possible"
+msgid "Offline"
+msgstr "Non in linea"
+
+#: resourceakonadi.cpp:377
+#, kde-format
+msgctxt "@info:tooltip visible name of the resource"
+msgid "<title>%1</title>"
+msgstr "<title>%1</title>"
+
+#: resourceakonadi.cpp:378
+msgctxt "@info:tooltip resource type"
+msgid "Type: Akonadi Calendar Resource"
+msgstr "Tipo: risorsa calendario di Akonadi"
+
+#: resourceakonadi.cpp:393
+#, kde-format
+msgctxt "@info:tooltip name of a calendar data source"
+msgid "<resource>%1</resource>"
+msgstr "<resource>%1</resource>"
+
+#: resourceakonadi.cpp:396
+#, kde-format
+msgctxt ""
+"@info:tooltip status of a calendar data source and its online/offline state"
+msgid "Status: %1 (%2)"
+msgstr "Stato: %1 (%2)"
+
+#: resourceakonadi_p.cpp:67
+msgctxt "@info:status"
+msgid "Processing change set failed"
+msgstr "Elaborazione dell'insieme delle modifiche non riuscita"
+
+#: resourceakonadi_p.cpp:131
+msgctxt "@label where to store a calendar entry of type Event"
+msgid "Please select a storage folder for this Event"
+msgstr "Seleziona una cartella per l'immagazzinamento dei dati dell'evento"
+
+#: resourceakonadi_p.cpp:133
+msgctxt "@label where to store a calendar entry of type Todo"
+msgid "Please select a storage folder for this Todo"
+msgstr ""
+"Seleziona una cartella per l'immagazzinamento dei dati della cosa da fare"
+
+#: resourceakonadi_p.cpp:135
+msgctxt "@label where to store a calendar entry of type Journal"
+msgid "Please select a storage folder for this Journal"
+msgstr "Seleziona una cartella per l'immagazzinamento dei dati del diario"
+
+#: resourceakonadi_p.cpp:138
+msgctxt "@label where to store a calendar entry of unspecified type"
+msgid "Please select a storage folder for this calendar entry"
+msgstr ""
+"Seleziona una cartella per l'immagazzinamento dei dati della voce di "
+"calendario"
+
+#: resourceakonadi_p.cpp:141
+msgctxt "@label"
+msgid "Please select a storage folder"
+msgstr "Seleziona una cartella per l'immagazzinamento dei dati"
+
+#: resourceakonadiconfig.cpp:41
+msgctxt "@title:window"
+msgid "Manage Calendar Sources"
+msgstr "Gestisci fonti di calendario"
+
+#: resourceakonadiconfig.cpp:46
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>By default you will be asked where to put a new Event, Todo or Journal "
+"when you create them.</para><para>For convenience it is also possible to "
+"configure a default folder for each of the three data items.</"
+"para><para><note>If the folder list below is empty, you might have to add a "
+"calendar source through <interface>%1</interface></note></para>"
+msgstr ""
+"<para>In modo predefinito, ti verrà chiesto dove posizionare un nuovo "
+"evento, cosa da fare o diario quando li crei.</para><para>Per convenienza è "
+"anche possibile configurare la cartella predefinita per ognuno dei tre tipi "
+"di dati.</para><para><note>Se la lista delle cartelle di seguito è vuota, "
+"probabilmente dovresti aggiungere una fonte per il calendario attraverso "
+"<interface>%1</interface></note></para>"
+
+#: resourceakonadiconfig.cpp:56
+msgctxt "@item:inlistbox, calendar entries"
+msgid "Events"
+msgstr "Eventi"
+
+#: resourceakonadiconfig.cpp:58
+msgctxt "@item:inlistbox, calendar entries"
+msgid "Todos"
+msgstr "Cose da fare"
+
+#: resourceakonadiconfig.cpp:60
+msgctxt "@item:inlistbox, calendar entries"
+msgid "Journals"
+msgstr "Diari"
+
+#~ msgctxt "@info:tooltip name of a calendar data source"
+#~ msgid "<b>%1</b>"
+#~ msgstr "<b>%1</b>"

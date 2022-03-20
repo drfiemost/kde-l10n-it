@@ -1,0 +1,380 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY kappname "&ark;">
+<!ENTITY % Italian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manuale dell'utente di &kde;</title>
+<author
+><firstname
+>Lauri</firstname
+><surname
+>Watts</surname
+> <contrib
+>Versione iniziale della pagina man di &ark;.</contrib
+></author>
+
+<author
+><firstname
+>Raphael</firstname
+><surname
+>Kubo da Costa</surname
+> <contrib
+>Aggiornamento della pagina man di &ark;.</contrib
+></author>
+
+<date
+>2013-08-23</date>
+<releaseinfo
+>2.19 (&kde; 4.11)</releaseinfo>
+<productname
+>Ambiente desktop KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>ark</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>ark</command
+></refname>
+<refpurpose
+>Strumento di archiviazione di &kde;</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>ark</command
+> <group choice="opt"
+><option
+>-b</option
+></group
+> <group choice="opt"
+><option
+>-a</option
+></group
+> <group choice="opt"
+><option
+>-e</option
+></group
+> <group choice="opt"
+><option
+>-c</option
+></group
+> <group choice="opt"
+><option
+>-f</option
+> <replaceable
+> suffisso</replaceable
+></group
+> <group choice="opt"
+><option
+>-p</option
+></group
+> <group choice="opt"
+><option
+>-t</option
+> <replaceable
+> file</replaceable
+></group
+> <group choice="opt"
+><option
+>-d</option
+></group
+> <group choice="opt"
+><option
+>-o</option
+> <replaceable
+> cartella</replaceable
+></group
+> <arg choice="opt"
+>Opzioni generiche di &kde;</arg
+> <arg choice="opt"
+>Opzioni Generiche di &Qt;</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrizione</title>
+<para
+>&ark; è un programma per gestire vari formati di file compressi in &kde;. Con &ark; gli archivi possono essere visualizzati, estratti, creati e modificati. Il programma può gestire diversi formati, tra cui <application
+>tar</application
+>, <application
+>gzip</application
+>, <application
+>bzip2</application
+>, <application
+>zip</application
+>, <application
+>rar</application
+> (se le giuste librerie o programmi da riga di comando sono installati).</para>
+</refsect1>
+
+<refsect1>
+<title
+>Modalità operative</title>
+<para
+>&ark; può essere usato sia come programma grafico a sé stante, sia come programma da riga di comando per effettuare alcuni compiti particolari.</para>
+<para
+>Se richiamato senza le opzioni <option
+>-b</option
+> (<option
+>--batch</option
+>) o <option
+>-c</option
+> (<option
+>--add</option
+>), &ark; viene avviato come un normale programma grafico.</para>
+<para
+>Quando si usa l'opzione <option
+>-b</option
+> (<option
+>--batch</option
+>), &ark; si può usare per estrarre i contenuti di uno o più file direttamente dalla riga di comando, senza avviarne l'interfaccia grafica.</para>
+<para
+>Quando si usa l'opzione <option
+>-c</option
+> (<option
+>--add</option
+>), &ark; chiede quali file dovrebbero essere aggiunti a un nuovo archivio o a uno esistente.</para>
+<para
+></para>
+<para
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>Opzioni</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+>-d, --dialog</option
+></term>
+<listitem>
+<para
+>Mostra una finestra per specificare le opzioni di un'operazione di estrazione o di aggiunta.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-o, --destination <replaceable
+>cartella</replaceable
+></option
+></term>
+<listitem
+><para
+>Cambia la cartella di destinazione a <replaceable
+>cartella</replaceable
+>. Se non viene fornita, si usa il percorso attuale.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<refsect2>
+<title
+>Opzioni per aggiungere file</title>
+<variablelist>
+<varlistentry>
+<term
+><option
+>-c, --add</option
+></term>
+<listitem>
+<para
+>Chiede all'utente il nome di un archivio a vi aggiunge i file specificati.Esce non appena terminato.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-t, --add-to <replaceable
+>nome_file</replaceable
+></option
+></term>
+<listitem>
+<para
+>Aggiunge i file specificato a <replaceable
+>nome_file</replaceable
+>. Crea l'archivio se non esiste. Esce non appena terminato.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-p, --changetofirstpath</option
+></term>
+<listitem>
+<para
+>Cambia la cartella attuale alla prima voce e aggiunge tutte le altre voci relativamente a questa.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-f, --autofilename <replaceable
+>suffisso</replaceable
+></option
+></term>
+<listitem>
+<para
+>Scegli automaticamente un nome di file con il <replaceable
+>suffisso</replaceable
+> selezionato (per esempio <literal role="extension"
+>rar</literal
+>, <literal role="extension"
+>tar.gz</literal
+>, <literal role="extension"
+>zip</literal
+> o qualsiasi altro tipo supportato).</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</refsect2>
+
+<refsect2>
+<title
+>Opzioni per l'estrazione non interattiva</title>
+<variablelist>
+<varlistentry>
+<term
+><option
+>-b, --batch</option
+></term>
+<listitem>
+<para
+>Usa l'interfaccia non interattiva invece delle normali finestre. Questa opzione è sottintesa se si specifica più di un &URL;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-e, --autodestination</option
+></term>
+<listitem>
+<para
+>L'argomento di destinazione verrà impostato al percorso del primo file dato.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-a, --autosubfolder</option
+></term>
+<listitem>
+<para
+>I contenuti dell'archivio saranno letti, e, se si rileva che non è un archivio con una sola cartella, ne verrà creata una col nome dell'archivio.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect2>
+</refsect1>
+
+<refsect1>
+<title
+>Esempi</title>
+
+<variablelist>
+<varlistentry>
+<term
+><userinput
+><command
+>ark</command
+> <option
+>--batch</option
+> <replaceable
+>archivio.tar.bz2</replaceable
+></userinput
+></term>
+<listitem>
+<para
+>Estrarrà <replaceable
+>archivio.tar.bz2</replaceable
+> nella cartella attuale senza visualizzare un'interfaccia. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>ark</command
+> <option
+>-b</option
+> <option
+>-d</option
+> <replaceable
+>archivio.tar.bz2</replaceable
+> <replaceable
+>archivio2.zip</replaceable
+></userinput
+></term>
+<listitem>
+<para
+>Mostrerà inizialmente una finestra delle opzioni di estrazione, e quindi estrarrà sia <replaceable
+>archivio.tar.bz2</replaceable
+> che <replaceable
+>archivio2.zip</replaceable
+> nella cartella lì scelta.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>ark</command
+> <option
+>--add-to</option
+> <replaceable
+>mio-archivio.zip</replaceable
+> <replaceable
+>foto1.jpg</replaceable
+> <replaceable
+>testo.txt</replaceable
+></userinput
+></term>
+<listitem>
+<para
+>Creerà <replaceable
+>mio-archivio.zip</replaceable
+> se non esiste, e quindi vi aggiungerà <replaceable
+>foto1.jpg</replaceable
+> e <replaceable
+>testo.txt</replaceable
+>. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Autori</title>
+<para
+>&ark; è attualmente mantenuto da &Harald.Hvaal; &Harald.Hvaal.mail; e &Raphael.Kubo.da.Costa; &Raphael.Kubo.da.Costa.mail;.</para>
+<para
+>Questa pagina di manuale è stata scritta da &Lauri.Watts; &Lauri.Watts.mail; nel 2005 per &kde; 3.4, ed è stata aggiornata nel 2009 da &Raphael.Kubo.da.Costa; &Raphael.Kubo.da.Costa.mail;.</para>
+</refsect1>
+
+</refentry>

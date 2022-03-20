@@ -1,0 +1,74 @@
+# translation of akonadi_kcal_resource.po to Italian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_kcal_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2013-03-04 03:32+0100\n"
+"PO-Revision-Date: 2009-06-14 17:27+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: kcalresource.cpp:84
+msgctxt "@info:status"
+msgid "Changing calendar plugin configuration"
+msgstr "Modifica della configurazione dell'estensione calendario"
+
+#: kcalresource.cpp:105
+msgctxt "@info:status"
+msgid "Acquiring calendar plugin configuration"
+msgstr "Acquisizione della configurazione dell'estensione calendario"
+
+#: kcalresource.cpp:114 kcalresource.cpp:148 kcalresource.cpp:236
+#: kcalresource.cpp:269 kcalresource.cpp:321 kcalresource.cpp:360
+#: kcalresource.cpp:414 kcalresource.cpp:439 kcalresource.cpp:458
+#: kcalresource.cpp:484 kcalresource.cpp:581 kcalresource.cpp:593
+#: kcalresource.cpp:599
+msgctxt "@info:status"
+msgid "No KDE calendar plugin configured yet"
+msgstr "Estensione calendario di KDE non ancora configurata"
+
+#: kcalresource.cpp:128
+msgctxt "@info:status"
+msgid "Initialization based on newly created configuration failed."
+msgstr "L'inizializzazione basata sulla nuova configurazione non è riuscita."
+
+#: kcalresource.cpp:134 kcalresource.cpp:615
+msgctxt "@info:status"
+msgid "Loading calendar"
+msgstr "Caricamento calendario"
+
+#: kcalresource.cpp:282
+msgctxt "@info:status"
+msgid ""
+"Request for data of a specific calendar entry failed because there is no "
+"such entry"
+msgstr ""
+"La richiesta dei dati per una particolare voce di calendario non è riuscita "
+"perché la voce richiesta non esiste."
+
+#: kcalresource.cpp:609
+msgctxt "@info:status"
+msgid "Initialization based on stored configuration failed."
+msgstr ""
+"L'inizializzazione basata sulla configurazione memorizzata non è riuscita."
+
+#: kcalresource.cpp:664
+#, kde-format
+msgctxt "@info:status"
+msgid "Loading of calendar failed: %1"
+msgstr "Caricamento del calendario non riuscito: %1"
+
+#: kcalresource.cpp:677
+#, kde-format
+msgctxt "@info:status"
+msgid "Saving of calendar failed: %1"
+msgstr "Salvataggio del calendario non riuscito: %1"

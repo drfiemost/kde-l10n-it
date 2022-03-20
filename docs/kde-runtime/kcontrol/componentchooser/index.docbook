@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article lang="&language;" id="default-components">
+<articleinfo>
+
+<title
+>Applicazioni predefinite</title>
+<authorgroup>
+<author
+><personname
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+></personname
+> <email
+>lueck@hube-lueck.de</email
+> </author>
+
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione in italiano</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-12-05</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>componente</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+>In questo modulo puoi cambiare i componenti predefiniti di &kde;.</para>
+
+<para
+>I componenti sono programmi che gestiscono compiti fondamentali, come l'emulatore di terminale, l'editor di testo e il programma di posta elettronica. Diverse applicazioni di &kde; devono occasionalmente richiamare un emulatore di terminale, inviare un messaggio di posta o visualizzare del testo.</para
+> 
+
+<para
+>Per farlo consistentemente, queste applicazioni chiamano sempre gli stessi componenti. Qui puoi selezionare quali programmi faranno la funzione di questi componenti.</para>
+
+<para
+>L'elenco a sinistra mostra i tipi di componenti configurabili:</para>
+<itemizedlist>
+<listitem>
+<para
+>Programma di posta elettronica</para>
+</listitem>
+<listitem>
+<para
+>Editor di testi incorporato</para>
+</listitem>
+<listitem>
+<para
+>Gestore di file</para>
+</listitem>
+<listitem>
+<para
+>Programma di messaggistica</para>
+</listitem>
+<listitem>
+<para
+>Emulatore di terminale</para>
+</listitem>
+<listitem>
+<para
+>Browser Web</para>
+</listitem>
+<listitem>
+<para
+>Gestore delle finestre</para>
+</listitem>
+</itemizedlist>
+
+<para
+>Fai clic sul componente che vuoi configurare. Sulla parte destra della finestra sono visualizzate tutte le applicazioni disponibili per questo servizio, e puoi selezionare il tuo emulatore di terminale, editor di testo e programma di posta preferito.</para>
+
+</article>

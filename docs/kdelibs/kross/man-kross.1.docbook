@@ -1,0 +1,247 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<refentry>
+
+<refentryinfo>
+<title
+>Manuale dell'utente di &kde;</title>
+<author
+><firstname
+>Sebastian</firstname
+> <surname
+>Sauer</surname
+> <affiliation
+> <address
+><email
+>mail@dipe.org</email
+></address>
+</affiliation>
+</author>
+
+<date
+>2008-10-22</date>
+<releaseinfo
+>0.01.01</releaseinfo>
+
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kross</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kross</command
+></refname>
+<refpurpose
+>Applicazione di &kde; per eseguire script kross.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<title
+>Sintassi</title>
+
+<cmdsynopsis
+><command
+>kross</command
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>opzioni_generiche</arg
+> <arg choice="opt"
+>opzioni_Qt</arg
+> <arg choice="opt"
+>opzioni_KDE</arg
+> <arg choice="opt"
+>file ...</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrizione</title>
+
+<para
+><command
+>kross</command
+> esegue in &kde; script kross scritti in JavaScript, Python, Ruby, Java e Falcon. </para>
+</refsect1>
+
+<refsect1>
+<title
+>Opzioni generiche</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--author</option
+></term>
+<listitem>
+<para
+>Mostra informazioni sull'autore.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help</option
+></term>
+<listitem>
+<para
+>Mostra una guida alle opzioni.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-all</option
+></term>
+<listitem>
+<para
+>Mostra tutte le opzioni.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-kde</option
+></term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per &kde;.</para>
+
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-qt</option
+></term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per Qt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--license</option
+></term>
+<listitem>
+<para
+>Mostra le informazioni sulla licenza.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-v</option
+><option
+>--version</option
+></term>
+<listitem>
+<para
+>Mostra le informazioni sulla versione.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+</refsect1>
+
+<refsect1>
+<title
+>Opzioni dell'applicazione</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>file</option
+>...</term>
+<listitem>
+<para
+>Il file con gli script da eseguire </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Uso</title>
+<para
+><command
+>kross</command
+> <parameter
+>file</parameter
+> esegue lo script nel <parameter
+>file</parameter
+> dopo aver caricato l'estensione interprete per il linguaggio dello script (rilevato dal suffisso del nome del file). </para>
+<para
+>Per interpretare altri linguaggi oltre al JavaScript di &kde;, si deve installare <replaceable
+>kdebindings</replaceable
+>. </para>
+
+
+</refsect1>
+
+<refsect1>
+<title
+>Vedi anche</title>
+<para
+><replaceable
+>kdeoptions</replaceable
+>(7), <replaceable
+>qtoptions</replaceable
+>(7), <replaceable
+>python</replaceable
+>(1), <replaceable
+>ruby</replaceable
+>(1), <replaceable
+>kjs</replaceable
+>(1), <replaceable
+>java</replaceable
+>(1), <replaceable
+>falcon</replaceable
+>(1) </para>
+<para
+>Vedi <replaceable
+>http://kross.dipe.org/solution.html</replaceable
+> per maggiori informazioni ed esercitazioni. </para>
+</refsect1>
+
+<refsect1>
+<title
+>Errori</title>
+<para
+>Probabilmente ce ne sono a bizzeffe. Usa <ulink url="http://bugs.kde.org"
+>bugs.kde.org</ulink
+> per segnalarli.</para>
+</refsect1>
+
+</refentry>
+
+
+

@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kappname "&sonnet;">
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<article id="sonnet" lang="&language;">
+
+<articleinfo>
+<!--title
+>The &sonnet; Handbook</title-->
+<title
+>Finestra di dialogo del controllo ortografico</title>
+
+<authorgroup>
+<author
+>&David.Sweet; &David.Sweet.mail;</author>
+
+<othercredit role="translator"
+><firstname
+>Luca</firstname
+><surname
+>Bellonda</surname
+><affiliation
+><address
+><email
+>lbellonda@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traduzione del documento</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-02</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+<abstract>
+<para
+>&sonnet; è il correttore ortografico utilizzato dalle applicazioni &kde; come &kate;, &kmail; e &kword;. Si tratta di una interfaccia &GUI;  per diversi correttori ortografici liberi. Ulteriori informazioni sui necessari correttori ortografici ed i dizionari si trovano nella documentazione del modulo di &systemsettings; <ulink url="help:kcontrol/spellchecking"
+>Correttore ortografico</ulink
+>.</para>
+
+</abstract>
+<keywordset>
+<keyword
+>ortografia</keyword>
+<keyword
+>ortografico</keyword>
+<keyword
+>sonnet</keyword>
+<keyword
+>ispell</keyword>
+<keyword
+>aspell</keyword>
+<keyword
+>controllo</keyword>
+<keyword
+>correttore</keyword>
+<keyword
+>KDE</keyword>
+</keywordset>
+</articleinfo>
+
+<para
+><anchor id="spelldlg"/> La linea superiore della finestra mostra una parola forse contenente errori di ortografia trovata nel tuo documento. &sonnet; tenta di trovare una sostituzione adeguata. La ricerca può avere come risultato una o più parole.</para>
+<para
+>La migliore ipotesi è mostrata alla destra di <guilabel
+>Sostituisci con</guilabel
+>. Per accettare questa sostituzione, fai clic su <guibutton
+>Sostituisci</guibutton
+>.</para
+> 
+<para
+>Puoi anche selezionare una parola dalla lista dei suggerimenti e fare clic su <guibutton
+>Sostituisci</guibutton
+> per sostituire la parola con errori di ortografia con quella selezionata. Per aggiungere ulteriori suggerimenti dal dizionario alla lista dei suggerimenti fai clic sul pulsante <guibutton
+>Suggerisci</guibutton
+>.</para>
+
+<para
+>Per mantenere la forma ortografica del vocabolo fai clic su <guilabel
+>Ignora</guilabel
+>.</para>
+
+<para
+>Per fermare il controllo ortografico, applicando le modifiche apportate, fai clic su <guibutton
+>Finito</guibutton
+>.</para>
+
+<para
+>Per terminare il controllo ortografico ed annullare le modifiche apportate, fai clic su <guibutton
+>Annulla</guibutton
+>.</para>
+
+<para
+>Un clic su <guibutton
+>Sostituisci tutto</guibutton
+> dapprima eseguirà la medesima funzione di un clic su <guibutton
+>Sostituisci</guibutton
+>, ma sostituirà anche il vocabolo scritto in modo errato con quello selezionato, anche nel resto del documento nel caso essa appaia di nuovo.</para>
+
+<para
+>Il pulsante <guibutton
+>Ignora sempre</guibutton
+> ignora l'attuale e tutte le future occorrenze della parola scritta in modo errato.</para>
+
+<para
+>Facendo clic su <guibutton
+>Aggiungi al dizionario</guibutton
+> aggiungerai il vocabolo considerato errore ortografico al tuo dizionario personale (diverso dal dizionario di sistema, per cui le aggiunte che hai fatto non saranno visibili dagli altri utenti).</para>
+
+<para
+>Il menu a tendina <guilabel
+>Lingua</guilabel
+> in fondo a questa finestra ti permette di utilizzare temporaneamente un altro dizionario.</para>
+
+<para
+>Le opzioni relative alla configurazione predefinita nel modulo &systemsettings; <ulink url="help:kcontrol/spellchecking"
+>Correttore ortografico</ulink
+>.</para>
+
+</article>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->
+

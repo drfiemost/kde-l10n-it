@@ -1,0 +1,555 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY kapplication "<application
+>Blogilo</application
+>">
+  <!ENTITY kappname "&kapplication;">
+  <!ENTITY package "kdepim">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+> 
+]>
+<book id="blogilo" lang="&language;">
+
+<bookinfo id="blogiloinfo">
+<title
+>Manuale di &kapplication;</title>
+
+<authorgroup>
+<author
+>&Mehrdad.Momeny;&Mehrdad.Momeny.mail; </author>
+<othercredit role="translator"
+><firstname
+>Valter</firstname
+><surname
+>Mura</surname
+><affiliation
+><address
+><email
+>valtermura@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traduzione e revisione del documento</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2009</year>
+<holder
+>&Mehrdad.Momeny;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-05-25</date>
+<releaseinfo
+>1.1 (4.11)</releaseinfo>
+
+<abstract>
+<para
+>&kapplication; è un programma client per i blog per &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>blog</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&kapplication; è un programma client per i blog.</para>
+<para
+>Un client blog (chiamato anche software blog o blogware) è un software progettato per semplificare la creazione il mantenimento di weblog. come altri sistemi di gestione dei contenuti specializzati, le applicazioni weblog supportano la proprietà intellettuale degli autori, la modifica e la pubblicazione di post e commenti, con funzioni speciali per la gestione delle immagini, per i diritti web e per la moderazione di post e commenti.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Uso di &kapplication;</title>
+
+<sect1 id="getting-started">
+<title
+>Primi passi</title>
+<para
+>Nella finestra principale di &kapplication; puoi creare nuovi post, modificare i precedenti, rimuoverli dal server, così come caricare file multimediali nel server. Puoi anche salvare localmente i post per un utilizzo successivo.</para>
+<note
+><para
+>Tutto questo sarà disponibile dopo aver configurato almeno un blog in &kapplication;.</para
+></note>
+<para
+>In assenza di un blog configurato, puoi scrivere e salvare localmente i post per un successivo utilizzo.</para>
+<screenshot>
+<screeninfo
+>Ecco una schermata di &kapplication;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="mainwindow.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Finestra principale</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+
+<sect1 id="configuring-a-blog">
+<title
+>Configurazione di un blog</title>
+<para
+>La gestione del blog è disponibile nella finestra di dialogo <guilabel
+>Configura &kapplication;</guilabel
+>, ed è raggiungibile dal menu <menuchoice
+><guimenu
+>Impostazioni</guimenu
+><guimenuitem
+>Configura &kapplication;...</guimenuitem
+></menuchoice
+> o, in alternativa, dal menu <menuchoice
+><guimenu
+>Blog</guimenu
+><guimenuitem
+>Aggiungi Blog...</guimenuitem
+> </menuchoice
+>.</para>
+<screenshot>
+<screeninfo
+>Aggiungi un nuovo blog - scheda <guilabel
+>di base</guilabel
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="add-blog-1.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Aggiungi un nuovo blog - scheda <guilabel
+>di base</guilabel
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Per aggiungere un blog, basta inserire l'indirizzo del tuo blog, il nome utente e la password nei campi corrispondenti e fare clic sul pulsante <guibutton
+>Configurazione automatica</guibutton
+> per i più conosciuti server di blog, come Wordpress. Esso individuerà il tuo blog e l'API, poi recupererà il suo identificativo (Blog Id).</para>
+<para
+>Se non dovesse funzionare, puoi selezionare manualmente il tipo di API del tuo blog nella scheda <guilabel
+>Avanzate</guilabel
+> e fare clic su <guibutton
+>Recupera ID</guibutton
+> per recuperare l'identificativo del blog o per inserirlo, se lo conosci. Se stai utilizzando una lingua con scrittura da «destra a sinistra», seleziona <guilabel
+>Da destra a sinistra</guilabel
+> nell'elenco a tendina successivo.</para>
+<screenshot>
+<screeninfo
+>Aggiungi un nuovo blog - scheda <guilabel
+>avanzate</guilabel
+></screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="add-blog-2.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Aggiungi un nuovo blog - scheda <guilabel
+>avanzate</guilabel
+></phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Puoi verificare quali caratteristiche supporta &kapplication; per il tuo blog nella scheda <guilabel
+>Caratteristiche supportate</guilabel
+>.</para>
+</sect1>
+
+<sect1 id="creating-new-post">
+<title
+>Creare un nuovo post</title>
+<para
+>Per creare un nuovo post, nella finestra principale puoi fare clic sul pulsante <guibutton
+>Nuovo post</guibutton
+> nella barra degli strumenti o nel menu <guimenu
+>Post</guimenu
+>, oppure semplicemente premere <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> (la sua scorciatoia).</para>
+<para
+>Viene creato un post nuovo, vuoto, in cui puoi scrivere, configurare e poi inviare al tuo blog.</para>
+<para
+>La finestra principale di &kapplication; è divisa in due sezioni, il compositore e la casella degli strumenti.</para>
+
+<sect2
+><title
+>Il compositore</title>
+<para
+>Nella sezione del Compositore è presente un campo per il testo con l'etichetta <guilabel
+>Titolo</guilabel
+>, in cui puoi scrivere il titolo del post. Sotto di esso sono presenti tre schede per modificare il post in vari modi. Il primo è l'editor visuale: è un editor WYSIWYG e devi solo utilizzare le icone per formattare il testo. La scheda successiva è un editor &HTML;, in cui è presente un editor di testo per modificare il codice &HTML; del tuo post. Nell'ultima scheda puoi visualizzare il tuo post nello stile del blog, prima di inviarlo al server.</para>
+</sect2>
+
+<sect2>
+<title
+>La casella degli strumenti</title>
+<para
+>La casella degli strumenti ha quattro sezioni:</para>
+<orderedlist>
+<listitem>
+<para
+>Post del blog</para>
+<screenshot>
+<screeninfo
+>Post del blog</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="toolbox-1.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Post del blog</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>In questa sezione puoi recuperare dal server gli ultimi post.</para>
+<para
+>Fai doppio clic su una voce di post per caricarlo all'interno del compositore e modificarlo, oppure seleziona un post e utilizza l'appropriato pulsante per rimuoverlo dal server. </para>
+</listitem>
+
+<listitem>
+<para
+>Categorie del post</para>
+<screenshot>
+<screeninfo
+>Categorie del post</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="toolbox-2.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Categorie del post</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>In questa sezione puoi selezionare le categorie e i tag per il tuo post. I tag devono essere separati da virgole.</para>
+</listitem>
+
+<listitem>
+<para
+>Opzioni del post</para>
+<screenshot>
+<screeninfo
+>Opzioni del post</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="toolbox-3.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Opzioni del post</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Qui puoi selezionare le opzioni per il post attualmente attivo nel compositore, come le opzioni di <guilabel
+>Feedback</guilabel
+> (per esempio, se i visitatori possono lasciare o no un commento per questo post), selezionare una data di pubblicazione, un titolo da usare per un «permalink» (collegamento permanente) del post (solo per blog Wordpress).</para>
+</listitem>
+
+<listitem>
+<para
+>Voci locali</para>
+<screenshot>
+<screeninfo
+>Voci locali</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="toolbox-4.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Voci locali</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>E nella sezione <guilabel
+>Voci locali</guilabel
+>, puoi fare doppio clic su una voce per caricarla nel compositore, oppure puoi rimuoverla dal disco.</para>
+</listitem>
+
+</orderedlist>
+</sect2>
+
+</sect1>
+
+<sect1 id="uploading">
+<title
+>Caricamento di un file multimediale nel server</title>
+<para
+>Per caricare un file nel server, usa <menuchoice
+><guimenu
+>Blog</guimenu
+> <guimenuitem
+>Carica oggetto multimediale...</guimenuitem
+></menuchoice
+>. Ti dunque verrà chiesto di selezionare un file dal disco. Verrà visualizzata la finestra di caricamento dell'oggetto multimediale:</para>
+<screenshot>
+<screeninfo
+>Carica oggetto</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="media-upload.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Carica oggetto</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Se l'API del tuo blog supporta il caricamento di oggetti multimediali, qui hai due opzioni, e in caso contrario ne esiste almeno una: il server &FTP;.</para>
+<para
+>Qui puoi ottenere l'anteprima del file desiderato (se è disponibile un metodo di anteprima) e inserire il suo nome nel server. Fai poi clic su <guibutton
+>Carica</guibutton
+>. </para>
+<para
+>Se vuoi caricare su un server &FTP;, è necessario il percorso assoluto della cartella. Devi pure inserire un &URL; da utilizzare per l'individuazione del collegamento del file sul server.</para>
+</sect1>
+
+</chapter>
+
+<chapter id="menu-reference">
+<title
+>Descrizione dei menu</title>
+
+<sect1 id="menus">
+<title
+>Elementi del menu</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>File</guimenu
+> <guimenuitem
+>Esci</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Esce</action
+> da &kapplication;</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Blog</guimenu
+> <guimenuitem
+>Aggiungi blog...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Modo rapido per aggiungere un nuovo blog.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Blog</guimenu
+> <guimenuitem
+>Carica oggetto multimediale...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Apre il caricatore degli oggetti multimediali, per caricare nel blog o nel server &FTP; file tipo le immagini.</para>
+<note
+><para
+>Solo le API MetaWeblog, MovableType e Wordpress supportano la funzione di caricamento degli oggetti multimediali.</para
+></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Post</guimenu
+> <guimenuitem
+>Nuovo post</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Crea un post vuoto.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Post</guimenu
+> <guimenuitem
+>Salva localmente</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Salva localmente il post corrente.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Post</guimenu
+> <guimenuitem
+>Invia...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+>Apre la finestra di dialogo di invio del post, per inviare il post attivo e corrente al blog corrente.</para>
+<para
+>Nella finestra «Invia post» puoi selezionare se questo post debba essere inviato o no come bozza, e, in aggiunta, se considerarlo come modifica del post corrente oppure come nuovo post. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Impostazioni</guimenu
+> <guimenuitem
+>Mostra casella degli strumenti</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Mostra o nasconde</action
+> la visualizzazione della casella degli strumenti.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>In aggiunta, &kapplication; contiene gli elementi di menu <guimenu
+>Impostazioni</guimenu
+> e <guimenu
+>Aiuto</guimenu
+>, comuni di &kde;, per ulteriori informazioni leggi le sezioni relative al <ulink url="help:/fundamentals/ui.html#menus-settings"
+>menu Impostazioni</ulink
+> e <ulink url="help:/fundamentals/ui.html#menus-help"
+>menu Aiuto</ulink
+> dei Fondamentali di &kde;. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&kapplication;</para>
+<para
+>Copyright del programma 2008-2009 &Mehrdad.Momeny; &Mehrdad.Momeny.mail; e &Golnaz.Nilieh; &Golnaz.Nilieh.mail; </para>
+<para
+>Copyright della documentazione &copy; 2009 &Mehrdad.Momeny; &Mehrdad.Momeny.mail; </para>
+
+<para
+>Valter Mura <email
+>valtermura@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installazione</title>
+
+<sect1 id="getting-blogilo">
+<title
+>Come ottenere &kapplication;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilazione e installazione</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

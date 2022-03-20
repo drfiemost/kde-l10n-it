@@ -1,0 +1,33 @@
+<sect2 id="calc-sidereal">
+<title
+>Modulo tempo siderale</title>
+<indexterm
+><primary
+>Strumenti</primary>
+<secondary
+>Astrocalcolatrice</secondary>
+<tertiary
+>Modulo tempo siderale</tertiary>
+</indexterm>
+
+<screenshot>
+<screeninfo
+>Il modulo Tempo siderale dell'astrocalcolatrice </screeninfo>
+<mediaobject>
+  <imageobject>
+    <imagedata fileref="calc-sidereal.png" format="PNG"/>
+  </imageobject>
+  <textobject>
+    <phrase
+>Tempo siderale</phrase>
+  </textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Questo modulo converte il <link linkend="ai-utime"
+>tempo universale</link
+> in <link linkend="ai-sidereal"
+>tempo siderale</link
+> locale e viceversa. Seleziona una località geografica e una data da calcolare. Sarà quindi mostrato il valore corrispondente dell'altro tempo. </para>
+</sect2>

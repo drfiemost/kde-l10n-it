@@ -1,0 +1,84 @@
+# translation of kabc_akonadi.po to Italian
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the kabc_akonadi package.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kabc_akonadi\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2012-08-20 04:36+0200\n"
+"PO-Revision-Date: 2009-06-14 18:57+0200\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: resourceakonadi_p.cpp:292
+msgctxt "@label where to store a new address book entry"
+msgid "Please select a storage folder for this contact:"
+msgstr "Seleziona una cartella per l'immagazzinamento dei dati del contatto:"
+
+#: resourceakonadi_p.cpp:294
+msgctxt "@label where to store a new email distribution list"
+msgid "Please select a storage folder for this distribution list:"
+msgstr ""
+"Seleziona una cartella per l'immagazzinamento dei dati della lista di "
+"distribuzione:"
+
+#: resourceakonadi_p.cpp:297
+msgctxt "@label"
+msgid "Please select a storage folder:"
+msgstr "Seleziona una cartella per l'immagazzinamento dei dati:"
+
+#: resourceakonadiconfig.cpp:44
+msgctxt "@title:window"
+msgid "Manage Address Book Sources"
+msgstr "Gestisci fonti rubrica indirizzi"
+
+#: resourceakonadiconfig.cpp:49
+#, kde-format
+msgctxt "@info"
+msgid ""
+"<para>By default you will be asked where to put a new Contact or "
+"Distribution List when you create them.</para><para>For convenience it is "
+"also possible to configure a default folder for each of the two data items.</"
+"para><para><note>If the folder list below is empty, you might have to add an "
+"address book source through <interface>%1</interface></note></para>"
+msgstr ""
+"<para>In modo predefinito, ti verrà chiesto dove posizionare un nuovo "
+"contatto o lista di distribuzione quando li crei.</para><para>Per "
+"convenienza è anche possibile configurare la cartella predefinita per ognuno "
+"dei due tipi di dati.</para><para><note>Se la lista delle cartelle di "
+"seguito è vuota, probabilmente dovresti aggiungere una fonte per la rubrica "
+"indirizzi attraverso <interface>%1</interface></note></para>"
+
+#: resourceakonadiconfig.cpp:59
+msgctxt "@item:inlistbox, address book entries"
+msgid "Contacts"
+msgstr "Contatti"
+
+#: resourceakonadiconfig.cpp:60
+msgctxt "@item:inlistbox, email distribution lists"
+msgid "Distribution Lists"
+msgstr "Liste di distribuzione"
+
+#~ msgctxt "@info"
+#~ msgid ""
+#~ "<title>Please select the folder for storing newly created contacts.</"
+#~ "title><note>If the folder list below is empty, you might have to add an "
+#~ "addressbook source through <interface>%1</interface> <br>or change which "
+#~ "folders you are subscribed to through <interface>%2</interface></note>"
+#~ msgstr ""
+#~ "<title>Seleziona la cartella dove salvare i nuovi contatti.</"
+#~ "title><note>Se la lista di cartelle mostrata di seguito è vuota, potresti "
+#~ "dover aggiungere una fonte per la rubrica tramite <interface>%1</"
+#~ "interface> <br> o modificare l'elenco delle cartelle a cui sei iscritto "
+#~ "tramite <interface>%2</interface></note>"
+
+#~ msgctxt "@title:window"
+#~ msgid "Select Addressbook Folder"
+#~ msgstr "Seleziona cartella della rubrica"

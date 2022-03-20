@@ -1,0 +1,1901 @@
+<appendix id="appendix-hayes-commands">
+<title
+>I comandi Hayes dei modem</title>
+
+<para
+>Questa è una descrizione dei comandi Hayes. La maggior parte dei modem implementano in larga misura questi comandi. Se hai perso il manuale del tuo modem o non ne hai mai avuto uno, questa guida potrebbe esserti utile. Io, per esempio, ho finalmente scoperto come spegnere l'altoparlante del mio modem: <command
+>ATM0</command
+>. Finalmente un po' di silenzio!</para>
+
+<para
+>La stringa di inizializzazione del modem è costituita da una serie di comandi. Essa prepara il modem per la comunicazione, impostando come comporre il numero, le attese, la rilevazione del segnale di occupato e molte altre impostazioni. I moderni programmi di comunicazione via modem riconfigurano la stringa di inizializzazione a seconda delle tue scelte, di quali funzionalità abiliti, eccetera.</para>
+
+<para
+>Per molti anni i modem Hayes sono stati lo standard. Non appena il mondo dei costruttori di modem si è ampliato, la maggior parte ha aderito più o meno allo standard Hayes. Quanto segue è una lista parziale dei comandi Hayes (detti comandi <quote
+>AT</quote
+>). I comandi Hayes si possono dividere in quattro gruppi:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Comandi di base</term>
+<listitem
+><para
+>Un carattere maiuscolo seguito da una cifra; per esempio, <command
+>M1</command
+>.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Comandi estesi</term>
+<listitem
+><para
+>Un <quote
+>&amp;</quote
+> (e commerciale) e una lettera maiuscola seguiti da una cifra (questa è un'estensione dei comandi di base); per esempio, <command
+>&amp;M1</command
+>. Nota che <command
+>M1</command
+> è diverso da <command
+>&amp;M1</command
+>.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Comandi proprietari</term>
+<listitem
+><para
+>Di solito iniziano con una barra inversa (<quote
+>\</quote
+>) o un segno di percentuale (<quote
+>&percnt;</quote
+>); questi comandi cambiano molto tra diversi produttori di modem. Per questa ragione, solo alcuni di questi sono elencati qui sotto.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Comandi di registro</term>
+<listitem
+><para
+><command
+>S<replaceable
+>r</replaceable
+>=<replaceable
+>n</replaceable
+></command
+> dove <replaceable
+>r</replaceable
+> è il numero del registro da modificare e <replaceable
+>n</replaceable
+> è il nuovo valore da assegnare.</para>
+
+<para
+>Un <quote
+>registro</quote
+>, nel gergo informatico, indica un luogo fisico specifico di memoria. I modem possiedono piccole quantità di memoria integrata. Questo quarto insieme di comandi si usa per inserire valori in un registro particolare (luogo di memoria). Il registro memorizzerà una particolare <quote
+>variabile</quote
+> (informazione alfanumerica), che verrà utilizzata dal modem e dal software di comunicazione; per esempio, <command
+>S7=60</command
+> dice al computer di <quote
+>impostare il registro numero 7 al valore 60</quote
+>.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<note
+><para
+>Anche se la maggior parte dei comandi sono definiti dalla combinazione di una lettera e di una cifra (<command
+>L0</command
+>, <command
+>L1</command
+>, eccetera), l'uso dello zero è facoltativo. In questo esempio <command
+>L0</command
+> è identico al semplice <command
+>L</command
+>. Tienilo a mente mentre leggi la tabella che segue.</para
+></note>
+
+<para
+>Sono qui elencati i caratteri più importanti che possono apparire nella stringa di inizializzazione del modem. Questi caratteri normalmente non dovrebbero essere modificati.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><command
+>AT</command
+></term>
+<listitem
+><para
+>Dice al modem che seguiranno dei comandi per esso. Questa sequenza deve essere all'inizio di ogni riga di comandi.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>Z</command
+></term>
+<listitem
+><para
+>Riporta il modem al suo stato predefinito</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>,</command
+> (una virgola)</term>
+<listitem
+><para
+>mette in pausa il software per un secondo. Puoi usare più <command
+>,</command
+> alla volta; per esempio, <command
+>,,,,</command
+> dice al software di mettersi in pausa per quattro secondi. La durata della pausa è determinata dall'impostazione del registro <varname
+>S8</varname
+>.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><command
+>^M</command
+></term>
+<listitem
+><para
+>Invia al modem il carattere di terminazione di ritorno a capo. Questo è un codice di controllo che la maggior parte dei software di comunicazione traduce come <quote
+>ritorno a capo</quote
+>.</para
+></listitem
+></varlistentry>
+</variablelist>
+
+<sect1 id="hayes-basic-commands">
+<title
+>Comandi Hayes di base</title>
+
+<para
+>In ordine alfabetico:</para>
+
+   <table>
+    <title
+>Comandi Hayes di base</title>
+    <tgroup cols="3">
+     <thead>
+      <row>
+       <entry
+>Comando</entry>
+       <entry
+>Descrizione</entry>
+       <entry
+>Commenti</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry
+><command
+>A0</command
+> o <command
+>A</command
+></entry>
+       <entry
+>Rispondi ad una chiamata</entry>
+       <entry
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>A/</command
+></entry>
+       <entry
+>Ripeti l'ultimo comando</entry>
+       <entry
+>Non anteporre <command
+>AT</command
+>. &Enter; di solito annulla.</entry>
+      </row>
+      <row>
+       <entry
+><command
+>B0</command
+> o <command
+>B</command
+></entry>
+       <entry
+>Negoziazione della chiamata</entry>
+       <entry
+>Sequenza di risposta in modalità V.32/CCITT</entry>
+      </row>
+      <row>
+       <entry
+><command
+>B1</command
+></entry>
+       <entry
+>Negoziazione della chiamata</entry>
+       <entry
+>Sequenza di risposta Bell 212A</entry>
+      </row>
+      <row>
+       <entry
+><command
+>B2</command
+></entry>
+       <entry
+>Negoziazione della chiamata</entry>
+       <entry
+>Prolisso o silenzioso alla risposta</entry>
+      </row>
+      <row>
+       <entry
+><command
+>D</command
+></entry>
+       <entry
+>Chiama</entry>
+       <entry
+><para
+>Compone il numero seguente, quindi esegue la negoziazione alla maniera d'origine.</para
+><variablelist>
+	 <varlistentry>
+	  <term
+><command
+>P</command
+></term>
+	  <listitem
+><para
+>Composizione decadica</para
+></listitem>
+	 </varlistentry>
+	 <varlistentry>
+	  <term
+><command
+>T</command
+></term>
+	  <listitem
+><para
+>Composizione in multifrequenza</para
+></listitem>
+	 </varlistentry>
+	 <varlistentry>
+	  <term
+><command
+>W</command
+></term>
+	  <listitem
+><para
+>Attendi il secondo tono di chiamata</para
+></listitem>
+	 </varlistentry>
+	 <varlistentry>
+	  <term
+><command
+>,</command
+></term>
+	  <listitem
+><para
+>Mette in pausa per il tempo specificato nel registro <varname
+>S8</varname
+> (di solito 2 secondi)</para
+></listitem>
+	 </varlistentry>
+	 <varlistentry>
+	  <term
+><command
+>;</command
+></term>
+	  <listitem
+><para
+>Rimani in modalità di comando dopo la chiamata</para
+></listitem>
+	 </varlistentry>
+	 <varlistentry>
+	  <term
+><command
+>!</command
+></term>
+	  <listitem
+><para
+>Riattacca per poco (riattacca per mezzo secondo, come quando si trasferisce una chiamata)</para
+></listitem>
+	 </varlistentry>
+	 <varlistentry>
+	  <term
+><command
+>L</command
+></term>
+	  <listitem
+><para
+>Ricomponi l'ultimo numero</para
+></listitem>
+	 </varlistentry>
+	</variablelist
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>E0</command
+> o <command
+>E</command
+></entry>
+       <entry
+>Senza eco</entry>
+       <entry
+>Non manderà l'eco dei comandi al computer</entry>
+      </row>
+      <row>
+       <entry
+><command
+>E1</command
+></entry>
+       <entry
+>Eco</entry>
+       <entry
+>Manderà l'eco dei comandi al computer (per poter leggere quello che si digita)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>H0</command
+></entry>
+       <entry
+>Stato della connessione</entry>
+       <entry
+>Se connesso, riattacca</entry>
+      </row>
+      <row>
+       <entry
+><command
+>H1</command
+></entry>
+       <entry
+>Stato della connessione</entry>
+       <entry
+>Se disconnesso, prendi la linea</entry>
+      </row>
+      <row>
+       <entry
+><command
+>I0</command
+> o <command
+>I</command
+></entry>
+       <entry
+>Ricerca, informazione o interrogazione</entry>
+       <entry
+>Questo comando dipende molto dal dispositivo. <command
+>I0</command
+> restituisce di solito un numero o un codice, mentre i numeri più grandi forniscono spesso informazioni molto più utili.</entry>
+      </row>
+      <row>
+       <entry
+><command
+>L0</command
+> o <command
+>L</command
+></entry>
+       <entry
+>Volume dell'altoparlante. I modem con manopole per la regolazione del volume non avranno queste opzioni.</entry>
+       <entry
+>Volume spento o basso</entry>
+      </row>
+      <row>
+       <entry
+><command
+>L1</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Volume basso</entry>
+      </row>
+      <row>
+       <entry
+><command
+>L2</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Volume medio</entry>
+      </row>
+      <row>
+       <entry
+><command
+>L3</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Volume forte o alto</entry>
+      </row>
+      <row>
+       <entry
+><command
+>M0</command
+> o <command
+>M</command
+></entry>
+       <entry
+>Altoparlante spento</entry>
+       <entry
+>Anche <command
+>M3</command
+> è comune, ma diverso da marca a marca</entry>
+      </row>
+      <row>
+       <entry
+><command
+>M1</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Altoparlante attivo finché non viene rilevata la portante remota (cioè finché non si sente l'altro modem)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>M2</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Altoparlante sempre attivo (si possono sentire i suoni dei dati dopo CONNECT)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>N0</command
+> o <command
+>N</command
+></entry>
+       <entry
+>Velocità di negoziazione</entry>
+       <entry
+>Negoziazione solo alla velocità in <link linkend="hayes-s37"
+><varname
+>S37</varname
+></link
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>N1</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Negoziazione a velocità massima maggiore di <link linkend="hayes-s37"
+><varname
+>S37</varname
+></link
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>O0</command
+> o <command
+>O</command
+></entry>
+       <entry
+>Torna in linea</entry>
+       <entry
+>Guarda anche <link linkend="hayes-basic-x1"
+><command
+>X1</command
+></link
+> perché il rilevamento del tono di chiamata potrebbe essere attivo.</entry>
+      </row>
+      <row>
+       <entry
+><command
+>O1</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Torna in linea dopo una sequenza di ricondizionamento dell'equalizzatore</entry>
+      </row>
+      <row>
+       <entry
+><command
+>Q0</command
+> o <command
+>Q1</command
+></entry>
+       <entry
+>Modalità silenziosa</entry>
+       <entry
+>Disattivata: mostra i codici dei risultati e l'utente vede le risposte ai comandi (per esempio <computeroutput
+>OK</computeroutput
+>)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>Q1</command
+></entry>
+       <entry
+>Modalità silenziosa</entry>
+       <entry
+>Attivata: i codici dei risultati non sono mostrati e l'utente non vede le risposte.</entry>
+      </row>
+      <row>
+       <entry
+><command
+>S<replaceable
+>n</replaceable
+>?</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Richiedi il contenuto del registro S<replaceable
+>n</replaceable
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>S<replaceable
+>n</replaceable
+>=<replaceable
+>r</replaceable
+></command
+></entry>
+       <entry
+>Memorizza</entry>
+       <entry
+>Memorizza il valore <replaceable
+>r</replaceable
+> nel registro S<replaceable
+>n</replaceable
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>V0</command
+> o <command
+>V</command
+></entry>
+       <entry
+>Prolisso</entry>
+       <entry
+>Codici numerici dei risultati</entry>
+      </row>
+      <row>
+       <entry
+><command
+>V1</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Codici dei risultati in inglese (per esempio,  <computeroutput
+>CONNECT</computeroutput
+>, <computeroutput
+>BUSY</computeroutput
+>, <computeroutput
+>NO CARRIER</computeroutput
+> eccetera)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>X0</command
+> o <command
+>X</command
+></entry>
+       <entry
+>Smartmodem</entry>
+       <entry
+>Codici dei risultati compatibili con l'Hayes Smartmodem 300</entry>
+      </row>
+      <row>
+       <entry
+><anchor id="hayes-basic-x1"/><command
+>X1</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Di solito aggiunge la velocità di connessione ai codici dei risultati di base (per esempio <computeroutput
+>CONNECT 1200</computeroutput
+>)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>X2</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Di solito aggiunge il rilevamento del tono di chiamata (evitando chiamate alla cieca, e alcune volte evitando <command
+>AT0</command
+>)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>X3</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Di solito aggiunge l'identificazione del segnale di occupato</entry>
+      </row>
+      <row>
+       <entry
+><command
+>X4</command
+></entry>
+       <entry
+></entry>
+       <entry
+>Di solito aggiunge il rilevamento sia del segnale di occupato che del tono di chiamata</entry>
+      </row>
+      <row>
+       <entry
+><command
+>Z0</command
+> o <command
+>Z</command
+></entry>
+       <entry
+>Ripristina</entry>
+       <entry
+>Riporta il modem a una configurazione memorizzata. Usa <command
+>Z0</command
+>, <command
+>Z1</command
+>, eccetera per più profili. Questo è la stessa cosa che <command
+>&amp;F</command
+> per i valori di fabbrica su modem senza <acronym
+>NVRAM</acronym
+> (memoria non volatile)</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+  </sect1>
+
+  <sect1 id="hayes-extended-commands">
+   <title
+>Comandi Hayes estesi</title
+><subtitle
+>Comandi con E commerciale</subtitle>
+
+   <table>
+    <title
+>Comandi Hayes estesi</title>
+    <tgroup cols="3">
+     <thead>
+      <row>
+       <entry
+>Comando</entry>
+       <entry
+>Descrizione</entry>
+       <entry
+>Commenti</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry
+><command
+>&amp;B0</command
+> o <command
+>&amp;B</command
+></entry>
+       <entry
+>Ricondiziona i parametri</entry>
+       <entry
+>Disattiva la funzione di ricondizionamento automatico</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;B1</command
+></entry>
+       <entry
+>Ricondiziona i parametri</entry>
+       <entry
+>Attiva la funzione di ricondizionamento automatico</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;B2</command
+></entry>
+       <entry
+>Ricondiziona i parametri</entry>
+       <entry
+>Attiva il ricondizionamento automatico, ma si scollega se non si ottiene un miglioramento della linea nel periodo indicato da <link linkend="hayes-s7"
+><varname
+>S7</varname
+></link
+></entry>
+</row>
+      <row>
+       <entry
+><command
+>&amp;C0</command
+> o <command
+>&amp;C1</command
+></entry>
+       <entry
+>Rilevamento della portante</entry>
+       <entry
+>Segnale sempre attivo</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;C1</command
+></entry>
+       <entry
+>Rilevamento della portante</entry>
+       <entry
+>Indica la portante remota (impostazione predefinita preferita)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;D0</command
+> o <command
+>&amp;D</command
+></entry>
+       <entry
+>Terminale di dati pronto (<acronym
+>DTR</acronym
+>)</entry>
+       <entry
+>Segnale ignorato (questo dipende dal tipo di modem, devi consultare il manuale per saperne di più)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;D1</command
+></entry>
+       <entry
+>Terminale di dati pronto (<acronym
+>DTR</acronym
+>)</entry>
+       <entry
+>Se il <acronym
+>DTR</acronym
+> viene disattivato il modem va in modalità di comando (solo con alcuni modem)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;D2</command
+></entry>
+       <entry
+>Terminale di dati pronto (<acronym
+>DTR</acronym
+>)</entry>
+       <entry
+>Alcuni modem riattaccano all'attivazione del <acronym
+>DTR</acronym
+> (questa è l'impostazione predefinita preferita)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;D3</command
+></entry>
+       <entry
+>Terminale di dati pronto (<acronym
+>DTR</acronym
+>)</entry>
+       <entry
+>Riattacca, ripristina il modem, e torna alla modalità di comando all'attivazione del <acronym
+>DTR</acronym
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;F0</command
+> o <command
+>&amp;F</command
+></entry>
+       <entry
+>Valori di fabbrica</entry>
+       <entry
+><para
+>Valori predefiniti compatibili con Hayes. </para
+><para
+>È di solito una buona cosa da usare nella stringa di inizializzazione, dato che le impostazioni <command
+>&amp;F1</command
+> e <command
+>&amp;F3</command
+> possono cambiare da modem a modem, e potrebbero essere la causa di problemi di connessione (visto che non puoi mai sapere cosa fa davvero il <command
+>&amp;F2</command
+> della tal marca).</para
+><para
+>D'altro canto, vale la pena di provare le altre opzioni sotto: i problemi di molti utenti si possono risolvere sostituendo una stringa di inizializzazione complicata con un semplice <command
+>&amp;F2</command
+> o simile. Comunque, se stai costruendo una stringa di inizializzazione, è meglio cominciare con un semplice <command
+>&amp;F</command
+>, e non usare la forma <quote
+>personalizzata</quote
+> dei valori predefiniti.</para
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;F1</command
+></entry>
+       <entry
+>Valori predefiniti di fabbrica</entry>
+       <entry
+>Valori predefiniti di fabbrica studiati per un utente di un computer compatibile con lo standard <acronym
+>PC</acronym
+> di IBM</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;F2</command
+></entry>
+       <entry
+>Valori predefiniti di fabbrica</entry>
+       <entry
+>Valori di fabbrica per un Mac con negoziazione software</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;F3</command
+></entry>
+       <entry
+>Valori predefiniti di fabbrica</entry>
+       <entry
+>Valori di fabbrica per un Mac con negoziazione hardware</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;G0</command
+> o <command
+>&amp;G</command
+></entry>
+       <entry
+>Toni di guardia</entry>
+       <entry
+>Disattiva i toni di guardia</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;K0</command
+> o <command
+>&amp;K</command
+></entry>
+       <entry
+>Controllo di flusso locale</entry>
+       <entry
+>Disabilita il controllo di flusso locale</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;K1</command
+></entry>
+       <entry
+>Controllo di flusso locale</entry>
+       <entry
+>Abilita il flusso di controllo locale hardware RTS/CTS</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;K2</command
+></entry>
+       <entry
+>Controllo di flusso locale</entry>
+       <entry
+>Abilita il controllo di flusso locale software XON/XOFF</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;K3</command
+></entry>
+       <entry
+>Controllo di flusso locale</entry>
+       <entry
+>Abilita il flusso di controllo locale hardware RTS/CTS</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;K4</command
+></entry>
+       <entry
+>Controllo di flusso locale</entry>
+       <entry
+>Abilita il controllo di flusso locale software XON/XOFF</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;L0</command
+> o <command
+>&amp;L</command
+></entry>
+       <entry
+>Modalità di chiamata</entry>
+       <entry
+>Seleziona la modalità di chiamata</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;M0</command
+> o <command
+>&amp;M</command
+></entry>
+       <entry
+>Modalità di controllo degli errori</entry>
+       <entry
+>Seleziona modalità asincrona senza controllo degli errori (la stessa cosa che fa <command
+>&amp;Q0</command
+>)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;P0</command
+> o <command
+>&amp;P</command
+></entry>
+       <entry
+>Rapporto </entry>
+       <entry
+>Rapporto di composizione decadica 39% chiuso e 61% aperto, per USA e Canada</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;P1</command
+></entry>
+       <entry
+>Rapporto </entry>
+       <entry
+>Rapporto di composizione decadica 33% chiuso e 67% aperto, per Inghilterra e Hong Kong</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Q0</command
+> o <command
+>&amp;Q</command
+></entry>
+       <entry
+>Modalità di controllo degli errori</entry>
+       <entry
+>Modalità asincrona senza controllo degli errori. Senza buffering di dati. <acronym
+>ASB</acronym
+> disabilitato.</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Q5</command
+></entry>
+       <entry
+>Modalità di controllo degli errori</entry>
+       <entry
+>Seleziona operazione V.42 con correzione degli errori (richiede controllo di flusso)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Q6</command
+></entry>
+       <entry
+>Modalità di controllo degli errori</entry>
+       <entry
+>Modalità asincrona con <acronym
+>ASB</acronym
+> (richiede controllo di flusso)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Q8</command
+></entry>
+       <entry
+>Modalità di controllo degli errori</entry>
+       <entry
+>Seleziona protocollo di correzione degli errori alternativo (<acronym
+>MNP</acronym
+>)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Q9</command
+></entry>
+       <entry
+>Modalità di controllo degli errori</entry>
+       <entry
+>Compressione di dati condizionale: V.42bis = sì, MNP5 = no.</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;S0</command
+> o <command
+>&amp;S</command
+></entry>
+       <entry
+>Selezione dell'azione <acronym
+>DSR</acronym
+></entry>
+       <entry
+>Sempre attivo (predefinito)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;S1</command
+></entry>
+       <entry
+>Selezione dell'azione <acronym
+>DSR</acronym
+></entry>
+       <entry
+>Segue la specifica <acronym
+>EIA</acronym
+> (segue attivamente il tono della portante finché non la si perde)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;T0</command
+> o <command
+>&amp;T</command
+></entry>
+       <entry
+>Autodiagnosi</entry>
+       <entry
+>Autodiagnosi specifica su alcuni modem</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;U0</command
+> o <command
+>&amp;U</command
+></entry>
+       <entry
+>Modulazione con codifica a traliccio</entry>
+       <entry
+>Abilita la <acronym
+>TCM</acronym
+> V.32</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;U1</command
+></entry>
+       <entry
+>Modulazione con codifica a traliccio</entry>
+       <entry
+>Disabilita la <acronym
+>TCM</acronym
+> V.32</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;V0</command
+> o <command
+>&amp;V1</command
+></entry>
+       <entry
+>Vedi impostazioni di profilo attive</entry>
+       <entry
+>Le impostazioni dei profili di configurazione sono spesso memorizzate (o <command
+>ATI4</command
+>)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;W0</command
+> o <command
+>&amp;W</command
+></entry>
+       <entry
+>Memorizza profilo</entry>
+       <entry
+>Nella <acronym
+>NVRAM</acronym
+> (<command
+>&amp;W0</command
+>, <command
+>&amp;W1</command
+> eccetera per profili multipli), alcune impostazioni non si possono memorizzare. Queste spesso non appaiono sotto <command
+>&amp;V</command
+> o <command
+>ATI4</command
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Y0</command
+> o <command
+>&amp;Y</command
+></entry>
+       <entry
+>Scegli la configurazione caricata all'accensione</entry>
+       <entry
+>Carica il profilo 0 (predefinito)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Y1</command
+></entry>
+       <entry
+>Scegli la configurazione caricata all'accensione</entry>
+       <entry
+>Carica il profilo 1</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&amp;Z<replaceable
+>n</replaceable
+>=<replaceable
+>x</replaceable
+></command
+></entry>
+       <entry
+>Ripristino leggero e caricamento del profilo memorizzato numero <replaceable
+>x</replaceable
+></entry>
+       <entry
+>Nota che tutti gli elementi nella riga di comando dopo <command
+>&amp;Z</command
+> vengono ignorati</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+
+  </sect1>
+
+  <sect1 id="hayes-backslash-commands">
+   <title
+>Comandi con barra inversa e percento</title>
+
+   <table>
+    <title
+>Comandi con barra inversa e percento</title>
+    <tgroup cols="3">
+     <thead>
+      <row>
+       <entry
+>Comando</entry>
+       <entry
+>Descrizione</entry>
+       <entry
+>Commenti</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry
+><command
+>\A0</command
+> o <command
+>\A</command
+></entry>
+       <entry
+>Dimensione massima dei blocchi <acronym
+>MNP</acronym
+> dei caratteri</entry>
+       <entry
+>Massimo 64 caratteri</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\A1</command
+></entry>
+       <entry
+>Dimensione massima dei blocchi <acronym
+>MNP</acronym
+> dei caratteri</entry>
+       <entry
+>Massimo 128 caratteri</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\A2</command
+></entry>
+       <entry
+>Dimensione massima dei blocchi <acronym
+>MNP</acronym
+> dei caratteri</entry>
+       <entry
+>Massimo 192 caratteri</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\A3</command
+></entry>
+       <entry
+>Dimensione massima dei blocchi <acronym
+>MNP</acronym
+> dei caratteri</entry>
+       <entry
+>Massimo 256 caratteri</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;C0</command
+> o <command
+>&percnt;C</command
+></entry>
+       <entry
+>Attivazione o disattivazione della compressione dei dati</entry>
+       <entry
+>Disattivata</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;C1</command
+></entry>
+       <entry
+>Attivazione o disattivazione della compressione dei dati</entry>
+       <entry
+>MNP5 abilitato</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;C2</command
+></entry>
+       <entry
+>Attivazione o disattivazione della compressione dei dati</entry>
+       <entry
+>V.42bis (<acronym
+>BTLZ</acronym
+>) abilitato</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;C3</command
+></entry>
+       <entry
+>Attivazione o disattivazione della compressione dei dati</entry>
+       <entry
+>MNP5 e V.42bis (<acronym
+>BTLZ</acronym
+>) abilitati</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;D0</command
+> o <command
+>&percnt;D</command
+></entry>
+       <entry
+>Compressione dei dati</entry>
+       <entry
+>Dimensione del dizionario BLTZ 512</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;D1</command
+></entry>
+       <entry
+>Compressione dei dati</entry>
+       <entry
+>Dimensione del dizionario BLTZ 1024</entry>
+      </row>
+     <row>
+       <entry
+><command
+>&percnt;D2</command
+></entry>
+       <entry
+>Compressione dei dati</entry>
+       <entry
+>Dimensione del dizionario BLTZ 2048</entry>
+      </row>
+     <row>
+       <entry
+><command
+>&percnt;D3</command
+></entry>
+       <entry
+>Compressione dei dati</entry>
+       <entry
+>Dimensione del dizionario BLTZ 4096</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;E0</command
+> o <command
+>&percnt;E1</command
+></entry>
+       <entry
+>Metodo di escape</entry>
+       <entry
+>Escape disattivato</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;E1</command
+></entry>
+       <entry
+>Metodo di escape</entry>
+       <entry
+>Metodo <command
+>+++AT</command
+> (predefinito)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;E2</command
+></entry>
+       <entry
+>Metodo di escape</entry>
+       <entry
+>Metodo <computeroutput
+>Break</computeroutput
+> <command
+>AT</command
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;E3</command
+></entry>
+       <entry
+>Metodo di escape</entry>
+       <entry
+>Entrambi i metodi abilitati</entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;E4</command
+></entry>
+       <entry
+>Metodo di escape</entry>
+       <entry
+>Disabilita <computeroutput
+>OK</computeroutput
+> per <command
+>+++</command
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>&percnt;E5</command
+></entry>
+       <entry
+>Metodo di escape</entry>
+       <entry
+>Abilita <computeroutput
+>OK</computeroutput
+> per <command
+>+++</command
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>\J0</command
+> o <command
+>\J</command
+></entry>
+       <entry
+>Regolazione automatica della velocità <acronym
+>DTE</acronym
+></entry>
+       <entry
+>Disattivata</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\J1</command
+></entry>
+       <entry
+>Regolazione automatica della velocità <acronym
+>DTE</acronym
+></entry>
+       <entry
+>La velocità <acronym
+>DTE</acronym
+> viene regolata per adattarsi alla velocità della portante</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\N0</command
+> o <command
+>\N</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Connessione normale (vedi sotto per le definizioni)</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\N1</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Connessione diretta</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\N2</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Connessione auto-affidabile <acronym
+>MNP</acronym
+></entry>
+      </row>
+      <row>
+       <entry
+><command
+>\N3</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Connessione auto-affidabile</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\N4</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Collegamento V.42bis affidabile con rilevamento di fase</entry>
+      </row>
+      <row>
+       <entry
+><command
+>\N5</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Collegamento V.42bis auto-affidabile con rilevamento di fase</entry>
+      </row
+>     
+      <row>
+       <entry
+><command
+>\N6</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Collegamento V.42 affidabile con rilevamento di fase</entry>
+      </row>
+        <row>
+       <entry
+><command
+>\N7</command
+></entry>
+       <entry
+>Tipo di connessione</entry>
+       <entry
+>Collegamento V.42 auto-affidabile con rilevamento di fase</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+
+<para
+>Una connessione diretta è una semplice connessione senza correzione degli errori o compressione dei dati. In questo caso, le velocità tra computer e modem e tra modem e modem devono essere identiche.</para>
+
+<para
+>Una connessione normale usa il controllo di flusso (software oppure hardware) per memorizzare in un buffer i dati inviati o ricevuti, in modo che il modem li possa trasmettere ad una velocità diversa da quella a cui il computer li sta inviando o ricevendo. Per esempio, un computer può inviare dati a 57kbps ma, usando compressione, il modem può inviare solo a 28,8kbps. Questa è la modalità usata dalla maggior parte dei modem.</para>
+
+<para
+>Una connessione affidabile è un tipo di connessione normale; se, per qualche motivo, la compressione dei dati o la correzione degli errori non possono essere stabilite o mantenute, la connessione verrà interrotta. In sostanza, un simile modem garantisce che tutte le connessioni siano affidabili, perché riattaccherà se non lo sono.</para>
+
+<para
+>Similmente, una connessione auto-affidabile è praticamente lo stesso, tranne che il modem cercherà di rinegoziare la connessione per stabilirne una affidabile. Di nuovo, questa è la modalità usata dalla maggior parte dei modem.</para>
+
+</sect1>
+
+<sect1 id="hayes-sregisters">
+<title
+>Registri S</title>
+
+   <table>
+    <title
+>Registri S</title>
+    <tgroup cols="4">
+     <thead>
+      <row>
+       <entry
+>Registro</entry>
+       <entry
+>Intervallo</entry>
+       <entry
+>Predefinito</entry>
+       <entry
+>Funzione</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry
+><varname
+>S0</varname
+></entry>
+       <entry
+>0-255 squilli</entry>
+       <entry
+>1-2</entry>
+       <entry
+>Rispondi al numero di squillo. Non rispondere se è 0</entry>
+      </row>
+      <row>
+       <entry
+><varname
+>S1</varname
+></entry>
+       <entry
+>0-255 squilli</entry>
+       <entry
+>0</entry>
+       <entry
+>se <varname
+>S0</varname
+> è maggiore di <returnvalue
+>0</returnvalue
+>, questo registro conta il numero di squilli ricevuti.</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S2</varname
+></entry>
+       <entry
+>0-127 <acronym
+>ASCII</acronym
+></entry>
+       <entry
+>43 +</entry>
+       <entry
+>Carattere per passare alla modalità di comando</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S2</varname
+></entry>
+       <entry
+>&gt;127</entry>
+       <entry
+></entry>
+       <entry
+>Impossibile passare</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S3</varname
+></entry>
+       <entry
+>0-127 <acronym
+>ASCII</acronym
+></entry>
+       <entry
+>13 CR</entry>
+       <entry
+>Carattere di ritorno a capo</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S4</varname
+></entry>
+       <entry
+>0-127 <acronym
+>ASCII</acronym
+></entry>
+       <entry
+>10 LF</entry>
+       <entry
+>Carattere di linea nuova</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S5</varname
+></entry>
+       <entry
+>0-32, 127 <acronym
+>ASCII</acronym
+></entry>
+       <entry
+>8 BS</entry>
+       <entry
+>Carattere backspace</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S6</varname
+></entry>
+       <entry
+>2-255 secondi</entry>
+       <entry
+>2</entry>
+       <entry
+>Tempo di attesa del tono di chiamata (chiamata alla cieca, vedi <link linkend="hayes-basic-x1"
+>X<replaceable
+>n</replaceable
+></link
+>)</entry>
+      </row>
+     <row>
+       <entry
+><anchor id="hayes-s7"/><varname
+>S7</varname
+></entry>
+       <entry
+>1-255 secondi</entry>
+       <entry
+>30-60</entry>
+       <entry
+>Tempo di attesa per la portante remota</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S8</varname
+></entry>
+       <entry
+>0-255 secondi</entry>
+       <entry
+>2</entry>
+       <entry
+>Tempo di pausa con virgola usato nella composizione</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S9</varname
+></entry>
+       <entry
+>1-255 decimi di secondo</entry>
+       <entry
+>6</entry>
+       <entry
+>Tempo di rilevamento della portante richiesto per il riconoscimento</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S10</varname
+></entry>
+       <entry
+>1-255 decimi di secondo</entry>
+       <entry
+>7-14</entry>
+       <entry
+>Tempo tra perdita della portante e riaggancio</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S11</varname
+></entry>
+       <entry
+>50-255 millisecondi</entry>
+       <entry
+>70-95</entry>
+       <entry
+>Durata e spaziatura dei toni in multifrequenza</entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S12</varname
+></entry>
+       <entry
+>0-255 cinquantesimi di secondo</entry>
+       <entry
+>50</entry>
+       <entry
+>Tempo di guardia per la pausa attorno alla sequenza di comando <command
+>+++</command
+></entry>
+      </row>
+     <row>
+       <entry
+><varname
+>S36</varname
+></entry>
+       <entry
+><para
+>Opzioni di ripiego quando il collegamento con correzione degli errori non riesce:</para
+><itemizedlist>
+	 <listitem
+><para
+>0: disconnetti</para>
+	 </listitem>
+	 <listitem
+><para
+>1: stabilisci connessione diretta</para>
+	 </listitem>
+	 <listitem
+><para
+>3: stabilisci connessione normale</para>
+	 </listitem>
+	 <listitem
+><para
+>4: stabilisci una connessione <acronym
+>MNP</acronym
+> se possibile, altrimenti disconnetti</para>
+	 </listitem>
+	 <listitem
+><para
+>5: stabilisci una connessione <acronym
+>MNP</acronym
+> se possibile, altrimenti una connessione diretta</para>
+	 </listitem>
+	 <listitem
+><para
+>7: stabilisci una connessione <acronym
+>MNP</acronym
+> se possibile, altrimenti una connessione normale</para>
+	 </listitem>
+	</itemizedlist
+></entry
+>       
+       <entry
+>7</entry>
+       <entry
+>Trattamento delle negoziazioni non riuscite</entry>
+      </row>
+      <row>
+       <entry
+><anchor id="hayes-s37"/><varname
+>S37</varname
+></entry>
+       <entry
+><itemizedlist>
+	 <listitem
+><para
+><returnvalue
+>1</returnvalue
+> = 300 bps</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>5</returnvalue
+> = 1200 bps</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>6</returnvalue
+> = 2400 bps</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>7</returnvalue
+> = 1200/75 bps (modalità v.23)</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>8</returnvalue
+> = 4800 bps</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>9</returnvalue
+> = 9600 bps</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>10</returnvalue
+> = 12000 bps</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>11</returnvalue
+> = 14400 bps</para>
+	 </listitem>
+	 <listitem
+><para
+><returnvalue
+>12</returnvalue
+> = 7200 bps</para>
+	 </listitem>
+	</itemizedlist
+></entry>
+       <entry
+>0</entry>
+       <entry
+>Negoziazione della velocità (negoziazione iniziale)</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+
+<para
+>Molti modem hanno dozzine o anche centinaia di registri S, ma solo la prima dozzina è più o meno standard. Sono modificati con un comando come <command
+>ATS<replaceable
+>n</replaceable
+>=<replaceable
+>N</replaceable
+></command
+>, ed esaminati con <command
+>ATS<replaceable
+>n</replaceable
+>?</command
+> (per esempio <userinput
+><command
+>AT</command
+> <command
+>S10</command
+><option
+>=70</option
+> <command
+>S1?</command
+></userinput
+> direbbe al modem di non riagganciare per sette secondi se non dovesse sentire una risposta dal modem remoto, e restituirebbe il numero di volte che il telefono ha squillato).</para>
+
+</sect1>
+</appendix>

@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><sect1 id="tool-obsplanner">
+  <sect1info>
+    <author
+><firstname
+>Kristian</firstname
+> <surname
+>Ivanov</surname
+> </author>
+  </sect1info>
+  <title
+>Pianificatore delle osservazioni</title>
+  <indexterm>
+    <primary
+>Pianificatore</primary>
+  </indexterm>
+  <para
+>A partire da &kde; SC 4.4, il lavoro del GSoC di Prakash Mohan è parte di &kstars;. &kstars; ora ha un fantastico pianificatore delle osservazioni per pianificare le tue sessioni di osservazione. L'opzione di esecuzione della sessione ti permette di registrare informazioni sugli oggetti man mano che li osservi. In alternativa, puoi anche scrivere un breve registro nel pianificatore delle osservazioni stesso. Divertiti a pianificare le tue osservazioni con &kstars;!</para>
+  <para
+>Puoi anche aggiungere immagini agli oggetti. La lista delle immagini è una lista di ricerca immagini di Google. Per aggiungere un'immagine ad un oggetto, premi il pulsante <guibutton
+>Trova immagine</guibutton
+> a destra e cerca un'immagine che ti piace. Se non hai una connessione ad Internet puoi usare un'immagine dal disco. Nota che le immagini usate saranno ridimensionate a 600x600 pixel.</para>
+  <para
+>Il primo modo di farlo è premere <keycombo action="simul"
+>&Ctrl;<keycap
+>2</keycap
+></keycombo
+> oppure <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> per aprire la lista di osservazione, e poi premi <guibutton
+>Aggiungi oggetto</guibutton
+>.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="KStars_Neptune.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Il pulsante <guibutton
+>Salva tutte le immagini</guibutton
+> avvia una ricerca di immagini SDSS e mostra l'immagine DSS se le coordinate AR/Dec sono fuori dalla copertura SDSS.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="sds.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase
+>Questa è l'immagine SDSS di una galassia</phrase>
+      </para>
+    </caption>
+  </mediaobject>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="dss.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase
+>Questa è un'immagine DSS della stessa galassia</phrase>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Il pulsante <guibutton
+>Elimina tutte le immagini</guibutton
+> fa l'opposto, cioè elimina tutte le immagini scaricate.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Delete_all_images.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase
+>L'immagine della galassia è stata eliminata </phrase>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Puoi aggiungere altri oggetti premendo il pulsante <guibutton
+>Aggiungi oggetto</guibutton
+>. C'è un sistema accurato per ordinare gli oggetti, a seconda delle opzioni specificate, quali: tutti, stelle, sistema solare, ammassi (globulari e aperti), nebulose (gassose e planetarie), galassie, comete, asteroidi e costellazioni con il filtro per nome.</para>
+  <para
+>Qui puoi vedere la visibilità dell'oggetto a seconda della data e dell'ora. La linea di riferimento mostra il tempo corrente.</para>
+  <para
+>Sotto di questo puoi aggiungere note sull'osservazione di questo oggetto.</para>
+  <para
+>Nota che la lista dei desideri non è il piano della sessione. Nella lista dei desideri puoi aggiungere oggetti che desideri osservare, prima o poi. Da lì, puoi aggiungerli al piano della sessione.</para>
+  <para
+>Puoi vedere la finestra a comparsa che appare dopo aver fatto clic con il &RMB; su un oggetto.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Add_Object_to_Session_plan.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase
+>Aggiungere oggetti alla finestra del piano della sessione</phrase>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Vediamo ora il secondo modo per aggiungere oggetti al piano di osservazione e usare il piano di osservazione stesso. Devi solamente premere la quarta icona (evidenziata di giallo) nell'angolo in alto a sinistra nella procedura guidata del piano di osservazione.</para>
+  <para
+>Nonostante sembri diverso, questo metodo è praticamente lo stesso del primo. Ciò nonostante, potrebbe essere descritto più in dettaglio. Qui puoi vedere le stesse categorie di oggetti.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Another_way_to_add.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Another_way_to_add_part3.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Puoi scegliere la posizione nel cielo di questi oggetti. Le opzioni disponibili sono quattro: in tutto il cielo (opzione predefinita), per costellazione e in una regione (rettangolare o circolare).</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Another_way4.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Puoi scegliere la data per l'osservazione e la località da cui osservare.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Another_way5.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Puoi scegliere la soglia della magnitudine degli oggetti visibili. In astronomia, la magnitudine assoluta (conosciuta anche come la magnitudine visuale assoluta quando misurata nella banda fotometrica standard V) misura la luminosità intrinseca dei corpi celesti.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Another_way6.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Puoi salvare il tuo piano di osservazione, che sarà salvato con un'estensione <filename class="extension"
+>.obslist</filename
+>.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="Savin_session.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Puoi anche usare lo strumento <guilabel
+>CSVS</guilabel
+> (Che si vede stanotte?), che può esserti di grande aiuto. Può darti un'idea di cosa osservare ad una determinata data, ora e località specificate usando i pulsanti di configurazione nell'angolo in alto a destra nella finestra <guilabel
+>Che si vede stanotte</guilabel
+>.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="wut.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase/>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Puoi vedere come appare la finestra <guilabel
+>Esegui sessione</guilabel
+>. Può essere aperta premendo <keycombo action="simul"
+>&Ctrl;<keycap
+>2</keycap
+></keycombo
+>. Dentro ci sono varie informazioni sull'oggetto selezionato e puoi aggiungere note sull'osservazione. </para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="execute_session_nt.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase
+>Prima finestra «Esegui sessione»</phrase>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Premendo <guibutton
+>Pagina successiva</guibutton
+> accederai alla seconda pagina del piano della sessione. Qui puoi vedere le informazioni sul tuo equipaggiamento, e non sul tuo oggetto.</para>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="execute_session_the_nt.png" format="PNG"/>
+    </imageobject>
+    <caption>
+      <para>
+        <phrase
+>Seconda finestra «Esegui sessione»</phrase>
+      </para>
+    </caption>
+  </mediaobject>
+  <para
+>Premendo <guibutton
+>Obiettivo successivo</guibutton
+> sarà aperta la prima finestra sul successivo oggetto.</para>
+</sect1>

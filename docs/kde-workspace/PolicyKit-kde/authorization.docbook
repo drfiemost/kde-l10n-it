@@ -1,0 +1,153 @@
+<chapter id="authorization">
+<title
+>Gestore delle autorizzazioni</title>
+
+<sect1 id="authorization-manual">
+<title
+>Manuale</title>
+
+<para
+>Il gestore delle autorizzazioni è l'applicazione che gli amministratori di sistema possono usare per cambiare facilmente il comportamento predefinito di ogni azione. Lo scopo di questa pagina non è quello di spiegare come creare nuove azioni o definire nuovi file <quote
+>.policy</quote
+>.</para>
+
+<para
+>La schermata di autorizzazione (vedi figura sotto) è divisa in due parti: a sinistra ci sono tutte le azioni che PolicyKit conosce; si può cercare un'azione usando la barra di ricerca in alto. A destra ci sono le azioni selezionate. </para>
+
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authorization_1.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Finestra principale con il dispositivo sorgente</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Quando si seleziona un'azione, i suoi dettagli saranno visualizzati nella parte destra. L'azione può avere un'icona, una descrizione e il nome del fornitore. Successivamente ci sono le <quote
+>autorizzazioni implicite</quote
+> e le <quote
+>autorizzazioni esplicite</quote
+>. </para>
+
+<para
+>Le <quote
+>autorizzazioni implicite</quote
+> sono autorizzazioni date in automatico agli utenti secondo dei criteri, ad esempio se sono nel terminale locale. Queste autorizzazioni sono lette dai file <quote
+>.policy</quote
+> che l'applicazione data ha definito; sono le impostazioni di default dell'azione. Questi sono valori validi </para>
+
+<itemizedlist>
+<listitem
+><para
+>no</para
+></listitem>
+<listitem
+><para
+>auth_self_one_shot</para
+></listitem>
+<listitem
+><para
+>auth_self</para
+></listitem>
+<listitem
+><para
+>auth_self_keep_session</para
+></listitem>
+<listitem
+><para
+>auth_self_keep_always</para
+></listitem>
+<listitem
+><para
+>auth_admin_one_shot</para
+></listitem>
+<listitem
+><para
+>auth_admin</para
+></listitem>
+<listitem
+><para
+>auth_admin_keep_session</para
+></listitem>
+<listitem
+><para
+>auth_admin_keep_always</para
+></listitem>
+<listitem
+><para
+>sì</para
+></listitem>
+</itemizedlist>
+
+<para
+>Questi valori predefiniti possono essere modificati semplicemente cambiandoli nella casella a scelta multipla. Il valore non in grassetto è quello predefinito, quindi per ripristinare il valore predefinito lo si seleziona. Per applicare la modifica è necessario fare clic sul pulsante <quote
+>Modifica</quote
+>. Il pulsante <quote
+>Ripristina predefiniti</quote
+> può essere usato per ripristinare i valori di default di tutte le <quote
+>autorizzazioni implicite</quote
+>. Attenzione che sia <quote
+>Modifica</quote
+> sia <quote
+>Ripristina predefiniti</quote
+> hanno bisogno dell'esecuzione dell'azione <quote
+>org.freedesktop.policykit.modify-defaults</quote
+> che potrebbe chiedere una password. </para>
+
+<para
+>Le <quote
+>Autorizzazioni esplicite</quote
+> sono autorizzazioni che sono ottenute attraverso il processo di autenticazione o specifiche per l'azione. Il comportamento predefinito è di visualizzare solo le autorizzazioni esplicite dell'utente; per vedere le autorizzazioni esplicite degli altri utenti si deve fare clic su <quote
+>Visualizza le autorizzazioni di tutti gli utenti</quote
+>. Attenzione che questo richiede l'esecuzione dell'azione <quote
+>org.freedesktop.policykit.read</quote
+> che potrebbe chiedere una password. Le autorizzazioni bloccate sono marcate con il segno <quote
+>STOP</quote
+>. </para>
+
+<para
+>Il pulsante <quote
+>Revoca</quote
+> è usato per revocare un'autorizzazione esplicita. Attenzione che è richiesta l'esecuzione dell'azione <quote
+>org.freedesktop.policykit.revoke</quote
+> che potrebbe chiedere una password. </para>
+
+<para
+>Se si vuole permettere o bloccare un utente per una azione specifica, si può fare clic su <quote
+>Permetti</quote
+> o <quote
+>Blocca</quote
+>. Nella schermata seguente si vede la finestra per Permettere/Bloccare le azioni. </para>
+
+<para>
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="authorization_2.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Finestra di dialogo per permettere/bloccare le autorizzazioni esplicite</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Per permettere/bloccare le autorizzazioni esplicite bisogna selezionare l'utente che riceverà l'autorizzazione. Si possono anche selezionare i <quote
+>Vincoli</quote
+> per limitare le autorizzazioni in modo che abbiano effetto solo in certe situazioni. <warning
+><para
+>Attenzione che il blocco o l'autorizzazione esplicita potrebbero impedirti di svolgere quella azione, quindi è necessario fare attenzione a quello che si fa</para
+></warning
+>. È richiesta l'esecuzione dell'azione <quote
+>org.freedesktop.policykit.grant</quote
+> di PolicyKit che potrebbe chiedere una password. </para>
+
+</sect1>
+
+</chapter>

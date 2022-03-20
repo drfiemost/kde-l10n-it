@@ -1,0 +1,242 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY i18n-importwizard "<application
+>Procedura guidata di importazione</application
+>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+> 
+]>
+
+<article id="importwizard" lang="&language;">
+
+<articleinfo id="importwizardinfo">
+
+<title
+>Manuale di &i18n-importwizard;</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Laurent</firstname
+> <surname
+>Montel</surname
+> </personname
+> <email
+>montel@kde.org</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Luigi</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>luigi.toscano@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2013</year>
+<holder
+>Laurent Montel</holder>
+</copyright>
+
+<date
+>2013-11-14</date>
+<releaseinfo
+>4.12 (&kde; 4.12)</releaseinfo>
+
+</articleinfo>
+
+<sect1 id="introduction">
+<title
+>Introduzione</title>
+
+<para
+>&i18n-importwizard; permette di importare messaggi di posta elettronica, impostazioni e la rubrica degli indirizzi da altri programmi di posta elettronica.</para>
+  <simplelist>
+    <member
+>Trojitá</member>
+    <member
+>Evolution 1.x - 3.x</member>
+    <member
+>OS X Mail</member>
+    <member
+>Opera</member>
+    <member
+>Sylpheed</member>
+    <member
+>Thunderbird/Mozilla</member>
+    <member
+>The Bat!</member>
+    <member
+>Outlook Express</member>
+    <member
+>Balsa</member>
+    <member
+>Pegasus Mail</member>
+    <member
+>Claws Mail</member>
+  </simplelist>
+
+<para
+>Puoi eseguire &i18n-importwizard; dall'avviatore dell'applicazione o da &kmail; tramite <menuchoice
+><guimenu
+>Strumenti</guimenu
+><guimenuitem
+>Procedura guidata importazione...</guimenuitem
+></menuchoice
+> </para>
+
+<note>
+<para
+>Chiudi &kmail; prima di importare i dati. Alcune estensioni modificheranno i file di configurazione di &kmail;.</para>
+</note>
+
+<para
+>Per informazioni sugli altri strumenti di importazione della posta consulta il <ulink url="help:kmailcvt"
+>manuale di KMailCVT</ulink
+> ed il capitolo <ulink url="help:/pimsettingexporter"
+>Esportatore delle impostazioni di PIM</ulink
+> nel manuale di &kmail;.</para>
+
+<sect2 id="using-kapp">
+<title
+>Usare &i18n-importwizard;</title>
+
+<para
+>All'avvio, la procedura guidata di importazione individua tutti i programmi di posta supportati e ne mostra un elenco nella finestra. Seleziona il programma di posta da cui vuoi importare e fai clic sul pulsante <guibutton
+>Successivo</guibutton
+>. La procedura guidata ti chiederà quindi se vuoi importare tutto, o in alternativa ti permetterà di selezionare il tipo di materiale che vuoi importare.</para>
+
+<screenshot>
+<screeninfo
+>Importa selezione</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="import-selection.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Importa selezione</phrase>
+    </textobject>
+    <caption>
+      <para
+>Importa selezione</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+
+<para
+>In base a quello che hai selezionato nella schermata dei materiali da importare, vedrai una o più delle seguenti schermate:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Per la scelta <guilabel
+>Importa messaggi di posta</guilabel
+>, devi selezionare la cartella in cui vuoi importare i messaggi di posta. Una volta selezionata fai clic sul pulsante <guibutton
+>Importa messaggi di posta</guibutton
+>. Quando la barra di avanzamento raggiunge il 100% fai clic sul pulsante <guibutton
+>Successivo</guibutton
+>, o sul pulsante <guibutton
+>Termina</guibutton
+> se questa era l'ultima selezione di materiale da importare.</para
+></listitem>
+
+<listitem
+><para
+>Per la scelta <guilabel
+>Importa filtri di posta</guilabel
+>, fai clic sul pulsante <guibutton
+>Importa filtri</guibutton
+> e saranno importati tutti i filtri individuati; una volta terminato fai clic sul pulsante <guibutton
+>Successivo</guibutton
+>, o sul pulsante <guibutton
+>Termina</guibutton
+> se questa era l'ultima selezione di materiale da importare.</para
+></listitem>
+
+<listitem
+><para
+>Per la scelta <guilabel
+>Importa impostazioni</guilabel
+>, fai clic sul pulsante <guibutton
+>Importa impostazioni</guibutton
+>. La procedura farà alcune domande come &eg; quale cartella usare per le cartelle non esistenti dell'account. La procedura guidata provvederà anche alla creazione di una nuova identità. Una volta terminato fai clic sul pulsante <guibutton
+>Successivo</guibutton
+>, o sul pulsante <guibutton
+>Termina</guibutton
+> se questa era l'ultima selezione di materiale da importare.</para
+></listitem>
+
+<listitem
+><para
+>Per la scelta <guilabel
+>Importa rubriche</guilabel
+>, fai clic sul pulsante <guibutton
+>Importa rubriche</guibutton
+> e saranno importate tutte le rubriche individuate. Una volta terminato fai clic sul pulsante <guibutton
+>Successivo</guibutton
+>, o sul pulsante <guibutton
+>Termina</guibutton
+> se questa era l'ultima selezione di materiale da importare.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Fai clic sul pulsante <guibutton
+>Termina</guibutton
+> per completare ed uscire dalla procedura guidata. Se vuoi terminare la procedura in qualsiasi momento puoi fare clic sul pulsante <guibutton
+>Annulla</guibutton
+>.</para>
+
+</sect2>
+
+<sect2 id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&i18n-importwizard;</para>
+<para
+>Copyright del programma 2013 Laurent Montel montel@kde.org </para>
+<para
+>Copyright della documentazione &copy; 2013 Laurent Montel montel@kde.org </para>
+
+<para
+>Traduzione italiana di Luigi Toscano <email
+>luigi.toscano@tiscali.it</email
+></para
+> 
+&underFDL; &underGPL; </sect2>
+
+</sect1>
+
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

@@ -1,0 +1,597 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<refentry>
+
+<refentryinfo>
+<title
+>Manuale dell'utente di &kde;</title>
+<author
+><firstname
+>David</firstname
+> <surname
+>Faure</surname
+> <affiliation
+> <address
+><email
+>faure@kde.org</email
+></address>
+</affiliation>
+</author>
+
+<author
+><firstname
+>Waldo</firstname
+> <surname
+>Bastian</surname
+> <affiliation
+> <address
+><email
+>bastian@kde.org</email
+></address>
+</affiliation>
+</author>
+
+<date
+>2010-10-28</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kded4</command
+></refentrytitle>
+<manvolnum
+>8</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kded4</command
+></refname>
+<refpurpose
+>Demone di &kde; - aggiorna la banca dati di Sycoca quando necessario.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<title
+>Sintassi</title>
+
+<cmdsynopsis
+><command
+>kded4</command
+> <arg choice="opt"
+>--help</arg
+> <arg choice="opt"
+>opzioni generiche</arg
+> <arg choice="opt"
+>opzioni di Qt</arg
+> <arg choice="opt"
+>opzioni di KDE</arg
+> <arg choice="opt"
+>--check</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrizione</title>
+
+<para
+><command
+>kded4</command
+> è responsabile della creazione del file Sycoca, cioè la cache binaria di tipi di servizi, tipi di file, e servizi per un certo utente. </para>
+<para
+>Sorveglia le cartelle contenenti file <literal role="extension"
+>.desktop</literal
+>. Quando un file viene aggiunto o rimosso, attende cinque secondi (per il caso di una serie di aggiornamenti), e quindi avvia <command
+>kbuildsycoca4</command
+> per aggiornare Sycoca. </para>
+<para
+>Controlla i file di aggiornamento installati recentemente, cioè i file <literal role="extension"
+>*.upd</literal
+> usati per aggiornare i file di configurazione degli utenti quando cambia il formato dei file di configurazione. Per fare gli aggiornamenti si esegue <command
+>kconf_update</command
+>. </para>
+<para
+>Quando cambia il nome dell'host, farà le modifiche necessarie all'ambiente &kde; e al server X per permetterne il funzionamento, eseguendo <command
+>kdontchangethehostname</command
+> per le modifiche. </para>
+<para
+>Questi compiti sono anche effettuati a ogni avvio di kded4 per assicurarsi che la configurazione dell'utente sia aggiornata. </para>
+<para
+>È inoltre responsabile per l'avvio dei moduli a richiesta di kded4 e di quelli abilitati per l'inizializzazione, come: <variablelist>
+<varlistentry>
+<term
+><option
+>Precaricatore del browser Konqueror</option
+></term>
+<listitem
+><para
+>Riduce il tempo di avvio di &konqueror;.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Guardia delle cartelle</option
+></term>
+<listitem
+><para
+>Sorveglia i cambiamenti nelle cartelle.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Rilevamento dell'hardware</option
+></term>
+<listitem
+><para
+>Dà un'interfaccia per l'utente agli eventi dell'hardware.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Regole dei certificati SSL</option
+></term>
+<listitem
+><para
+>Fornisce alle applicazioni le regole configurate dall'utente per i certificati SSL.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Configurazione dei proxy di rete</option
+></term>
+<listitem
+><para
+>Configurazione automatica dei proxy.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Memorizzazione delle password</option
+></term>
+<listitem
+><para
+>Memorizzazione temporanea delle password, per esempio in modo che una pagina Web con autenticazione HTTP non chieda la password per ogni suo collegamento e ogni sua immagine. Queste password vengono dimenticate all'uscita da &kde; (al contrario del portafogli di &kde;).</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Gestione del suono</option
+></term>
+<listitem
+><para
+>Dà le linee guida di sistema per il suono alle applicazioni.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Iconcine</option
+></term>
+<listitem
+><para
+>Memorizza le icone dei siti Web.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Gestione del video</option
+></term>
+<listitem
+><para
+>Gestisce gli schermi e le uscite video.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Modulo Jar dei cookie</option
+></term>
+<listitem
+><para
+>Salva cookie di rete.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Guardia di rete</option
+></term>
+<listitem
+><para
+>Tiene traccia della rete e aggiorna la lista delle cartelle del KIOslave <application
+>network:/</application
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Modulo di Subversion</option
+></term>
+<listitem
+><para
+>Fornisce varie azioni di Subversion al gestore dei file e ad altri programmi.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>Stato di rete</option
+></term>
+<listitem
+><para
+>Segue lo stato delle interfacce di rete e fornisce notifiche per le applicazioni che la usano.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Demone di scrittura</option
+></term>
+<listitem
+><para
+>Sorveglia i messaggi che gli utenti locali inviano con <command
+>write</command
+> o <command
+>wall</command
+>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Guardia dell'area di modifica</option
+></term>
+<listitem
+><para
+>Segue le applicazioni che vogliono usare l'area di notifica basata su D-Bus.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>KMixD</option
+></term>
+<listitem
+><para
+>Servizio mixer KMixD</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Demone del vassoio di sistema</option
+></term>
+<listitem
+><para
+>Segue le applicazioni che vogliono usare il vassoio di sistema basato su D-Bus.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Demone della tastiera</option
+></term>
+<listitem
+><para
+>Segue le modifiche della tastiera (nuova tastiera, mappatura cambiata)</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Notifica del cambiamento di URL remoti</option
+></term>
+<listitem>
+<para
+>Dà notifiche dei cambiamenti per le cartelle di rete</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Gestore delle attività</option
+></term>
+<listitem
+><para
+>Il motore del gestore delle attività di Nepomuk</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Monitor di cambiamento della gestione dello schermo</option
+></term>
+<listitem
+><para
+>Notifica come è stato ruotato lo schermo (ove disponibile)</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Notificatore dello spazio libero</option
+></term>
+<listitem
+><para
+>Avvisa quando si sta finendo lo spazio nella tua cartella Home.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Montaggio automatico dei dispositivi rimovibili</option
+></term>
+<listitem
+><para
+>Monta automaticamente i dispositivi secondo necessità.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Modulo di ricerca di Nepomuk</option
+></term>
+<listitem
+><para
+>Modulo ausiliare per KIO per assicurare gli aggiornamenti automatici delle liste di ricerca di Nepomuk.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Gestione energetica</option
+></term>
+<listitem
+><para
+>Gestione e notifiche di batteria, schermo e consumo del processore.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Demone dei telecomandi</option
+></term>
+<listitem
+><para
+>Gestisce i comandi ricevuti dal telecomando</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Gestore del notificatore di stato</option
+></term>
+<listitem
+><para
+>Gestisce i servizi che forniscono interfacce utente al notificatore di stato.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Rilevamento di servizi DNS-SD</option
+></term>
+<listitem
+><para
+>Controlla la presenza di servizi DNS-SD nella rete.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Espulsore di unità</option
+></term>
+<listitem
+><para
+>Smonta e rilascia automaticamente le unità quando ne viene premuto il pulsante di espulsione.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Fuso orario</option
+></term>
+<listitem
+><para
+>Dà accesso ai fusi di sistema alle applicazioni.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>Azioni di immissione</option
+></term>
+<listitem
+><para
+>Il servizio azioni di immissione effettua particolari azioni quando certi tasti vengono premuti.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+ <para
+>I moduli di inizializzazione possono essere abilitati o disabilitati nelle &systemsettings;, in <menuchoice
+><guimenu
+>Amministrazione di sistema</guimenu
+><guisubmenu
+>Avvio e spegnimento</guisubmenu
+><guimenuitem
+>Gestione dei servizi</guimenuitem
+></menuchoice
+>.</para>
+
+</refsect1>
+
+<refsect1
+><title
+>Opzioni generiche</title>
+<!--<para
+>--><variablelist>
+<varlistentry>
+<term
+><option
+>--author</option
+></term>
+<listitem>
+<para
+>Mostra le informazioni sull'autore.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help</option
+></term>
+<listitem>
+<para
+>Mostra la guida sulle opzioni.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-all</option
+></term>
+<listitem>
+<para
+>Mostra tutte le opzioni.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-kde</option
+></term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per &kde;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--help-qt</option
+></term>
+<listitem>
+<para
+>Mostra le opzioni specifiche per Qt.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--license</option
+></term>
+<listitem>
+<para
+>Mostra le informazioni sulla licenza.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-v</option
+> <option
+>--version</option
+></term>
+<listitem>
+<para
+>Mostra le informazioni sulla versione</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+<!--</para
+>-->
+</refsect1>
+
+<refsect1>
+<title
+>Opzioni dell'applicazione</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--check</option
+></term>
+<listitem>
+<para
+>Controlla la banca dati di Sycoca solo una volta. </para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Uso</title>
+<para
+>Se <command
+>kded4</command
+> viene chiamato senza parametri ed è già in esecuzione, visualizza il messaggio: <screen
+>Demone di &kde; (kded) già in esecuzione.</screen>
+</para>
+<para
+>Se il comando <command
+>kded4</command
+> viene chiamato come <command
+>kded4 <option
+>--check</option
+></command
+>, aggiorna il Sycoca di &kde; usando <command
+>kbuildsycoca4</command
+>. </para>
+</refsect1>
+
+<refsect1>
+<title
+>Vedi anche</title>
+<para
+><replaceable
+>kdeoptions</replaceable
+>(7), <replaceable
+>qtoptions</replaceable
+>(7), <replaceable
+>kbuildsycoca4</replaceable
+>(8) </para>
+</refsect1>
+
+<refsect1>
+<title
+>Errori</title>
+<para
+>Probabilmente ce ne sono a bizzeffe. Usa <ulink url="http://bugs.kde.org"
+>bugs.kde.org</ulink
+> per segnalarli.</para>
+</refsect1>
+
+</refentry>

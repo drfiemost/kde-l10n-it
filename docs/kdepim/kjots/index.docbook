@@ -1,0 +1,409 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!-- nothing below must be removed -->
+  <!ENTITY kappname "&kjots;">
+  <!ENTITY package "kdepim">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<book id="kjots" lang="&language;">
+
+<bookinfo id="kjotsinfo">
+<title
+>Manuale di &kjots;</title>
+
+<authorgroup>
+<author
+><firstname
+>Matt</firstname
+> <surname
+>Johnston</surname
+> <affiliation
+> <address
+><email
+>matt.kde@caifex.org</email
+></address>
+</affiliation>
+</author>
+
+<othercredit role="developer"
+><firstname
+>Christoph</firstname
+> <surname
+>Neerfield</surname
+> <affiliation
+> <address
+>&Christoph.Neerfield.mail;</address>
+</affiliation>
+<contrib
+>Sviluppatore</contrib>
+</othercredit>
+
+<othercredit role="reviewer"
+><firstname
+>Lauri</firstname
+> <surname
+>Watts</surname
+> <affiliation
+> <address
+>&Lauri.Watts.mail;</address>
+</affiliation>
+<contrib
+>Revisore</contrib>
+</othercredit>
+
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Cozzi</surname
+><contrib
+>Traduzione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Nicola</firstname
+><surname
+>Ruggero</surname
+><affiliation
+><address
+><email
+>nicola@nxnt.org</email
+></address
+></affiliation
+><contrib
+>Traduzione e revisione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Matt.Johnston;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2013-05-27</date>
+<releaseinfo
+>4.11 pre (&kde; 4.11)</releaseinfo>
+
+<abstract
+><para
+>Questo manuale descrive come usare &kjots;, un programmino utile per tenere appunti vari.</para
+></abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KJots</keyword>
+<keyword
+>kdepim</keyword>
+<keyword
+>appunti</keyword>
+<keyword
+>agenda</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="using-kjots">
+<title
+>Usare &kjots;</title>
+
+<para
+>&kjots; ha due elementi di base usati per organizzare le tue note: gli <quote
+>appunti</quote
+> e le <quote
+>pagine</quote
+>.</para>
+
+<screenshot>
+<screeninfo
+>La finestra principale di &kjots;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="mainwindow.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>La finestra principale di &kjots;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Puoi creare un certo numero di appunti in &kjots;, e ogni appunto può contenere un certo numero di pagine, dove puoi scrivere le note. Ogni appunto dovrebbe avere un nome (in modo che puoi trovare ciò che cerchi), e lo dovrebbe avere anche ogni pagina. Anche se non è obbligatorio dare un nome alle pagine, è una buona idea farlo.</para>
+
+<para
+>La parte sinistra della finestra principale mostra le <guilabel
+>Note locali</guilabel
+> e tutti gli appunti e tutte le pagine in una vista ad albero. </para>
+<para
+>Se le <guilabel
+>Note locali</guilabel
+> o gli appunti sono selezionati, l'editor a destra mostra gli indici con i titoli degli appunti e le pagine come collegamenti, in modo da poter navigare velocemente tra gli appunti e leggere le pagine. </para>
+<para
+>Il contenuto delle pagine è mostrato in sola lettura. Il contento di una pagina può essere modificato solo selezionando quella pagina nella vista ad albero oppure facendo clic sul suo titolo nell'editor. </para>
+
+<sect1 id="kjots-books">
+<title
+>Usare gli appunti</title>
+
+<para
+>Per creare un nuovo appunto, usa <keycombo action="simul"
+>&Ctrl;&Shift; <keycap
+>N</keycap
+></keycombo
+> o la voce del menu <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Nuovo appunto</guimenuitem
+></menuchoice
+>, e comparirà un nuovo appunto chiamato <guilabel
+>Nuovo appunto</guilabel
+> con una pagina vuota chiamata <guilabel
+>Nuova pagina</guilabel
+>.</para>
+
+<para
+>Il nome del nuovo appunto dovrebbe apparire nella parte sinistra della finestra. Se vuoi che l'appunto sia nei tuoi <quote
+>segnalibri</quote
+>, usa <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> o la voce del menu <menuchoice
+><guimenu
+>Segnalibri</guimenu
+><guimenuitem
+>Aggiungi un segnalibro</guimenuitem
+></menuchoice
+>. Puoi organizzare i tuoi segnalibri in cartelle separate come probabilmente fai in &konqueror;.</para>
+
+<tip
+><para
+>Se vuoi che i tuoi appunti siano in un ordine diverso, puoi semplicemente trascinarli nel posto dove vuoi che siano. </para
+></tip>
+
+<para
+>Forse avrai notato che non c'è nessun <quote
+>Salva</quote
+> da nessuna parte. Questo non è un errore, &kjots; salva i tuoi appunti e pagine automaticamente, così non perderai mai la noticina che scrivi mentre sei al telefono e devi scrivere qualcosa alla svelta.</para>
+
+<para
+>Puoi anche esportare un intero appunto come file di testo, file HTML o file appunto usando <menuchoice
+><guimenu
+>File</guimenu
+><guisubmenu
+>Esporta</guisubmenu
+></menuchoice
+>. Ti sarà richiesta una posizione dove salvare il file. Il formato di un appunto di esempio salvato come testo è mostrato qui sotto:</para>
+
+<screen
+>############
+# Prima pagina
+############
+Ricordarsi di andare al negozio!
+
+#############
+# Codice utile
+#############
+10 PRINT "CIAO MONDO"
+20 GOTO 10
+
+################
+# La terza pagina
+################
+Questa è la terza pagina ed è un esempio di &kjots;.</screen>
+
+<para
+>Ricordati che la finestra dove ti si richiede il nome del file è una finestra standard di KDE. Ciò vuol dire che salvare il file sul tuo disco fisso è facile come salvarlo su un server Web, FTP, o penna di memoria USB. Quindi puoi esportare come HTML e salvare su un server Web; in questo modo avrai sempre i tuoi appunti disponibili.</para>
+
+<tip
+><para
+>Puoi importare note di &kjots; nel formato degli appunti con estensione <filename class="extension"
+>.book</filename
+>. Copia questo file in <filename
+>$<envar
+>KDEHOME</envar
+>/share/apps/kjots</filename
+>. Ora esegui <userinput
+><command
+>kjotsmigrator <option
+>--interactive</option
+></command
+></userinput
+> e quindi i dati saranno importati come <guilabel
+>Appunto</guilabel
+> in &kjots;.</para
+></tip>
+<!-- data is in hidden dirs in ~/.local/share/notes in kde
+> 4.9-->
+</sect1>
+
+<sect1 id="kjots-pages">
+<title
+>Usare le pagine</title>
+
+<para
+>Le pagine sono dove scrivi qualsiasi cosa che devi scrivere. Una volta che hai creato un appunto, puoi scrivere del testo nel riquadro di testo principale.</para>
+
+<para
+>Per creare altre pagine, puoi usare <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+> o la voce del menu <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Nuova pagina</guimenuitem
+></menuchoice
+>, che creerà una nuova pagina. Similmente, la pagina attuale può essere rimossa usando <menuchoice
+><guimenu
+>File</guimenu
+><guimenuitem
+>Elimina pagina</guimenuitem
+></menuchoice
+>.</para>
+
+<tip
+><para
+>Se devi inserire la data e ora attuali mentre stai scrivendo un appunto, puoi usare <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>I</keycap
+></keycombo
+>.</para
+></tip>
+
+<para
+>Per poter arrivare alla pagina che vuoi vedere, le pagine possono (e dovrebbero) avere un nome. Si può fare nel modo a cui sei abituato: fai doppio clic sulla pagina che vuoi rinominare. A questo punto puoi rinominare la pagina. Ovviamente c'è anche una scorciatoia da tastiera che puoi usare in qualsiasi momento mentre scrivi un appunto. La scorciatoia è <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>.</para>
+
+<para
+>Un altro modo di rinominare una pagina è selezionare una parte del tuo appunto e premere <keycombo action="simul"
+>&Ctrl;<keycap
+>T</keycap
+></keycombo
+>. Il testo selezionato diverrà istantaneamente il titolo della pagina.</para>
+
+<para
+>Mentre scrivi o modifichi le tue note puoi formattare il testo usando le azioni dal menu <guimenu
+>Formato</guimenu
+> oppure i pulsanti della barra degli strumenti. </para>
+
+<!-- not possible in kde4 ???
+<tip
+><para
+>If you want fast access to a particular page, you 
+can assign a keyboard shortcut to that page. Go to <menuchoice>
+<guimenu
+>Settings</guimenu
+><guimenuitem
+>Configure Shortcuts...
+</guimenuitem
+></menuchoice
+>.</para
+></tip
+> -->
+</sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&kjots; </para>
+<para
+>Copyright 1997 del programma Christoph Neerfeld <email
+>Christoph.Neerfeld@home.ivm.de</email
+> </para>
+<para
+>Basato sul programma <command
+>jots</command
+> incluso nel pacchetto <application
+>tkgoodstuff</application
+>. Il pacchetto <application
+>tkgoodstuff</application
+> è copyright 1995-96 di Mark Crimmins <email
+>markcrim@umich.edu</email
+> </para>
+
+<para
+>Documentazione copyright 2000 &Matt.Johnston; <email
+>matt.kde@caifex.org</email
+> </para>
+<para
+>Alcune parti prese dalla documentazione copyright 1998 Christoph Neerfeld <email
+>Christoph.Neerfeld@home.ivm.de</email
+> </para>
+
+<para
+>Federico Cozzi<email />Traduzione</para
+><para
+>Federico Zenith<email
+>zenith@member.fsf.org</email
+>Traduzione della documentazione</para
+><para
+>Nicola Ruggero<email
+>nicola@nxnt.org</email
+>Traduzione della documentazione e revisione della documentazione</para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installazione</title>
+
+<sect1 id="getting-kjots">
+<title
+>Come procurarsi &kjots;</title>
+&install.intro.documentation; </sect1>
+
+<sect1 id="compilation">
+<title
+>Compilazione e installazione</title>
+&install.compile.documentation; </sect1>
+
+</appendix>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+// vim:ts=2:sw=2:tw=78:noet
+-->

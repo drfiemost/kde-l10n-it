@@ -1,0 +1,146 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="screensaver" lang="&language;">
+<articleinfo>
+<title
+>Bloccaschermo</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Nicola</firstname
+><surname
+>Ruggero</surname
+><affiliation
+><address
+><email
+>nicola@nxnt.org</email
+></address
+></affiliation
+><contrib
+></contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-12-05</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>impostazioni di sistema</keyword>
+<keyword
+>salvaschermo</keyword>
+<keyword
+>salva schermo</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="kcm_screensaver">
+
+<title
+>Bloccaschermo</title>
+
+<para
+>Utilizzando questo modulo puoi scegliere il tuo salvaschermo, determinare quanto tempo debba passare prima che il salvaschermo si attivi, e aggiungere o rimuovere la protezione con password del tuo salvaschermo.</para>
+
+<sect2 id="ss-options">
+<title
+>Impostazione dell'attesa, priorità e password dei salvaschermo.</title>
+
+<para
+>In altro c'è una casella etichettata come <guilabel
+>Avvia automaticamente</guilabel
+> e un'altra casella nella quale puoi determinare il periodo di inattività prima di avviare il salvaschermo. In quest'ultima casella puoi indicare un numero positivo qualsiasi di minuti.</para>
+
+<para
+>Sotto c'è una casellina etichettata come <guilabel
+>Richiedi password per fermare il salvaschermo</guilabel
+>. Se è marcata, quando premi un tasto o fai clic con il mouse per terminare il salvaschermo, devi inserire una password. La password utilizzata è la stessa che hai usato per effettuare l'accesso alla macchina. Se la casellina non è marcata, non ti viene richiesta alcuna password per tornare al desktop.</para>
+
+<para
+>Bloccare lo schermo manualmente provoca l'attivazione immediata della protezione con password.</para>
+
+</sect2>
+
+<sect2 id="ss-choose">
+<title
+>Scelta del salvaschermo, e configurazione delle opzioni</title>
+
+<para
+>Usa l'opzione <guilabel
+>Blocco semplice</guilabel
+> per una finestra semplice di sblocco che richiede una password.</para>
+
+<para
+>Se vuoi avere degli oggetti interattivi come note oppure un riproduttore multimediale assieme al salvaschermo, abilita <guilabel
+>Oggetti del desktop</guilabel
+> e fai clic su <guibutton
+>Configura...</guibutton
+> per selezionare quelli che preferisci. </para>
+
+<para
+>Usa l'opzione <guilabel
+>Salvaschermo</guilabel
+> per abilitare la scelta di tutti i salvaschermo disponibili. Puoi scegliere un salvaschermo semplicemente facendo clic sul suo nome. Una volta che hai selezionato un salvaschermo, vedrai una piccola anteprima nello schermo a destra.</para>
+
+<note
+><para
+>Lo schermo d'anteprima spesso mostrerà il salvaschermo più largo di come compare in realtà. Questo accorgimento è stato sviluppato con lo scopo di poter visualizzare molti dei dettagli che altrimenti sarebbero impercettibili se il salvaschermo venisse ridotto veramente a quella grandezza.</para
+></note>
+
+<para
+>Ogni salvaschermo ha diversi gruppi di opzioni. Facendo clic su <guilabel
+>Imposta...</guilabel
+> apparirà una finestra di dialogo con tutte le opzioni disponibili. Nel momento in cui cambi le opzioni, il riquadro di anteprima nella finestra di dialogo mostrerà che effetto ottieni con le impostazioni correnti.</para>
+
+<para
+>Quando hai finito di impostare il salvaschermo fai clic su <guibutton
+>OK</guibutton
+>.</para
+> <para
+>Facendo clic su <guibutton
+>Annulla</guibutton
+> cancellerai tutti i cambiamenti effettuati in questa finestra di dialogo e ritornerai al modulo del salvaschermo.</para>
+
+<para
+>Nella maggior parte dei salvaschermi, la descrizione, il copyright e le informazioni sull'autore sono mostrate direttamente nella finestra di dialogo. Per le altre info devi fare clic su <guibutton
+>Informazioni su...</guibutton
+>.</para>
+
+<para
+>Quando pensi di aver impostato tutte le opzioni, fai clic semplicemente su <guibutton
+>Prova</guibutton
+> per avviare immediatamente il salvaschermo <emphasis
+>esattamente</emphasis
+> come apparirà.</para>
+
+</sect2>
+
+<!--FIXME still true in 4.10?-->
+<sect2 id="ss-other"
+><title
+>Utilizzo di un salvaschermo non &kde;</title
+> 
+
+<para
+>&kde; non impedisce ad altri salvaschermo di funzionare. Per usate un salvaschermo diverso, come <application
+>xscreensaver</application
+>, semplicemente disabilita i salvaschermo di &kde; e imposta normalmente l'altro programma di salvaschermo. </para>
+
+</sect2>
+
+</sect1>
+
+</article>

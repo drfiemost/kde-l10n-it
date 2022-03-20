@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+	
+<article id="kresources" lang="&language;">
+<title
+>Risorse di &kde;</title>
+<articleinfo>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+></personname
+></author>
+<othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2013-08-08</date>
+<releaseinfo
+>&kde; 4.11</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>risorse</keyword>
+<keyword
+>indirizzo</keyword>
+<keyword
+>avviso</keyword>
+<keyword
+>calendario</keyword>
+<keyword
+>note</keyword>
+</keywordset>
+</articleinfo>
+
+<!-- Revision 39e72ce9
+ID: 39e72ce9fc6760727154edf2c29be8656cebe67d
+ Added by Sergio Luis Martins 12 months ago
+Remove KResources kcm from systemsettings.
+It's deprecated and should not be used, and it's confusing users.
+It can now be used through kcmshell4 though, if you still need it.
+kresources
+  kresources.desktop (diff)
+  -->
+<para
+>Questo modulo è uno strumento di configurazione per gestire le risorse usate da diverse applicazioni di &kde;. Permette di aggiungere, eliminare o modificare le risorse di <guilabel
+>Calendari</guilabel
+>, <guilabel
+>Note</guilabel
+> e <guilabel
+>Contatti</guilabel
+>.</para>
+
+<note
+><para
+>Questo modulo non è più nelle &systemsettings; ed è disponibile solo se avvii <userinput
+><command
+>kcmshell4</command
+> <option
+>kresources</option
+></userinput
+> da un terminale. </para
+></note>
+
+<para
+>Seleziona un tipo di risorsa dal menu a tendina in cima alla sezione <guilabel
+>Risorse</guilabel
+>. Il riquadro a elenco visualizza ora i nomi e i tipi delle risorse disponibili di questo tipo. Una di queste risorse è segnata come risorsa standard.</para>
+
+<para
+>Usa i pulsanti sul lato destro del riquadro a elenco per aggiungere, rimuovere o modificare le risorse.</para>
+
+<para
+>Puoi trovare informazioni dettagliate sui tipi di risorse e sulle opzioni seguendo i collegamenti forniti nella tabella seguente:</para>
+
+<para>
+<table>
+<title
+>Risorse disponibili</title>
+<tgroup cols="3">
+<tbody>
+<row>
+<entry
+>Tipo di risorsa</entry>
+<entry
+>Usato da</entry>
+<entry
+>Informazioni aggiuntive</entry>
+</row>
+<!--this is a dead link and there's no longer appears to be any relevant documentation in KAlarm
+<row>
+<entry
+>Alarms</entry>
+<entry
+><simplelist type="inline"
+><member
+>&kalarm;</member
+></simplelist
+></entry>
+<entry
+><ulink url="help:/kalarm/index.html#resources"
+>&kalarm; resources</ulink
+></entry>
+</row -->
+<row>
+<entry
+>Calendario</entry>
+<entry
+><simplelist type="inline"
+><member
+>&korganizer;</member
+> 
+<member
+>Estensione per inviti iCal di &kmail;</member
+></simplelist
+></entry>
+<entry
+><ulink url="help:/korganizer/managing-data.html#managing-resources"
+>Risorse di &korganizer;</ulink
+></entry>
+</row>
+<row>
+<entry
+>Note</entry>
+<entry
+><simplelist type="inline"
+><member
+>&knotes;</member
+></simplelist
+></entry>
+<entry
+><ulink url="help:/knotes/index.html#using"
+>Risorsa di &knotes;</ulink
+></entry>
+</row>
+<row>
+<entry
+>Contatti</entry>
+<entry
+><simplelist type="inline">
+<member
+>&kaddressbook;</member
+> 
+<member
+>Completamento di indirizzi in &kmail;, &knode; e &korganizer;</member>
+<member
+>Intergrazione con la rubrica in &kopete;</member>
+<member
+>&konversation;</member>
+<member
+>Estensione di &krunner; per i contatti</member>
+<member
+>KonsoleKalendar</member
+></simplelist
+> </entry>
+<entry
+></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</para>
+
+<para
+>Ogni tipo di risorsa deve avere una risorsa standard, in cui salvare tutti i dati se non ne viene specificata un'altra. Se vuoi cambiare la risorsa standard, usa il pulsante <guibutton
+>Usa come standard</guibutton
+> per selezionarla. Devi avere accesso sia in lettura che scrittura alla nuova risorsa standard, altrimenti non la potrai selezionare. </para>
+
+</article>

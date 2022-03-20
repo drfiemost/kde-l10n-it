@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="performance" lang="&language;">
+<articleinfo>
+<title
+>Prestazioni</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>Riccardo</firstname
+><surname
+>Iaconelli</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Manutenzione della traduzione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2009-11-24</date>
+<releaseinfo
+>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>prestazioni</keyword>
+<keyword
+>precaricamento</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sys-performance">
+<title
+>Impostazioni delle prestazioni</title>
+
+<para
+>&kde; è usato su molti tipi di computer da molti tipi di utenti. Per quanto riguarda le prestazioni, questa finestra permette ad ogni utente di regolare le opzioni che possono rendere il computer sul quale è installato &konqueror; più reattivo e veloce. </para>
+
+<sect2
+><title
+>Istanze di &konqueror;</title>
+<para
+>La prima sezione della finestra è indicata <guilabel
+>Minimizza l'utilizzo della memoria</guilabel
+> e ha tre opzioni che determinano il numero massimo di istanze di &konqueror; che si possono aprire contemporaneamente su una macchina.</para>
+
+<note
+><para
+>Non confondere le istanze con le finestre o le schede di &konqueror;. Il numero di istanze è determinato da &kde; e non dall'utente. Puoi immaginare le istanze come i dati nascosti delle finestre e delle schede di &konqueror;. Un'istanza di &konqueror; può contenere i dati di più finestre o schede. Quello che imposti in questa sezione non limita il numero di finestre che puoi aprire contemporaneamente, ma piuttosto quante istanze di &konqueror; possono essere aperte. </para>
+<para
+>Il motivo per cui le scelte che fai in questo riquadro sono importanti diventa chiaro quando qualcosa va storto, e &konqueror; è costretto a chiudere un'istanza. <emphasis
+>Tutte le finestre di &konqueror; associate a un'istanza devono essere chiuse immediatamente, senza che tu abbia il tempo di salvare i dati o aggiungere dei segnalibri per poter facilmente tornare dov'eri.</emphasis
+> Quindi, più istanze tieni aperte contemporaneamente, meno probabile è che un problema in un'istanza ti dia fastidio. Avendo più istanze, però, si userà più memoria, e questo può essere un problema in sistemi che ne hanno poca. </para
+></note>
+
+<para
+>Le tue opzioni sono:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Mai</guilabel
+></term>
+<listitem
+><para
+>Non ci sono restrizioni. Si può aprire un qualsiasi numero di istanze di &konqueror; contemporanee. Il vantaggio di quest'opzione è che se una qualunque istanza si impianta, le restanti non ne verranno influenzate. Lo svantaggio è che, avendo più istanze di &konqueror;, si userà più memoria.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Unicamente per la navigazione file (raccomandato)</guilabel
+></term>
+<listitem
+><para
+>Se è selezionata questa opzione, puoi avere tutte le istanze di &konqueror; che vuoi quando stai navigando nel Web, ma solo una istanza di &konqueror; per la gestione dei file. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Sempre (utilizzare con cautela)</guilabel
+></term>
+<listitem
+><para
+>Se è selezionata questa opzione, potrai avere una sola istanza di &konqueror; attiva. Ciò risparmia memoria, ma se &konqueror; si impianta tutte le sue finestre si chiuderanno immediatamente senza alcun preavviso. Questa opzione dovrebbe essere usata solo per sistemi con seri limiti di memoria.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2
+><title
+>Precaricamento</title>
+<para
+>Anche la sottosezione chiamata <guilabel
+>Precaricamento</guilabel
+> permette di fare un compromesso tra memoria e prestazioni.</para>
+
+<para
+><emphasis
+>Precaricamento</emphasis
+> si riferisce al caricare un'istanza di &konqueror; nella memoria prima che un utente lo avvii. Il lato positivo è che, quando un'utente chiede a &kde; di avviare &konqueror;, la finestra appare subito perché la maggior parte dell'applicazione è già stata caricata. Il lato negativo è che l'istanza precaricata di &konqueror; usa memoria che potrebbe essere usata da altri programmi. Normalmente, quando un utente chiude &konqueror; &kde; non ne chiuderà l'istanza. Questo significa che la prossima volta che l'utente vorrà lanciare &konqueror;, sarà praticamente istantaneo anche questa volta.</para>
+<para
+>La casella numerica indicata con <guilabel
+>Massimo sumero di istanze da precaricare:</guilabel
+> può essere usata per impostare il numero massimo di istanze precaricate. Questa opzione non influenza le istanze quando sono caricate. Inoltre, non limita il numero di istanze che possono essere usate dalla finestra attiva. Influisce solo sul numero di istanze precaricate.</para>
+<para
+>La casella indicata con <guilabel
+>Precarica una istanza dopo l'avvio di KDE</guilabel
+> fa esattamente quello che dice. Dice a &kde; di precaricare un'istanza di &konqueror; all'avvio.</para>
+<note
+><para
+>Questo rallenta l'avviamento di &kde;.</para
+></note>
+<para
+>L'ultima casella, indicata con <guilabel
+>Mantieni sempre almeno una istanza precaricata</guilabel
+>, segnala a &kde; che vuoi fargli tenere sempre precaricata, ma non usata, un'istanza di &konqueror; disponibile. Questa opzione potrebbe ridurre le prestazioni su alcune macchine (specialmente quelle con poca memoria).</para>
+</sect2>
+<!-- not in kde4
+<sect2
+><title
+>&kde; system performance options</title>
+<para
+>Click on the tab labeled <guilabel
+>System</guilabel
+>.</para>
+<para
+>Currently there is only one option labeled <guilabel
+>Disable system configuration startup check</guilabel
+>.
+</para>
+<para
+>When &kde; starts, it checks several directories for changes to configuration.  Most of these changes relate to installation and uninstalling applications to the computer.  This scan extends the startup time for &kde;  and many times this scan is not needed as the configuration is current from the last time &kde; was started.  When the configuration has changed &kde; uses this scan to update various datafiles to ensure a smooth user experience.  </para>
+<warning
+><para
+>You are given the option to skip this initial scan during startup.  &kde; developers strongly suggest you do not disable this scan because of the potential to introduce instability into your system.</para>
+<para
+>If you do select this option:</para>
+<itemizedlist>
+<listitem
+><para
+>&kde; will wait to perform the scan until after &kde; has started.  This scan will be performed after the desktop is loaded.</para
+></listitem>
+<listitem
+><para
+>In the event of a crash, &kde; will not perform a backtrace because your problem may be related to the delayed scan.</para
+></listitem>
+<listitem
+><para
+>Switch this option off if any application is crashing as a delayed scan may be responsible for the crash.</para
+></listitem>
+</itemizedlist>
+</warning>
+</sect2>
+-->
+</sect1>
+
+</article>

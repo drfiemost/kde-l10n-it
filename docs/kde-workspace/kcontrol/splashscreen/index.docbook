@@ -1,0 +1,172 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE">
+]>
+<article id="splashscreen" lang="&language;">
+<title
+>Schermata d'avvio</title>
+<articleinfo>
+<authorgroup>
+<author
+><firstname
+>Anne-Marie</firstname
+> <surname
+>Mahfouf</surname
+> <affiliation
+> <address
+>&Anne-Marie.Mahfouf.mail;</address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Alberto</firstname
+><surname
+>Campanile</surname
+><affiliation
+><address
+><email
+>acd_82@people.it</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2010-09-25</date>
+<releaseinfo
+>&kde; 4.5</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Impostazioni di sistema</keyword>
+<keyword
+>schermata d'avvio</keyword>
+<keyword
+>tema</keyword>
+</keywordset>
+</articleinfo>
+
+<!--sect1 id="kcm_splashscreen">
+<title
+>Splash Screen Theme Manager</title>
+-->
+<para
+>Questo modulo fornisce un'interfaccia per installare e visualizzare i temi per la schermata d'avvio.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Qui è presente una immagine del gestore della schermata d'avvio</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="splash-main.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Il modulo per la gestione della schermata d'avvio</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+
+<para
+>Sulla sinistra puoi vedere la lista delle schermate d'avvio già installate. La schermata di avvio attualmente attiva è quella evidenziata.</para>
+<para
+>Sulla destra è visualizzata un'anteprima della schermata di avvio attualmente attiva con sotto alcune informazioni a riguardo.</para>
+
+<variablelist>
+<varlistentry
+><term
+><guilabel
+>Ottieni nuovi temi...</guilabel
+></term>
+<listitem>
+<para
+>Devi essere collegato ad Internet per utilizzare questa opzione. Una finestra visualizzerà un elenco di temi dal sito <ulink url="http://www.kde-look.org"
+>http://www.kde-look.org</ulink
+> . Premendo il pulsante <guibutton
+>Installa</guibutton
+> associato al tema, sarà effettuata l'installazione del tema in locale. </para>
+<para>
+<screenshot>
+<screeninfo
+>Installare un nuovo tema</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="get-new-theme.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Installare un nuovo tema</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</para>
+<para
+>Questo nuovo tema è immediatamente disponibile ed è evidenziato dopo la chiusura della finestra impostazioni di sistema installazione componente aggiuntivo. L'anteprima visualizzerà l'immagine. Devi premere il pulsante <guibutton
+>Applica</guibutton
+> per attivare questo tema. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Installa file di tema...</guilabel
+></term>
+<listitem>
+<para
+>Invece di installare un tema come visto prima, potresti avere in locale un archivio tarball di untema. Premendo su questo pulsante si aprirà una finestra di dialogo del file e potrai scegliere il tarball del tema che desideri installare. L'installazione decomprime il tema in locale e lo rende immediatamente disponibile nella lista dei temi. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Rimuovi tema</guilabel
+></term>
+<listitem>
+<para
+>La rimozione di un tema consiste nella cancellazione del file del tema dal disco rigido. Una finestra di messaggioti avvisa prima di procedere ed indica cosa sarà cancellato. Premendo su <guibutton
+>Elimina</guibutton
+> nella finestra di messaggio, verrà definitivamente rimosso iltema dal disco rigido. Facendo clic su <guibutton
+>Annulla</guibutton
+> la rimozione sarà annullata. Se si sceglie <guibutton
+>Elimina</guibutton
+> , Il tema non sarà più disponibile nella lista. </para>
+</listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><guilabel
+>Prova tema</guilabel
+></term>
+<listitem>
+<para
+>Questa opzione mostra il tema e le icone associate come se stesse partendo la schermata all'avvio di &kde; . La prova terminerà cliccando sulla schermata d'avvio. </para>
+</listitem>
+</varlistentry>
+</variablelist>
+<!--/sect1-->
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

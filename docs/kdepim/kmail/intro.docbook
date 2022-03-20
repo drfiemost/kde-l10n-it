@@ -1,0 +1,155 @@
+<chapter id="intro">
+
+<chapterinfo>
+<authorgroup>
+<author
+><firstname
+>Daniel</firstname
+> <surname
+>Naber</surname
+> <affiliation
+><address
+> <email
+>daniel.naber@t-online.de</email>
+</address
+></affiliation>
+</author>
+<author
+><firstname
+>Scarlett</firstname
+> <surname
+>Clark</surname
+> <affiliation
+><address
+>&Scarlett.Clark.mail; </address
+></affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Luciano</firstname
+> <surname
+>Montanaro</surname
+> <affiliation
+><address
+><email
+>mikelima@cirulla.net</email
+></address
+></affiliation
+> <contrib
+>Traduzione del documento</contrib
+></othercredit
+> 
+</authorgroup>
+<date
+>2013-12-12</date>
+<releaseinfo
+>&kde; 4.12</releaseinfo>
+</chapterinfo>
+
+
+<title
+>Introduzione</title>
+
+<screenshot>
+<screeninfo
+>La schermata di benvenuto di &kmail;</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kmailwelcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>La schermata di benvenuto di &kmail;</phrase>
+    </textobject>
+    <caption>
+      <para
+>La schermata di benvenuto di &kmail;</para>
+    </caption>
+  </mediaobject>
+</screenshot>
+
+<para
+>La squadra di &kmail; ti dà il benvenuto in &kmail;, un programma di posta elettronica per &kde;. Il nostro obiettivo è rendere &kmail; bello ed intuitivo senza sacrificare potenza e flessibilità. </para>
+
+<para
+>Se non hai mai configurato prima d'ora un client di posta elettronica su un sistema &UNIX;, ti suggeriamo di leggere subito la sezione <link linkend="getting-started"
+>Primi passi</link
+>.</para>
+<sect1 id="features">
+<title
+>Alcune funzionalità di &kmail;</title>
+<para
+>Alcuni collegamenti alle importanti funzionalità disponibili in &kmail;</para>
+<itemizedlist>
+<listitem>
+<para
+>Non è necessario usare il mouse in &kmail;. È possibile fare tutte le operazioni con le <link linkend="keyboard-shortcuts"
+>Scorciatoie da tastiera</link
+>.</para>
+</listitem>
+<listitem>
+<para
+>Sebbene &kmail; possa essere considerato affidabile, è meglio tenere una copia di sicurezza dei messaggi, &ie; usa una delle opzioni di esportazioni/archiviazione elencate nelle <link linkend="transfer-mail-and-settings"
+>opzioni relative alle copie di sicurezza</link
+> per creare una copia delle tue impostazioni e della posta elettronica in un luogo sicuro.</para>
+</listitem>
+<listitem>
+<para
+>&kmail; è in grado di importare messaggi di posta elettronica in vari formati dal programma di posta che usavi in precedenza usando le opzioni in <link linkend="import-restore"
+>ripristino e importazione in &kmail;</link
+>.</para>
+</listitem>
+<listitem>
+<para
+>Organizza le tue cartelle con facilità usando le molteplici opzioni delle <link linkend="folders"
+>Cartelle</link
+> di &kmail;. Alcune delle funzionalità includono la gestione, separatamente per ogni cartella, di: mailing list, ACL (solo &imap;) e archiviazione.</para>
+</listitem>
+<listitem>
+<para
+>Completa la configurazione delle tue cartelle con gli estremamente configurabili <link linkend="filters"
+>filtri</link
+>.</para>
+</listitem>
+<listitem>
+<para
+>Come impostazione predefinita &kmail; rileva le più comuni <link linkend="configure-security-email-scams"
+>truffe</link
+> via posta, Puoi combattere anche lo SPAM ed i virus tramite le procedure guidate integrate per attivare l'integrazione con programmi esterni che controllano i messaggi di posta man mano che arrivano. Consulta <link linkend="the-anti-spam-wizard"
+>la procedura guidata per lo SPAM</link
+> e <link linkend="the-anti-virus-wizard"
+>la procedura guidata contro i virus</link
+> per maggiori dettagli.</para>
+</listitem>
+<listitem>
+<para
+>Gestisci facilmente le impostazioni per il singolo account usando <link linkend="configure-identity"
+>identità</link
+> multiple.</para>
+</listitem>
+</itemizedlist>
+<para
+>Speriamo sinceramente che &kmail; ti soddisfi!</para>
+<sect2 id="getting-help">
+<title
+>Ricevere aiuto</title>
+<note
+><para
+>Se incontri problemi durante la migrazione a &kmail; 2, consulta il capitolo <link linkend="troubleshooting"
+>Risoluzione dei problemi</link
+>. </para
+></note>
+<para
+>La pagina home di &kmail; si trova a <ulink url="http://userbase.kde.org/2sKMkmail/"
+>http://userbase.kde.org/KMail</ulink
+>. Contiene molti collegamenti utili, ad esempio le mailing-list degli utenti e degli sviluppatori. Segnala eventuali problemi di funzionamento di &kmail; usando <menuchoice
+><guimenu
+>Aiuto</guimenu
+><guimenuitem
+>Segnala un bug...</guimenuitem
+></menuchoice
+>.</para>
+</sect2>
+
+</sect1>
+</chapter>

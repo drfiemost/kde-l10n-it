@@ -1,0 +1,565 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kremotecontrol "<application
+>KRemoteControl</application
+>">
+  
+  <!ENTITY % Italian "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="kremotecontrol" lang="&language;">
+  <bookinfo>
+    <title
+>Configurazione dei telecomandi di &kde;</title>
+
+    <authorgroup>
+      <author
+><firstname
+>Michael</firstname
+> <surname
+>Zanetti</surname
+> <affiliation
+> <address
+><email
+>michael_zanetti@gmx.net</email
+></address>
+        </affiliation>
+      </author>
+    <othercredit role="translator"
+><firstname
+>Massimiliano</firstname
+><surname
+>Donno</surname
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> <othercredit role="translator"
+> <firstname
+>Luigi</firstname
+><surname
+>Toscano</surname
+> <contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+><affiliation
+><address
+><email
+>federico.zenith@member.fsf.org</email
+></address
+></affiliation
+><contrib
+>Traduzione della documentazione</contrib
+></othercredit
+> 
+    </authorgroup>
+
+    <date
+>2010-03-05</date>
+    <releaseinfo
+>1.0</releaseinfo>
+
+    <copyright>
+      <year
+>2010</year>
+      <holder
+>Michael Zanetti</holder>
+    </copyright>
+
+    <abstract>
+      <para
+>Configurazione di <application
+>TeleKomando</application
+>: l'infrastruttura per le funzionalità dei telecomandi di &kde;. </para>
+    </abstract>
+    
+    <keywordset>
+      <keyword
+>TeleKomando</keyword>
+      <keyword
+>kcm_remotecontrol</keyword>
+      <keyword
+>Telecomandi</keyword>
+    </keywordset>
+
+  </bookinfo>
+
+  <chapter id="introduction">
+    <title
+>Introduzione</title>
+
+    <para
+>Questo modulo permette di configurare i telecomandi. Puoi assegnare azioni eseguite alla pressione dei pulsanti. Le azioni possono avviare applicazioni, controllarle o eseguire dei comandi di sistema, come spegnere il computer. </para>
+
+    <sect1 id="requirements">
+      <title
+>Requisiti</title>
+
+      <para
+>Per usare <application
+>TeleKomando</application
+> devi aver configurato un motore per telecomandi sul computer. Attualmente ce n'è disponibile uno solo, per LIRC. Se LIRC è impostato correttamente, l'icona di <application
+>TeleKomando</application
+> nel vassoio di sistema si colorerà di rosso <inlinemediaobject
+><imageobject
+><imagedata fileref="irkick.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. Altrimenti, sarà grigia e con una croce sopra <inlinemediaobject
+><imageobject
+><imagedata fileref="irkickoff.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. </para>
+
+      <para
+>Per maggiori informazioni su LIRC visita <ulink url="http://www.lirc.org"
+>il loro sito Web</ulink
+>. </para>
+
+    </sect1>
+  </chapter>
+
+  <chapter id="usage">
+    <title
+>Uso</title>
+
+    <para
+>Il modulo di configurazione consiste di due elenchi. Quello a sinistra mostra i telecomandi disponibili e le loro modalità. L'elenco a destra mostra tutte le azioni configurate per il telecomando e la modalità attualmente selezionati. <screenshot>
+      <screeninfo
+>Configurazione di <application
+>TeleKomando</application
+></screeninfo>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="kcmremotecontrol.png" format="PNG"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>Elenco di telecomandi, modalità configurate e azioni</phrase>
+          </textobject>
+        </mediaobject>
+      </screenshot>
+    </para>
+
+    <sect1 id="modes">
+      <title
+>Telecomandi e modalità</title>
+
+      <para
+>Ogni telecomando può avere una serie di diverse modalità. Avere più modalità permette ai pulsanti di eseguire azioni diverse in contesti diversi. Immaginalo come un telecomando multiuso per TV, videoregistratore, satellitare e DVD. Invece di usare telecomandi diversi per applicazioni diverse, puoi cambiare il comportamento di un telecomando per adattarsi a un'applicazione creando diverse modalità e cambiandole secondo necessità.Le azioni definite direttamente per il telecomando sono sempre disponibili, indipendentemente dalla sua presente modalità. Le azioni definite per una modalità specifica sono eseguite solo se il telecomando è impostato in tale modalità. Ogni telecomando può essere in una sola modalità alla volta. Può anche non essere in nessuna modalità, e questo significa che solo le azioni sempre disponibili saranno eseguite alla pressione dei pulsanti. Puoi anche definire una modalità predefinita, che è quella attivata automaticamente all'avvio. </para>
+      <para
+>Puoi aggiungere delle modalità a un telecomando selezionandolo e usando il pulsante <guibutton
+>+</guibutton
+> di fianco all'elenco. Quando si crea una modalità le si deve dare un nome. A scelta puoi assegnare un pulsante per attivarla e un'icona per le sue notifiche. Puoi eliminare le modalità selezionandole e usando il pulsante <guibutton
+>-</guibutton
+>. <screenshot>
+        <screeninfo
+>Aggiungi modalità</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="AddMode.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Aggiungere una nuova modalità</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Come impostazione predefinita, se ci sono più modalità con lo stesso pulsante assegnato, il pulsante viene usato per passare attraverso queste modalità. In questo modo puoi raggruppare le modalità. Per esempio potresti assegnare un pulsante col nome <quote
+>Musica</quote
+> per passare tra le modalità di &amarok; e &juk; mentre un pulsante di nome <quote
+>Video</quote
+> potrebbe passare tra le modalità di &dragon; o KMPlayer. Se preferissi avere un pulsante per passare attraverso tutte le modalità e un secondo per tornare a quella precedente, puoi impostare questo comportamento nelle preferenze dei telecomandi selezionandone uno e premendo il pulsante di modifica. <screenshot>
+        <screeninfo
+>Modifica telecomando</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="EditMasterMode.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Modificare un telecomando</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+
+    </sect1>
+
+    <sect1 id="actions">
+      <title
+>Azioni</title>
+
+      <para
+>Dopo aver selezionato un telecomando o una modalità, puoi aggiungerci delle azioni usando il pulsante <guibutton
+>+</guibutton
+> sulla destra. Ci sono due diversi modi in cui creare le azioni: usando un modello o sfogliando manualmente il bus della sessione di &DBus;. <screenshot>
+        <screeninfo
+>Aggiungere un'azione</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="AddAction.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Aggiungere un'azione</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Creare azioni con i modelli è più facile ma ha dei limiti. Puoi trovare i modelli per le applicazioni più comuni come &amarok; o l'avviatore di programmi di &kde; e i comandi di sistema per spegnere il computer. Questi modelli sono raccolti in profili che li raggruppano per compiti simili. Per esempi c'è un profilo chiamato <quote
+>Gestione energetica</quote
+> che contiene i modelli per spegnere o sospendere il computer. <screenshot>
+        <screeninfo
+>Azione per aggiungere profili</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="AddProfileAction.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Aggiungere un'azione con un modello</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Creare azioni sfogliando D-Bus elenca tutte le applicazioni attualmente in esecuzione. Puoi sfogliare loro e le loro funzioni. Ciò richiede una comprensione di base del funzionamento di &DBus;, ma puoi usare più applicazioni e funzioni che quelle nell'elenco dei modelli. <screenshot>
+        <screeninfo
+>Azione di aggiunta con &DBus;</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="AddDBusAction.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Aggiungere un'azione con &DBus;</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Quando si aggiunge un'azione la se ne possono modificare alcune opzioni. La prima di queste definisce se l'azione viene eseguita ripetutamente quando si tiene premuto il pulsante sul telecomando. Ciò è un comportamento utile per le azioni come aumentare o ridurre il volume, ma potrebbe non essere desiderato per le azioni come passare tra lettura e pausa in un lettore multimediale. La seconda definisce se l'applicazione di destinazione va avviata se non è in esecuzione alla pressione del pulsante. Per esempio, non avrebbe senso avviare un'applicazione per le azioni che la chiudono. La terza e ultima opzione è definire quale istanza dell'applicazione dovrebbe ricevere l'azione se ce ne sono diverse in esecuzione. Se hai selezionato un'applicazione che non può eseguire istanze multiple, questa opzione è disattivata. </para>
+      <para>
+        <screenshot>
+        <screeninfo
+>Opzioni di aggiunta delle azioni</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="AddActionOptions.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Opzioni delle azioni</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+>Le azioni possono anche essere assegnate automaticamente tramite il pulsante di assistenza. Ciò vuol dire che <application
+>TeleKomando</application
+> può cercare di associare i pulsanti alle azioni da sé. La finestra di assegnazione automatica mostra tutte le raccolte di modelli con una bandiera. A seconda del colore della bandiera, il telecomando è completamente, parzialmente o per niente supportato da quel profilo. Verde vuol dire che tutti i modelli contenuti possono essere fatti corrispondere al telecomando, giallo che alcune delle azioni contenute corrispondono, e rosso che nessuno dei modelli può essere fatto corrispondere ai pulsanti del telecomando. Puoi quindi solo configurarli uno per uno, impostando da te il pulsante desiderato. <screenshot>
+        <screeninfo
+>Assegnazione automatica</screeninfo>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="AutoPopulate.png" format="PNG"/>
+            </imageobject>
+            <textobject>
+              <phrase
+>Genera azioni automaticamente usando i modelli</phrase>
+            </textobject>
+          </mediaobject>
+        </screenshot>
+      </para>
+      <para
+><emphasis role="strong"
+>Nota:</emphasis
+> se il telecomando non è compatibile con nessun profilo potresti non aver configurato LIRC con gli spazi di nomi. </para>
+    </sect1>
+  </chapter>
+  <chapter id="advancedInformation">
+    <title
+>Informazioni avanzate</title>
+    <para
+>Questo capitolo illustra alcune informazioni che potrebbero essere interessanti per gli utenti più avanzati e per gli sviluppatori. Imparerai come creare dei profili. </para>
+
+    <sect1 id="profileCreation">
+      <title
+>Creare un profilo</title>
+
+      <sect2>
+        <title
+>Introduzione</title>
+        <para
+>Quasi tutti i programmi con supporto per &DBus; possono essere usati con <application
+>TeleKomando</application
+> senza bisogno di modifiche. Tuttavia, per permettere una facile configurazione e far comparire un'applicazione nella finestra di assegnazione automatica, potresti crearle un profilo. </para>
+        <para
+>Un profilo dice a <application
+>TeleKomando</application
+> (e all'utente!) cosa fanno le varie chiamate a &DBus;. Si tratta essenzialmente di un tipo di documentazione delle chiamate a &DBus;. Non le devi includere tutte, solo quelle che credi possano essere più utili per gli utenti finali (normalmente quelle relative alla <quote
+>regolazione dell'interfaccia</quote
+>, piuttosto che quelle per la <quote
+>raccolta di informazioni</quote
+>). </para>
+      </sect2>
+
+      <sect2>
+        <title
+>Guida ai profili</title>
+        <procedure>
+
+          <step>
+            <title
+>&DBus;</title>
+            <para
+>Assicurati che l'applicazione per cui vuoi creare un profilo fornisca delle funzioni sul bus di sessione di &DBus;. Lo puoi verificare cercando di aggiungere delle azioni per quell'applicazione con il metodo manuale in <application
+>TeleKomando</application
+>. Anche <quote
+>qdbusviewer</quote
+>, un'applicazione inclusa nell'installazione di Qt4, è un buon strumento per determinare le funzionalità relative a &DBus; di un'applicazione. </para>
+          </step>
+
+          <step>
+            <title
+>Passo passo</title>
+            <para
+>Una volta che hai trovato le funzioni &DBus; appropriate, le devi descrivere in un documento <filename
+><replaceable
+>nomeapplicazione</replaceable
+>.profile.xml</filename
+>. Di seguito, una piccola guida per crearlo: </para>
+
+            <substeps>
+              <step>
+                <para
+>Prima, crea un nuovo file con il contenuto sottostante. Il tag <quote
+>name</quote
+> definisce un breve nome descrittivo del profilo. Aggiungi una descrizione del profilo nel tag <quote
+>description</quote
+>. Aggiungi inoltre il tuo nome nel tag <quote
+>author</quote
+> e un numero di versione nel tag <quote
+>version</quote
+>. Il numero di versione è importante per aggiornare il profilo. <application
+>TeleKomando</application
+> userà quello con il numero maggiore se ci sono più versioni del profilo sul sistema. </para>
+                <programlisting
+>&lt;xml version="1.0" encoding="UTF-8"?>
+&lt;profile xmlns="urn:org-kde-kremotecontrol"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:org-kde-kremotecontrol file:profile.xsd"&gt;
+
+    &lt;name&gt;Il mio profilo&lt;/name&gt;
+    &lt;version&gt;0.1&lt;/version&gt;
+    &lt;author&gt;Io&lt;/author&gt;
+    &lt;description&gt;Informazioni descrittive su cosa fa il profilo&lt;/description&gt;
+    &lt;action&gt;
+        &lt;-- Questo tag sarà spiegato in seguito --&gt;
+    &lt;action&gt;
+
+&lt;/profile&gt;
+                </programlisting>
+              </step>
+
+              <step>
+                <para
+>Dopo aver creato lo scheletro del profilo, è ora di aggiungere dei modelli d'azione. </para>
+
+                <programlisting
+>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;profile xmlns="urn:org-kde-kremotecontrol"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:org-kde-kremotecontrol file:profile.xsd"&gt;
+
+    &lt;name&gt;Il mio profilo&lt;/name&gt;
+    &lt;version&gt;0.1&lt;/version&gt;
+    &lt;author&gt;Io&lt;/author&gt;
+    &lt;description&gt;Informazioni descrittive su cosa fa il profilo&lt;/description&gt;
+
+    &lt;action id="identificativoUnivoco"  repeat="true|false" button="unPulsante"&gt;
+      &lt;name&gt;La mia azione&lt;/name&gt;
+      &lt;description&gt;Cosa fa l'azione&lt;/description&gt;
+      &lt;prototype&gt;
+        &lt;-- Questo tag sarà spiegato in seguito --&gt;
+      &lt;prototype&gt;
+      &lt;ifmulti&gt;Opzione ifMulti&lt;/ifmulti&gt;
+    &lt;/action&gt;
+    
+&lt;/profile&gt;
+                </programlisting>
+               <para
+>Per prima cosa definisci un identificativo univoco. Questo verrà usato da <application
+>TeleKomando</application
+> per far corrispondere le azioni esistenti al modello, per esempio leggendone la descrizione. Questo identificativo deve essere univoco in tutto il profilo. L'attributo <quote
+>button</quote
+> si usa per la funzione di assegnazione automatica. Vedi il file di schema <quote
+>profile.xsd</quote
+> per un elenco completo di tutti i nomi di pulsanti disponibili. L'attributo <quote
+>repeat</quote
+> indica se l'azione va eseguita più volte se il pulsante del telecomando viene tenuto premuto. Se l'applicazione va avviata se non è in esecuzione quando si preme un pulsante, imposta <quote
+>autostart</quote
+> a <quote
+>true</quote
+>. Gli attributi <quote
+>button</quote
+>, <quote
+>repeat</quote
+> e <quote
+>autostart</quote
+> sono facoltativi. Se <quote
+>repeat</quote
+> e <quote
+>autostart</quote
+> non sono definiti, saranno assunti essere impostati a <quote
+>false</quote
+>. </para>
+                 
+               <para
+>Aggiungi un nome breve al tag <quote
+>name</quote
+> e una descrizione con il tag <quote
+>description</quote
+>. La proprietà <quote
+>ifmulti</quote
+> specifica cosa deve fare <application
+>TeleKomando</application
+> se ci sono più istanze in esecuzione alla pressione di un pulsante. Puoi usare i valori seguenti per questa proprietà: <quote
+>sendtotop</quote
+> (invia la chiamata all'istanza in cima alla pila delle finestre), <quote
+>sendtobottom</quote
+> (invia la chiamata all'istanza in fondo alla pila delle finestre), <quote
+>sendtoall</quote
+> (invia a tutte le istanze), <quote
+>dontsend</quote
+> (non inviare l'azione a nessuna istanza) e <quote
+>unique</quote
+> (questa applicazione non permette istanze multiple). Se questo tag non è definito, <application
+>TeleKomando</application
+> assumerà che le applicazioni non possono essere eseguite in istanze multiple, assegnando a questo tag il valore predefinito <quote
+>unique</quote
+>. </para>
+              </step>
+
+              <step>
+                <para
+>Quindi, definisci la funzione di &DBus; da eseguire nel tag <quote
+>prototype</quote
+>: </para>
+                <programlisting
+>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;profile xmlns="urn:org-kde-kremotecontrol"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:org-kde-kremotecontrol file:profile.xsd"&gt;
+
+    &lt;name&gt;Il mio profilo&lt;/name&gt;
+    &lt;version&gt;0.1&lt;/version&gt;
+    &lt;author&gt;Io&lt;/author&gt;
+    &lt;description&gt;Informazioni descrittive su cosa fa il profilo&lt;/description&gt;
+
+    &lt;action id="identificativoUnivoco"  repeat="true|false" button="unPulsante"&gt;
+      &lt;name&gt;La mia azione&lt;/name&gt;
+      &lt;description&gt;Cosa fa l'azione&lt;/description&gt;
+
+      &lt;prototype&gt;
+        &lt;serviceName&gt;org.esempio.applicazione&lt;/nomeServizio&gt;
+        &lt;node&gt;Un/Nodo&lt;/node&gt;
+        &lt;function&gt;funzione&lt;/function&gt;
+      &lt;/prototype&gt;
+
+      &lt;ifmulti&gt;Opzione ifMulti&lt;/ifmulti&gt;
+    &lt;/action&gt;
+
+&lt;/profile&gt;
+                </programlisting>
+                <para
+><quote
+>servicename</quote
+> contiene il nome del servizio &DBus; dell'applicazione, per esempio <quote
+>org.kde.plasma-desktop</quote
+>. <quote
+>node</quote
+> contiene il rispettivo nodo &DBus; come <quote
+>App</quote
+>. Aggiungi il nome della funzione senza il valore restituito e gli argomenti usando il tag <quote
+>function</quote
+>; per esempio, <quote
+>toggleDashboard</quote
+>. </para>
+              </step>
+
+              <step>
+                <para
+>Se la funzione ha degli argomenti devi descriverli tutti, dandone una descrizione per l'utente, un tipo e a scelta un valore predefinito. Un elenco dei tipi supportati è disponibile nel file di schema <quote
+>profile.xsd</quote
+>. Il tag <quote
+>comment</quote
+> dovrebbe avere una descrizione comprensibile per l'utente dello scopo per cui si usa l'argomento. Dovresti anche dichiarare un valore predefinito per ogni argomento tra i tag <quote
+>default</quote
+>. Nota che i modelli che contengono un pulsante devono dare un valore predefinito per tutti gli argomenti, o la funzione di assegnazione automatica produrrà delle funzioni errate. </para>
+      
+                  <programlisting
+>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;profile xmlns="urn:org-kde-kremotecontrol"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:org-kde-kremotecontrol file:profile.xsd"&gt;
+
+   &lt;name&gt;Il mio profilo&lt;/name&gt;
+    &lt;version&gt;0.1&lt;/version&gt;
+    &lt;author&gt;Io&lt;/author&gt;
+    &lt;description&gt;Informazioni descrittive su cosa fa il profilo&lt;/description&gt;
+
+    &lt;action id="identificativoUnivoco"  repeat="true|false" button="unPulsante"&gt;
+      &lt;name&gt;La mia azione&lt;/name&gt;
+      &lt;description&gt;Cosa fa l'azione&lt;/description&gt;
+
+      &lt;prototype&gt;
+        &lt;serviceName&gt;org.esempio.applicazione&lt;/nomeServizio&gt;
+        &lt;node&gt;Un/Nodo&lt;/node&gt;
+        &lt;function&gt;funzione&lt;/function&gt;
+
+        &lt;arguments&gt;
+          &lt;argument type="QString"&gt;
+            &lt;comment&gt;Commento aggiuntivo&lt;/comment&gt;
+            &lt;default&gt;unValore&lt;/default&gt;
+          &lt;/argument&gt;
+        &lt;/arguments&gt;
+
+      &lt;/prototype&gt;
+
+      &lt;ifmulti&gt;Opzione ifMulti&lt;/ifmulti&gt;
+    &lt;/action&gt;
+
+&lt;/profile&gt;
+                  </programlisting>
+              </step>
+            </substeps>
+          </step>
+        </procedure>
+      </sect2>
+      <sect2>
+        <title
+>Installazione</title>
+          <para
+>Per provare e usare il profilo lo devi copiare in <filename class="directory"
+>$(kde_datadir)/profiles</filename
+> e riavviare <application
+>TeleKomando</application
+>. </para>
+          <para
+>Se vuoi rendere disponibile il profilo con &kde; SC, invialo alla squadra di sviluppo di kdeutils su <email
+>kde-utils-devel@kde.org</email
+>. </para>
+        </sect2>
+    </sect1>
+  </chapter>
+</book>
