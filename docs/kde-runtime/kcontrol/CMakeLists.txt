@@ -1,4 +1,3 @@
-add_subdirectory( attica )
 add_subdirectory( bookmarks )
 add_subdirectory( cache )
 add_subdirectory( componentchooser )
